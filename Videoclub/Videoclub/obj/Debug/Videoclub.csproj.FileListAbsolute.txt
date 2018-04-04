@@ -1,0 +1,5 @@
+c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\bin\Debug\Videoclub.dll
+c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\bin\Debug\Videoclub.pdb
+c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\obj\Debug\Videoclub.csprojResolveAssemblyReference.cache
+c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\obj\Debug\Videoclub.dll
+c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\obj\Debug\Videoclub.pdb
