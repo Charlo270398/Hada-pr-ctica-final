@@ -25,5 +25,8 @@ namespace Videoclub.EN
 
         private int edadR;
         public int EdadR { get { return edadR; } set { edadR = value; } }
+
+        private int precio;
+        public int Precio { get { return precio; } set { precio = value; } }
     }
 }
