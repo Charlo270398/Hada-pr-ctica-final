@@ -8,25 +8,35 @@ namespace Videoclub.EN
 {
     class peliculaEN
     {
-        private int id;
-        public int Id { get { return id; } set { id = value; } }
-
-        private string nombre;
-        public string Nombre { get { return nombre; } set { nombre = value; } }
-
-        private string descripcion;
-        public string Descripcion { get { return descripcion; } set { descripcion = value; } }
+        private int idP;
+        public int IdP { get { return idP; } set { idP = value; } }
+  
+        private string nombreP;
+        public string NombreP { get { return nombreP; } set { nombreP = value; } }
 
         private int duracion;
         public int Duracion { get { return duracion; } set { duracion = value; } }
 
-        private int valoracion;
-        public int Valoracion { get { return valoracion; } set { valoracion = value; } }
+        private string sinopsis;
+        public string Sinopsis { get { return sinopsis; } set { sinopsis = value; } }
 
-        private int edadR;
-        public int EdadR { get { return edadR; } set { edadR = value; } }
+        private string fechaE;
+        public string FechaE { get { return fechaE; } set { fechaE = value; } }
 
-        private int precio;
-        public int Precio { get { return precio; } set { precio = value; } }
+        private float precioC;
+        public float PrecioC { get { return precioC; } set { precioC = value; } }
+
+        private float precioA;
+        public float PrecioA { get { return precioA; } set { precioA = value; } }
+
+        private int idDir;
+        public int IdDir { get { return idDir; } set { idDir = value; } }
+
+        private string genero;
+        public string Genero { get { return genero; } set { genero = value; } }
+
+        private int idDist;
+        public int IdDist { get { return idDist; } set { idDist = value; } }
+        
     }
 }
