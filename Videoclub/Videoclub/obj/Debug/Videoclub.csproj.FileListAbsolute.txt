@@ -1,9 +1,0 @@
-c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\bin\Debug\Videoclub.dll
-c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\bin\Debug\Videoclub.pdb
-c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\obj\Debug\Videoclub.csprojResolveAssemblyReference.cache
-c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\obj\Debug\Videoclub.dll
-c:\users\carlos\documents\visual studio 2012\Projects\Videoclub\Videoclub\obj\Debug\Videoclub.pdb
-C:\Users\Carlos\Source\Repos\videoclub\Videoclub\Videoclub\obj\Debug\Videoclub.csprojResolveAssemblyReference.cache
-C:\Users\Carlos\Source\Repos\videoclub\Videoclub\Videoclub\obj\Debug\Videoclub.csproj.CoreCompileInputs.cache
-C:\Users\Carlos\Source\Repos\videoclub\Videoclub\Videoclub\obj\Debug\Videoclub.dll
-C:\Users\Carlos\Source\Repos\videoclub\Videoclub\Videoclub\obj\Debug\Videoclub.pdb
