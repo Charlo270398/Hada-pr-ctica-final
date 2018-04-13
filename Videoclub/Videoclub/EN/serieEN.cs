@@ -20,11 +20,11 @@ namespace Videoclub
         private string fechaE;
         public string FechaE { get { return fechaE; } set { fechaE = value; } }
 
-        private int precioC;
-        public int PrecioC { get { return precioC; } set { precioC = value; } }
+        private float precioC;
+        public float PrecioC { get { return precioC; } set { precioC = value; } }
 
-        private int precioA;
-        public int PrecioA { get { return precioA; } set { precioA = value; } }
+        private float precioA;
+        public float PrecioA { get { return precioA; } set { precioA = value; } }
 
         public void anyadirSerie()
         {

@@ -37,6 +37,22 @@ namespace Videoclub.EN
 
         private int idDist;
         public int IdDist { get { return idDist; } set { idDist = value; } }
-        
+
+        public void anyadirPelicula()
+        {
+
+        }
+        public void borrarPelicula()
+        {
+
+        }
+        public void mostrarPelicula()
+        {
+
+        }
+        public void modificarPelicula()
+        {
+
+        }
     }
 }
