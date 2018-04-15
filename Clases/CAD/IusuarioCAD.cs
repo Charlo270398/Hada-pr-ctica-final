@@ -9,9 +9,10 @@ namespace CAD
 {
     interface IusuarioCAD
     {
-        public void anyadirUsuario(string email);
-        public void borrarUsuario(string email);
-        public void mostrarUsuario(string email);
-        public void modificarUsuario(string email);
+        void anyadirUsuario(string email);
+        void borrarUsuario(string email);
+        usuarioEN mostrarUsuario(string email);
+        void modificarUsuario(string email);
+        bool existe(string email);
     }
 }

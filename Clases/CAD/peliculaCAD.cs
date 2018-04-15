@@ -13,10 +13,12 @@ namespace CAD
         {
 
         }
-        public void anyadirPelicula(int id);
-        public void borrarPelicula(int id);
-        public peliculaEN mostrarPelicula(int id);
-        public void modificarPelicula(int id);  
-        
+       
+        public void anyadirPelicula(int id) { }
+        public void borrarPelicula(int id) { }
+        public peliculaEN mostrarPelicula(int id) { return null; }
+        public void modificarPelicula(int id) { }
+        public bool existe(int id) { return false; }
+
     }
 }

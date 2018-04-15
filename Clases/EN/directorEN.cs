@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Clases.EN
 {
-    class directorEN
+    public class directorEN
     {
         private int idD;
         public int IdD { get { return idD; } set { idD = value; } }

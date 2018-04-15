@@ -10,11 +10,12 @@ namespace CAD
     public interface ItransaccionPeliculaCAD
     {
 
-        void alquilar();
-        void devolver();
-        void comprar();
-        void modificarCompra();
-        void modificarAlquiler();
-        transaccionPeliculaEN mostrarTransaccion();
+        void alquilar(int id);
+        void devolver(int id);
+        void comprar(int id);
+        void modificarCompra(int id);
+        void modificarAlquiler(int id);
+        transaccionPeliculaEN mostrarTransaccion(int id);
+        bool existe(int id);
     }
 }

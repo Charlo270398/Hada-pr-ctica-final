@@ -184,11 +184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlos\\Downloads\\videoclub-48683294E\\Clases\\Clases.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos\\Source\\Repos\\videoclub\\Clases\\Clases.csproj",
       "projectName": "Clases",
-      "projectPath": "C:\\Users\\Carlos\\Downloads\\videoclub-48683294E\\Clases\\Clases.csproj",
+      "projectPath": "C:\\Users\\Carlos\\Source\\Repos\\videoclub\\Clases\\Clases.csproj",
       "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlos\\Downloads\\videoclub-48683294E\\Clases\\obj\\",
+      "outputPath": "C:\\Users\\Carlos\\Source\\Repos\\videoclub\\Clases\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

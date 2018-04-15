@@ -17,8 +17,9 @@ namespace CAD
         }
         public void anyadirUsuario(string email){}
         public void borrarUsuario(string email){}
-        public void mostrarUsuario(string email){}
+        public usuarioEN mostrarUsuario(string email){ return null; }
         public void modificarUsuario(string email){}
+        public bool existe(string email) { return false; }
 
 
     }

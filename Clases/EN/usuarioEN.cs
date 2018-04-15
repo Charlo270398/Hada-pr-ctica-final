@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace  Clases.EN
 {
-    class usuarioEN
+   public  class usuarioEN
     {
         private string email;
         public string Email { get { return email; } set { email = value; } }

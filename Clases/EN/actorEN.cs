@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Clases.EN
 {
-    class actorEN
+    public class actorEN
     {
         private int idAc;
         public int IdAc { get { return idAc; } set { idAc = value; } }

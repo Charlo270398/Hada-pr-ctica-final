@@ -9,11 +9,12 @@ namespace CAD
 {
     public interface ItransaccionSerieCAD
     {
-        void alquilar();
-        void devolver();
-        void comprar();
-        void modificarCompra();
-        void modificarAlquiler();
-        transaccionSerieEN mostrarTransaccion();
+        void alquilar(int id);
+        void devolver(int id);
+        void comprar(int id);
+        void modificarCompra(int id);
+        void modificarAlquiler(int id);
+        transaccionSerieEN mostrarTransaccion(int id);
+        bool existe(int id);
     }
 }
