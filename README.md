@@ -40,4 +40,4 @@ Los usuarios que accedan a la parte privada podrán ver:
 - [ ] Posibilidad de regalar películas a otros usuarios de la plataforma.
 - [ ] Posibilidad de añadir una Tarjeta de Crédito apra realizar los pagos.
 ### Documentación ###
-*El diagrama entidad-relación se encuentra en: "/Documentación/er_videoclub.pdf"
+* El diagrama entidad-relación se encuentra en: "/Documentación/er_videoclub.pdf"
