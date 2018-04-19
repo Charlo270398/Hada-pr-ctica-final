@@ -7,7 +7,12 @@ using Clases.EN;
 
 namespace CAD
 {
-    interface IpeliculaCAD
+    public interface IpeliculaCAD
     {
+        void anyadirPelicula(int id);
+        void borrarPelicula(int id);
+        peliculaEN mostrarPelicula(int id);
+        void modificarPelicula(int id);
+        bool existe(int id);
     }
 }

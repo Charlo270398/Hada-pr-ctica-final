@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clases.EN
 {
-    class transaccionPeliculaEN
+    public class transaccionPeliculaEN
     {
         private int idP;
         public int IdP { get { return idP; } set { idP = value; } }

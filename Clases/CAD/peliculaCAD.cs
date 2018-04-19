@@ -7,8 +7,18 @@ using Clases.EN;
 
 namespace CAD
 {
-    class peliculaCAD
+    public class peliculaCAD : IpeliculaCAD
     {
-        
+        public peliculaCAD()
+        {
+
+        }
+       
+        public void anyadirPelicula(int id) { }
+        public void borrarPelicula(int id) { }
+        public peliculaEN mostrarPelicula(int id) { return null; }
+        public void modificarPelicula(int id) { }
+        public bool existe(int id) { return false; }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clases.EN
 {
-    class distribuidoraEN
+    public class distribuidoraEN
     {
         private int idDis;
         public int IdDis { get { return idDis; } set { idDis = value; } }
