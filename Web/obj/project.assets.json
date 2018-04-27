@@ -12543,11 +12543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlos\\Source\\Repos\\videoclub\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos\\source\\Repos\\videoclub\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\Carlos\\Source\\Repos\\videoclub\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\Carlos\\source\\Repos\\videoclub\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlos\\Source\\Repos\\videoclub\\Web\\obj\\",
+      "outputPath": "C:\\Users\\Carlos\\source\\Repos\\videoclub\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
