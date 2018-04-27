@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clases", "Clases\Clases.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVideoclub", "WebVideoclub\WebVideoclub.csproj", "{C2EC9088-49AB-42F0-809A-BA698222973A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manteca-Box-develop", "..\..\..\Downloads\pagina-web-hada-master\Manteca-Box-develop\Manteca-Box-develop.csproj", "{341297D2-904C-4876-B59D-70DBA9F83B89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C2EC9088-49AB-42F0-809A-BA698222973A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2EC9088-49AB-42F0-809A-BA698222973A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2EC9088-49AB-42F0-809A-BA698222973A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341297D2-904C-4876-B59D-70DBA9F83B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341297D2-904C-4876-B59D-70DBA9F83B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341297D2-904C-4876-B59D-70DBA9F83B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341297D2-904C-4876-B59D-70DBA9F83B89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
