@@ -10,6 +10,7 @@ Desarrolladores:
 * Aitor Salgado
 * Carlos Zamora Sanz
 * Benjamín Noel Marpegán
+* Miguel Fernández Zorrilla
 
 ### Parte pública: ###
 En la parte pública los usuarios no registrados podrán ver:
