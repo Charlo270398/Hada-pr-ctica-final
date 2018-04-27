@@ -10,7 +10,7 @@ Desarrolladores:
 * Aitor Salgado
 * Carlos Zamora Sanz
 * Benjamín Noel Marpegán
-* Anaïs
+
 ### Parte pública: ###
 En la parte pública los usuarios no registrados podrán ver:
 * Logotipo de la web
