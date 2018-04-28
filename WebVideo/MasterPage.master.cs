@@ -32,6 +32,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     protected void nuevoUsuarioButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("nuevoUsuario.aspx");
+        Response.Redirect("Registro.aspx");
     }
 }
