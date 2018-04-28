@@ -8,13 +8,13 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C2EC9088-49AB-42F0-809A-BA698222973A}</ProjectGuid>
+    <ProjectGuid>{3C9196B4-AEB1-4E61-BF70-36818A478D04}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebVideoclub</RootNamespace>
-    <AssemblyName>WebVideoclub</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>WebVideo</RootNamespace>
+    <AssemblyName>WebVideo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -33,13 +33,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PublishDatabaseSettings>
-      <Objects>
-        <ObjectGroup Name="NewConnection1-Implementación" Order="1" Enabled="False">
-          <Destination Path="" />
-        </ObjectGroup>
-      </Objects>
-    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,6 +48,7 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,7 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\maestra.Master" />
+    <Content Include="MasterPage.master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -83,54 +77,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\images\demo\1.gif" />
-    <Content Include="Models\images\demo\2.gif" />
-    <Content Include="Models\images\demo\240x90.gif" />
-    <Content Include="Models\images\demo\290x100.gif" />
-    <Content Include="Models\images\demo\3.gif" />
-    <Content Include="Models\images\demo\60x60.gif" />
-    <Content Include="Models\images\demo\80x80.gif" />
-    <Content Include="Models\images\demo\avatar.gif" />
-    <Content Include="Models\images\demo\imgl.gif" />
-    <Content Include="Models\images\demo\imgr.gif" />
-    <Content Include="Models\images\demo\index.html" />
-    <Content Include="Models\images\index.html" />
-    <Content Include="Models\layout\images\index.html" />
-    <Content Include="Models\layout\images\next.png" />
-    <Content Include="Models\layout\images\prev.png" />
-    <Content Include="Models\layout\index.html" />
-    <Content Include="Models\layout\scripts\index.html" />
-    <Content Include="Models\layout\scripts\jquery.jcarousel.pack.js" />
-    <Content Include="Models\layout\scripts\jquery.jcarousel.setup.js" />
-    <Content Include="Models\layout\scripts\jquery.min.js" />
-    <Content Include="Models\layout\styles\featured_slide.css" />
-    <Content Include="Models\layout\styles\forms.css" />
-    <Content Include="Models\layout\styles\images\black_file.gif" />
-    <Content Include="Models\layout\styles\images\green_file.gif" />
-    <Content Include="Models\layout\styles\images\index.html" />
-    <Content Include="Models\layout\styles\index.html" />
-    <Content Include="Models\layout\styles\layout.css" />
-    <Content Include="Models\layout\styles\navi.css" />
-    <Content Include="Models\layout\styles\tables.css" />
-    <Content Include="Models\licence.txt" />
-    <Content Include="Models\pages\full-width.html" />
-    <Content Include="Models\pages\index.html" />
-    <Content Include="Models\pages\style-demo.html" />
+    <Content Include="css\style.css" />
+    <Content Include="Models\WebForm1.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\maestra.Master.cs">
-      <DependentUpon>maestra.Master</DependentUpon>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Models\maestra.Master.designer.cs">
-      <DependentUpon>maestra.Master</DependentUpon>
+    <Compile Include="Models\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -148,9 +125,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2027</DevelopmentServerPort>
+          <DevelopmentServerPort>59661</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2027/</IISUrl>
+          <IISUrl>http://localhost:59661/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
