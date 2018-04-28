@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="WebVideo.Registro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
-    <p>
+    <p style="font-size: xx-large" align="center">
         Regístrese para pertenecer a la comunidad Hookin!</p>
     <p>
         Introduzca los siguientes datos
