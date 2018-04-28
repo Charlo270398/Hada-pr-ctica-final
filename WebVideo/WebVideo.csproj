@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Busquedas.aspx" />
     <Content Include="MasterPage.master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -87,6 +88,13 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busquedas.aspx.cs">
+      <DependentUpon>Busquedas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busquedas.aspx.designer.cs">
+      <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

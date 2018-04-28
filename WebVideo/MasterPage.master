@@ -47,7 +47,7 @@
             </ul>
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio0" runat="server" NavigateUrl="inicio.aspx">Búsquedas</asp:HyperLink> 
+              <asp:HyperLink ID="menuInicio0" runat="server" NavigateUrl="Busquedas.aspx">Búsquedas</asp:HyperLink> 
               </li>
             </ul>
             <ul class="nav  pull-right">
