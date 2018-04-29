@@ -67,6 +67,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\series_img\1x01got.jpg" />
+    <Content Include="images\series_img\1x02got.jpg" />
+    <Content Include="images\series_img\gott1.jpg" />
+    <Content Include="images\series_img\gott2.jpg" />
+    <Content Include="images\series_img\gott3.jpg" />
+    <Content Include="images\series_img\gott4.jpg" />
+    <Content Include="images\series_img\gott5.jpg" />
+    <Content Include="images\series_img\gott6.jpg" />
+    <Content Include="images\series_img\gott7.jpg" />
+    <Content Include="images\series_img\juego_de_tronos.jpg" />
+    <Content Include="images\series_img\lost.jpg" />
+    <Content Include="images\series_img\stranger_things2.jpg" />
     <Content Include="Busquedas.aspx" />
     <Content Include="MasterPage.master" />
     <None Include="packages.config" />
@@ -84,6 +96,9 @@
     <Content Include="css\style.css" />
     <Content Include="Models\WebForm1.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="Series\Series_index.aspx" />
+    <Content Include="Series\Series_individual.aspx" />
+    <Content Include="Series\series_temporada.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -110,6 +125,27 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Series\Series_index.aspx.cs">
+      <DependentUpon>Series_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series\Series_index.aspx.designer.cs">
+      <DependentUpon>Series_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Series\Series_individual.aspx.cs">
+      <DependentUpon>Series_individual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series\Series_individual.aspx.designer.cs">
+      <DependentUpon>Series_individual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Series\series_temporada.aspx.cs">
+      <DependentUpon>series_temporada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series\series_temporada.aspx.designer.cs">
+      <DependentUpon>series_temporada.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

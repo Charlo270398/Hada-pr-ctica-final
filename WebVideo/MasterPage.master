@@ -6,7 +6,7 @@
 <html>
   
   <head runat="server">
-    <title>Videoclub 2013: Es otra película!</title>
+    <title>Videoclub 2018: HADA es otra película!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -55,7 +55,7 @@
               <asp:HyperLink ID="menuInicio1" runat="server" NavigateUrl="inicio.aspx">Peliculas</asp:HyperLink> 
               </li>
               <li>
-              <asp:HyperLink ID="menuInicio2" runat="server" NavigateUrl="inicio.aspx">Series</asp:HyperLink> 
+              <asp:HyperLink ID="menuInicio2" runat="server" NavigateUrl="Series\Series_index.aspx">Series</asp:HyperLink> 
               </li>
             </ul>
             <ul class="nav  pull-right">
