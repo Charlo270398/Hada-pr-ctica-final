@@ -33,7 +33,7 @@
         &nbsp;</p>
     <p>
         Acepto los 
-        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/TerminosYCondiciones.html">Términos y Condiciones de Servicio</asp:HyperLink>: <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" /></p>
+        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/Terminos.aspx">Términos y Condiciones de Servicio</asp:HyperLink>: <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" /></p>
     <p>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Crear usuario" />
     </p>
