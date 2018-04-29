@@ -27,10 +27,10 @@
           <div class="navbar-content">
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio" runat="server" NavigateUrl="Inicio.aspx" ForeColor="#3333FF">Sobre Nosotros</asp:HyperLink> 
+              <asp:HyperLink ID="menuSN" runat="server" NavigateUrl="FAQ.html" ForeColor="#3333FF">Preguntas frecuentes</asp:HyperLink> 
               </li>
               <li>
-                <asp:HyperLink ID="menuPeliculas" runat="server" NavigateUrl="peliculas.aspx" ForeColor="#3333FF">Salir</asp:HyperLink> 
+                <asp:HyperLink ID="menuSalir" runat="server" NavigateUrl="http://google.com" ForeColor="#3333FF">Salir</asp:HyperLink> 
               </li>   
               <li>
               </li>
@@ -47,20 +47,20 @@
             </ul>
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio0" runat="server" NavigateUrl="Busquedas.aspx" ForeColor="#3333FF">Búsquedas</asp:HyperLink> 
+              <asp:HyperLink ID="menuBusquedas" runat="server" NavigateUrl="Busquedas.aspx" ForeColor="#3333FF">Búsquedas</asp:HyperLink> 
               </li>
             </ul>
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio1" runat="server" NavigateUrl="Peliculas\Peliculas_index.aspx" ForeColor="#3333FF">Peliculas</asp:HyperLink> 
+              <asp:HyperLink ID="menuPeliculas" runat="server" NavigateUrl="Peliculas\Peliculas_index.aspx" ForeColor="#3333FF">Peliculas</asp:HyperLink> 
               </li>
               <li>
-              <asp:HyperLink ID="menuInicio2" runat="server" NavigateUrl="Series\Series_index.aspx" ForeColor="#3333FF">Series</asp:HyperLink> 
+              <asp:HyperLink ID="menuSeries" runat="server" NavigateUrl="Series\Series_index.aspx" ForeColor="#3333FF">Series</asp:HyperLink> 
               </li>
             </ul>
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio3" runat="server" NavigateUrl="Inicio.aspx" ForeColor="#3333FF">Inicio</asp:HyperLink> 
+              <asp:HyperLink ID="menuInicio" runat="server" NavigateUrl="Inicio.aspx" ForeColor="#3333FF">Inicio</asp:HyperLink> 
               </li>
             </ul>
           </div>

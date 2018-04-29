@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FAQ.html" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
     <Content Include="images\peliculas_img\starwarsSaga.jpg" />
@@ -112,6 +113,7 @@
     <Content Include="Series\Series_index.aspx" />
     <Content Include="Series\Series_individual.aspx" />
     <Content Include="Series\series_temporada.aspx" />
+    <Content Include="TerminosYCondiciones.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
