@@ -28,10 +28,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void menuCerrarSesion_Click(object sender, EventArgs e)
     {
         Session.Abandon();
-        Response.Redirect("inicio.aspx");
+        Response.Redirect("~/inicio.aspx");
     }
     protected void nuevoUsuarioButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Registro.aspx");
+            Response.Redirect("~/Registro.aspx");
     }
 }
