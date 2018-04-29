@@ -105,10 +105,10 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="Global.asax" />
     <Content Include="css\style.css" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Peliculas\Peliculas_index.aspx" />
     <Content Include="Peliculas\Peliculas_individual.aspx" />
-    <Content Include="Peliculas\Peliculas_temporada.aspx" />
     <Content Include="Series\Series_index.aspx" />
     <Content Include="Series\Series_individual.aspx" />
     <Content Include="Series\series_temporada.aspx" />
@@ -144,12 +144,12 @@
     <Compile Include="Peliculas\Peliculas_individual.aspx.designer.cs">
       <DependentUpon>Peliculas_individual.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Peliculas\Peliculas_temporada.aspx.cs">
-      <DependentUpon>Peliculas_temporada.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Peliculas\Peliculas_temporada.aspx.designer.cs">
-      <DependentUpon>Peliculas_temporada.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Series\Series_index.aspx.cs">
       <DependentUpon>Series_index.aspx</DependentUpon>

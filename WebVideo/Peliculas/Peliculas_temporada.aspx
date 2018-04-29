@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Peliculas_temporada.aspx.cs" Inherits="WebVideo.Peliculas.Peliculas_temporada" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
-    <h2><asp:Label Font-Bold="true" ID="TituloIndividual" runat="server" Text="JUEGO DE TRONOS: TEMPORADA 1"></asp:Label></h2>
+    <h2>&nbsp;</h2>
     <div id ="serie_individual">
         <asp:ImageButton ID="imageSerie1" runat="server" Height="200px" Width="200px" ImageUrl="~/images/series_img/gott1.jpg"/><br />
     </div>

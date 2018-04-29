@@ -27,7 +27,7 @@
           <div class="navbar-content">
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio" runat="server" NavigateUrl="inicio.aspx" ForeColor="#3333FF">Sobre Nosotros</asp:HyperLink> 
+              <asp:HyperLink ID="menuInicio" runat="server" NavigateUrl="Inicio.aspx" ForeColor="#3333FF">Sobre Nosotros</asp:HyperLink> 
               </li>
               <li>
                 <asp:HyperLink ID="menuPeliculas" runat="server" NavigateUrl="peliculas.aspx" ForeColor="#3333FF">Salir</asp:HyperLink> 
@@ -60,7 +60,7 @@
             </ul>
             <ul class="nav  pull-right">
               <li>
-              <asp:HyperLink ID="menuInicio3" runat="server" NavigateUrl="inicio.aspx" ForeColor="#3333FF">Inicio</asp:HyperLink> 
+              <asp:HyperLink ID="menuInicio3" runat="server" NavigateUrl="Inicio.aspx" ForeColor="#3333FF">Inicio</asp:HyperLink> 
               </li>
             </ul>
           </div>
