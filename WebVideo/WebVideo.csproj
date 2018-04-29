@@ -67,7 +67,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FAQ.html" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
     <Content Include="images\peliculas_img\starwarsSaga.jpg" />
@@ -107,6 +106,7 @@
     <Content Include="Global.asax" />
     <Content Include="css\style.css" />
     <Content Include="Inicio.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Peliculas\Peliculas_index.aspx" />
     <Content Include="Peliculas\Peliculas_individual.aspx" />
@@ -130,6 +130,13 @@
     <Compile Include="MasterPage.master.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Peliculas\Peliculas_index.aspx.cs">
