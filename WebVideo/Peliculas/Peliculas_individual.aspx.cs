@@ -16,7 +16,7 @@ namespace WebVideo.Peliculas
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("series_temporada.aspx");
+            Response.Redirect("Peliculas_temporada.aspx");
         }
     }
 }

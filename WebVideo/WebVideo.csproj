@@ -67,6 +67,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\peliculas_img\dunkerque.jpg" />
+    <Content Include="images\peliculas_img\it.jpg" />
+    <Content Include="images\peliculas_img\starwarsSaga.jpg" />
+    <Content Include="images\peliculas_img\stw1.jpg" />
+    <Content Include="images\peliculas_img\stw2.jpg" />
+    <Content Include="images\peliculas_img\stw3.jpg" />
+    <Content Include="images\peliculas_img\stw4.jpg" />
+    <Content Include="images\peliculas_img\stw5.jpg" />
+    <Content Include="images\peliculas_img\stw6.jpg" />
+    <Content Include="images\peliculas_img\stw7.jpg" />
+    <Content Include="images\peliculas_img\stw8.jpg" />
     <Content Include="images\series_img\1x01got.jpg" />
     <Content Include="images\series_img\1x02got.jpg" />
     <Content Include="images\series_img\gott1.jpg" />
@@ -171,7 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\peliculas_img\" />
+    <Folder Include="images\imagenes\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
