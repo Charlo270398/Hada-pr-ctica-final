@@ -15,7 +15,7 @@
     <div id="Temporadas_serie">
         <h4>PELÍCULAS</h4>
         <h5>LA AMENAZA FANTASMA</h5>
-        <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" Width="100px" ImageUrl="~/images/peliculas_img/stw1.jpg" OnClick="ImageButton1_Click"/><br />
+        <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" Width="100px" ImageUrl="~/images/peliculas_img/stw1.jpg"/><br />
         <h5>EL ATAQUE DE LOS CLONES</h5>
         <asp:ImageButton ID="ImageButton2" runat="server" Height="100px" Width="100px" ImageUrl="~/images/peliculas_img/stw2.jpg"/><br />
         <h5>LA VENGANZA DE LOS SITH</h5>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="WebVideo.Registro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
     <p style="font-size: xx-large" align="center">
-        Regístrese para pertenecer a la comunidad Hookin!</p>
+        ¡Regístrate para pertenecer a la comunidad Hookin!</p>
     <p>
         Introduzca los siguientes datos
     </p>
@@ -30,8 +30,10 @@
         <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
     </p>
     <p>
-        Acepto los Términos y Condiciones de Servicio:
-        <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" /></p>
+        &nbsp;</p>
+    <p>
+        Acepto los 
+        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/TerminosYCondiciones.html">Términos y Condiciones de Servicio</asp:HyperLink>: <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" /></p>
     <p>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Crear usuario" />
     </p>
