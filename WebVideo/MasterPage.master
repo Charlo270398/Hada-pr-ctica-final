@@ -30,7 +30,7 @@
               <asp:HyperLink ID="menuSN" runat="server" NavigateUrl="FAQ.aspx" ForeColor="#3333FF">Preguntas frecuentes</asp:HyperLink> 
               </li>
               <li>
-                <asp:HyperLink ID="menuSalir" runat="server" NavigateUrl="http://google.com" ForeColor="#3333FF">Salir</asp:HyperLink> 
+                <asp:HyperLink ID="menuSalir" runat="server" NavigateUrl="https://www.google.es" ForeColor="#3333FF">Salir</asp:HyperLink> 
               </li>   
               <li>
               </li>
