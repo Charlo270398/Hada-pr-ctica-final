@@ -67,8 +67,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bbdd.mdf" />
-    <Content Include="bbdd_log.ldf">
+    <Content Include="App_Data\bbdd.mdf" />
+    <Content Include="App_Data\bbdd_log.ldf">
       <DependentUpon>bbdd.mdf</DependentUpon>
     </Content>
     <Content Include="BusquedaPorDistribuidora.aspx" />
@@ -202,7 +202,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="images\imagenes\" />
     <Folder Include="Models\" />
   </ItemGroup>
