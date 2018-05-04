@@ -183,12 +183,15 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlos\\source\\Repos\\Videoclub\\Clases\\Clases.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos\\Documents\\GitHub\\videoclub\\Clases\\Clases.csproj",
       "projectName": "Clases",
-      "projectPath": "C:\\Users\\Carlos\\source\\Repos\\Videoclub\\Clases\\Clases.csproj",
+      "projectPath": "C:\\Users\\Carlos\\Documents\\GitHub\\videoclub\\Clases\\Clases.csproj",
       "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlos\\source\\Repos\\Videoclub\\Clases\\obj\\",
+      "outputPath": "C:\\Users\\Carlos\\Documents\\GitHub\\videoclub\\Clases\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
