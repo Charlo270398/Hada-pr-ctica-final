@@ -67,6 +67,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BBDD\bbdd.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BBDD\bbdd_log.ldf">
+      <DependentUpon>bbdd.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
