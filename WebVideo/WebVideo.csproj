@@ -68,10 +68,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BBDD\bbdd.mdf">
+    <Content Include="App_Data\bbdd.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BBDD\bbdd_log.ldf">
+    <Content Include="App_Data\bbdd_log.ldf">
       <DependentUpon>bbdd.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -211,7 +211,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="BBDD\" />
     <Folder Include="images\imagenes\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -27,7 +27,10 @@
     </p>
     <p>
         País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="DWPais" runat="server" OnSelectedIndexChanged="DWPais_SelectedIndexChanged">
+        </asp:DropDownList>
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        </asp:DropDownList>
     </p>
     <p>
         &nbsp;</p>
