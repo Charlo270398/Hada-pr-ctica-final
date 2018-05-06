@@ -11,7 +11,7 @@
     </p>
     <p>
         Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
     </p>
     <p>
         Repetir Contraseña:
@@ -27,9 +27,7 @@
     </p>
     <p>
         País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-        <asp:DropDownList ID="DWPais" runat="server" OnSelectedIndexChanged="DWPais_SelectedIndexChanged">
-        </asp:DropDownList>
-        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:DropDownList ID="DWPais" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DWPais_SelectedIndexChanged" OnInit="DWPais_Init">
         </asp:DropDownList>
     </p>
     <p>

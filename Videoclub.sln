@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVideo", "WebVideo\WebVideo.csproj", "{3C9196B4-AEB1-4E61-BF70-36818A478D04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases", "Clases\Clases.csproj", "{E36CF35F-546A-4E15-8C82-A4EFC7F75E00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases", "Clases\Clases.csproj", "{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,10 @@ Global
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E36CF35F-546A-4E15-8C82-A4EFC7F75E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E36CF35F-546A-4E15-8C82-A4EFC7F75E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E36CF35F-546A-4E15-8C82-A4EFC7F75E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E36CF35F-546A-4E15-8C82-A4EFC7F75E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

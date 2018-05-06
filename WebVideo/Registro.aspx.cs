@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CAD;
 
 namespace WebVideo
 {
@@ -14,7 +15,8 @@ namespace WebVideo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-    
+           
+           
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
@@ -27,24 +29,17 @@ namespace WebVideo
 
         }
 
+     
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Consultar("SELECT Pais FROM Paises where Id_pais = 97");
-            TextBox2.Text = Consultar("SELECT Pais FROM Paises")[0];
-            DWPais.DataSource = Consultar("SELECT Pais FROM Paises");
-            DWPais.DataBind();
-            DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+           
         }
-
+        
         protected void DWPais_SelectedIndexChanged(object sender, EventArgs e)
         {
-     
-            DWPais.DataSource = Consultar("SELECT Pais FROM Paises");
-            DWPais.DataTextField = "Pais";
-            DWPais.DataValueField = "PaisID";
-            DWPais.DataBind();
-            DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
             
+
         }
 
         public List<string> Consultar (string comando)
@@ -63,13 +58,24 @@ namespace WebVideo
             return s;
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
-            DropDownList1.DataSource = Consultar("SELECT Pais FROM Paises");
-            DropDownList1.DataTextField = "Pais";
-            DropDownList1.DataValueField = "PaisID";
-            DropDownList1.DataBind();
-            DropDownList1.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
+        }
+
+       
+
+        protected void DWPais_Init(object sender, EventArgs e)
+        {
+            if (DWPais != null)
+            {
+                paisCAD pais = new paisCAD();
+                DWPais.DataSource = Consultar("SELECT Pais FROM Paises");
+                DWPais.DataBind();
+                DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+                TextBox2.Text = pais.mostrarNombrePais(160).Pais;
+            }
+
         }
     }
 }

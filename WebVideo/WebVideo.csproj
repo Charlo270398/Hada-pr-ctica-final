@@ -226,7 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Clases\Clases.csproj">
-      <Project>{e36cf35f-546a-4e15-8c82-a4efc7f75e00}</Project>
+      <Project>{a28e9350-df70-40cf-9c92-70c64e6ed2ed}</Project>
       <Name>Clases</Name>
     </ProjectReference>
   </ItemGroup>

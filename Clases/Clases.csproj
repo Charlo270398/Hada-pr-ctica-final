@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E36CF35F-546A-4E15-8C82-A4EFC7F75E00}</ProjectGuid>
+    <ProjectGuid>{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Clases</RootNamespace>
     <AssemblyName>Clases</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile4</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,15 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAD\actorCAD.cs" />
-    <Compile Include="EN\actorEN.cs" />
     <Compile Include="CAD\directorCAD.cs" />
-    <Compile Include="EN\directorEN.cs" />
     <Compile Include="CAD\distribuidoraCAD.cs" />
-    <Compile Include="EN\distribuidoraEN.cs" />
     <Compile Include="CAD\IactorCAD.cs" />
     <Compile Include="CAD\IdirectorCAD.cs" />
     <Compile Include="CAD\IdistribuidoraCAD.cs" />
@@ -50,24 +52,23 @@
     <Compile Include="CAD\ItransaccionPeliculaCAD.cs" />
     <Compile Include="CAD\ItransaccionSerieCAD.cs" />
     <Compile Include="CAD\IusuarioCAD.cs" />
+    <Compile Include="CAD\paisCAD.cs" />
     <Compile Include="CAD\peliculaCAD.cs" />
-    <Compile Include="EN\peliculaEN.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CAD\serieCAD.cs" />
-    <Compile Include="EN\serieEN.cs" />
     <Compile Include="CAD\transaccionPeliculaCAD.cs" />
-    <Compile Include="EN\transaccionPeliculaEN.cs" />
     <Compile Include="CAD\transaccionSerieCAD.cs" />
-    <Compile Include="EN\transaccionSerieEN.cs" />
     <Compile Include="CAD\usuarioCAD.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="EN\actorEN.cs" />
+    <Compile Include="EN\directorEN.cs" />
+    <Compile Include="EN\distribuidoraEN.cs" />
+    <Compile Include="EN\paisEN.cs" />
+    <Compile Include="EN\peliculaEN.cs" />
+    <Compile Include="EN\serieEN.cs" />
+    <Compile Include="EN\transaccionPeliculaEN.cs" />
+    <Compile Include="EN\transaccionSerieEN.cs" />
     <Compile Include="EN\usuarioEN.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
