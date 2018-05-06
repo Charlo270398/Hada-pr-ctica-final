@@ -7,23 +7,23 @@
     </p>
     <p>
         Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Text_Email" runat="server" OnTextChanged="IN_EMAIL"></asp:TextBox>
     </p>
     <p>
         Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="Text_Cnt" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
     </p>
     <p>
         Repetir Contraseña:
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Text_Rcnt" runat="server"></asp:TextBox>
     </p>
     <p>
         Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Text_nom" runat="server"></asp:TextBox>
     </p>
     <p>
         Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Text_ap" runat="server"></asp:TextBox>
     </p>
     <p>
         País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
@@ -34,9 +34,9 @@
         &nbsp;</p>
     <p>
         Acepto los 
-        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/Terminos.aspx">Términos y Condiciones de Servicio</asp:HyperLink>: <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" /></p>
+        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/Terminos.aspx">Términos y Condiciones de Servicio</asp:HyperLink>: <asp:CheckBox ID="Terminos" runat="server" /></p>
     <p>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Crear usuario" />
+        <asp:Button ID="Button1" runat="server" OnClick="BTN_CREAR" Text="Crear usuario" />
     </p>
     <p>
         &nbsp;</p>

@@ -13,49 +13,49 @@ namespace WebVideo {
     public partial class Registro {
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control Text_Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox Text_Email;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control Text_Cnt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox Text_Cnt;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control Text_Rcnt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox Text_Rcnt;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control Text_nom.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox Text_nom;
         
         /// <summary>
-        /// Control TextBox7.
+        /// Control Text_ap.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox Text_ap;
         
         /// <summary>
         /// Control DWPais.
@@ -76,13 +76,13 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.HyperLink TC;
         
         /// <summary>
-        /// Control CheckBox1.
+        /// Control Terminos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox Terminos;
         
         /// <summary>
         /// Control Button1.

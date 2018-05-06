@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,10 +25,7 @@ namespace WebVideo
 
         }
 
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+  
 
      
         protected void Button1_Click(object sender, EventArgs e)
@@ -73,9 +71,64 @@ namespace WebVideo
                 DWPais.DataSource = Consultar("SELECT Pais FROM Paises");
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
-                TextBox2.Text = pais.mostrarNombrePais(160).Pais;
+
             }
 
         }
+
+        protected void BTN_CREAR(object sender, EventArgs e)
+        {
+            Text_Email.BorderColor = Color.Green;
+            Text_Cnt.BorderColor = Color.Green;
+            Text_nom.BorderColor = Color.Green;
+            Text_Rcnt.BorderColor = Color.Green;
+            Text_ap.BorderColor = Color.Green;
+            DWPais.BorderColor = Color.Green;
+
+            bool correcto = true;
+
+            if(Text_Email.Text == "")
+            {
+                correcto = false;
+                Text_Email.BorderColor = Color.Red;
+            }
+            if (Text_Cnt.Text == "")
+            {
+                correcto = false;
+                Text_Cnt.BorderColor = Color.Red;
+            }
+            if (Text_nom.Text == "")
+            {
+                correcto = false;
+                Text_nom.BorderColor = Color.Red;
+            }
+            if (Text_Rcnt.Text == "")
+            {
+                correcto = false;
+                Text_Rcnt.BorderColor = Color.Red;
+            }
+            if (Text_ap.Text == "")
+            {
+                correcto = false;
+                Text_ap.BorderColor = Color.Red;
+            }
+            if(DWPais.SelectedItem.ToString() == "[Seleccionar]")
+            {
+                correcto = false;
+                DWPais.BorderColor = Color.Red;   
+            }
+
+        }
+
+        protected void TextBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void IN_EMAIL (object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
