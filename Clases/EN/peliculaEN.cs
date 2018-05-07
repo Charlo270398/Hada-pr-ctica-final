@@ -43,6 +43,9 @@ namespace Clases.EN
         private string imagen;
         public string Imagen { get { return imagen; } set { imagen = value; } }
 
+        private string trailer;
+        public string Trailer { get { return trailer; } set { trailer = value; } }
+
         public peliculaEN(string nombre)
         {
             NombreP = nombre;

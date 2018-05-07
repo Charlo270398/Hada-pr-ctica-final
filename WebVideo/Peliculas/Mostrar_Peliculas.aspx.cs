@@ -11,6 +11,8 @@ namespace WebVideo.Peliculas
 {
     public partial class Mostrar_Peliculas : System.Web.UI.Page
     {
+        
+     
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -26,7 +28,7 @@ namespace WebVideo.Peliculas
             
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(Request.QueryString["id"]);
-            Titulo.Text = peli.mostrarPeliculas(p)[0].Imagen;
+            Titulo.Text = peli.mostrarPelicula(p).NombreP;
 
         }
 
@@ -34,7 +36,7 @@ namespace WebVideo.Peliculas
         {
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(Request.QueryString["id"]);
-            Imagen.ImageUrl = peli.mostrarPeliculas(p)[0].Imagen;
+            Imagen.ImageUrl = peli.mostrarPelicula(p).Imagen;
 
         }
 
@@ -45,7 +47,46 @@ namespace WebVideo.Peliculas
 
         protected void I_sinopsis(object sender, EventArgs e)
         {
-            Sinopsis.Text = "A";
+            peliculaCAD peli = new peliculaCAD();
+            peliculaEN p = new peliculaEN(Request.QueryString["id"]);
+            Texto_Sinopsis.Text = peli.mostrarPelicula(p).Sinopsis;
+        }
+
+        protected void precioAnumtext_Init(object sender, EventArgs e)
+        {
+            peliculaCAD peli = new peliculaCAD();
+            peliculaEN p = new peliculaEN(Request.QueryString["id"]);
+            precioAnumtext.Text = peli.mostrarPelicula(p).PrecioA.ToString();
+        }
+
+        protected void fechaEstrenotext_Init(object sender, EventArgs e)
+        {
+            peliculaCAD peli = new peliculaCAD();
+            peliculaEN p = new peliculaEN(Request.QueryString["id"]);
+            fechaEstrenotext.Text = peli.mostrarPelicula(p).FechaE;
+
+        }
+
+        protected void precioCnumtext_Init(object sender, EventArgs e)
+        {
+            peliculaCAD peli = new peliculaCAD();
+            peliculaEN p = new peliculaEN(Request.QueryString["id"]);
+            precioCnumtext.Text = peli.mostrarPelicula(p).PrecioC.ToString();
+        }
+
+        protected void cargaTrailer(object sender, EventArgs e)
+        {
+            peliculaCAD peli = new peliculaCAD();
+            peliculaEN p = new peliculaEN(Request.QueryString["id"]);
+            TrailerLink.NavigateUrl = peli.mostrarPelicula(p).Trailer;
+       
+        }
+
+        protected void duraciontext_Init(object sender, EventArgs e)
+        {
+            peliculaCAD peli = new peliculaCAD();
+            peliculaEN p = new peliculaEN(Request.QueryString["id"]);
+            duracionNumtext.Text = peli.mostrarPelicula(p).Duracion.ToString() + " min";
         }
     }
 }

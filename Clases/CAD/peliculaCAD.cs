@@ -17,7 +17,7 @@ namespace CAD
        
         public void anyadirPelicula(peliculaEN id) { }
         public void borrarPelicula(peliculaEN id) { }
-        public List<peliculaEN> mostrarPeliculas(peliculaEN pelicula) {
+        public List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula) {
 
             peliculaEN aux = new peliculaEN();
             List<peliculaEN> devolver = new List<peliculaEN>();
@@ -37,7 +37,8 @@ namespace CAD
                 aux.IdDist = (int)reader["Id_Distribuidora"];
                 aux.IdDist = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
-                if(reader["Id_Saga"] != null)
+                aux.Trailer = reader["Trailer"].ToString();
+                if (reader["Id_Saga"] != null)
                 {
                     
                 }
@@ -53,6 +54,41 @@ namespace CAD
             cn.Close();
 
             return devolver;
+        }
+        public peliculaEN mostrarPelicula(peliculaEN pelicula)
+        {
+
+            peliculaEN aux = new peliculaEN();
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            string comando = "select * from Peliculas where Nombre like '" + pelicula.NombreP + "'";
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                aux.IdP = (int)reader["Id_Pelicula"];
+                aux.NombreP = reader["Nombre"].ToString();
+                aux.Duracion = (int)reader["Duracion"];
+                aux.FechaE = reader["Fecha_Estreno"].ToString();
+                aux.Sinopsis = reader["Sinopsis"].ToString();
+
+                aux.IdDist = (int)reader["Id_Distribuidora"];
+                aux.IdDist = (int)reader["Id_Director"];
+                aux.Imagen = reader["Imagen"].ToString();
+                aux.Trailer = reader["Trailer"].ToString();
+                if (reader["Id_Saga"] != null)
+                {
+
+                }
+                else
+                {
+                    aux.IdSaga = -1;
+                }
+            }
+            reader.Close();
+            cn.Close();
+
+            return aux;
         }
 
         public void modificarPelicula(peliculaEN id) { }

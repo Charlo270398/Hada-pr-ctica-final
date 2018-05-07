@@ -10,7 +10,8 @@ namespace CAD
     {
         void anyadirPelicula(peliculaEN pelicula);
         void borrarPelicula(peliculaEN pelicula);
-        List<peliculaEN> mostrarPeliculas(peliculaEN pelicula);
+        List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula);
+        peliculaEN mostrarPelicula(peliculaEN pelicula);
         void modificarPelicula(peliculaEN pelicula);
         bool existe(peliculaEN pelicula);
     }

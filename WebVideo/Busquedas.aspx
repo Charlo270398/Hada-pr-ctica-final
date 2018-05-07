@@ -4,15 +4,23 @@
     Búsqueda por título (serie):<br />
     <asp:TextBox ID="TextBox1" runat="server"  OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
-    <asp:Button ID="Button1" runat="server"  Text="Buscar Serie" OnClick="Btn_Serie" />
+    <asp:Button ID="Btn_Serie" runat="server"  Text="Buscar Serie" OnClick="Btn_SerieC" />
+    <asp:DropDownList ID="DWSeries" runat="server" Visible="False">
+    </asp:DropDownList>
     <br />Búsqueda por título (película):<br />
     <asp:TextBox ID="PeliculaBox" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
-    <asp:Button ID="Button2" runat="server" Text="Buscar Película" OnClick="Btn_Pelicula" />
+    <asp:Button ID="Btn_Pelicula" runat="server" Text="Buscar Película" OnClick="Btn_PeliculaC" />
+    <asp:DropDownList ID="DWPeliculas" runat="server" Visible="False">
+    </asp:DropDownList>
+    <asp:Button ID="Btn_Pelicula2" runat="server" Text="Mostrar Pelicula" OnClick="Btn_Pelicula2C" Visible="False" />
+    <asp:Label ID="ErrPelicula" runat="server" ForeColor="Red" Text="*Debe seleccionar una película" Visible="False"></asp:Label>
     <br />Búsqueda por actor:<br />
     <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
     <asp:Button ID="Button3" runat="server" Text="Buscar Actor" />
+    <asp:DropDownList ID="DWActor" runat="server" Visible="False">
+    </asp:DropDownList>
     <br />Búsqueda por director:<br />
     <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
