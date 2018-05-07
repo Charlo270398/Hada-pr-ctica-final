@@ -33,7 +33,8 @@ namespace CAD
                 aux.Duracion = (int)reader["Duracion"];
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
                 aux.Sinopsis = reader["Sinopsis"].ToString();
-             
+                aux.PrecioA = (float)reader["Precio_A"];
+                aux.PrecioC = (float)reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
                 aux.IdDist = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
@@ -71,7 +72,8 @@ namespace CAD
                 aux.Duracion = (int)reader["Duracion"];
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
                 aux.Sinopsis = reader["Sinopsis"].ToString();
-
+                aux.PrecioA = (float)reader["Precio_A"];
+                aux.PrecioC = (float)reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
                 aux.IdDist = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();

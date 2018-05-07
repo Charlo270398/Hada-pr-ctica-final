@@ -71,14 +71,14 @@ namespace WebVideo.Peliculas
         {
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(Request.QueryString["id"]);
-            precioCnumtext.Text = peli.mostrarPelicula(p).PrecioC.ToString();
+            precioCnumtext.Text = peli.mostrarPelicula(p).PrecioC.ToString() + "€";
         }
 
         protected void cargaTrailer(object sender, EventArgs e)
         {
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(Request.QueryString["id"]);
-            TrailerLink.NavigateUrl = peli.mostrarPelicula(p).Trailer;
+            TrailerLink.NavigateUrl = peli.mostrarPelicula(p).Trailer + "€";
        
         }
 
