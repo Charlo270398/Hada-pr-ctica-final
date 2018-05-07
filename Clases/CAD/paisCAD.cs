@@ -58,25 +58,21 @@ namespace CAD
             return devolver;
 
         }
-        public List <paisEN> mostrarListaPaises()
+        public List <string> mostrarListaPaises()
         {
-            List<paisEN> devolver = new List<paisEN>();
-            paisEN pais = new paisEN();
+            List <string> dev = new List<string>();
+            string comando = "Select Pais from Paises";
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
-            string comando = "select * from Paises";
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                pais.IdPais = (int)reader["Id_pais"];
-                pais.Pais = (reader["Pais"].ToString());
-                devolver.Add(pais);
+                dev.Add(reader["Pais"].ToString());
             }
             reader.Close();
             cn.Close();
-
-            return devolver;
+            return dev;
 
         }
     }

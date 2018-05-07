@@ -34,22 +34,7 @@ namespace WebVideo
            
         }
         
-        public List<string> Consultar (string comando)
-        {
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            List <string> s = new List<string>();
-            while(reader.Read())
-            {
-                 s.Add(reader["Pais"].ToString());
-            }
-            reader.Close();
-            cn.Close();
-            return s;
-        }
-
+      
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -62,7 +47,8 @@ namespace WebVideo
             if (DWPais != null)
             {
                 paisCAD pais = new paisCAD();
-                DWPais.DataSource = Consultar("SELECT Pais FROM Paises");
+
+                DWPais.DataSource = pais.mostrarListaPaises() ;
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
