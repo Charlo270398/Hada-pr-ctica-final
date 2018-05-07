@@ -37,6 +37,21 @@ namespace Clases.EN
         private int idDist;
         public int IdDist { get { return idDist; } set { idDist = value; } }
 
+        private int idSaga;
+        public int IdSaga { get { return idSaga; } set { idSaga = value; } }
+
+        private string imagen;
+        public string Imagen { get { return imagen; } set { imagen = value; } }
+
+        public peliculaEN(string nombre)
+        {
+            NombreP = nombre;
+        }
+        public peliculaEN()
+        {
+    
+        }
+
         public void anyadirPelicula()
         {
 
