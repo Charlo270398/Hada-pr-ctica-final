@@ -18,5 +18,17 @@ namespace WebVideo
         {
 
         }
+
+        
+
+        protected void Btn_Serie(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Btn_Pelicula(object sender, EventArgs e)
+        {
+            Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + PeliculaBox.Text);
+        }
     }
 }

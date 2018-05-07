@@ -22,6 +22,15 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.TextBox Text_Email;
         
         /// <summary>
+        /// Control EmailErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmailErr;
+        
+        /// <summary>
         /// Control Text_Cnt.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Text_Cnt;
+        
+        /// <summary>
+        /// Control CntErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CntErr;
         
         /// <summary>
         /// Control Text_Rcnt.
@@ -40,6 +58,15 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.TextBox Text_Rcnt;
         
         /// <summary>
+        /// Control RcntErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RcntErr;
+        
+        /// <summary>
         /// Control Text_nom.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Text_nom;
+        
+        /// <summary>
+        /// Control NombreErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NombreErr;
         
         /// <summary>
         /// Control Text_ap.
@@ -58,6 +94,15 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.TextBox Text_ap;
         
         /// <summary>
+        /// Control ApellidosErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ApellidosErr;
+        
+        /// <summary>
         /// Control DWPais.
         /// </summary>
         /// <remarks>
@@ -65,6 +110,15 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DWPais;
+        
+        /// <summary>
+        /// Control PaisErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PaisErr;
         
         /// <summary>
         /// Control TC.
@@ -83,6 +137,15 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox Terminos;
+        
+        /// <summary>
+        /// Control TerminosErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TerminosErr;
         
         /// <summary>
         /// Control Button1.

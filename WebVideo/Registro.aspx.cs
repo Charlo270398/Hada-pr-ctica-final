@@ -67,42 +67,64 @@ namespace WebVideo
             Terminos.BackColor = Color.Gray;
 
             bool correcto = true;
+            EmailErr.Visible = false;
+            CntErr.Visible = false;
+            NombreErr.Visible = false;
+            RcntErr.Visible = false;
+            PaisErr.Visible = false;
+            ApellidosErr.Visible = false;
+            TerminosErr.Visible = false;
 
-            if(Text_Email.Text == "")
+            if (Text_Email.Text == "")
             {
                 correcto = false;
                 Text_Email.BorderColor = Color.Red;
+                EmailErr.Visible = true;
             }
             if (Text_Cnt.Text == "")
             {
                 correcto = false;
                 Text_Cnt.BorderColor = Color.Red;
+                CntErr.Visible = true;
             }
             if (Text_nom.Text == "")
             {
                 correcto = false;
                 Text_nom.BorderColor = Color.Red;
+                NombreErr.Visible = true;
             }
+
             if (Text_Rcnt.Text == "")
             {
                 correcto = false;
                 Text_Rcnt.BorderColor = Color.Red;
+                RcntErr.Visible = true;
             }
+            else if (Text_Rcnt.Text != Text_Cnt.Text)
+            {
+                RcntErr.Text = "*Contraseña distinta";
+                correcto = false;
+                Text_Rcnt.BorderColor = Color.Red;
+                RcntErr.Visible = true;
+            }
+
             if (Text_ap.Text == "")
             {
                 correcto = false;
                 Text_ap.BorderColor = Color.Red;
+                ApellidosErr.Visible = true;
             }
             if(DWPais.SelectedItem.ToString() == "[Seleccionar]")
             {
                 correcto = false;
-                DWPais.BorderColor = Color.Red;  
+                DWPais.BorderColor = Color.Red;
+                PaisErr.Visible = true;
                 
             }
             if (!Terminos.Checked)
             {
                 correcto = false;
-                Terminos.BackColor = Color.Red;
+                TerminosErr.Visible = true;
             }
 
             if (correcto)
@@ -133,6 +155,11 @@ namespace WebVideo
         }
 
         protected void Email_Cambio(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void Text_Email_DataBinding(object sender, EventArgs e)
         {
            
         }

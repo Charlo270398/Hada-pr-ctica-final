@@ -2,13 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
     <div align="center" style="font-size: xx-large">¿Qué desea buscar?</div><br />
     Búsqueda por título (serie):<br />
-    <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" runat="server"  OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
-    <asp:Button ID="Button1" runat="server" Text="Buscar Serie" />
+    <asp:Button ID="Button1" runat="server"  Text="Buscar Serie" OnClick="Btn_Serie" />
     <br />Búsqueda por título (película):<br />
-    <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
+    <asp:TextBox ID="PeliculaBox" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
-    <asp:Button ID="Button2" runat="server" Text="Buscar Película" />
+    <asp:Button ID="Button2" runat="server" Text="Buscar Película" OnClick="Btn_Pelicula" />
     <br />Búsqueda por actor:<br />
     <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox1_TextChanged" Width="926px"></asp:TextBox>
     <br />
