@@ -76,6 +76,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="BusquedaPorDistribuidora.aspx" />
+    <Content Include="App_Data\copiarInsertarPelicula.txt" />
     <Content Include="Peliculas\Mostrar_Peliculas.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
@@ -219,7 +220,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BBDD\" />
     <Folder Include="images\imagenes\" />
     <Folder Include="Models\" />
   </ItemGroup>
