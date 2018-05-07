@@ -32,8 +32,16 @@ namespace  Clases.EN
 
         public void anyadirUsuario()
         {
+
             usuarioCAD user = new usuarioCAD();
-            user.anyadirUsuario(this);
+            try
+            {
+                user.anyadirUsuario(this);
+            }
+            catch (Exception e)  
+            {
+                throw new Exception(e.Message);
+            }
 
         }
         public void borrarUsuario()

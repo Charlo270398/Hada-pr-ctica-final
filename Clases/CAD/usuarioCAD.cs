@@ -24,10 +24,9 @@ namespace CAD
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
-            }catch(Exception e)
+            }catch(Exception)
             {
-
-
+                throw new Exception("*Email repetido. Introduzca otro.");
             }
 
         }

@@ -64,7 +64,6 @@ namespace WebVideo
             Text_Rcnt.BorderColor = Color.Green;
             Text_ap.BorderColor = Color.Green;
             DWPais.BorderColor = Color.Green;
-            Terminos.BackColor = Color.Gray;
 
             bool correcto = true;
             EmailErr.Visible = false;
@@ -74,13 +73,23 @@ namespace WebVideo
             PaisErr.Visible = false;
             ApellidosErr.Visible = false;
             TerminosErr.Visible = false;
+            
 
             if (Text_Email.Text == "")
             {
+                EmailErr.Text = "*Campo vacío.";
                 correcto = false;
                 Text_Email.BorderColor = Color.Red;
                 EmailErr.Visible = true;
             }
+            else if (!Text_Email.Text.Contains("@gmail.")&&!Text_Email.Text.Contains("@hotmail.")&& !Text_Email.Text.Contains("@yahoo."))
+            {
+                correcto = false;
+                EmailErr.Text = "*Dominio incorrecto. Pruebe con @gmail,@hotmail o @yahoo.";
+                Text_Email.BorderColor = Color.Red;
+                EmailErr.Visible = true;
+            }
+
             if (Text_Cnt.Text == "")
             {
                 correcto = false;
@@ -96,11 +105,12 @@ namespace WebVideo
 
             if (Text_Rcnt.Text == "")
             {
+                RcntErr.Text = "*Campo vacío.";
                 correcto = false;
                 Text_Rcnt.BorderColor = Color.Red;
                 RcntErr.Visible = true;
             }
-            else if (Text_Rcnt.Text != Text_Cnt.Text)
+            else if (Text_Rcnt.Text != Text_Cnt.Text && Text_Rcnt.Text!="")
             {
                 RcntErr.Text = "*Contraseña distinta";
                 correcto = false;
@@ -126,7 +136,7 @@ namespace WebVideo
                 correcto = false;
                 TerminosErr.Visible = true;
             }
-
+            
             if (correcto)
             {
                 paisCAD pais = new paisCAD();
@@ -137,8 +147,15 @@ namespace WebVideo
                 user.Nombre = Text_nom.Text;
                 user.Pais = pais.mostrarIdPais(DWPais.SelectedItem.ToString()).IdPais;
                 DateTime fecha = DateTime.Now;
-                user.FechaA = fecha.Date.ToString();       
-                user.anyadirUsuario();
+                user.FechaA = fecha.Date.ToString();
+                try
+                {
+                    user.anyadirUsuario();
+                }catch(Exception ex)
+                {
+                    EmailErr.Visible = true;
+                    EmailErr.Text = ex.Message;
+                }
                 
             }
 
