@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Clases.EN
 {
@@ -37,6 +36,24 @@ namespace Clases.EN
 
         private int idDist;
         public int IdDist { get { return idDist; } set { idDist = value; } }
+
+        private int idSaga;
+        public int IdSaga { get { return idSaga; } set { idSaga = value; } }
+
+        private string imagen;
+        public string Imagen { get { return imagen; } set { imagen = value; } }
+
+        private string trailer;
+        public string Trailer { get { return trailer; } set { trailer = value; } }
+
+        public peliculaEN(string nombre)
+        {
+            NombreP = nombre;
+        }
+        public peliculaEN()
+        {
+    
+        }
 
         public void anyadirPelicula()
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Clases.EN;
+using System.Data.SqlClient;
 
 namespace Clases.CAD
 {
