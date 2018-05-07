@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CAD;
+using Clases.EN;
 
 namespace WebVideo
 {
@@ -33,13 +34,6 @@ namespace WebVideo
            
         }
         
-        protected void DWPais_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            
-
-        }
-
         public List<string> Consultar (string comando)
         {
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
@@ -118,6 +112,21 @@ namespace WebVideo
                 DWPais.BorderColor = Color.Red;   
             }
 
+            if (correcto)
+            {
+                paisCAD pais = new paisCAD();
+                usuarioEN user = new usuarioEN();
+                user.Apellidos = Text_ap.Text;
+                user.Contrasenya = Text_Cnt.Text;
+                user.Email = Text_Email.Text;
+                user.Nombre = Text_nom.Text;
+                user.Pais = pais.mostrarIdPais(DWPais.SelectedItem.ToString()).IdPais;
+                DateTime fecha = DateTime.Now;
+                user.FechaA = fecha.Date.ToString();       
+                user.anyadirUsuario();
+                
+            }
+
         }
 
         protected void TextBox4_TextChanged(object sender, EventArgs e)
@@ -130,5 +139,9 @@ namespace WebVideo
 
         }
 
+        protected void Email_Cambio(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CAD;
 
 
 namespace  Clases.EN
@@ -26,11 +27,13 @@ namespace  Clases.EN
         private string tipoU;
         public string TipoU { get { return tipoU; } set { tipoU = value; } }
 
-        private string pais;
-        public string Pais { get { return pais; } set { pais = value; } }
+        private int pais;
+        public int Pais { get { return pais; } set { pais = value; } }
 
         public void anyadirUsuario()
         {
+            usuarioCAD user = new usuarioCAD();
+            user.anyadirUsuario(this);
 
         }
         public void borrarUsuario()

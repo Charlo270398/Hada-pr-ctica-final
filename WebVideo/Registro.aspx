@@ -7,7 +7,7 @@
     </p>
     <p>
         Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="Text_Email" runat="server" OnTextChanged="IN_EMAIL"></asp:TextBox>
+        <asp:TextBox ID="Text_Email" runat="server" OnTextChanged="Email_Cambio"></asp:TextBox>
     </p>
     <p>
         Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -27,7 +27,7 @@
     </p>
     <p>
         País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-        <asp:DropDownList ID="DWPais" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DWPais_SelectedIndexChanged" OnInit="DWPais_Init">
+        <asp:DropDownList ID="DWPais" runat="server" AutoPostBack="true" OnInit="DWPais_Init">
         </asp:DropDownList>
     </p>
     <p>
