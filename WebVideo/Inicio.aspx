@@ -11,7 +11,9 @@
 <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         <strong>Novedades:</strong></p>
 <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
-        &nbsp;-(29/04/18) Puesta en marcha del videoclub online</p>
+        &nbsp; -(29/04/18) Puesta en marcha del videoclub online</p>
+    <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
+        &nbsp; -(07/05/18) Alfa de Registro operativa </p>
 <p style="font-size: xx-large" align="center">
         &nbsp;</p>
 <p style="font-size: xx-large" align="center">

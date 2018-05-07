@@ -78,6 +78,7 @@ namespace WebVideo
             Text_Rcnt.BorderColor = Color.Green;
             Text_ap.BorderColor = Color.Green;
             DWPais.BorderColor = Color.Green;
+            Terminos.BackColor = Color.Gray;
 
             bool correcto = true;
 
@@ -109,7 +110,13 @@ namespace WebVideo
             if(DWPais.SelectedItem.ToString() == "[Seleccionar]")
             {
                 correcto = false;
-                DWPais.BorderColor = Color.Red;   
+                DWPais.BorderColor = Color.Red;  
+                
+            }
+            if (!Terminos.Checked)
+            {
+                correcto = false;
+                Terminos.BackColor = Color.Red;
             }
 
             if (correcto)
