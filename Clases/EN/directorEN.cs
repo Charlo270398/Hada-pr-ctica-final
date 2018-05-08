@@ -17,8 +17,8 @@ namespace Clases.EN
         private string apellidos;
         public string Apellidos { get { return apellidos; } set { apellidos = value; } }
 
-        private string fechaNac;
-        public string FechaNac { get { return fechaNac; } set { fechaNac = value; } }
+        private string nacionalidad;
+        public string Nacionalidad { get { return nacionalidad; } set { nacionalidad = value; } }
 
 
         public void anyadirDirector()

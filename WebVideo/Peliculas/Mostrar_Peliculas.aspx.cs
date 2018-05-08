@@ -56,7 +56,7 @@ namespace WebVideo.Peliculas
         {
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(Request.QueryString["id"]);
-            precioAnumtext.Text = peli.mostrarPelicula(p).PrecioA.ToString();
+            precioAnumtext.Text = peli.mostrarPelicula(p).PrecioA.ToString() + "€";
         }
 
         protected void fechaEstrenotext_Init(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace WebVideo.Peliculas
         {
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(Request.QueryString["id"]);
-            TrailerLink.NavigateUrl = peli.mostrarPelicula(p).Trailer + "€";
+            TrailerLink.NavigateUrl = peli.mostrarPelicula(p).Trailer;
        
         }
 

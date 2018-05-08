@@ -7,10 +7,11 @@ namespace Clases.CAD
 {
     public interface IdirectorCAD
     {
-        void anyadirDirector(int id);
-        void borrarDirector(int id);
-        directorEN mostrarDirector(int id);
-        void modificarDirector(int id);
-        bool existe(int id);
+        void anyadirDirector(directorEN director);
+        void borrarDirector(directorEN director);
+        List<directorEN> mostrarListaDirectores(directorEN director);
+        directorEN mostrarDirector(directorEN director);
+        void modificarDirector(directorEN director);
+        bool existe(directorEN director);
     }
 }

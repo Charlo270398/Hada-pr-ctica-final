@@ -23,7 +23,15 @@ namespace CAD
             List<peliculaEN> devolver = new List<peliculaEN>();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
-            string comando = "select * from Peliculas where Nombre like '%" + pelicula.NombreP + "%'";
+            string comando = "";
+            if (pelicula.NombreP == "%")
+            {
+                comando = "select * from Peliculas";
+            }
+            else
+            {
+                comando = "select * from Peliculas where Nombre like '%" + pelicula.NombreP + "%'";
+            }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())
