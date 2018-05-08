@@ -11,6 +11,7 @@ namespace CAD
         void anyadirPelicula(peliculaEN pelicula);
         void borrarPelicula(peliculaEN pelicula);
         List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula);
+        List<peliculaEN> mostrarListaPeliculasDirector(int idDir);
         peliculaEN mostrarPelicula(peliculaEN pelicula);
         void modificarPelicula(peliculaEN pelicula);
         bool existe(peliculaEN pelicula);

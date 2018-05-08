@@ -77,6 +77,8 @@
     </Content>
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
+    <Content Include="Mostrar\Mostrar_Actor.aspx" />
+    <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Peliculas\Mostrar_Peliculas.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
@@ -134,6 +136,20 @@
     </Compile>
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
+      <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Actor.aspx.designer.cs">
+      <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Director.aspx.cs">
+      <DependentUpon>Mostrar_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Director.aspx.designer.cs">
+      <DependentUpon>Mostrar_Director.aspx</DependentUpon>
     </Compile>
     <Compile Include="Peliculas\Mostrar_Peliculas.aspx.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
@@ -222,7 +238,6 @@
   <ItemGroup>
     <Folder Include="images\imagenes\" />
     <Folder Include="Models\" />
-    <Folder Include="Mostrar\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

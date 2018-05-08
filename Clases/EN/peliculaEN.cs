@@ -46,13 +46,14 @@ namespace Clases.EN
         private string trailer;
         public string Trailer { get { return trailer; } set { trailer = value; } }
 
-        public peliculaEN(string nombre)
+        public peliculaEN(int id, string nombre)
         {
+            IdP = id;
             NombreP = nombre;
         }
         public peliculaEN()
         {
-    
+            IdP = -1;
         }
 
         public void anyadirPelicula()

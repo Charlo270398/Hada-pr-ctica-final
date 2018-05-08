@@ -11,6 +11,7 @@ namespace WebVideo
 {
     public partial class Formulario_web1 : System.Web.UI.Page
     {
+        protected static List<int> listaID = new List<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,13 +27,15 @@ namespace WebVideo
             if (PeliculaBox.Text != "")
             {
                 peliculaCAD pelicula = new peliculaCAD();
-                peliculaEN nombre = new peliculaEN(PeliculaBox.Text);
+                peliculaEN nombre = new peliculaEN(-1, PeliculaBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWPeliculas.Visible = true;
                 Btn_Pelicula2.Visible = true;
+                
                 for (int i = 0; i < pelicula.mostrarListaPeliculas(nombre).Count; i++)
                 {
                     ListaNombres.Add(pelicula.mostrarListaPeliculas(nombre)[i].NombreP);
+                    listaID.Add(pelicula.mostrarListaPeliculas(nombre)[i].IdP);
                 }
                 DWPeliculas.DataSource = ListaNombres;
                 DWPeliculas.DataBind();
@@ -72,7 +75,7 @@ namespace WebVideo
         {
             if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
             {
-                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + DWPeliculas.SelectedItem.ToString());
+                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);
             }
             else
             {
@@ -90,14 +93,41 @@ namespace WebVideo
                 List<string> ListaNombres = new List<string>();
                 DWDirector.Visible = true;
                 Btn_Director2.Visible = true;
+                listaID.Clear();
                 for (int i = 0; i < pelicula.mostrarListaDirectores(nombre).Count; i++)
                 {
                     ListaNombres.Add(pelicula.mostrarListaDirectores(nombre)[i].Nombre + " " + pelicula.mostrarListaDirectores(nombre)[i].Apellidos);
+                    listaID.Add(pelicula.mostrarListaDirectores(nombre)[i].IdD);
                 }
                 DWDirector.DataSource = ListaNombres.Distinct().ToList();
                 DWDirector.DataBind();
                 DWDirector.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
+                if (DWDirector.Items.Count == 1)
+                {
+                    ErrDirector.Visible = true;
+                    ErrDirector.Text = "*Búsqueda vacía. Introduzca el carácter '%' para ver todos los directores";
+                }
+                else
+                {
+                    ErrDirector.Visible = false;
+                }
             }
+            else
+            {
+                ErrDirector.Visible = true;
+                ErrDirector.Text = "*Campo vacío";
+            }
+
+            ErrSerie.Visible = false;
+            ErrPelicula.Visible = false;
+            ErrSerie.Visible = false;
+            DWActor.Visible = false;
+            DWPeliculas.Visible = false;
+            DWSeries.Visible = false;
+            Btn_Actor2.Visible = false;
+            Btn_Pelicula2.Visible = false;
+            Btn_Serie2.Visible = false;
         }
 
         protected void Btn_Serie2C(object sender, EventArgs e)
