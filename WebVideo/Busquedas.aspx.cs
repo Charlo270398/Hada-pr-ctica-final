@@ -90,16 +90,17 @@ namespace WebVideo
         {
             if (DirectorBox.Text != "")
             {
+                listaID.Clear();
                 directorCAD pelicula = new directorCAD();
                 directorEN nombre = new directorEN(DirectorBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWDirector.Visible = true;
                 Btn_Director2.Visible = true;
-                listaID.Clear();
-                for (int i = 0; i < pelicula.mostrarListaDirectores(nombre).Count; i++)
+                List<directorEN> d = pelicula.mostrarListaDirectores(nombre);
+                for (int i = 0; i < d.Count; i++)
                 {
-                    ListaNombres.Add(pelicula.mostrarListaDirectores(nombre)[i].Nombre + " " + pelicula.mostrarListaDirectores(nombre)[i].Apellidos);
-                    listaID.Add(pelicula.mostrarListaDirectores(nombre)[i].IdD);
+                    ListaNombres.Add(d[i].Nombre + " " + d[i].Apellidos);
+                    listaID.Add(d[i].IdD);
                 }
                 DWDirector.DataSource = ListaNombres.Distinct().ToList();
                 DWDirector.DataBind();
