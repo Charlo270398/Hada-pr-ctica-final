@@ -45,7 +45,28 @@ namespace CAD
 
             return lista;
         }
-        public void anyadirDirector(directorEN director) { }
+        public void anyadirDirector(directorEN director) {
+
+            int nextId = -1;
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            string comando = "select max(Id_Director) max from Director";
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                nextId = (int)reader["max"];
+            }
+            reader.Close();
+
+            comando = "insert into Director values (" + nextId + ", '";
+            comando += director.Nombre + "', '" + director.Apellidos + "', ";
+            comando += director.Nacionalidad + ")";
+            cmd = new SqlCommand(comando, cn);
+            cmd.ExecuteNonQuery();
+
+            cn.Close();
+        }
         public void borrarDirector(directorEN director) { }
         public directorEN mostrarDirector(directorEN director) {
 
