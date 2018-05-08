@@ -54,7 +54,14 @@ namespace CAD
             cn.Open();
             directorEN dir = new directorEN(); 
             string comando = "";
-            comando = "select distinct * from Director where Nombre like '%" + director.Nombre + "%' or Apellidos like '%" + director.Apellidos + "%'";
+            if(director.IdD != -1)
+            {
+                comando = "select distinct * from Director where Id_Director = " + director.IdD;
+            }
+            else
+            {
+                comando = "select distinct * from Director where Nombre like '" + director.Nombre + "' and Apellidos like '" + director.Apellidos + "'";
+            }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())

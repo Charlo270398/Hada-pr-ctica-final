@@ -144,7 +144,7 @@ namespace WebVideo
         {
             if (DWDirector.SelectedItem.ToString() != "[Seleccionar]")
             {
-                Response.Redirect("Mostrar/Mostrar_Director.aspx?id=" + DWDirector.SelectedItem.ToString());
+                Response.Redirect("Mostrar/Mostrar_Director.aspx?id=" + +listaID[DWDirector.SelectedIndex - 1]);
             }
             else
             {
