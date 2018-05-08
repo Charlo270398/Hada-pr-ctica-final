@@ -25,6 +25,9 @@ namespace Clases.EN
         private float precioA;
         public float PrecioA { get { return precioA; } set { precioA = value; } }
 
+        private string imagen;
+        public string Imagen { get { return imagen; } set { imagen = value; } }
+
         public void anyadirSerie()
         {
 
