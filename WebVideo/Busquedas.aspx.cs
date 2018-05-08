@@ -26,17 +26,19 @@ namespace WebVideo
         {
             if (PeliculaBox.Text != "")
             {
+                listaID.Clear();
                 peliculaCAD pelicula = new peliculaCAD();
                 peliculaEN nombre = new peliculaEN(-1, PeliculaBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWPeliculas.Visible = true;
                 Btn_Pelicula2.Visible = true;
-                
-                for (int i = 0; i < pelicula.mostrarListaPeliculas(nombre).Count; i++)
+                List<peliculaEN> p = pelicula.mostrarListaPeliculas(nombre);
+                for (int i = 0; i < p.Count; i++)
                 {
-                    ListaNombres.Add(pelicula.mostrarListaPeliculas(nombre)[i].NombreP);
-                    listaID.Add(pelicula.mostrarListaPeliculas(nombre)[i].IdP);
+                    ListaNombres.Add(p[i].NombreP);
+                    listaID.Add(p[i].IdP);
                 }
+    
                 DWPeliculas.DataSource = ListaNombres;
                 DWPeliculas.DataBind();
                 DWPeliculas.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
@@ -75,7 +77,7 @@ namespace WebVideo
         {
             if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
             {
-                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);
+                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);                             
             }
             else
             {
@@ -88,16 +90,17 @@ namespace WebVideo
         {
             if (DirectorBox.Text != "")
             {
+                listaID.Clear();
                 directorCAD pelicula = new directorCAD();
                 directorEN nombre = new directorEN(DirectorBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWDirector.Visible = true;
                 Btn_Director2.Visible = true;
-                listaID.Clear();
-                for (int i = 0; i < pelicula.mostrarListaDirectores(nombre).Count; i++)
+                List<directorEN> d = pelicula.mostrarListaDirectores(nombre);
+                for (int i = 0; i < d.Count; i++)
                 {
-                    ListaNombres.Add(pelicula.mostrarListaDirectores(nombre)[i].Nombre + " " + pelicula.mostrarListaDirectores(nombre)[i].Apellidos);
-                    listaID.Add(pelicula.mostrarListaDirectores(nombre)[i].IdD);
+                    ListaNombres.Add(d[i].Nombre + " " + d[i].Apellidos);
+                    listaID.Add(d[i].IdD);
                 }
                 DWDirector.DataSource = ListaNombres.Distinct().ToList();
                 DWDirector.DataBind();
