@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clases", "Clases\Clases.csproj", "{63750734-4D3F-4E9E-8A94-7AAC58B8FEBF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVideo", "WebVideo\WebVideo.csproj", "{3C9196B4-AEB1-4E61-BF70-36818A478D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases", "Clases\Clases.csproj", "{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{63750734-4D3F-4E9E-8A94-7AAC58B8FEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63750734-4D3F-4E9E-8A94-7AAC58B8FEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63750734-4D3F-4E9E-8A94-7AAC58B8FEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63750734-4D3F-4E9E-8A94-7AAC58B8FEBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C9196B4-AEB1-4E61-BF70-36818A478D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

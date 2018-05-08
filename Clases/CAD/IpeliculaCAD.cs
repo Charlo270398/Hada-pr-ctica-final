@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Clases.EN;
 
 namespace CAD
 {
     public interface IpeliculaCAD
     {
-        void anyadirPelicula(int id);
-        void borrarPelicula(int id);
-        peliculaEN mostrarPelicula(int id);
-        void modificarPelicula(int id);
-        bool existe(int id);
+        void anyadirPelicula(peliculaEN pelicula);
+        void borrarPelicula(peliculaEN pelicula);
+        List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula);
+        List<peliculaEN> mostrarListaPeliculasDirector(int idDir);
+        peliculaEN mostrarPelicula(peliculaEN pelicula);
+        void modificarPelicula(peliculaEN pelicula);
+        bool existe(peliculaEN pelicula);
     }
 }

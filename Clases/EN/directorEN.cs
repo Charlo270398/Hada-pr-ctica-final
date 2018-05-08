@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Clases.EN
@@ -18,9 +17,17 @@ namespace Clases.EN
         private string apellidos;
         public string Apellidos { get { return apellidos; } set { apellidos = value; } }
 
-        private string fechaNac;
-        public string FechaNac { get { return fechaNac; } set { fechaNac = value; } }
+        private string nacionalidad;
+        public string Nacionalidad { get { return nacionalidad; } set { nacionalidad = value; } }
 
+        public directorEN()
+        {
+
+        }
+        public directorEN(string nombre)
+        {
+            this.Nombre = nombre;
+        }
 
         public void anyadirDirector()
         {
