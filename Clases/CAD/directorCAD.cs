@@ -37,7 +37,7 @@ namespace Clases.CAD
                 dir.IdD = (int)reader["Id_Director"];
                 dir.Nombre = reader["Nombre"].ToString();
                 dir.Apellidos = reader["Apellidos"].ToString();
-                dir.Nacionalidad = pais.mostrarPais((int)reader["Fecha_Alta"]).Pais;
+                dir.Nacionalidad = pais.mostrarPais((int)reader["Nacionalidad"]).Pais;
                 lista.Add(dir);
             }
             reader.Close();
@@ -62,7 +62,7 @@ namespace Clases.CAD
                 dir.IdD = (int)reader["Id_Director"];
                 dir.Nombre = reader["Nombre"].ToString();
                 dir.Apellidos = reader["Apellidos"].ToString();
-                dir.Nacionalidad = pais.mostrarPais((int)reader["Fecha_Alta"]).Pais;
+                dir.Nacionalidad = pais.mostrarPais((int)reader["Nacionalidad"]).Pais;
             }
             reader.Close();
             cn.Close();
