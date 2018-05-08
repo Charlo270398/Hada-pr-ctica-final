@@ -26,12 +26,16 @@ namespace WebVideo
         {
             if (PeliculaBox.Text != "")
             {
+<<<<<<< HEAD
                 listaID.Clear();
+=======
+>>>>>>> 6076236e993125d3864f2ea167344ce9cbd98422
                 peliculaCAD pelicula = new peliculaCAD();
                 peliculaEN nombre = new peliculaEN(-1, PeliculaBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWPeliculas.Visible = true;
                 Btn_Pelicula2.Visible = true;
+<<<<<<< HEAD
                 List<peliculaEN> p = pelicula.mostrarListaPeliculas(nombre);
                 for (int i = 0; i < p.Count; i++)
                 {
@@ -39,6 +43,14 @@ namespace WebVideo
                     listaID.Add(p[i].IdP);
                 }
 
+=======
+                
+                for (int i = 0; i < pelicula.mostrarListaPeliculas(nombre).Count; i++)
+                {
+                    ListaNombres.Add(pelicula.mostrarListaPeliculas(nombre)[i].NombreP);
+                    listaID.Add(pelicula.mostrarListaPeliculas(nombre)[i].IdP);
+                }
+>>>>>>> 6076236e993125d3864f2ea167344ce9cbd98422
                 DWPeliculas.DataSource = ListaNombres;
                 DWPeliculas.DataBind();
                 DWPeliculas.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
@@ -77,7 +89,11 @@ namespace WebVideo
         {
             if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
             {
+<<<<<<< HEAD
                 Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);                             
+=======
+                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);
+>>>>>>> 6076236e993125d3864f2ea167344ce9cbd98422
             }
             else
             {
