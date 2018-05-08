@@ -222,6 +222,7 @@
   <ItemGroup>
     <Folder Include="images\imagenes\" />
     <Folder Include="Models\" />
+    <Folder Include="Mostrar\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

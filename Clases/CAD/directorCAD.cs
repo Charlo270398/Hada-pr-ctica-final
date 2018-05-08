@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using CAD;
 
-namespace Clases.CAD
+namespace CAD
 {
     public class directorCAD : IdirectorCAD
     {
@@ -18,7 +18,6 @@ namespace Clases.CAD
         {
             paisCAD pais = new paisCAD();
             List<directorEN> lista = new List<directorEN>();
-            directorEN dir = new directorEN();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
             string comando = "";
@@ -28,12 +27,13 @@ namespace Clases.CAD
             }
             else
             {
-                comando = "select * from Director where Nombre like '%" + director.Nombre + "%'";
+                comando = "select distinct * from Director where Nombre like '%" + director.Nombre + "%' or Apellidos like '%" + director.Nombre + "%'";
             }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                directorEN dir = new directorEN();
                 dir.IdD = (int)reader["Id_Director"];
                 dir.Nombre = reader["Nombre"].ToString();
                 dir.Apellidos = reader["Apellidos"].ToString();
@@ -50,15 +50,16 @@ namespace Clases.CAD
         public directorEN mostrarDirector(directorEN director) {
 
             paisCAD pais = new paisCAD();
-            directorEN dir = new directorEN();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
+            directorEN dir = new directorEN(); 
             string comando = "";
-            comando = "select * from Director where Nombre like '" + director.Nombre + "'";
+            comando = "select distinct * from Director where Nombre like '%" + director.Nombre + "%' or Apellidos like '%" + director.Apellidos + "%'";
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                dir = new directorEN();
                 dir.IdD = (int)reader["Id_Director"];
                 dir.Nombre = reader["Nombre"].ToString();
                 dir.Apellidos = reader["Apellidos"].ToString();

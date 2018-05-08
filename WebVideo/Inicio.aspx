@@ -11,6 +11,8 @@
 <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         <strong>Novedades:</strong></p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
+        &nbsp; -(08/05/18) Beta de Búsqueda Películas operativa </p>
+    <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         &nbsp; -(08/05/18) Alfa de Búsqueda Películas operativa </p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         &nbsp; -(07/05/18) Beta de Registro operativa </p>

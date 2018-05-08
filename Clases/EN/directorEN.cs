@@ -20,6 +20,14 @@ namespace Clases.EN
         private string nacionalidad;
         public string Nacionalidad { get { return nacionalidad; } set { nacionalidad = value; } }
 
+        public directorEN()
+        {
+
+        }
+        public directorEN(string nombre)
+        {
+            this.Nombre = nombre;
+        }
 
         public void anyadirDirector()
         {

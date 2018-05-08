@@ -36,6 +36,7 @@ namespace CAD
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                aux = new peliculaEN();
                 aux.IdP = (int)reader["Id_Pelicula"];
                 aux.NombreP = reader["Nombre"].ToString();
                 aux.Duracion = (int)reader["Duracion"];
@@ -75,6 +76,7 @@ namespace CAD
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                aux = new peliculaEN();
                 aux.IdP = (int)reader["Id_Pelicula"];
                 aux.NombreP = reader["Nombre"].ToString();
                 aux.Duracion = (int)reader["Duracion"];
