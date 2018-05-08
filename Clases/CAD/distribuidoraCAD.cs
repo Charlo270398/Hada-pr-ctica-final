@@ -5,7 +5,7 @@ using Clases.EN;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace Clases.CAD
+namespace CAD
 {
     public class DistribuidoraCAD : IdistribuidoraCAD
     {
@@ -59,18 +59,25 @@ namespace Clases.CAD
         public distribuidoraEN mostrarDistribuidora(int id) {
 
             distribuidoraEN d = new distribuidoraEN();
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            string comando = "select * from Distribuidora where Id_Distibuidora = " + id;
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                d.IdDis = (int)reader["Id_Distribuidora"];
-                d.Nombre = reader["Nombre"].ToString();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from Distribuidora where Id_Distribuidora = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    d.IdDis = (int)reader["Id_Distribuidora"];
+                    d.Nombre = reader["Nombre"].ToString();
+                }
+                reader.Close();
+                cn.Close();
             }
-            reader.Close();
-            cn.Close();
+            catch (Exception)
+            {
+
+            }
 
             return d;
         }

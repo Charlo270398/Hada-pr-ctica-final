@@ -22,6 +22,14 @@ namespace Clases.EN
         private string pais;
         public string Pais { get { return pais; } set { pais = value; } }
 
+        public distribuidoraEN()
+        {
+
+        }
+        public distribuidoraEN(int id, string nombre){
+            IdDis = id;
+            this.Nombre = nombre;
+        }
         public void anyadirDistribuidora()
         {
 

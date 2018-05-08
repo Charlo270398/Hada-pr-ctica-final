@@ -11,13 +11,15 @@
 <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         <strong>Novedades:</strong></p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
-        &nbsp; -(08/05/18) Beta de Búsqueda Director operativa </p>
+        &nbsp; -(08/05/18) Búsqueda Distribuidora operativa </p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
-        &nbsp; -(08/05/18) Beta de Búsqueda Películas operativa </p>
+        &nbsp; -(08/05/18) Búsqueda Director operativa </p>
+    <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
+        &nbsp; -(08/05/18) Búsqueda Películas operativa </p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         &nbsp; -(08/05/18) Alfa de Búsqueda Películas operativa </p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
-        &nbsp; -(07/05/18) Beta de Registro operativa </p>
+        &nbsp; -(07/05/18) Registro operativa </p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         &nbsp; -(07/05/18) Alfa de Registro operativa </p>
 <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
