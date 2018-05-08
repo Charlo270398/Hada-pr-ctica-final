@@ -47,58 +47,101 @@ namespace CAD
         }
         public void anyadirDirector(directorEN director) {
 
-            int nextId = -1;
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            string comando = "select max(Id_Director) max from Director";
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                nextId = (int)reader["max"];
+                int nextId = -1;
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select max(Id_Director) max from Director";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    nextId = (int)reader["max"];
+                }
+                reader.Close();
+
+                comando = "insert into Director values (" + nextId + ", '";
+                comando += director.Nombre + "', '" + director.Apellidos + "', ";
+                comando += director.Nacionalidad + ")";
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+
+                cn.Close();
             }
-            reader.Close();
+            catch (Exception)
+            {
 
-            comando = "insert into Director values (" + nextId + ", '";
-            comando += director.Nombre + "', '" + director.Apellidos + "', ";
-            comando += director.Nacionalidad + ")";
-            cmd = new SqlCommand(comando, cn);
-            cmd.ExecuteNonQuery();
-
-            cn.Close();
+            }
         }
-        public void borrarDirector(directorEN director) { }
+        public void borrarDirector(int id) {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Director where Id_Director = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception){
+
+            }
+        }
         public directorEN mostrarDirector(directorEN director) {
 
-            paisCAD pais = new paisCAD();
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            directorEN dir = new directorEN(); 
-            string comando = "";
-            if(director.IdD != -1)
+            directorEN dir = new directorEN();
+            try
             {
-                comando = "select distinct * from Director where Id_Director = " + director.IdD;
+                paisCAD pais = new paisCAD();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();              
+                string comando = "";
+                if (director.IdD != -1)
+                {
+                    comando = "select distinct * from Director where Id_Director = " + director.IdD;
+                }
+                else
+                {
+                    comando = "select distinct * from Director where Nombre like '" + director.Nombre + "' and Apellidos like '" + director.Apellidos + "'";
+                }
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    dir = new directorEN();
+                    dir.IdD = (int)reader["Id_Director"];
+                    dir.Nombre = reader["Nombre"].ToString();
+                    dir.Apellidos = reader["Apellidos"].ToString();
+                    dir.Nacionalidad = pais.mostrarPais((int)reader["Nacionalidad"]).Pais;
+                }
+                reader.Close();
+                cn.Close();
             }
-            else
+            catch (Exception)
             {
-                comando = "select distinct * from Director where Nombre like '" + director.Nombre + "' and Apellidos like '" + director.Apellidos + "'";
+
             }
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                dir = new directorEN();
-                dir.IdD = (int)reader["Id_Director"];
-                dir.Nombre = reader["Nombre"].ToString();
-                dir.Apellidos = reader["Apellidos"].ToString();
-                dir.Nacionalidad = pais.mostrarPais((int)reader["Nacionalidad"]).Pais;
-            }
-            reader.Close();
-            cn.Close();
 
             return dir;
         }
-        public void modificarDirector(directorEN director) { }
+        public void modificarDirector(directorEN director) {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "update Director set Nombre = '" + director.Nombre + "', ";
+                comando += "'Apellidos = '" + director.Apellidos + "', ";
+                comando += "Nacionalidad= " + director.Nacionalidad;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }catch(Exception) {
+
+            }
+        }
         public bool existe(directorEN director) { return false; }
     }
 }
