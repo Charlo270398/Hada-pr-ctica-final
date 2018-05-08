@@ -237,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\imagenes\" />
+    <Folder Include="Mantenimiento\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
