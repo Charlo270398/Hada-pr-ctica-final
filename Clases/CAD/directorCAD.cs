@@ -133,7 +133,7 @@ namespace CAD
                 cn.Open();
                 string comando = "update Director set Nombre = '" + director.Nombre + "', ";
                 comando += "'Apellidos = '" + director.Apellidos + "', ";
-                comando += "Nacionalidad= " + director.Nacionalidad;
+                comando += "Nacionalidad= " + director.Nacionalidad + " where Id_Director = " + director.IdD;
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
