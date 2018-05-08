@@ -59,6 +59,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -77,6 +79,10 @@
     </Content>
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
+    <Content Include="Mantenimiento\Añadir_Dist.aspx" />
+    <Content Include="Mantenimiento\Borrar_Dist.aspx" />
+    <Content Include="Mantenimiento\Main.aspx" />
+    <Content Include="Mantenimiento\Modificar_Dist.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
@@ -137,6 +143,34 @@
     </Compile>
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Dist.aspx.cs">
+      <DependentUpon>Añadir_Dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Dist.aspx.designer.cs">
+      <DependentUpon>Añadir_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Dist.aspx.cs">
+      <DependentUpon>Borrar_Dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Dist.aspx.designer.cs">
+      <DependentUpon>Borrar_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Dist.aspx.cs">
+      <DependentUpon>Modificar_Dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Dist.aspx.designer.cs">
+      <DependentUpon>Modificar_Dist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
       <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
@@ -245,7 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\imagenes\" />
-    <Folder Include="Mantenimiento\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

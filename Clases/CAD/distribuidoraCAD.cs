@@ -4,6 +4,7 @@ using System.Text;
 using Clases.EN;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace CAD
 {
@@ -24,19 +25,20 @@ namespace CAD
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    nextId = (int)reader["max"];
+                    nextId = (int)reader["max"] + 1;
                 }
                 reader.Close();
 
                 comando = "insert into Distribuidora values (" + nextId + ", '";
-                comando += distribuidora.Nombre + "')'";
+                comando += distribuidora.Nombre + "')";
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
 
                 cn.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                throw new Exception(ex.Message);
 
             }
         }
@@ -45,15 +47,15 @@ namespace CAD
             {
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "delete from Distribuidora where Id_Distibuidora = " + id;
+                string comando = "delete from Distribuidora where Id_Distribuidora = " + id;
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception)
-            {
-
+            catch (Exception ex)
+            {              
+                throw new Exception(ex.Message);
             }
         }
         public distribuidoraEN mostrarDistribuidora(int id) {
@@ -93,9 +95,9 @@ namespace CAD
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw new Exception(ex.Message);
             }
         }
         public bool existe(int id) { return false; }
@@ -111,6 +113,7 @@ namespace CAD
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                d = new distribuidoraEN();
                 d.IdDis = (int)reader["Id_Distribuidora"];
                 d.Nombre = reader["Nombre"].ToString();
                 lista.Add(d);
@@ -119,6 +122,6 @@ namespace CAD
             cn.Close();
 
             return lista;
-        }
+        }      
     }
 }
