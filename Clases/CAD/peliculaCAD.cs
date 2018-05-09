@@ -15,7 +15,77 @@ namespace CAD
 
         }
        
-        public void anyadirPelicula(peliculaEN id) { }
+        public void anyadirPelicula(peliculaEN pelicula) {
+
+            try
+            {
+                DateTime fecha = DateTime.Parse(pelicula.FechaE);
+                paisCAD p = new paisCAD();
+                int nextId = 1;
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "insert into Peliculas values (" + nextId + ", '";
+                comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
+                comando += fecha + "', '";
+                comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
+                comando += pelicula.IdP + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
+                if(pelicula.IdSaga == -1)
+                {
+                    comando += null + ", '" + pelicula.Trailer + "')";
+                }
+                else
+                {
+                    comando += pelicula.IdSaga + ", '" + pelicula.Trailer + "')";
+                }
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+
+                cn.Close();
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    DateTime fecha = DateTime.Parse(pelicula.FechaE);
+                    paisCAD p = new paisCAD();
+                    int nextId = 1;
+                    SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                    cn.Open();
+                    string comando = "select max(Id_Pelicula) max from Peliculas";
+                    SqlCommand cmd = new SqlCommand(comando, cn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nextId = (int)reader["max"] + 1;
+                    }
+                    reader.Close();
+                    comando = "insert into Peliculas values (" + nextId + ", '";
+                    comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
+                    comando += fecha + "', '";
+                    comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
+                    comando += pelicula.IdP + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
+                    if (pelicula.IdSaga == -1)
+                    {
+                        comando += null + ", '" + pelicula.Trailer + "')";
+                    }
+                    else
+                    {
+                        comando += pelicula.IdSaga + ", '" + pelicula.Trailer + "')";
+                    }
+                    cmd = new SqlCommand(comando, cn);
+                    cmd.ExecuteNonQuery();
+
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+
+        }
         public void borrarPelicula(peliculaEN id) { }
         public List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula) {
 

@@ -43,6 +43,8 @@ namespace WebVideo.Mantenimiento
             DW_Dir.DataBind();
             DW_Actor.DataSource = opList;
             DW_Actor.DataBind();
+            DW_Pelicula.DataSource = opList;
+            DW_Pelicula.DataBind();
 
         }
 
@@ -79,5 +81,23 @@ namespace WebVideo.Mantenimiento
             }
 
         }
+
+        protected void Btn_Pelicula_Click(object sender, EventArgs e)
+        {
+            if (DW_Pelicula.SelectedValue == "Añadir")
+            {
+                Response.Redirect("Añadir_Pelicula.aspx?");
+            }
+            else if (DW_Pelicula.SelectedValue == "Modificar")
+            {
+                Response.Redirect("Modificar_Pelicula.aspx?");
+            }
+            else
+            {
+                Response.Redirect("Borrar_Pelicula.aspx?");
+            }
+
+        }
+
     }
 }

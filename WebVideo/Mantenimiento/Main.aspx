@@ -7,7 +7,7 @@
 &nbsp;&nbsp;
         <asp:DropDownList ID="DW_Dist" runat="server" OnInit="DW_Dist_Init" Width="200px">
         </asp:DropDownList>
-    </h2>
+    &nbsp;</h2>
     <p>
         <asp:Button ID="Btn_Dir" runat="server" Text="Director" Width="120px" OnClick="Btn_Dir_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -18,6 +18,12 @@
         <asp:Button ID="Btn_Actor" runat="server" Text="Actor" Width="120px" OnClick="Btn_Actor_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:DropDownList ID="DW_Actor" runat="server" Width="200px">
+        </asp:DropDownList>
+    </p>
+    <p>
+        <asp:Button ID="Btn_Pelicula" runat="server" Text="Película" Width="120px" OnClick="Btn_Pelicula_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DW_Pelicula" runat="server" Width="200px">
         </asp:DropDownList>
     </p>
     <p>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CAD;
 
 namespace Clases.EN
 {
@@ -51,6 +52,21 @@ namespace Clases.EN
             IdP = id;
             NombreP = nombre;
         }
+        public peliculaEN(int id, string nombre, int duracion, string fecha, string sinopsis, float precioC, float precioA, int idDis, int idDir, string imagen, int idSag, string trailer)
+        {
+            IdP = id;
+            NombreP = nombre;
+            this.duracion = duracion;
+            this.fechaE = fecha;
+            this.sinopsis = sinopsis;
+            this.precioA = precioA;
+            this.precioC = precioC;
+            this.IdDir = IdDir;
+            this.IdDist = IdDist;
+            this.imagen = imagen;
+            this.idSaga = idSag;
+            this.trailer = trailer;
+        }
         public peliculaEN()
         {
             IdP = -1;
@@ -58,6 +74,16 @@ namespace Clases.EN
 
         public void anyadirPelicula()
         {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                p.anyadirPelicula(this);
+                
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
         }
         public void borrarPelicula()

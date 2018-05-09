@@ -82,13 +82,16 @@
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
     <Content Include="Mantenimiento\Añadir_Director.aspx" />
     <Content Include="Mantenimiento\Añadir_Dist.aspx" />
+    <Content Include="Mantenimiento\Añadir_Pelicula.aspx" />
     <Content Include="Mantenimiento\Borrar_Actor.aspx" />
     <Content Include="Mantenimiento\Borrar_Director.aspx" />
     <Content Include="Mantenimiento\Borrar_Dist.aspx" />
+    <Content Include="Mantenimiento\Borrar_Pelicula.aspx" />
     <Content Include="Mantenimiento\Main.aspx" />
     <Content Include="Mantenimiento\Modificar_Actor.aspx" />
     <Content Include="Mantenimiento\Modificar_Director.aspx" />
     <Content Include="Mantenimiento\Modificar_Dist.aspx" />
+    <Content Include="Mantenimiento\Modificar_Pelicula.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
@@ -171,6 +174,13 @@
     <Compile Include="Mantenimiento\Añadir_Dist.aspx.designer.cs">
       <DependentUpon>Añadir_Dist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Añadir_Pelicula.aspx.cs">
+      <DependentUpon>Añadir_Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Pelicula.aspx.designer.cs">
+      <DependentUpon>Añadir_Pelicula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Borrar_Actor.aspx.cs">
       <DependentUpon>Borrar_Actor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,6 +201,13 @@
     </Compile>
     <Compile Include="Mantenimiento\Borrar_Dist.aspx.designer.cs">
       <DependentUpon>Borrar_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Pelicula.aspx.cs">
+      <DependentUpon>Borrar_Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Pelicula.aspx.designer.cs">
+      <DependentUpon>Borrar_Pelicula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -219,6 +236,13 @@
     </Compile>
     <Compile Include="Mantenimiento\Modificar_Dist.aspx.designer.cs">
       <DependentUpon>Modificar_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.cs">
+      <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
+      <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
       <DependentUpon>Mostrar_Actor.aspx</DependentUpon>

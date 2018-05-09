@@ -24,6 +24,7 @@ namespace Clases.EN
         public directorEN()
         {
             this.idD = -1;
+            Nombre = "%";
         }
         public directorEN(string nombre, string apellidos, string nacionalidad)
         {
