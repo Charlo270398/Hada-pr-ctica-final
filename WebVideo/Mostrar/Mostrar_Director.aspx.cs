@@ -58,5 +58,10 @@ namespace WebVideo.Mostrar
                 ErrPelicula.Text = "*Seleccione una película";
             }
         }
+
+        protected void DWPeliculas_Init(object sender, EventArgs e)
+        {
+
+        }
     }
 }

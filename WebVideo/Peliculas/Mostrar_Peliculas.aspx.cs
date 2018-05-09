@@ -73,7 +73,7 @@ namespace WebVideo.Peliculas
             int.TryParse(Request.QueryString["id"], out id);
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(id, "");
-            fechaEstrenotext.Text = peli.mostrarPelicula(p).FechaE;
+            fechaEstrenotext.Text = peli.mostrarPelicula(p).FechaE.Substring(0, 10); 
 
         }
 

@@ -20,7 +20,7 @@
     <br />Búsqueda por actor:<br />
     <asp:TextBox ID="ActorBox" runat="server" Width="926px"></asp:TextBox>
     <br />
-    <asp:Button ID="Button3" runat="server" Text="Buscar Actor" />
+    <asp:Button ID="Button3" runat="server" Text="Buscar Actor" OnClick="Button_Actor" />
     <asp:DropDownList ID="DWActor" runat="server" Visible="False">
     </asp:DropDownList>
     <asp:Button ID="Btn_Actor2" runat="server" Text="Mostrar Actor" OnClick="Btn_Actor2C" Visible="False" />
