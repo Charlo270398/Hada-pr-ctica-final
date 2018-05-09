@@ -188,5 +188,23 @@ namespace CAD
 
             return lista;
         }
+
+        public void insertarActuacion(int idAct, int idPel)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "insert into Actuaciones values("+ idPel + "," + idAct + ")";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

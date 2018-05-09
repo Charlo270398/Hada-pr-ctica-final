@@ -33,6 +33,12 @@
         </asp:DropDownList>
     </p>
     <p>
+        <asp:Button ID="Btn_Actuaciones" runat="server" Text="Actuaciones" Width="120px" OnClick="Btn_Actuaciones_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DW_Actuaciones" runat="server" Width="200px">
+        </asp:DropDownList>
+    </p>
+    <p>
     </p>
     <p>
     </p>

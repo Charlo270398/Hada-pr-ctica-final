@@ -35,8 +35,11 @@ namespace WebVideo.Mantenimiento
         protected void DW_Dist_Init(object sender, EventArgs e)
         {
             opList.Add("Añadir");
-            opList.Add("Modificar");
             opList.Add("Borrar");
+            DW_Actuaciones.DataBind();
+            DW_Actuaciones.DataSource = opList;
+            DW_Actuaciones.DataBind();
+            opList.Add("Modificar");
             DW_Dist.DataSource = opList;
             DW_Dist.DataBind();
             DW_Dir.DataSource = opList;
@@ -115,6 +118,19 @@ namespace WebVideo.Mantenimiento
             else
             {
                 Response.Redirect("Borrar_Saga.aspx?");
+            }
+
+        }
+
+        protected void Btn_Actuaciones_Click(object sender, EventArgs e)
+        {
+            if (DW_Actuaciones.SelectedValue == "Añadir")
+            {
+                Response.Redirect("Añadir_Actuacion.aspx?");
+            }
+            else
+            {
+                Response.Redirect("Borrar_Actuacion.aspx?");
             }
 
         }

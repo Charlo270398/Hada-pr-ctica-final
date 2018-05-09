@@ -81,11 +81,13 @@
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
+    <Content Include="Mantenimiento\Añadir_Actuacion.aspx" />
     <Content Include="Mantenimiento\Añadir_Director.aspx" />
     <Content Include="Mantenimiento\Añadir_Dist.aspx" />
     <Content Include="Mantenimiento\Añadir_Pelicula.aspx" />
     <Content Include="Mantenimiento\Añadir_Saga.aspx" />
     <Content Include="Mantenimiento\Borrar_Actor.aspx" />
+    <Content Include="Mantenimiento\Borrar_Actuacion.aspx" />
     <Content Include="Mantenimiento\Borrar_Director.aspx" />
     <Content Include="Mantenimiento\Borrar_Dist.aspx" />
     <Content Include="Mantenimiento\Borrar_Pelicula.aspx" />
@@ -163,6 +165,13 @@
     <Compile Include="Mantenimiento\Añadir_Actor.aspx.designer.cs">
       <DependentUpon>Añadir_Actor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actuacion.aspx.cs">
+      <DependentUpon>Añadir_Actuacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actuacion.aspx.designer.cs">
+      <DependentUpon>Añadir_Actuacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Añadir_Director.aspx.cs">
       <DependentUpon>Añadir_Director.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +206,13 @@
     </Compile>
     <Compile Include="Mantenimiento\Borrar_Actor.aspx.designer.cs">
       <DependentUpon>Borrar_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Actuacion.aspx.cs">
+      <DependentUpon>Borrar_Actuacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Actuacion.aspx.designer.cs">
+      <DependentUpon>Borrar_Actuacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Borrar_Director.aspx.cs">
       <DependentUpon>Borrar_Director.aspx</DependentUpon>
