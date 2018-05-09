@@ -21,7 +21,7 @@ namespace CAD
             {
                 DateTime fecha = DateTime.Parse(pelicula.FechaE);
                 paisCAD p = new paisCAD();
-                int nextId = 4;
+                int nextId = 1;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "";
@@ -29,7 +29,7 @@ namespace CAD
                 comando = "insert into Peliculas values (" + nextId + ", '";
                 comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
                 comando += fecha + "', '";
-                comando += pelicula.Sinopsis + "', '" + pelicula.PrecioC.ToString() + "', '" + pelicula.PrecioA.ToString() + "', " + pelicula.IdDist + ", ";
+                comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
                 comando += pelicula.IdDir + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
                 if(pelicula.IdSaga == -1)
                 {
@@ -64,7 +64,7 @@ namespace CAD
                     comando = "insert into Peliculas values (" + nextId + ", '";
                     comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
                     comando += fecha + "', '";
-                    comando += pelicula.Sinopsis + "', " +  pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
+                    comando += pelicula.Sinopsis + "', '" +  pelicula.PrecioC.ToString() + "', '" + pelicula.PrecioA.ToString() + "', " + pelicula.IdDist + ", ";
                     comando += pelicula.IdDir + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
                     if (pelicula.IdSaga == -1)
                     {
@@ -127,8 +127,8 @@ namespace CAD
                 aux.Duracion = (int)reader["Duracion"];
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
                 aux.Sinopsis = reader["Sinopsis"].ToString();
-                aux.PrecioA = (float)reader["Precio_A"];
-                aux.PrecioC = (float)reader["Precio_C"];
+                aux.PrecioA = (int) reader["Precio_A"];
+                aux.PrecioC = (int) reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
                 aux.IdDist = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
@@ -175,8 +175,8 @@ namespace CAD
                 aux.Duracion = (int)reader["Duracion"];
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
                 aux.Sinopsis = reader["Sinopsis"].ToString();
-                aux.PrecioA = (float)reader["Precio_A"];
-                aux.PrecioC = (float)reader["Precio_C"];
+                aux.PrecioA = (int)reader["Precio_A"];
+                aux.PrecioC = (int)reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
                 aux.IdDist = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
