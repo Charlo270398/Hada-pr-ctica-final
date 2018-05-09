@@ -10,6 +10,7 @@ namespace CAD
         void anyadirActor(actorEN actor);
         void borrarActor(int id);
         actorEN mostrarActor(int id);
+        List <actorEN> mostrarListaActores(actorEN actor);
         void modificarActor(actorEN actor);
         bool existe(actorEN actor); 
     }

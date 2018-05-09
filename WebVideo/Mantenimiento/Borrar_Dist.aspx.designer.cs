@@ -13,22 +13,13 @@ namespace WebVideo.Mantenimiento {
     public partial class Borrar_Dist {
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control DWDist.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// Control Err.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Err;
+        protected global::System.Web.UI.WebControls.DropDownList DWDist;
         
         /// <summary>
         /// Control Btn_Borrar.
@@ -38,5 +29,14 @@ namespace WebVideo.Mantenimiento {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_Borrar;
+        
+        /// <summary>
+        /// Control Err.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Err;
     }
 }
