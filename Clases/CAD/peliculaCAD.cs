@@ -21,7 +21,7 @@ namespace CAD
             {
                 DateTime fecha = DateTime.Parse(pelicula.FechaE);
                 paisCAD p = new paisCAD();
-                int nextId = 1;
+                int nextId = 4;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "";
@@ -30,10 +30,10 @@ namespace CAD
                 comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
                 comando += fecha + "', '";
                 comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
-                comando += pelicula.IdP + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
+                comando += pelicula.IdDir + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
                 if(pelicula.IdSaga == -1)
                 {
-                    comando += null + ", '" + pelicula.Trailer + "')";
+                    comando += "null" + ", '" + pelicula.Trailer + "')";
                 }
                 else
                 {
@@ -65,10 +65,10 @@ namespace CAD
                     comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
                     comando += fecha + "', '";
                     comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
-                    comando += pelicula.IdP + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
+                    comando += pelicula.IdDir + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
                     if (pelicula.IdSaga == -1)
                     {
-                        comando += null + ", '" + pelicula.Trailer + "')";
+                        comando += "null" + ", '" + pelicula.Trailer + "')";
                     }
                     else
                     {

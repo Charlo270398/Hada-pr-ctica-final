@@ -7,12 +7,16 @@ using System.Web.UI.WebControls;
 using CAD;
 using Clases.EN;
 using System.Drawing;
+using System.Globalization;
 
 namespace WebVideo.Mantenimiento
 {
     public partial class Añadir_Pelicula : System.Web.UI.Page
     {
         List<string> nombres = new List<string>();
+        List<int> listaIdDir = new List<int>();
+        List<int> listaIdDist = new List<int>();
+        List<int> listaIdSag = new List<int>();
         peliculaCAD p = new peliculaCAD();
         peliculaEN pelicula = new peliculaEN();
         protected void Page_Load(object sender, EventArgs e)
@@ -24,9 +28,33 @@ namespace WebVideo.Mantenimiento
         {
             if(tituloBox.Text!="" && duracionBox.Text != "" && sinopsisBox.Text != "" && alquilerBox.Text != "" && compraBox.Text != "" && imagenBox.Text != "" && trailerBox.Text != "")
             {
-                if(DWdir.SelectedItem.ToString() == "[Seleccionar]" && DWdist.SelectedItem.ToString() == "[Seleccionar]")
+                if(DWdir.SelectedItem.ToString() != "[Seleccionar]" && DWdist.SelectedItem.ToString() != "[Seleccionar]")
                 {
-                    pelicula = new peliculaEN();
+                    try
+                    {
+                        DistribuidoraCAD dist = new DistribuidoraCAD();
+                        directorCAD dir = new directorCAD();
+                        float precioC = float.Parse(compraBox.Text, CultureInfo.InvariantCulture.NumberFormat);
+                        float precioA = float.Parse(alquilerBox.Text, CultureInfo.InvariantCulture.NumberFormat);
+                        int duracion = int.Parse(duracionBox.Text, CultureInfo.InvariantCulture.NumberFormat); ;
+                        int idDist = listaIdDist[DWdist.SelectedIndex - 1];
+                        int idDir = listaIdDir[DWdir.SelectedIndex - 1];
+                        int idSag = -1;
+                        string fecha = DWdia.SelectedItem.ToString() + "-" + DWmes.SelectedItem.ToString() + "-" + DWaño.SelectedItem.ToString();
+                        pelicula = new peliculaEN(-1, tituloBox.Text, duracion, fecha, sinopsisBox.Text, precioC, precioA, idDist, idDir, imagenBox.Text, idSag, trailerBox.Text);
+                        pelicula.IdDir = idDir;
+                        pelicula.IdDist = idDist;
+                        pelicula.anyadirPelicula();
+                        Err.Text = "AÑADIDO CORRECTAMENTE";
+                        Err.Visible = true;
+                        Err.ForeColor = Color.Green;
+                    }
+                    catch (Exception ex)
+                    {
+                        Err.Text = ex.Message;
+                        Err.Visible = true;
+                        Err.ForeColor = Color.Red;
+                    }
                 }
                 else
                 {
@@ -52,11 +80,13 @@ namespace WebVideo.Mantenimiento
             {
                 directorCAD d = new directorCAD();
                 directorEN dir = new directorEN();
-
+                List < directorEN > dirlist = d.mostrarListaDirectores(dir);
+                listaIdDir.Clear();
                 nombres.Clear();
-                for(i=0; i< d.mostrarListaDirectores(dir).Count; i++)
+                for(i=0; i< dirlist.Count; i++)
                 {
-                    nombres.Add(d.mostrarListaDirectores(dir)[i].Nombre + " " + d.mostrarListaDirectores(dir)[i].Apellidos);
+                    nombres.Add(dirlist[i].Nombre + " " + dirlist[i].Apellidos);
+                    listaIdDir.Add(dirlist[i].IdD);
                 }
                 DWdir.DataSource = nombres;
                 DWdir.DataBind();
@@ -67,9 +97,12 @@ namespace WebVideo.Mantenimiento
             {
                 DistribuidoraCAD dist = new DistribuidoraCAD();
                 nombres.Clear();
-                for (i = 0; i < dist.mostrarListaDistribuidora().Count; i++)
+                listaIdDist.Clear();
+                List<distribuidoraEN> dlist = dist.mostrarListaDistribuidora();
+                for (i = 0; i < dlist.Count; i++)
                 {
-                    nombres.Add(dist.mostrarListaDistribuidora()[i].Nombre);
+                    nombres.Add(dlist[i].Nombre);
+                    listaIdDist.Add(dlist[i].IdDis);
                 }
                 DWdist.DataSource = nombres;
                 DWdist.DataBind();

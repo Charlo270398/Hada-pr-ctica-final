@@ -79,6 +79,7 @@
     </Content>
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
+    <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
     <Content Include="Mantenimiento\Añadir_Director.aspx" />
     <Content Include="Mantenimiento\Añadir_Dist.aspx" />

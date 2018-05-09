@@ -32,9 +32,6 @@ namespace Clases.EN
         private int idDir;
         public int IdDir { get { return idDir; } set { idDir = value; } }
 
-        private string genero;
-        public string Genero { get { return genero; } set { genero = value; } }
-
         private int idDist;
         public int IdDist { get { return idDist; } set { idDist = value; } }
 
@@ -61,8 +58,8 @@ namespace Clases.EN
             this.sinopsis = sinopsis;
             this.precioA = precioA;
             this.precioC = precioC;
-            this.IdDir = IdDir;
-            this.IdDist = IdDist;
+            this.idDir = IdDir;
+            this.idDist = IdDist;
             this.imagen = imagen;
             this.idSaga = idSag;
             this.trailer = trailer;
