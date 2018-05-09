@@ -263,3 +263,5 @@ __pycache__/
 *.cache
 *.ide
 *.ide
+WebVideo/BBDD/BBDD.sql
+.vs/videoclub/v15/Server/sqlite3/storage.ide
