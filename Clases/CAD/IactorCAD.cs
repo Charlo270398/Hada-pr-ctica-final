@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using Clases.EN;
 
-namespace Clases.CAD
+namespace CAD
 {
     public interface IactorCAD
     {
-        void anyadirActor(int id);
+        void anyadirActor(actorEN actor);
         void borrarActor(int id);
         actorEN mostrarActor(int id);
-        void modificarActor(int id);
-        bool existe(int id); 
+        void modificarActor(actorEN actor);
+        bool existe(actorEN actor); 
     }
 }

@@ -17,18 +17,11 @@ namespace CAD
         public void anyadirDistribuidora(distribuidoraEN distribuidora) {
             try
             {
-                int nextId = -1;
+                int nextId = 1;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "select max(Id_Distribuidora) max from Distribuidora";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    nextId = (int)reader["max"] + 1;
-                }
-                reader.Close();
-
+                SqlCommand cmd;
                 comando = "insert into Distribuidora values (" + nextId + ", '";
                 comando += distribuidora.Nombre + "')";
                 cmd = new SqlCommand(comando, cn);
@@ -36,9 +29,34 @@ namespace CAD
 
                 cn.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception(ex.Message);
+                try
+                {
+                    int nextId = 1;
+                    SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                    cn.Open();
+                    string comando = "select max(Id_Distribuidora) max from Distribuidora";
+                    SqlCommand cmd = new SqlCommand(comando, cn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nextId = (int)reader["max"] + 1;
+                    }
+                    reader.Close();
+
+                    comando = "insert into Distribuidora values (" + nextId + ", '";
+                    comando += distribuidora.Nombre + "')";
+                    cmd = new SqlCommand(comando, cn);
+                    cmd.ExecuteNonQuery();
+
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+
+                }
 
             }
         }

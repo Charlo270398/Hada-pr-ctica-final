@@ -94,7 +94,8 @@ namespace WebVideo
             {
                 listaID.Clear();
                 directorCAD pelicula = new directorCAD();
-                directorEN nombre = new directorEN(DirectorBox.Text);
+                directorEN nombre = new directorEN();
+                nombre.Nombre = DirectorBox.Text;
                 List<string> ListaNombres = new List<string>();
                 DWDirector.Visible = true;
                 Btn_Director2.Visible = true;

@@ -50,15 +50,15 @@ namespace WebVideo.Mantenimiento
         {
             if (DW_Dir.SelectedValue == "Añadir")
             {
-
+                Response.Redirect("Añadir_Director.aspx?");
             }
             else if (DW_Dir.SelectedValue == "Modificar")
             {
-
+                Response.Redirect("Modificar_Director.aspx?");
             }
             else
             {
-
+                Response.Redirect("Borrar_Director.aspx?");
             }
 
         }
@@ -67,15 +67,15 @@ namespace WebVideo.Mantenimiento
         {
             if (DW_Actor.SelectedValue == "Añadir")
             {
-
+                Response.Redirect("Añadir_Actor.aspx?");
             }
             else if (DW_Actor.SelectedValue == "Modificar")
             {
-
+                Response.Redirect("Modificar_Actor.aspx?");
             }
             else
             {
-
+                Response.Redirect("Borrar_Actor.aspx?");
             }
 
         }

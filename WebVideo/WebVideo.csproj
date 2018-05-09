@@ -79,6 +79,8 @@
     </Content>
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
+    <Content Include="Mantenimiento\Añadir_Actor.aspx" />
+    <Content Include="Mantenimiento\Añadir_Director.aspx" />
     <Content Include="Mantenimiento\Añadir_Dist.aspx" />
     <Content Include="Mantenimiento\Borrar_Dist.aspx" />
     <Content Include="Mantenimiento\Main.aspx" />
@@ -143,6 +145,20 @@
     </Compile>
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actor.aspx.cs">
+      <DependentUpon>Añadir_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actor.aspx.designer.cs">
+      <DependentUpon>Añadir_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Director.aspx.cs">
+      <DependentUpon>Añadir_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Director.aspx.designer.cs">
+      <DependentUpon>Añadir_Director.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Añadir_Dist.aspx.cs">
       <DependentUpon>Añadir_Dist.aspx</DependentUpon>

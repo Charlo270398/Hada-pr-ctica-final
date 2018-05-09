@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CAD;
 
 
 namespace Clases.EN
@@ -22,28 +23,67 @@ namespace Clases.EN
 
         public directorEN()
         {
-
+            this.idD = -1;
         }
-        public directorEN(string nombre)
+        public directorEN(string nombre, string apellidos, string nacionalidad)
         {
             this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.nacionalidad = nacionalidad;
         }
 
         public void anyadirDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                dir.anyadirDirector(this);
+
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
 
         }
         public void borrarDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                dir.borrarDirector(this.idD);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
-        public void mostrarDirector()
+        public directorEN mostrarDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                return dir.mostrarDirector(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void modificarDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                dir.modificarDirector(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }

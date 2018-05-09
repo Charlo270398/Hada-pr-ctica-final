@@ -49,21 +49,15 @@ namespace CAD
 
             try
             {
-                int nextId = -1;
+                paisCAD p = new paisCAD();
+                int nextId = 1;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "select max(Id_Director) max from Director";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    nextId = (int)reader["max"];
-                }
-                reader.Close();
-
+                string comando = "";
+                SqlCommand cmd;
                 comando = "insert into Director values (" + nextId + ", '";
                 comando += director.Nombre + "', '" + director.Apellidos + "', ";
-                comando += director.Nacionalidad + ")";
+                comando += p.mostrarIdPais(director.Nacionalidad).IdPais + ")";
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
 
@@ -71,7 +65,32 @@ namespace CAD
             }
             catch (Exception)
             {
+                try
+                {
+                    paisCAD p = new paisCAD();
+                    int nextId = 1;
+                    SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                    cn.Open();
+                    string comando = "select max(Id_Director) max from Director";
+                    SqlCommand cmd = new SqlCommand(comando, cn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nextId = (int)reader["max"] + 1;
+                    }
+                    reader.Close();
+                    comando = "insert into Director values (" + nextId + ", '";
+                    comando += director.Nombre + "', '" + director.Apellidos + "', ";
+                    comando += p.mostrarIdPais(director.Nacionalidad).IdPais + ")";
+                    cmd = new SqlCommand(comando, cn);
+                    cmd.ExecuteNonQuery();
 
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
             }
         }
         public void borrarDirector(int id) {
@@ -85,8 +104,8 @@ namespace CAD
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception){
-
+            catch (Exception ex){
+                throw new Exception(ex.Message);
             }
         }
         public directorEN mostrarDirector(directorEN director) {
