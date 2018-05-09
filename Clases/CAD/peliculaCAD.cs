@@ -29,7 +29,7 @@ namespace CAD
                 comando = "insert into Peliculas values (" + nextId + ", '";
                 comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
                 comando += fecha + "', '";
-                comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
+                comando += pelicula.Sinopsis + "', '" + pelicula.PrecioC.ToString() + "', '" + pelicula.PrecioA.ToString() + "', " + pelicula.IdDist + ", ";
                 comando += pelicula.IdDir + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
                 if(pelicula.IdSaga == -1)
                 {
@@ -64,7 +64,7 @@ namespace CAD
                     comando = "insert into Peliculas values (" + nextId + ", '";
                     comando += pelicula.NombreP + "', " + pelicula.Duracion + ", '";
                     comando += fecha + "', '";
-                    comando += pelicula.Sinopsis + "', " + pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
+                    comando += pelicula.Sinopsis + "', " +  pelicula.PrecioC + ", " + pelicula.PrecioA + ", " + pelicula.IdDist + ", ";
                     comando += pelicula.IdDir + ", '../images/peliculas_img/" + pelicula.Imagen + "', ";
                     if (pelicula.IdSaga == -1)
                     {
