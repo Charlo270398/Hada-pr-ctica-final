@@ -58,7 +58,6 @@
     <Compile Include="CAD\transaccionPeliculaCAD.cs" />
     <Compile Include="CAD\transaccionSerieCAD.cs" />
     <Compile Include="CAD\usuarioCAD.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="EN\actorEN.cs" />
     <Compile Include="EN\directorEN.cs" />
     <Compile Include="EN\distribuidoraEN.cs" />

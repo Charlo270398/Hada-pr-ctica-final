@@ -4,8 +4,9 @@ using System.Text;
 using Clases.EN;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
-namespace Clases.CAD
+namespace CAD
 {
     public class DistribuidoraCAD : IdistribuidoraCAD
     {
@@ -16,20 +17,13 @@ namespace Clases.CAD
         public void anyadirDistribuidora(distribuidoraEN distribuidora) {
             try
             {
-                int nextId = -1;
+                int nextId = 1;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "select max(Id_Distribuidora) max from Distribuidora";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    nextId = (int)reader["max"];
-                }
-                reader.Close();
-
+                SqlCommand cmd;
                 comando = "insert into Distribuidora values (" + nextId + ", '";
-                comando += distribuidora.Nombre + "')'";
+                comando += distribuidora.Nombre + "')";
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
 
@@ -37,6 +31,32 @@ namespace Clases.CAD
             }
             catch (Exception)
             {
+                try
+                {
+                    int nextId = 1;
+                    SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                    cn.Open();
+                    string comando = "select max(Id_Distribuidora) max from Distribuidora";
+                    SqlCommand cmd = new SqlCommand(comando, cn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nextId = (int)reader["max"] + 1;
+                    }
+                    reader.Close();
+
+                    comando = "insert into Distribuidora values (" + nextId + ", '";
+                    comando += distribuidora.Nombre + "')";
+                    cmd = new SqlCommand(comando, cn);
+                    cmd.ExecuteNonQuery();
+
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+
+                }
 
             }
         }
@@ -45,32 +65,39 @@ namespace Clases.CAD
             {
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "delete from Distribuidora where Id_Distibuidora = " + id;
+                string comando = "delete from Distribuidora where Id_Distribuidora = " + id;
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {              
+                throw new Exception(ex.Message);
+            }
+        }
+        public distribuidoraEN mostrarDistribuidora(int id) {
+
+            distribuidoraEN d = new distribuidoraEN();
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from Distribuidora where Id_Distribuidora = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    d.IdDis = (int)reader["Id_Distribuidora"];
+                    d.Nombre = reader["Nombre"].ToString();
+                }
+                reader.Close();
                 cn.Close();
             }
             catch (Exception)
             {
 
             }
-        }
-        public distribuidoraEN mostrarDistribuidora(int id) {
-
-            distribuidoraEN d = new distribuidoraEN();
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            string comando = "select * from Distribuidora where Id_Distibuidora = " + id;
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                d.IdDis = (int)reader["Id_Distribuidora"];
-                d.Nombre = reader["Nombre"].ToString();
-            }
-            reader.Close();
-            cn.Close();
 
             return d;
         }
@@ -86,9 +113,9 @@ namespace Clases.CAD
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw new Exception(ex.Message);
             }
         }
         public bool existe(int id) { return false; }
@@ -104,6 +131,7 @@ namespace Clases.CAD
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                d = new distribuidoraEN();
                 d.IdDis = (int)reader["Id_Distribuidora"];
                 d.Nombre = reader["Nombre"].ToString();
                 lista.Add(d);
@@ -112,6 +140,6 @@ namespace Clases.CAD
             cn.Close();
 
             return lista;
-        }
+        }      
     }
 }

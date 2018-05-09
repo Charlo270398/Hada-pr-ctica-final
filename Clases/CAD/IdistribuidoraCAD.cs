@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using Clases.EN;
 
-namespace Clases.CAD
+namespace CAD
 {
     public interface IdistribuidoraCAD
     {
