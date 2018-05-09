@@ -45,6 +45,9 @@ namespace WebVideo.Mantenimiento
             DW_Actor.DataBind();
             DW_Pelicula.DataSource = opList;
             DW_Pelicula.DataBind();
+            DW_Saga.DataBind();
+            DW_Saga.DataSource = opList;
+            DW_Saga.DataBind();
 
         }
 
@@ -99,5 +102,21 @@ namespace WebVideo.Mantenimiento
 
         }
 
+        protected void Btn_Saga_Click(object sender, EventArgs e)
+        {
+            if (DW_Saga.SelectedValue == "Añadir")
+            {
+                Response.Redirect("Añadir_Saga.aspx?");
+            }
+            else if (DW_Saga.SelectedValue == "Modificar")
+            {
+                Response.Redirect("Modificar_Saga.aspx?");
+            }
+            else
+            {
+                Response.Redirect("Borrar_Saga.aspx?");
+            }
+
+        }
     }
 }

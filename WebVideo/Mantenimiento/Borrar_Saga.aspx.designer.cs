@@ -10,16 +10,16 @@
 namespace WebVideo.Mantenimiento {
     
     
-    public partial class Borrar_Pelicula {
+    public partial class Borrar_Saga {
         
         /// <summary>
-        /// Control DWPelicula.
+        /// Control DWSaga.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWPelicula;
+        protected global::System.Web.UI.WebControls.DropDownList DWSaga;
         
         /// <summary>
         /// Control Btn_Borrar.
@@ -31,12 +31,12 @@ namespace WebVideo.Mantenimiento {
         protected global::System.Web.UI.WebControls.Button Btn_Borrar;
         
         /// <summary>
-        /// Control Err.
+        /// Control Err1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Err;
+        protected global::System.Web.UI.WebControls.Label Err1;
     }
 }

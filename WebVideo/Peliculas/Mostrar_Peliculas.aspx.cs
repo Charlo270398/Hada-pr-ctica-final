@@ -63,7 +63,8 @@ namespace WebVideo.Peliculas
             int.TryParse(Request.QueryString["id"], out id);
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(id, "");
-            precioAnumtext.Text = peli.mostrarPelicula(p).PrecioA.ToString() + "€";
+            float precio = peli.mostrarPelicula(p).PrecioA / 100;
+            precioAnumtext.Text = precio.ToString() + "€";
         }
 
         protected void fechaEstrenotext_Init(object sender, EventArgs e)
@@ -82,7 +83,8 @@ namespace WebVideo.Peliculas
             int.TryParse(Request.QueryString["id"], out id);
             peliculaCAD peli = new peliculaCAD();
             peliculaEN p = new peliculaEN(id, "");
-            precioCnumtext.Text = peli.mostrarPelicula(p).PrecioC.ToString() + "€";
+            float precio = peli.mostrarPelicula(p).PrecioC / 100;           
+            precioCnumtext.Text = precio.ToString() + "€";
         }
 
         protected void cargaTrailer(object sender, EventArgs e)
