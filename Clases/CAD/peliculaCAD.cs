@@ -86,7 +86,22 @@ namespace CAD
             }
 
         }
-        public void borrarPelicula(peliculaEN id) { }
+        public void borrarPelicula(int id) {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Peliculas where Id_Pelicula = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula) {
 
             peliculaEN aux = new peliculaEN();
