@@ -30,8 +30,31 @@ namespace CAD
             }
 
         }
-        public void borrarUsuario(usuarioEN user) {}
-        public usuarioEN mostrarUsuario(string email){ return null; }
+        public void borrarUsuario(usuarioEN user) {
+
+        }
+        public usuarioEN mostrarUsuario(string email){
+            usuarioEN user = new usuarioEN();
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            string comando = "select * from Usuarios where Email like '" + email + "'";
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                user.Email = reader["Email"].ToString();
+                user.Contrasenya = reader["Contrasenya"].ToString();
+                user.Nombre = reader["Nombre"].ToString();
+                user.Apellidos = reader["Apellidos"].ToString();
+                user.FechaA = reader["Fecha_Alta"].ToString();
+                user.Pais = (int)reader["Pais"];
+
+            }
+            reader.Close();
+            cn.Close();
+
+            return user;
+        }
         public void modificarUsuario(usuarioEN user) {}
         public bool existe(usuarioEN user) { return false; }
 

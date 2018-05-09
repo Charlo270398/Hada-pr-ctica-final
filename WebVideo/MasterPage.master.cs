@@ -34,5 +34,5 @@ using Clases.EN;
 
             Response.Redirect("~/Registro.aspx");
         }
-    }
+}
 

@@ -234,7 +234,7 @@ a {
   color: #0088cc;
   text-decoration: none;
     font-family: system;
-    font-size: x-large;
+    font-size: large;
 }
 
 a:hover,
@@ -1183,7 +1183,6 @@ input[type="reset"],
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
-  width: auto;
 }
 
 select,
@@ -2001,6 +2000,8 @@ table {
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
+    text-align: center;
+    margin-top: 0px;
 }
 
 .table {

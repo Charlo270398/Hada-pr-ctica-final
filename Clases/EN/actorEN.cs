@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CAD;
 
 
 
@@ -26,14 +27,41 @@ namespace Clases.EN
         private string pais;
         public string Pais { get { return pais; } set { pais = value; } }
 
-
-        public void anyadirActor()
+        public actorEN()
         {
 
         }
+        public actorEN(int id, string nombre, string apellidos, string fecha, string pais)
+        {
+            this.idAc = id;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.fechaNac = fecha;
+            this.pais = pais;
+
+        }
+        public void anyadirActor()
+        {
+            actorCAD actor = new actorCAD();
+            try
+            {
+                actor.anyadirActor(this);
+            }catch(Exception ex)
+            {
+                throw new Exception (ex.Message);
+            }
+        }
         public void borrarActor()
         {
-
+            actorCAD actor = new actorCAD();
+            try
+            {
+                actor.borrarActor(this.idAc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void mostrarActor()
         {
@@ -41,7 +69,15 @@ namespace Clases.EN
         }
         public void modificarActor()
         {
-
+            actorCAD actor = new actorCAD();
+            try
+            {
+                actor.modificarActor(this);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }
