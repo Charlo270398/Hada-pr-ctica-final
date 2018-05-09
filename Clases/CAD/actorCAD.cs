@@ -81,7 +81,26 @@ namespace CAD
             }
         }
         public actorEN mostrarActor(int id) { return null; }
-        public void modificarActor(actorEN actor) { }
+        public void modificarActor(actorEN actor) {
+            paisCAD p = new paisCAD();
+            DateTime fecha = DateTime.Parse(actor.FechaNac);
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "update Actores set Nombre = '" + actor.Nombre + "', ";
+                comando += "Apellidos = '" + actor.Apellidos + "', Fecha_Nac = '"+ fecha + "', ";
+                comando += "Nacionalidad= " + p.mostrarIdPais(actor.Pais).IdPais + " where Id_Actor = " + actor.IdAc;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public bool existe(actorEN actor) { return false; }
 
         public List<actorEN> mostrarListaActores(actorEN actor)

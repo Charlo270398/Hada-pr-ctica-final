@@ -86,6 +86,8 @@
     <Content Include="Mantenimiento\Borrar_Director.aspx" />
     <Content Include="Mantenimiento\Borrar_Dist.aspx" />
     <Content Include="Mantenimiento\Main.aspx" />
+    <Content Include="Mantenimiento\Modificar_Actor.aspx" />
+    <Content Include="Mantenimiento\Modificar_Director.aspx" />
     <Content Include="Mantenimiento\Modificar_Dist.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
@@ -196,6 +198,20 @@
     </Compile>
     <Compile Include="Mantenimiento\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Actor.aspx.cs">
+      <DependentUpon>Modificar_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Actor.aspx.designer.cs">
+      <DependentUpon>Modificar_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Director.aspx.cs">
+      <DependentUpon>Modificar_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Director.aspx.designer.cs">
+      <DependentUpon>Modificar_Director.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Modificar_Dist.aspx.cs">
       <DependentUpon>Modificar_Dist.aspx</DependentUpon>

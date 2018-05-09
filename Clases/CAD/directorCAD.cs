@@ -148,17 +148,18 @@ namespace CAD
         public void modificarDirector(directorEN director) {
             try
             {
+                paisCAD p = new paisCAD();
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "update Director set Nombre = '" + director.Nombre + "', ";
-                comando += "'Apellidos = '" + director.Apellidos + "', ";
-                comando += "Nacionalidad= " + director.Nacionalidad + " where Id_Director = " + director.IdD;
+                comando += "Apellidos = '" + director.Apellidos + "', ";
+                comando += "Nacionalidad= " + p.mostrarIdPais(director.Nacionalidad).IdPais + " where Id_Director = " + director.IdD;
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
-            }catch(Exception) {
-
+            }catch(Exception ex) {
+                throw new Exception(ex.Message);
             }
         }
         public bool existe(directorEN director) {return false; }
