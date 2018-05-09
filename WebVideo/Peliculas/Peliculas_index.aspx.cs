@@ -14,9 +14,17 @@ namespace WebVideo.Peliculas
 
         }
 
-        protected void ImageSerie1_Click(object sender, ImageClickEventArgs e)
+        protected void ImagePelicula1_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("Series_individual.aspx");
+            Response.Redirect("Peliculas_index.aspx");
+        }
+        protected void imageSerie2_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Peliculas_index.aspx");
+        }
+        protected void ImagePelicula3_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Peliculas_individual.aspx");
         }
     }
 }

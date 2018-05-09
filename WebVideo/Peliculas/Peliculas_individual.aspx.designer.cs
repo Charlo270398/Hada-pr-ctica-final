@@ -10,8 +10,7 @@
 namespace WebVideo.Peliculas {
     
     
-    public partial class Peliculas_individual
-    {
+    public partial class Peliculas_individual {
         
         /// <summary>
         /// Control TituloIndividual.
@@ -23,22 +22,13 @@ namespace WebVideo.Peliculas {
         protected global::System.Web.UI.WebControls.Label TituloIndividual;
         
         /// <summary>
-        /// Control imageSerie1.
+        /// Control imagePelicula1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imageSerie1;
-        
-        /// <summary>
-        /// Control fechaEstrenoText.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaEstrenoText;
+        protected global::System.Web.UI.WebControls.ImageButton imagePelicula1;
         
         /// <summary>
         /// Control temporadasText.
@@ -48,15 +38,6 @@ namespace WebVideo.Peliculas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label temporadasText;
-        
-        /// <summary>
-        /// Control episodiosText.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label episodiosText;
         
         /// <summary>
         /// Control preciCompraText.
@@ -138,5 +119,14 @@ namespace WebVideo.Peliculas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ImageButton7;
+        
+        /// <summary>
+        /// Control ImageButton8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton8;
     }
 }

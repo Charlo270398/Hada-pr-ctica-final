@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Clases.EN;
 
 namespace CAD
 {
     interface IusuarioCAD
     {
-        void anyadirUsuario(string email);
-        void borrarUsuario(string email);
+        void anyadirUsuario(usuarioEN user);
+        void borrarUsuario(usuarioEN user);
         usuarioEN mostrarUsuario(string email);
-        void modificarUsuario(string email);
-        bool existe(string email);
+        void modificarUsuario(usuarioEN user);
+        bool existe(usuarioEN user);
+        List<usuarioEN> listaUsuarios();
     }
 }

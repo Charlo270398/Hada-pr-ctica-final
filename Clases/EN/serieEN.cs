@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Clases.EN
 {
@@ -25,6 +24,9 @@ namespace Clases.EN
 
         private float precioA;
         public float PrecioA { get { return precioA; } set { precioA = value; } }
+
+        private string imagen;
+        public string Imagen { get { return imagen; } set { imagen = value; } }
 
         public void anyadirSerie()
         {

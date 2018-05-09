@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using CAD;
 
 
 namespace Clases.EN
@@ -18,25 +18,74 @@ namespace Clases.EN
         private string apellidos;
         public string Apellidos { get { return apellidos; } set { apellidos = value; } }
 
-        private string fechaNac;
-        public string FechaNac { get { return fechaNac; } set { fechaNac = value; } }
+        private string nacionalidad;
+        public string Nacionalidad { get { return nacionalidad; } set { nacionalidad = value; } }
 
+        public directorEN()
+        {
+            this.idD = -1;
+            Nombre = "%";
+        }
+        public directorEN(string nombre, string apellidos, string nacionalidad)
+        {
+            this.idD = -1;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.nacionalidad = nacionalidad;
+        }
 
         public void anyadirDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                dir.anyadirDirector(this);
+
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
 
         }
         public void borrarDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                dir.borrarDirector(this.idD);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
-        public void mostrarDirector()
+        public directorEN mostrarDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                return dir.mostrarDirector(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void modificarDirector()
         {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                dir.modificarDirector(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }

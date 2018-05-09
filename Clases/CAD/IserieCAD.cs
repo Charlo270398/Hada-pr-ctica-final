@@ -7,10 +7,12 @@ namespace Clases.CAD
 {
     public interface IserieCAD
     {
-        void anyadirSerie(int id);
-        void borrarSerie(int id);
-        serieEN mostrarSerie(int id);
-        void modificarSerie(int id);
-        bool existe(int id);
+        void anyadirSerie(serieEN serie);
+        void borrarSerie(serieEN serie);
+        serieEN mostrarSerie(serieEN serie);
+        serieEN mostrarSerieId(int idSerie);
+        List <serieEN> mostrarListaSeries(string titulo);
+        void modificarSerie(serieEN serie);
+        bool existe(serieEN serie);
     }
 }

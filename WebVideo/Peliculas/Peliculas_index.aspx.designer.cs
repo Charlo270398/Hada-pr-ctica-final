@@ -10,8 +10,7 @@
 namespace WebVideo.Peliculas {
     
     
-    public partial class Peliculas_index
-    {
+    public partial class Peliculas_index {
         
         /// <summary>
         /// Control TituloSeries.
@@ -32,13 +31,13 @@ namespace WebVideo.Peliculas {
         protected global::System.Web.UI.WebControls.HyperLink hyper_tituloserie1;
         
         /// <summary>
-        /// Control imageSerie1.
+        /// Control imagePelicula1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imageSerie1;
+        protected global::System.Web.UI.WebControls.ImageButton imagePelicula1;
         
         /// <summary>
         /// Control fechaEstrenoText.
@@ -57,15 +56,6 @@ namespace WebVideo.Peliculas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label temporadasText;
-        
-        /// <summary>
-        /// Control episodiosText.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label episodiosText;
         
         /// <summary>
         /// Control preciCompraText.
@@ -122,15 +112,6 @@ namespace WebVideo.Peliculas {
         protected global::System.Web.UI.WebControls.Label temporadasText2;
         
         /// <summary>
-        /// Control episodiosText2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label episodiosText2;
-        
-        /// <summary>
         /// Control preciCompraText2.
         /// </summary>
         /// <remarks>
@@ -167,15 +148,6 @@ namespace WebVideo.Peliculas {
         protected global::System.Web.UI.WebControls.ImageButton imageSerie3;
         
         /// <summary>
-        /// Control fechaEstrenoText3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaEstrenoText3;
-        
-        /// <summary>
         /// Control temporadasText3.
         /// </summary>
         /// <remarks>
@@ -185,13 +157,13 @@ namespace WebVideo.Peliculas {
         protected global::System.Web.UI.WebControls.Label temporadasText3;
         
         /// <summary>
-        /// Control episodiosText3.
+        /// Control temporadasText4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label episodiosText3;
+        protected global::System.Web.UI.WebControls.Label temporadasText4;
         
         /// <summary>
         /// Control preciCompraText3.
