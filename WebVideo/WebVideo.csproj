@@ -126,7 +126,7 @@
     <Content Include="images\series_img\lost.jpg" />
     <Content Include="images\series_img\stranger_things2.jpg" />
     <Content Include="Busquedas.aspx" />
-    <Content Include="MasterPage.master" />
+    <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -277,6 +277,13 @@
     <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
       <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
       <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,10 +326,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage.master.cs">
-      <DependentUpon>MasterPage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
