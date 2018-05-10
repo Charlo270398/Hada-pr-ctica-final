@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+      <style type="text/css">
+          .auto-style3 {
+              font-size: 12px;
+          }
+          .auto-style4 {
+              font-size: 22px;
+              font-family: "Bell MT";
+          }
+      </style>
   </head>
   
   <body><form id="form1" runat="server">
@@ -24,50 +33,10 @@
           <div class="usuario pull-left">
               Tu videoclub online</div>
           <div class="navbar-content">
-            <ul class="nav  pull-right">
-              <li>
-              <asp:HyperLink ID="menuSN" runat="server" NavigateUrl="FAQ.aspx" ForeColor="#3333FF">Preguntas frecuentes</asp:HyperLink> 
-              </li>
-              <li>
-                <asp:HyperLink ID="menuMantenimiento" runat="server" NavigateUrl="Mantenimiento/Main.aspx" ForeColor="#3333FF" OnInit="menuMantenimiento_Init">Mantenimiento</asp:HyperLink> 
-                <asp:HyperLink ID="menuSalir" runat="server" NavigateUrl="Mantenimiento/Main.aspx" ForeColor="#3333FF" OnDataBinding="a" OnInit="menuMantenimiento_Init">Salir</asp:HyperLink> 
-              </li>   
-              <li>
-              </li>
-              <li>
-              </li>
-              <li>
-              </li>
-              <li>
-              </li>          
-            </ul>
-            <ul class="nav  pull-right">
-              <li>
-              </li>
-            </ul>
-            <ul class="nav  pull-right">
-              <li>
-              <asp:HyperLink ID="menuBusquedas" runat="server" NavigateUrl="Busquedas.aspx" ForeColor="#3333FF">Búsquedas</asp:HyperLink> 
-              </li>
-            </ul>
-            <ul class="nav  pull-right">
-              <li>
-              <asp:HyperLink ID="menuPeliculas" runat="server" NavigateUrl="Peliculas\Peliculas_index.aspx" ForeColor="#3333FF">Peliculas</asp:HyperLink> 
-              </li>
-              <li>
-              <asp:HyperLink ID="menuSeries" runat="server" NavigateUrl="Series\Series_index.aspx" ForeColor="#3333FF">Series</asp:HyperLink> 
-              </li>
-            </ul>
-            <ul class="nav  pull-right">
-              <li>
-              <asp:HyperLink ID="menuInicio" runat="server" NavigateUrl="Inicio.aspx" ForeColor="#3333FF">Inicio</asp:HyperLink> 
-              </li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
-    <div><br /><br /><br /></div>
 
 
 
@@ -75,19 +44,23 @@
 
     
 
-    <asp:Panel ID="globoInicioSesion" runat="server">
+    <asp:Panel ID="globoInicioSesion" runat="server" CssClass="auto-style3">
       <div class="alert alert-info hidden-phone">
-        <div class="pull-right form-inline" id="formInicioSesion">
-            <asp:Label ID="Label1" runat="server" Text="Nombre de Usuario:" />
-            <asp:TextBox ID="userTextBox" runat="server" CssClass="input-medium" />
-            <asp:Label ID="Label2" runat="server" Text="Contraseña:" />
-            <asp:TextBox ID="passTextBox" runat="server" CssClass="input-medium" TextMode="Password" />
-            <asp:Label ID="err" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label>
-            <div class="btn-group">
-                <asp:Button ID="accederButton" runat="server" CssClass="btn" onclick="accederButton_Click" Text="Iniciar Sesión" />
-                <asp:Button ID="nuevoUsuarioButton" runat="server" CssClass="btn" onclick="nuevoUsuarioButton_Click" Text="Registrarse" />
-            </div>
-          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>
+          <asp:HyperLink ID="menuInicio" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="Inicio.aspx">Inicio</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuLogin" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuRegistro" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Registro.aspx">Registrarse</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuPreguntas" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="FAQ.aspx">Preguntas frecuentes</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuBusquedas" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="Busquedas.aspx">Búsquedas</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuMantenimiento" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Mantenimiento/Main.aspx" Visible="False">Mantenimiento</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style4" ForeColor="#3333FF" Visible="False">Salir</asp:HyperLink>
+          </strong>
 
       </div>
     </asp:Panel>

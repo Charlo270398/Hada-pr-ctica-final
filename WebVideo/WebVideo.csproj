@@ -81,6 +81,7 @@
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
+    <Content Include="Login.aspx" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
     <Content Include="Mantenimiento\Añadir_Actuacion.aspx" />
     <Content Include="Mantenimiento\Añadir_Director.aspx" />
@@ -128,6 +129,7 @@
     <Content Include="images\series_img\stranger_things2.jpg" />
     <Content Include="Busquedas.aspx" />
     <Content Include="MasterPage.Master" />
+    <Content Include="MasterPage2.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -165,6 +167,13 @@
     </Compile>
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Añadir_Actor.aspx.cs">
       <DependentUpon>Añadir_Actor.aspx</DependentUpon>
@@ -291,6 +300,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage2.Master.cs">
+      <DependentUpon>MasterPage2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage2.Master.designer.cs">
+      <DependentUpon>MasterPage2.Master</DependentUpon>
     </Compile>
     <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
       <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
