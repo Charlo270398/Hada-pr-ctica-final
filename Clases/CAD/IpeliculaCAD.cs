@@ -9,8 +9,10 @@ namespace CAD
     public interface IpeliculaCAD
     {
         void anyadirPelicula(peliculaEN pelicula);
-        void borrarPelicula(peliculaEN pelicula);
+        void borrarPelicula(int pelicula);
         List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula);
+        List<peliculaEN> mostrarListaPeliculasDirector(int idDir);
+        List<peliculaEN> mostrarListaPeliculasDistribuidora(int idDir);
         peliculaEN mostrarPelicula(peliculaEN pelicula);
         void modificarPelicula(peliculaEN pelicula);
         bool existe(peliculaEN pelicula);

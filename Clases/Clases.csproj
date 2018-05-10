@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A28E9350-DF70-40CF-9C92-70C64E6ED2ED}</ProjectGuid>
+    <ProjectGuid>{63750734-4D3F-4E9E-8A94-7AAC58B8FEBF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Clases</RootNamespace>
@@ -48,22 +48,24 @@
     <Compile Include="CAD\IdirectorCAD.cs" />
     <Compile Include="CAD\IdistribuidoraCAD.cs" />
     <Compile Include="CAD\IpeliculaCAD.cs" />
+    <Compile Include="CAD\IsagaCAD.cs" />
     <Compile Include="CAD\IserieCAD.cs" />
     <Compile Include="CAD\ItransaccionPeliculaCAD.cs" />
     <Compile Include="CAD\ItransaccionSerieCAD.cs" />
     <Compile Include="CAD\IusuarioCAD.cs" />
     <Compile Include="CAD\paisCAD.cs" />
     <Compile Include="CAD\peliculaCAD.cs" />
+    <Compile Include="CAD\sagaCAD.cs" />
     <Compile Include="CAD\serieCAD.cs" />
     <Compile Include="CAD\transaccionPeliculaCAD.cs" />
     <Compile Include="CAD\transaccionSerieCAD.cs" />
     <Compile Include="CAD\usuarioCAD.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="EN\actorEN.cs" />
     <Compile Include="EN\directorEN.cs" />
     <Compile Include="EN\distribuidoraEN.cs" />
     <Compile Include="EN\paisEN.cs" />
     <Compile Include="EN\peliculaEN.cs" />
+    <Compile Include="EN\sagaEN.cs" />
     <Compile Include="EN\serieEN.cs" />
     <Compile Include="EN\transaccionPeliculaEN.cs" />
     <Compile Include="EN\transaccionSerieEN.cs" />

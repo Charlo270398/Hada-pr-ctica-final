@@ -7,117 +7,126 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebVideo.Peliculas {
+namespace WebVideo {
     
     
-    public partial class Mostrar_Peliculas {
+    public partial class MasterPage {
         
         /// <summary>
-        /// Control Titulo.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Titulo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control Imagen.
+        /// Control globoInicioSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Imagen;
+        protected global::System.Web.UI.WebControls.Panel globoInicioSesion;
         
         /// <summary>
-        /// Control Fecha_Etext.
+        /// Control menuInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Fecha_Etext;
+        protected global::System.Web.UI.WebControls.HyperLink menuInicio;
         
         /// <summary>
-        /// Control fechaEstrenotext.
+        /// Control menuLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaEstrenotext;
+        protected global::System.Web.UI.WebControls.HyperLink menuLogin;
         
         /// <summary>
-        /// Control duraciontext.
+        /// Control menuRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label duraciontext;
+        protected global::System.Web.UI.WebControls.HyperLink menuRegistro;
         
         /// <summary>
-        /// Control duracionNumtext.
+        /// Control menuPreguntas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label duracionNumtext;
+        protected global::System.Web.UI.WebControls.HyperLink menuPreguntas;
         
         /// <summary>
-        /// Control preciCompraText.
+        /// Control menuBusquedas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label preciCompraText;
+        protected global::System.Web.UI.WebControls.HyperLink menuBusquedas;
         
         /// <summary>
-        /// Control precioCnumtext.
+        /// Control menuMantenimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label precioCnumtext;
+        protected global::System.Web.UI.WebControls.HyperLink menuMantenimiento;
         
         /// <summary>
-        /// Control precioAlquilerText.
+        /// Control menuSalir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label precioAlquilerText;
+        protected global::System.Web.UI.WebControls.HyperLink menuSalir;
         
         /// <summary>
-        /// Control precioAnumtext.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label precioAnumtext;
+        protected global::System.Web.UI.WebControls.Label Nombre;
         
         /// <summary>
-        /// Control Texto_Sinopsis.
+        /// Control Cuerpo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Texto_Sinopsis;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Cuerpo;
         
         /// <summary>
-        /// Control TrailerLink.
+        /// Control subBody.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink TrailerLink;
+        protected global::System.Web.UI.WebControls.Panel subBody;
+        
+        /// <summary>
+        /// Control bajoCuerpo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder bajoCuerpo;
     }
 }

@@ -234,7 +234,7 @@ a {
   color: #0088cc;
   text-decoration: none;
     font-family: system;
-    font-size: x-large;
+    font-size: large;
 }
 
 a:hover,
@@ -620,6 +620,7 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+    height: 2px;
 }
 
 .container:before,
@@ -826,6 +827,8 @@ ol ul {
 
 li {
   line-height: 20px;
+    width: 330px;
+    height: 72px;
 }
 
 ul.unstyled,
@@ -1183,7 +1186,6 @@ input[type="reset"],
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
-  width: auto;
 }
 
 select,
@@ -1909,6 +1911,9 @@ input.search-query {
 .form-search .btn-group,
 .form-inline .btn-group {
   display: inline-block;
+    top: -34px;
+    left: -164px;
+    width: 109px;
 }
 
 .form-search .input-append,
@@ -2001,6 +2006,8 @@ table {
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
+    text-align: center;
+    margin-top: 0px;
 }
 
 .table {
@@ -4523,14 +4530,13 @@ input[type="submit"].btn.btn-mini {
 .navbar-static-top .navbar-inner {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
-          border-radius: 0;
-}
+          border-radius:
 
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-  right: 0;
-  left: 0;
+  right: -15px;
+  left: 15px;
   z-index: 1030;
   margin-bottom: 0;
 }
@@ -4550,17 +4556,23 @@ input[type="submit"].btn.btn-mini {
   padding-left: 0;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
-          border-radius: 0;
-}
+          border-radius:
 
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
   width: 940px;
+    height: 178px;
+}
+
+
 }
 
 .navbar-fixed-top {
-  top: 0;
+  top: 276px;
+}
+
+
 }
 
 .navbar-fixed-top .navbar-inner,
@@ -4577,12 +4589,11 @@ input[type="submit"].btn.btn-mini {
 .navbar-fixed-bottom .navbar-inner {
   -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
      -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
-}
+          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.
 
 .navbar .nav {
   position: relative;
-  left: 0;
+  left: -353px;
   display: block;
   float: left;
   margin: 0 10px 0 0;
@@ -4591,6 +4602,8 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav.pull-right {
   float: right;
   margin-right: 0;
+    top: 2px;
+    height: 124px;
 }
 
 .navbar .nav > li {
@@ -6134,6 +6147,11 @@ a.badge:focus {
 
 .pull-right {
   float: right;
+    text-align: left;
+    width: 499px;
+}
+
+
 }
 
 .pull-left {

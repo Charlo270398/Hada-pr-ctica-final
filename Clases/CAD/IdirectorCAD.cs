@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Clases.EN;
 
-namespace Clases.CAD
+namespace CAD
 {
     public interface IdirectorCAD
     {
-        void anyadirDirector(int id);
+        void anyadirDirector(directorEN director);
         void borrarDirector(int id);
-        directorEN mostrarDirector(int id);
-        void modificarDirector(int id);
-        bool existe(int id);
+        List<directorEN> mostrarListaDirectores(directorEN director);
+        directorEN mostrarDirector(directorEN director);
+        void modificarDirector(directorEN director);
+        bool existe(directorEN director);
     }
 }

@@ -20,7 +20,7 @@ namespace CAD
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "insert into Usuarios values ('" + user.Email;
-                comando += "', '" + user.Contrasenya + "','" + user.Nombre + "','" + user.Apellidos + "','" + user.FechaA + "','" + user.Pais + "')";
+                comando += "', '" + user.Contrasenya + "','" + user.Nombre + "','" + user.Apellidos + "','" + user.FechaA + "','" + user.Pais + "', " + 0 + ")";
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -30,17 +30,15 @@ namespace CAD
             }
 
         }
-        public void borrarUsuario(usuarioEN user) {}
-        public usuarioEN mostrarUsuario(string email){ return null; }
-        public void modificarUsuario(usuarioEN user) {}
-        public bool existe(usuarioEN user) { return false; }
+        public void borrarUsuario(usuarioEN user) {
 
-        public List<usuarioEN> listaUsuarios()
-        {
+        }
+        public usuarioEN mostrarUsuario(string email){
+
             usuarioEN user = new usuarioEN();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
-            string comando = "select * from Usuarios";
+            string comando = "select * from Usuarios where Email like '" + email + "'";
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -51,14 +49,101 @@ namespace CAD
                 user.Apellidos = reader["Apellidos"].ToString();
                 user.FechaA = reader["Fecha_Alta"].ToString();
                 user.Pais = (int)reader["Pais"];
+                if ((bool)reader["Administrador"])
+                {
+                    user.AdMin = true;
+                }
+                else
+                {
+                    user.AdMin = false;
+                }
 
-                lista.Add(user);
             }
             reader.Close();
             cn.Close();
 
-            return lista;
+            return user;
+        }
+        public void modificarUsuario(usuarioEN user) {}
+        public bool existe(usuarioEN user) {
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            int numero = 0;
+            string comando = "select count(*) numero from Usuarios where Email like '" + user.Email + "'";
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                numero = (int)reader["numero"];
+
+            }
+            reader.Close();
+            cn.Close();
+
+            if(numero == 1)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
         }
 
+        public List<usuarioEN> listaUsuarios()
+        {
+            try
+            {
+                usuarioEN user = new usuarioEN();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from Usuarios";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    user = new usuarioEN();
+                    user.Email = reader["Email"].ToString();
+                    user.Contrasenya = reader["Contrasenya"].ToString();
+                    user.Nombre = reader["Nombre"].ToString();
+                    user.Apellidos = reader["Apellidos"].ToString();
+                    user.FechaA = reader["Fecha_Alta"].ToString();
+                    user.Pais = (int)reader["Pais"];
+                    if ((bool)reader["Administrador"])
+                    {
+                        user.AdMin = true;
+                    }
+                    else
+                    {
+                        user.AdMin = false;
+                    }
+
+                    lista.Add(user);
+                }
+                reader.Close();
+                cn.Close();
+
+                return lista;
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void hacerAdmin(string email)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "update Usuarios set Administrador = "+ 1 + "where Email = '" + email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

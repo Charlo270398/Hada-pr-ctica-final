@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.8.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.8.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -59,6 +59,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -75,9 +77,32 @@
       <DependentUpon>bbdd.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Area_Cliente.aspx" />
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
-    <Content Include="Peliculas\Mostrar_Peliculas.aspx" />
+    <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="Mantenimiento\Añadir_Actor.aspx" />
+    <Content Include="Mantenimiento\Añadir_Actuacion.aspx" />
+    <Content Include="Mantenimiento\Añadir_Director.aspx" />
+    <Content Include="Mantenimiento\Añadir_Dist.aspx" />
+    <Content Include="Mantenimiento\Añadir_Pelicula.aspx" />
+    <Content Include="Mantenimiento\Añadir_Saga.aspx" />
+    <Content Include="Mantenimiento\Borrar_Actor.aspx" />
+    <Content Include="Mantenimiento\Borrar_Actuacion.aspx" />
+    <Content Include="Mantenimiento\Borrar_Director.aspx" />
+    <Content Include="Mantenimiento\Borrar_Dist.aspx" />
+    <Content Include="Mantenimiento\Borrar_Pelicula.aspx" />
+    <Content Include="Mantenimiento\Borrar_Saga.aspx" />
+    <Content Include="Mantenimiento\Main.aspx" />
+    <Content Include="Mantenimiento\Modificar_Actor.aspx" />
+    <Content Include="Mantenimiento\Modificar_Director.aspx" />
+    <Content Include="Mantenimiento\Modificar_Dist.aspx" />
+    <Content Include="Mantenimiento\Modificar_Pelicula.aspx" />
+    <Content Include="Mostrar\Mostrar_Actor.aspx" />
+    <Content Include="Mostrar\Mostrar_Director.aspx" />
+    <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
+    <Content Include="Mostrar\Mostrar_Peliculas.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
@@ -103,7 +128,8 @@
     <Content Include="images\series_img\lost.jpg" />
     <Content Include="images\series_img\stranger_things2.jpg" />
     <Content Include="Busquedas.aspx" />
-    <Content Include="MasterPage.master" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="MasterPage2.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -128,6 +154,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area_Cliente.aspx.cs">
+      <DependentUpon>Area_Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Area_Cliente.aspx.designer.cs">
+      <DependentUpon>Area_Cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas.aspx.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,11 +168,172 @@
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Peliculas\Mostrar_Peliculas.aspx.cs">
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actor.aspx.cs">
+      <DependentUpon>Añadir_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actor.aspx.designer.cs">
+      <DependentUpon>Añadir_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actuacion.aspx.cs">
+      <DependentUpon>Añadir_Actuacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Actuacion.aspx.designer.cs">
+      <DependentUpon>Añadir_Actuacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Director.aspx.cs">
+      <DependentUpon>Añadir_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Director.aspx.designer.cs">
+      <DependentUpon>Añadir_Director.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Dist.aspx.cs">
+      <DependentUpon>Añadir_Dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Dist.aspx.designer.cs">
+      <DependentUpon>Añadir_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Pelicula.aspx.cs">
+      <DependentUpon>Añadir_Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Pelicula.aspx.designer.cs">
+      <DependentUpon>Añadir_Pelicula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Saga.aspx.cs">
+      <DependentUpon>Añadir_Saga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Saga.aspx.designer.cs">
+      <DependentUpon>Añadir_Saga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Actor.aspx.cs">
+      <DependentUpon>Borrar_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Actor.aspx.designer.cs">
+      <DependentUpon>Borrar_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Actuacion.aspx.cs">
+      <DependentUpon>Borrar_Actuacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Actuacion.aspx.designer.cs">
+      <DependentUpon>Borrar_Actuacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Director.aspx.cs">
+      <DependentUpon>Borrar_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Director.aspx.designer.cs">
+      <DependentUpon>Borrar_Director.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Dist.aspx.cs">
+      <DependentUpon>Borrar_Dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Dist.aspx.designer.cs">
+      <DependentUpon>Borrar_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Pelicula.aspx.cs">
+      <DependentUpon>Borrar_Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Pelicula.aspx.designer.cs">
+      <DependentUpon>Borrar_Pelicula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Saga.aspx.cs">
+      <DependentUpon>Borrar_Saga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Saga.aspx.designer.cs">
+      <DependentUpon>Borrar_Saga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Actor.aspx.cs">
+      <DependentUpon>Modificar_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Actor.aspx.designer.cs">
+      <DependentUpon>Modificar_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Director.aspx.cs">
+      <DependentUpon>Modificar_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Director.aspx.designer.cs">
+      <DependentUpon>Modificar_Director.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Dist.aspx.cs">
+      <DependentUpon>Modificar_Dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Dist.aspx.designer.cs">
+      <DependentUpon>Modificar_Dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.cs">
+      <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
+      <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage2.Master.cs">
+      <DependentUpon>MasterPage2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage2.Master.designer.cs">
+      <DependentUpon>MasterPage2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
+      <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Actor.aspx.designer.cs">
+      <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Director.aspx.cs">
+      <DependentUpon>Mostrar_Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Director.aspx.designer.cs">
+      <DependentUpon>Mostrar_Director.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Distribuidora.aspx.cs">
+      <DependentUpon>Mostrar_Distribuidora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Distribuidora.aspx.designer.cs">
+      <DependentUpon>Mostrar_Distribuidora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Peliculas.aspx.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Peliculas\Mostrar_Peliculas.aspx.designer.cs">
+    <Compile Include="Mostrar\Mostrar_Peliculas.aspx.designer.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -156,10 +350,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage.master.cs">
-      <DependentUpon>MasterPage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
@@ -267,8 +457,8 @@
     <PropertyGroup>
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.8.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.8.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

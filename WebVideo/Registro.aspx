@@ -40,7 +40,7 @@
         &nbsp;</p>
     <p>
         Acepto los 
-        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/Terminos.aspx">Términos y Condiciones de Servicio</asp:HyperLink>: <asp:CheckBox ID="Terminos" runat="server" />
+        <asp:HyperLink ID="TC" runat="server" NavigateUrl="~/Terminos.aspx">Términos y Condiciones de Servicio</asp:HyperLink>:<asp:CheckBox ID="Terminos" runat="server" />
         <asp:Label ID="TerminosErr" runat="server" BackColor="White" BorderColor="White" ForeColor="Red" style="font-style: italic" Text="*Debe aceptar los términos" Visible="False"></asp:Label>
     </p>
     <p>
