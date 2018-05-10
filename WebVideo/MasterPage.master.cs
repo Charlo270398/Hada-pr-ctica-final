@@ -23,9 +23,13 @@ namespace WebVideo
                 menuLogin.Visible = false;
                 menuRegistro.Text = "Área cliente";
                 menuRegistro.NavigateUrl = "Area_cliente.aspx";
+                Nombre.Visible = true;
+                Nombre.ForeColor = Color.Black;
+                Nombre.Text = "Sesión iniciada como: " + user.Nombre;
             }
             else
             {
+                Nombre.Visible = false;
                 menuRegistro.NavigateUrl = "Registro.aspx";
                 menuRegistro.Text = "Registro";
                 menuMantenimiento.Visible = false;
