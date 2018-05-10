@@ -23,6 +23,7 @@
           }
           .auto-style5 {
               font-size: medium;
+              font-family: Consolas;
           }
       </style>
   </head>
