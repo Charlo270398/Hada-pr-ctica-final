@@ -57,8 +57,23 @@ namespace  Clases.EN
         {
 
         }
-        public void mostrarUsuario()
+        public void cargarUsuario()
         {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                usuarioEN aux = user.mostrarUsuario(email);
+                email = aux.email;
+                nombre = aux.nombre;
+                apellidos = aux.apellidos;
+                contrasenya = aux.contrasenya;
+                pais = aux.pais;
+                fechaA = aux.fechaA;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
 
         }
         public bool existe()

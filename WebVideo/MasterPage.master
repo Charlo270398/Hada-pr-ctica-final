@@ -59,7 +59,7 @@
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
           <asp:HyperLink ID="menuMantenimiento" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Mantenimiento/Main.aspx" Visible="False">Mantenimiento</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style4" ForeColor="#3333FF" Visible="False">Salir</asp:HyperLink>
+          <asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style4" ForeColor="#3333FF" Visible="False" NavigateUrl="~/Login.aspx">Salir</asp:HyperLink>
           </strong>
 
       </div>

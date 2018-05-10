@@ -22,15 +22,6 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.TextBox Text_Email;
         
         /// <summary>
-        /// Control EmailErr.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailErr;
-        
-        /// <summary>
         /// Control Text_Pass.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Text_Pass;
-        
-        /// <summary>
-        /// Control PassErr.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PassErr;
         
         /// <summary>
         /// Control Btn_Login.

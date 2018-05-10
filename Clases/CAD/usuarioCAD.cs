@@ -34,6 +34,7 @@ namespace CAD
 
         }
         public usuarioEN mostrarUsuario(string email){
+
             usuarioEN user = new usuarioEN();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
@@ -56,7 +57,29 @@ namespace CAD
             return user;
         }
         public void modificarUsuario(usuarioEN user) {}
-        public bool existe(usuarioEN user) { return false; }
+        public bool existe(usuarioEN user) {
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            int numero = 0;
+            string comando = "select count(*) numero from Usuarios where Email like '" + user.Email + "'";
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                numero = (int)reader["numero"];
+
+            }
+            reader.Close();
+            cn.Close();
+
+            if(numero == 1)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 
         public List<usuarioEN> listaUsuarios()
         {

@@ -12,11 +12,26 @@ namespace WebVideo
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
-        usuarioEN user = new usuarioEN();
         protected void Page_Load(object sender, EventArgs e)
         {
-             
-
+            Response.Charset = "utf-8";
+            usuarioEN user = (usuarioEN)Session["user_session_data"];
+            if (user != null)
+            {
+                menuMantenimiento.Visible = true;
+                menuSalir.Visible = true;
+                menuLogin.Visible = false;
+                menuRegistro.Text = "Área cliente";
+                menuRegistro.NavigateUrl = "Area_cliente.aspx";
+            }
+            else
+            {
+                menuRegistro.NavigateUrl = "Registro.aspx";
+                menuRegistro.Text = "Registro";
+                menuMantenimiento.Visible = false;
+                menuSalir.Visible = false;
+                menuLogin.Visible = true;
+            }
         }
 
         protected void accederButton_Click(object sender, EventArgs e)
