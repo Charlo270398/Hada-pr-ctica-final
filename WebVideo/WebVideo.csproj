@@ -100,7 +100,7 @@
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
-    <Content Include="Peliculas\Mostrar_Peliculas.aspx" />
+    <Content Include="Mostrar\Mostrar_Peliculas.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
@@ -298,11 +298,11 @@
     <Compile Include="Mostrar\Mostrar_Distribuidora.aspx.designer.cs">
       <DependentUpon>Mostrar_Distribuidora.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Peliculas\Mostrar_Peliculas.aspx.cs">
+    <Compile Include="Mostrar\Mostrar_Peliculas.aspx.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Peliculas\Mostrar_Peliculas.aspx.designer.cs">
+    <Compile Include="Mostrar\Mostrar_Peliculas.aspx.designer.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">

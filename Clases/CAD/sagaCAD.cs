@@ -84,7 +84,7 @@ namespace CAD
         {
             List<sagaEN> dev = new List<sagaEN>();
             sagaEN saga;
-            string comando = "Select * from Saga";
+            string comando = "Select * from Saga order by Nombre";
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
             SqlCommand cmd = new SqlCommand(comando, cn);
@@ -109,7 +109,21 @@ namespace CAD
 
         public sagaEN mostrarSaga(int id)
         {
-            throw new NotImplementedException();
+            sagaEN saga = new sagaEN();
+            string comando = "Select * from Saga where Id_Saga =" + id;
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {          
+                saga.IDsaga = (int)reader["Id_Saga"];
+                saga.Descripcion = reader["Descripcion"].ToString();
+                saga.Nombre = reader["Nombre"].ToString();
+            }
+            reader.Close();
+            cn.Close();
+            return saga;
         }
     }
 }

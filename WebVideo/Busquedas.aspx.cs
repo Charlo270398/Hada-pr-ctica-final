@@ -79,7 +79,7 @@ namespace WebVideo
         {
             if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
             {
-                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);                             
+                Response.Redirect("Mostrar/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);                             
             }
             else
             {

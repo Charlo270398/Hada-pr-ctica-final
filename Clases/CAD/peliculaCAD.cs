@@ -111,11 +111,11 @@ namespace CAD
             string comando = "";
             if (pelicula.NombreP == "%")
             {
-                comando = "select * from Peliculas";
+                comando = "select * from Peliculas order by Nombre";
             }
             else
             {
-                comando = "select * from Peliculas where Nombre like '%" + pelicula.NombreP + "%'";
+                comando = "select * from Peliculas where Nombre like '%" + pelicula.NombreP + "%' order by Nombre";
             }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
@@ -130,18 +130,17 @@ namespace CAD
                 aux.PrecioA = (int) reader["Precio_A"];
                 aux.PrecioC = (int) reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
-                aux.IdDist = (int)reader["Id_Director"];
+                aux.IdDir = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
                 aux.Trailer = reader["Trailer"].ToString();
-                if (reader["Id_Saga"] != null)
-                {
-                    
+                if (reader.IsDBNull(10)) {
+                    aux.IdSaga = -1;
                 }
                 else
                 {
-                    aux.IdSaga = -1;
+                    aux.IdSaga = (int)reader["Id_Saga"];
                 }
-                
+
                 devolver.Add(aux);
 
             }
@@ -178,16 +177,16 @@ namespace CAD
                 aux.PrecioA = (int)reader["Precio_A"];
                 aux.PrecioC = (int)reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
-                aux.IdDist = (int)reader["Id_Director"];
+                aux.IdDir = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
                 aux.Trailer = reader["Trailer"].ToString();
-                if (reader["Id_Saga"] != null)
+                if (reader.IsDBNull(10))
                 {
-
+                    aux.IdSaga = -1;
                 }
                 else
                 {
-                    aux.IdSaga = -1;
+                    aux.IdSaga = (int)reader["Id_Saga"];
                 }
             }
             reader.Close();
@@ -215,19 +214,19 @@ namespace CAD
                 aux.Duracion = (int)reader["Duracion"];
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
                 aux.Sinopsis = reader["Sinopsis"].ToString();
-                aux.PrecioA = (float)reader["Precio_A"];
-                aux.PrecioC = (float)reader["Precio_C"];
+                aux.PrecioA = (int)reader["Precio_A"];
+                aux.PrecioC = (int)reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
                 aux.IdDist = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
                 aux.Trailer = reader["Trailer"].ToString();
-                if (reader["Id_Saga"] != null)
+                if (reader.IsDBNull(10))
                 {
-
+                    aux.IdSaga = -1;
                 }
                 else
                 {
-                    aux.IdSaga = -1;
+                    aux.IdSaga = (int)reader["Id_Saga"];
                 }
 
                 devolver.Add(aux);
@@ -260,19 +259,19 @@ namespace CAD
                 aux.Duracion = (int)reader["Duracion"];
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
                 aux.Sinopsis = reader["Sinopsis"].ToString();
-                aux.PrecioA = (float)reader["Precio_A"];
-                aux.PrecioC = (float)reader["Precio_C"];
+                aux.PrecioA = (int)reader["Precio_A"];
+                aux.PrecioC = (int)reader["Precio_C"];
                 aux.IdDist = (int)reader["Id_Distribuidora"];
-                aux.IdDist = (int)reader["Id_Director"];
+                aux.IdDir = (int)reader["Id_Director"];
                 aux.Imagen = reader["Imagen"].ToString();
                 aux.Trailer = reader["Trailer"].ToString();
-                if (reader["Id_Saga"] != null)
+                if (reader.IsDBNull(10))
                 {
-
+                    aux.IdSaga = -1;
                 }
                 else
                 {
-                    aux.IdSaga = -1;
+                    aux.IdSaga = (int)reader["Id_Saga"];
                 }
 
                 devolver.Add(aux);
