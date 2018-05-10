@@ -22,8 +22,12 @@
               font-family: "Bell MT";
           }
           .auto-style5 {
-              font-size: medium;
+              font-size: small;
               font-family: Consolas;
+          }
+          .auto-style6 {
+              font-size: 18px;
+              font-family: "Bell MT";
           }
       </style>
   </head>
@@ -50,24 +54,24 @@
 
     <asp:Panel ID="globoInicioSesion" runat="server" CssClass="auto-style3">
       <div class="alert alert-info hidden-phone">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>
-          <asp:HyperLink ID="menuInicio" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="Inicio.aspx">Inicio</asp:HyperLink>
+          <strong>
+          <asp:HyperLink ID="menuInicio" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="Inicio.aspx">Inicio</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuLogin" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+          <asp:HyperLink ID="menuLogin" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuRegistro" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Registro.aspx">Registrarse</asp:HyperLink>
+          <asp:HyperLink ID="menuRegistro" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="~/Registro.aspx">Registrarse</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuPreguntas" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="FAQ.aspx">Preguntas frecuentes</asp:HyperLink>
+          <asp:HyperLink ID="menuPreguntas" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="FAQ.aspx">FAQ</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuBusquedas" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="Busquedas.aspx">Búsquedas</asp:HyperLink>
+          <asp:HyperLink ID="menuBusquedas" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="Busquedas.aspx">Búsquedas</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuMantenimiento" runat="server" CssClass="auto-style4" ForeColor="#3333FF" NavigateUrl="~/Mantenimiento/Main.aspx" Visible="False">Mantenimiento</asp:HyperLink>
+          <asp:HyperLink ID="menuMantenimiento" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="~/Mantenimiento/Main.aspx" Visible="False">Mantenimiento</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style4" ForeColor="#3333FF" Visible="False" NavigateUrl="~/Login.aspx">Salir</asp:HyperLink>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </strong>
-
-          <asp:Label ID="Nombre" runat="server" CssClass="auto-style5" Text="Texto"></asp:Label>
+          <asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style6" ForeColor="#3333FF" Visible="False" NavigateUrl="~/Login.aspx">Salir</asp:HyperLink>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+          <asp:Label ID="Nombre" runat="server" CssClass="auto-style5" ForeColor="#CC00CC" Text="Texto"></asp:Label>
+&nbsp;</strong><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
       </div>
     </asp:Panel>
