@@ -29,8 +29,7 @@
               <asp:HyperLink ID="menuSN" runat="server" NavigateUrl="FAQ.aspx" ForeColor="#3333FF">Preguntas frecuentes</asp:HyperLink> 
               </li>
               <li>
-                <asp:HyperLink ID="menuMantenimiento" runat="server" NavigateUrl="Mantenimiento/Main.aspx" ForeColor="#3333FF" OnInit="menuMantenimiento_Init">Mantenimiento</asp:HyperLink> 
-                <asp:HyperLink ID="menuSalir" runat="server" NavigateUrl="Mantenimiento/Main.aspx" ForeColor="#3333FF" OnDataBinding="a" OnInit="menuMantenimiento_Init">Salir</asp:HyperLink> 
+                <asp:HyperLink ID="menuSalir" runat="server" NavigateUrl="Mantenimiento/Main.aspx" ForeColor="#3333FF">Mantenimiento</asp:HyperLink> 
               </li>   
               <li>
               </li>
@@ -82,7 +81,6 @@
             <asp:TextBox ID="userTextBox" runat="server" CssClass="input-medium" />
             <asp:Label ID="Label2" runat="server" Text="Contraseña:" />
             <asp:TextBox ID="passTextBox" runat="server" CssClass="input-medium" TextMode="Password" />
-            <asp:Label ID="err" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label>
             <div class="btn-group">
                 <asp:Button ID="accederButton" runat="server" CssClass="btn" onclick="accederButton_Click" Text="Iniciar Sesión" />
                 <asp:Button ID="nuevoUsuarioButton" runat="server" CssClass="btn" onclick="nuevoUsuarioButton_Click" Text="Registrarse" />

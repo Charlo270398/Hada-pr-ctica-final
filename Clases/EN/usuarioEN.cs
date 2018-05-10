@@ -30,15 +30,6 @@ namespace  Clases.EN
         private int pais;
         public int Pais { get { return pais; } set { pais = value; } }
 
-        public usuarioEN()
-        {
-
-        }
-        public usuarioEN(string email, string contraseña)
-        {
-            this.email = email;
-            this.Contrasenya = contrasenya;
-        }
         public void anyadirUsuario()
         {
 
@@ -59,31 +50,6 @@ namespace  Clases.EN
         }
         public void mostrarUsuario()
         {
-
-        }
-        public bool existe()
-        {
-            usuarioCAD user = new usuarioCAD();
-            try
-            {
-               return user.existe(this);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-        public bool validacion()
-        {
-            usuarioCAD user = new usuarioCAD();
-            try
-            {
-                return user.existe(this);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
 
         }
         public void modificarUsuario()
