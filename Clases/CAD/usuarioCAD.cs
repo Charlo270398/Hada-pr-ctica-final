@@ -20,7 +20,7 @@ namespace CAD
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "insert into Usuarios values ('" + user.Email;
-                comando += "', '" + user.Contrasenya + "','" + user.Nombre + "','" + user.Apellidos + "','" + user.FechaA + "','" + user.Pais + "')";
+                comando += "', '" + user.Contrasenya + "','" + user.Nombre + "','" + user.Apellidos + "','" + user.FechaA + "','" + user.Pais + "', " + 0 + ")";
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -49,6 +49,14 @@ namespace CAD
                 user.Apellidos = reader["Apellidos"].ToString();
                 user.FechaA = reader["Fecha_Alta"].ToString();
                 user.Pais = (int)reader["Pais"];
+                if ((bool)reader["Administrador"])
+                {
+                    user.AdMin = true;
+                }
+                else
+                {
+                    user.AdMin = false;
+                }
 
             }
             reader.Close();
@@ -83,28 +91,59 @@ namespace CAD
 
         public List<usuarioEN> listaUsuarios()
         {
-            usuarioEN user = new usuarioEN();
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            string comando = "select * from Usuarios";
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                user.Email = reader["Email"].ToString();
-                user.Contrasenya = reader["Contrasenya"].ToString();
-                user.Nombre = reader["Nombre"].ToString();
-                user.Apellidos = reader["Apellidos"].ToString();
-                user.FechaA = reader["Fecha_Alta"].ToString();
-                user.Pais = (int)reader["Pais"];
+                usuarioEN user = new usuarioEN();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from Usuarios";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    user = new usuarioEN();
+                    user.Email = reader["Email"].ToString();
+                    user.Contrasenya = reader["Contrasenya"].ToString();
+                    user.Nombre = reader["Nombre"].ToString();
+                    user.Apellidos = reader["Apellidos"].ToString();
+                    user.FechaA = reader["Fecha_Alta"].ToString();
+                    user.Pais = (int)reader["Pais"];
+                    if ((bool)reader["Administrador"])
+                    {
+                        user.AdMin = true;
+                    }
+                    else
+                    {
+                        user.AdMin = false;
+                    }
 
-                lista.Add(user);
+                    lista.Add(user);
+                }
+                reader.Close();
+                cn.Close();
+
+                return lista;
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
-            reader.Close();
-            cn.Close();
-
-            return lista;
         }
 
+        public void hacerAdmin(string email)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "update Usuarios set Administrador = "+ 1 + "where Email = '" + email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

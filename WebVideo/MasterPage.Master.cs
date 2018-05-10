@@ -18,7 +18,10 @@ namespace WebVideo
             usuarioEN user = (usuarioEN)Session["user_session_data"];
             if (user != null)
             {
-                menuMantenimiento.Visible = true;
+                if (user.AdMin)
+                {
+                    menuMantenimiento.Visible = true;
+                }
                 menuSalir.Visible = true;
                 menuLogin.Visible = false;
                 menuRegistro.Text = "Área cliente";

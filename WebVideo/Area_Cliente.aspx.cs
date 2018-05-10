@@ -38,6 +38,10 @@ namespace WebVideo
                 DWCompras.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
             }
+            if (user.AdMin)
+            {
+                admin.Visible = true;
+            }
 
         }
 

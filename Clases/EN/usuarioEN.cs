@@ -24,8 +24,8 @@ namespace  Clases.EN
         private string fechaA;
         public string FechaA { get { return fechaA; } set { fechaA = value; } }
 
-        private string tipoU;
-        public string TipoU { get { return tipoU; } set { tipoU = value; } }
+        private bool Admin;
+        public bool AdMin { get { return Admin; } set { Admin = value; } }
 
         private int pais;
         public int Pais { get { return pais; } set { pais = value; } }
@@ -69,6 +69,20 @@ namespace  Clases.EN
                 contrasenya = aux.contrasenya;
                 pais = aux.pais;
                 fechaA = aux.fechaA;
+                Admin = aux.Admin;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
+        public void hacerAdmin()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                 user.hacerAdmin(this.email);
             }
             catch (Exception e)
             {

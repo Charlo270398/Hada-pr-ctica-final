@@ -14,5 +14,6 @@ namespace CAD
         void modificarUsuario(usuarioEN user);
         bool existe(usuarioEN user);
         List<usuarioEN> listaUsuarios();
+        void hacerAdmin(string email);
     }
 }

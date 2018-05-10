@@ -5,7 +5,9 @@
     <p>
         <strong><span style="font-size: x-large">Área del cliente</span></strong></p>
     <p>
-        &nbsp;</p>
+        <em><strong>
+        <asp:Label ID="admin" runat="server" Text="*ADMINISTRADOR*" ForeColor="#3333FF" Visible="False"></asp:Label>
+        </strong></em></p>
     <p>
         <strong>Email: </strong>
         <asp:Label ID="email" runat="server" Text="Label"></asp:Label>
