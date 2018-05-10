@@ -86,7 +86,7 @@ namespace CAD
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
             string comando = "";
-            comando = "select * from Actores where Id_Actor = " + id;
+            comando = "select * from Actores where Id_Actor = " + id + "Order by Apellidos, Nombre";
 
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
@@ -135,11 +135,11 @@ namespace CAD
             string comando = "";
             if (actor.Nombre == "%")
             {
-                comando = "select * from Actores";
+                comando = "select * from Actores Order by Apellidos, Nombre";
             }
             else
             {
-                comando = "select distinct * from Actores where Nombre like '%" + actor.Nombre + "%' or Apellidos like '%" + actor.Nombre + "%'";
+                comando = "select distinct * from Actores where Nombre like '%" + actor.Nombre + "%' or Apellidos like '%" + actor.Nombre + "%' Order by Apellidos, Nombre";
             }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
