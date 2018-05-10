@@ -31,6 +31,42 @@ namespace WebVideo.Peliculas {
         protected global::System.Web.UI.WebControls.ImageButton Imagen;
         
         /// <summary>
+        /// Control DirectorText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DirectorText;
+        
+        /// <summary>
+        /// Control mostrarDirText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink mostrarDirText;
+        
+        /// <summary>
+        /// Control DistribuidoraText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DistribuidoraText;
+        
+        /// <summary>
+        /// Control mostrarDistText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink mostrarDistText;
+        
+        /// <summary>
         /// Control Fecha_Etext.
         /// </summary>
         /// <remarks>
@@ -101,6 +137,24 @@ namespace WebVideo.Peliculas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label precioAnumtext;
+        
+        /// <summary>
+        /// Control SagaText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SagaText;
+        
+        /// <summary>
+        /// Control mostrarSaga.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mostrarSaga;
         
         /// <summary>
         /// Control Texto_Sinopsis.

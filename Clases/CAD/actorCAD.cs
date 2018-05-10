@@ -80,7 +80,30 @@ namespace CAD
                 throw new Exception(ex.Message);
             }
         }
-        public actorEN mostrarActor(int id) { return null; }
+        public actorEN mostrarActor(int id) {
+            paisCAD pais = new paisCAD();
+            actorEN act = new actorEN();
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            string comando = "";
+            comando = "select * from Actores where Id_Actor = " + id + "Order by Apellidos, Nombre";
+
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                
+                act.IdAc = (int)reader["Id_Actor"];
+                act.Nombre = reader["Nombre"].ToString();
+                act.Apellidos = reader["Apellidos"].ToString();
+                act.FechaNac = reader["Fecha_Nac"].ToString();
+                act.Pais = pais.mostrarPais((int)reader["Nacionalidad"]).Pais;
+            }
+            reader.Close();
+            cn.Close();
+
+            return act;
+        }
         public void modificarActor(actorEN actor) {
             paisCAD p = new paisCAD();
             DateTime fecha = DateTime.Parse(actor.FechaNac);
@@ -112,11 +135,11 @@ namespace CAD
             string comando = "";
             if (actor.Nombre == "%")
             {
-                comando = "select * from Actores";
+                comando = "select * from Actores Order by Apellidos, Nombre";
             }
             else
             {
-                comando = "select distinct * from Actores where Nombre like '%" + actor.Nombre + "%' or Apellidos like '%" + actor.Nombre + "%'";
+                comando = "select distinct * from Actores where Nombre like '%" + actor.Nombre + "%' or Apellidos like '%" + actor.Nombre + "%' Order by Apellidos, Nombre";
             }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
@@ -134,6 +157,54 @@ namespace CAD
             cn.Close();
 
             return lista;
+        }
+
+        public List<peliculaEN> peliculasActor(int id)
+        {
+            peliculaCAD p = new peliculaCAD();
+            List<peliculaEN> lista = new List<peliculaEN>();
+            List<int> IDs = new List<int>();
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            string comando = "";
+
+            comando = "select p.Id_Pelicula from Actores a, Peliculas p, Actuaciones ac where p.Id_Pelicula = ac.Id_Pelicula and a.Id_Actor = ac.Id_Actor";
+
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                IDs.Add((int)reader["Id_Pelicula"]);
+            }
+            reader.Close();
+
+            for(int i=0; i<IDs.Count; i++)
+            {
+                peliculaEN peli = new peliculaEN(IDs[i],"");
+                lista.Add(p.mostrarPelicula(peli));
+            }
+
+            cn.Close();
+
+            return lista;
+        }
+
+        public void insertarActuacion(int idAct, int idPel)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "insert into Actuaciones values("+ idPel + "," + idAct + ")";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

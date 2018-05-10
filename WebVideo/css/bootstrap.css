@@ -620,6 +620,7 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+    height: 2px;
 }
 
 .container:before,
@@ -1908,6 +1909,8 @@ input.search-query {
 .form-search .btn-group,
 .form-inline .btn-group {
   display: inline-block;
+    top: 90px;
+    left: -16px;
 }
 
 .form-search .input-append,
@@ -4551,13 +4554,16 @@ input[type="submit"].btn.btn-mini {
   padding-left: 0;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
-          border-radius: 0;
-}
+          border-radius:
 
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
   width: 940px;
+    height: 178px;
+}
+
+
 }
 
 .navbar-fixed-top {

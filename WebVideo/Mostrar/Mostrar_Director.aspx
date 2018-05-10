@@ -10,7 +10,7 @@
         <br />
         <h4>Películas</h4>
     <p>
-    <asp:DropDownList ID="DWPeliculas" runat="server">
+    <asp:DropDownList ID="DWPeliculas" runat="server" OnInit="DWPeliculas_Init">
     </asp:DropDownList>
     <asp:Button ID="Btn_Pelicula" runat="server" Text="Mostrar Pelicula" OnClick="Btn_PeliculaC" />
     <asp:Label ID="ErrPelicula" runat="server" ForeColor="Red" Text="*Debe seleccionar una película" Visible="False"></asp:Label>
