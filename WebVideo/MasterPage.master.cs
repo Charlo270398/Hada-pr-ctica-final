@@ -15,12 +15,10 @@ namespace WebVideo
         usuarioEN user = new usuarioEN();
         protected void Page_Load(object sender, EventArgs e)
         {
-             
-            Response.Charset = "utf-8";
-            user = (usuarioEN)Session["user_session_data"];
-            if (user != null)
+            usuarioEN userS = (usuarioEN)Session["user_session_data"];
+            if (userS != null)
             {
-                menuSalir.Visible = true;
+                btnSalir.Visible = true;
                 menuMantenimiento.Visible = true;
                 userTextBox.Visible = false;
                 passTextBox.Visible = false;
@@ -28,6 +26,7 @@ namespace WebVideo
                 nuevoUsuarioButton.Visible = false;
                 Label1.Visible = false;
                 Label2.Visible = false;
+                user = userS;
                 err.Text = "BIENVENIDO " + user.Nombre;
                 err.ForeColor = Color.Green;
                 err.Visible = true;
@@ -35,7 +34,7 @@ namespace WebVideo
             else
             {
                 menuMantenimiento.Visible = false;
-                menuSalir.Visible = false;
+                btnSalir.Visible = false;
                 userTextBox.Visible = true;
                 passTextBox.Visible = true;
                 accederButton.Visible = true;
@@ -87,12 +86,19 @@ namespace WebVideo
         protected void menuMantenimiento_Init(object sender, EventArgs e)
         {
             menuMantenimiento.Visible = false;
-            menuSalir.Visible = false;
+            btnSalir.Visible = false;
         }
 
-        protected void a(object sender, EventArgs e)
+        protected void SalirBTN(object sender, EventArgs e)
         {
-            Session.Abandon();
+            Session["user_session_data"] = null;
+            menuMantenimiento.Visible = false;
+            btnSalir.Visible = false;
+        }
+
+        protected void salirButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

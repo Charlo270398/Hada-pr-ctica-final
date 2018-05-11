@@ -1028,7 +1028,9 @@ pre code {
 }
 
 form {
-  margin: 0 0 20px;
+  margin: 0 0 6px 0;
+    width: 1167px;
+    height: 75px;
 }
 
 fieldset {
@@ -1097,7 +1099,7 @@ input[type="color"],
   height: 20px;
   padding: 4px 6px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: x-small;
   line-height: 20px;
   color: #555555;
   vertical-align: middle;
@@ -1896,6 +1898,7 @@ input.search-query {
   margin-bottom: 0;
   vertical-align: middle;
   *zoom: 1;
+    text-align: left;
 }
 
 .form-search .hide,
@@ -3240,7 +3243,7 @@ button.close {
 }
 
 .btn:first-child {
-  *margin-left: 0;
+  *margin-left: 22px;
 }
 
 .btn:hover,
@@ -4584,12 +4587,11 @@ input[type="submit"].btn.btn-mini {
 .navbar-fixed-bottom .navbar-inner {
   -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
      -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
-}
+          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.
 
 .navbar .nav {
   position: relative;
-  left: 0;
+  left: 0px;
   display: block;
   float: left;
   margin: 0 10px 0 0;
@@ -4598,11 +4600,16 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav.pull-right {
   float: right;
   margin-right: 0;
+    top: -1px;
 }
 
 .navbar .nav > li {
   float: left;
     height: 15px;
+    width: 41px;
+}
+
+
 }
 
 .navbar .nav > li > a {
@@ -6141,6 +6148,8 @@ a.badge:focus {
 
 .pull-right {
   float: right;
+    height: 34px;
+    width: 176px;
 }
 
 .pull-left {
