@@ -39,7 +39,15 @@ namespace WebVideo.Mantenimiento
                         int duracion = int.Parse(duracionBox.Text, CultureInfo.InvariantCulture.NumberFormat); ;
                         int idDist = listaIdDist[DWdist.SelectedIndex - 1];
                         int idDir = listaIdDir[DWdir.SelectedIndex - 1];
-                        int idSag = -1;
+                        int idSag;
+                        if (DWsaga.SelectedItem.ToString() == "NINGUNA")
+                        {
+                            idSag = -1;
+                        }
+                        else
+                        {
+                            idSag = listaIdSag[DWsaga.SelectedIndex - 1];
+                        }
                         string fecha = DWdia.SelectedItem.ToString() + "-" + DWmes.SelectedItem.ToString() + "-" + DWaño.SelectedItem.ToString();
                         pelicula = new peliculaEN(-1, tituloBox.Text, duracion, fecha, sinopsisBox.Text, precioC, precioA, idDist, idDir, imagenBox.Text, idSag, trailerBox.Text);
                         pelicula.IdDir = idDir;
@@ -107,6 +115,22 @@ namespace WebVideo.Mantenimiento
                 DWdist.DataSource = nombres;
                 DWdist.DataBind();
                 DWdist.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
+            }
+            if (DWsaga != null)
+            {
+                sagaCAD dist = new sagaCAD();
+                nombres.Clear();
+                listaIdSag.Clear();
+                List<sagaEN> dlist = dist.listaSagas();
+                for (i = 0; i < dlist.Count; i++)
+                {
+                    nombres.Add(dlist[i].Nombre);
+                    listaIdSag.Add(dlist[i].IDsaga);
+                }
+                DWsaga.DataSource = nombres;
+                DWsaga.DataBind();
+                DWsaga.Items.Insert(0, new ListItem("NINGUNA", "0"));
 
             }
             if (DWdia != null)

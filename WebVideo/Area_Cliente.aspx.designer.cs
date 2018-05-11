@@ -7,90 +7,81 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebVideo.Mostrar {
+namespace WebVideo {
     
     
-    public partial class Mostrar_Actor {
+    public partial class Area_Cliente {
         
         /// <summary>
-        /// Control NombreText.
+        /// Control admin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreText;
+        protected global::System.Web.UI.WebControls.Label admin;
         
         /// <summary>
-        /// Control ApellidosText.
+        /// Control email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ApellidosText;
+        protected global::System.Web.UI.WebControls.Label email;
         
         /// <summary>
-        /// Control PaisText.
+        /// Control nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaisText;
+        protected global::System.Web.UI.WebControls.Label nombre;
         
         /// <summary>
-        /// Control nombrePais.
+        /// Control pais.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombrePais;
+        protected global::System.Web.UI.WebControls.Label pais;
         
         /// <summary>
-        /// Control PaisText0.
+        /// Control Btn_Compra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaisText0;
+        protected global::System.Web.UI.WebControls.Button Btn_Compra;
         
         /// <summary>
-        /// Control fechaNac.
+        /// Control DWCompras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaNac;
+        protected global::System.Web.UI.WebControls.DropDownList DWCompras;
         
         /// <summary>
-        /// Control DWPeliculas.
+        /// Control Btn_Alquiler.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWPeliculas;
+        protected global::System.Web.UI.WebControls.Button Btn_Alquiler;
         
         /// <summary>
-        /// Control Btn_Pelicula.
+        /// Control DWAlquiler.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Pelicula;
-        
-        /// <summary>
-        /// Control ErrPelicula.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrPelicula;
+        protected global::System.Web.UI.WebControls.DropDownList DWAlquiler;
     }
 }

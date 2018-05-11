@@ -15,7 +15,7 @@
         <b>Tarjetas prepago</b><br />
         <p>Si tienes una tarjeta prepago con logotipo de Visa, MasterCard o American Express, podrás introducir los datos de tu tarjeta en la página de pagos. Si el banco que emitió la tarjeta aprueba nuestra solicitud de autorización, aceptaremos esa tarjeta como método de pago.</p>
         <b>Tarjetas regalo de Hookin</b> <br />
-        <p>Las tarjetas regalo de Hookin están disponibles en determinados comercios y te permiten regalar Netflix a otra persona o usarlas para pagar por adelantado tu propia suscripción.</p>
+        <p>Las tarjetas regalo de Hookin están disponibles en determinados comercios y te permiten regalar Hookin a otra persona o usarlas para pagar por adelantado tu propia suscripción.</p>
         <b>PayPal</b> <br />
         Puedes usar tu cuenta de PayPal para pagar Hookin.<br />
     <br />

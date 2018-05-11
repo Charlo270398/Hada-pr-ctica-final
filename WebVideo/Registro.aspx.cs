@@ -17,8 +17,8 @@ namespace WebVideo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-           
+            Session["user_session_data"] = null;
+
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
@@ -151,7 +151,10 @@ namespace WebVideo
                 try
                 {
                     user.anyadirUsuario();
-                }catch(Exception ex)
+                    Session["user_session_data"] = user;
+                    Response.Redirect("Area_Cliente.aspx");
+                }
+                catch(Exception ex)
                 {
                     EmailErr.Visible = true;
                     EmailErr.Text = ex.Message;

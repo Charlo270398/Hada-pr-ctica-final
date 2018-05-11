@@ -126,7 +126,7 @@ namespace CAD
             distribuidoraEN d = new distribuidoraEN();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
-            string comando = "select * from Distribuidora";
+            string comando = "select * from Distribuidora" + " Order by Nombre";
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())

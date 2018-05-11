@@ -85,7 +85,16 @@ namespace Clases.EN
         }
         public void borrarPelicula()
         {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                p.borrarPelicula(this.idP);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void mostrarPelicula()
         {
@@ -93,7 +102,16 @@ namespace Clases.EN
         }
         public void modificarPelicula()
         {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                p.modificarPelicula(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

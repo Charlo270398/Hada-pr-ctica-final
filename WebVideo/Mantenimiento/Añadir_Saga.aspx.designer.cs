@@ -7,90 +7,63 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebVideo.Mostrar {
+namespace WebVideo.Mantenimiento {
     
     
-    public partial class Mostrar_Actor {
+    public partial class Añadir_Saga {
         
         /// <summary>
-        /// Control NombreText.
+        /// Control TextBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreText;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Control ApellidosText.
+        /// Control Err.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ApellidosText;
+        protected global::System.Web.UI.WebControls.Label Err;
         
         /// <summary>
-        /// Control PaisText.
+        /// Control TextBox2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaisText;
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
         
         /// <summary>
-        /// Control nombrePais.
+        /// Control Err0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombrePais;
+        protected global::System.Web.UI.WebControls.Label Err0;
         
         /// <summary>
-        /// Control PaisText0.
+        /// Control Btn_Insertar1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaisText0;
+        protected global::System.Web.UI.WebControls.Button Btn_Insertar1;
         
         /// <summary>
-        /// Control fechaNac.
+        /// Control ErrInsert.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaNac;
-        
-        /// <summary>
-        /// Control DWPeliculas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWPeliculas;
-        
-        /// <summary>
-        /// Control Btn_Pelicula.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Pelicula;
-        
-        /// <summary>
-        /// Control ErrPelicula.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrPelicula;
+        protected global::System.Web.UI.WebControls.Label ErrInsert;
     }
 }
