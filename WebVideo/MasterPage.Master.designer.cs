@@ -22,6 +22,7 @@ namespace WebVideo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+<<<<<<< HEAD
         /// Control menuInicio.
         /// </summary>
         /// <remarks>
@@ -50,12 +51,19 @@ namespace WebVideo {
         
         /// <summary>
         /// Control menuMantenimiento.
+=======
+        /// Control globoInicioSesion.
+>>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.HyperLink menuMantenimiento;
+=======
+        protected global::System.Web.UI.WebControls.Panel globoInicioSesion;
+>>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
         
         /// <summary>
         /// Control btnSalir.
@@ -67,76 +75,67 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.Button btnSalir;
         
         /// <summary>
-        /// Control globoInicioSesion.
+        /// Control menuLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel globoInicioSesion;
+        protected global::System.Web.UI.WebControls.HyperLink menuLogin;
         
         /// <summary>
-        /// Control Label1.
+        /// Control menuRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.HyperLink menuRegistro;
         
         /// <summary>
-        /// Control userTextBox.
+        /// Control menuPreguntas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userTextBox;
+        protected global::System.Web.UI.WebControls.HyperLink menuPreguntas;
         
         /// <summary>
-        /// Control Label2.
+        /// Control menuBusquedas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.HyperLink menuBusquedas;
         
         /// <summary>
-        /// Control passTextBox.
+        /// Control menuMantenimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passTextBox;
+        protected global::System.Web.UI.WebControls.HyperLink menuMantenimiento;
         
         /// <summary>
-        /// Control err.
+        /// Control menuSalir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label err;
+        protected global::System.Web.UI.WebControls.HyperLink menuSalir;
         
         /// <summary>
-        /// Control accederButton.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button accederButton;
-        
-        /// <summary>
-        /// Control nuevoUsuarioButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button nuevoUsuarioButton;
+        protected global::System.Web.UI.WebControls.Label Nombre;
         
         /// <summary>
         /// Control Cuerpo.

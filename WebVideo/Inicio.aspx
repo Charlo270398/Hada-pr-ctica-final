@@ -10,7 +10,15 @@
         &nbsp;</p>
 <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" >
         <strong>Novedades:</strong></p>
+<<<<<<< HEAD
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" >
+=======
+    <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
+        &nbsp; -(10/05/18) Usuarios con privilegios operativo.</p>
+    <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
+        &nbsp; -(10/05/18) Inicio sesión/Registro operativo. </p>
+    <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
+>>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
         &nbsp; -(09/05/18) Búsqueda Actor operativa. </p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" >
         &nbsp; -(09/05/18) Mantenimiento Añadir/Borrar Sagas y Peliculas Operativo. </p>

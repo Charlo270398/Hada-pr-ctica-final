@@ -827,6 +827,8 @@ ol ul {
 
 li {
   line-height: 20px;
+    width: 330px;
+    height: 72px;
 }
 
 ul.unstyled,
@@ -1912,8 +1914,9 @@ input.search-query {
 .form-search .btn-group,
 .form-inline .btn-group {
   display: inline-block;
-    top: 90px;
-    left: -16px;
+    top: -34px;
+    left: -164px;
+    width: 109px;
 }
 
 .form-search .input-append,
@@ -4530,14 +4533,13 @@ input[type="submit"].btn.btn-mini {
 .navbar-static-top .navbar-inner {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
-          border-radius: 0;
-}
+          border-radius:
 
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-  right: 0;
-  left: 0;
+  right: -15px;
+  left: 15px;
   z-index: 1030;
   margin-bottom: 0;
 }
@@ -4570,7 +4572,10 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-fixed-top {
-  top: 0;
+  top: 276px;
+}
+
+
 }
 
 .navbar-fixed-top .navbar-inner,
@@ -4591,7 +4596,11 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav {
   position: relative;
+<<<<<<< HEAD
   left: 0px;
+=======
+  left: -353px;
+>>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
   display: block;
   float: left;
   margin: 0 10px 0 0;
@@ -4600,7 +4609,12 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav.pull-right {
   float: right;
   margin-right: 0;
+<<<<<<< HEAD
     top: -1px;
+=======
+    top: 2px;
+    height: 124px;
+>>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
 }
 
 .navbar .nav > li {
@@ -6148,8 +6162,16 @@ a.badge:focus {
 
 .pull-right {
   float: right;
+<<<<<<< HEAD
     height: 34px;
     width: 176px;
+=======
+    text-align: left;
+    width: 499px;
+}
+
+
+>>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
 }
 
 .pull-left {
