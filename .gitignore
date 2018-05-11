@@ -263,5 +263,8 @@ __pycache__/
 *.cache
 *.ide
 *.ide
+<<<<<<< HEAD
 WebVideo/BBDD/BBDD.sql
 .vs/videoclub/v15/Server/sqlite3/storage.ide
+=======
+>>>>>>> master

@@ -23,11 +23,11 @@ namespace CAD
             string comando = "";
             if(director.Nombre == "%")
             {
-                comando = "select * from Director";
+                comando = "select * from Director" + " Order by Apellidos, Nombre";
             }
             else
             {
-                comando = "select distinct * from Director where Nombre like '%" + director.Nombre + "%' or Apellidos like '%" + director.Nombre + "%'";
+                comando = "select distinct * from Director where Nombre like '%" + director.Nombre + "%' or Apellidos like '%" + director.Nombre + "%'" + " Order by Apellidos, Nombre";
             }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
@@ -123,7 +123,7 @@ namespace CAD
                 }
                 else
                 {
-                    comando = "select distinct * from Director where Nombre like '" + director.Nombre + "' and Apellidos like '" + director.Apellidos + "'";
+                    comando = "select distinct * from Director where Nombre like '" + director.Nombre + "' and Apellidos like '" + director.Apellidos + "'" + " Order by Apellidos, Nombre";
                 }
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 var reader = cmd.ExecuteReader();
