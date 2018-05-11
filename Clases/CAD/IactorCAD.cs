@@ -12,6 +12,9 @@ namespace CAD
         actorEN mostrarActor(int id);
         List <actorEN> mostrarListaActores(actorEN actor);
         void modificarActor(actorEN actor);
-        bool existe(actorEN actor); 
+        bool existe(actorEN actor);
+        List<peliculaEN> peliculasActor(int id);
+        void insertarActuacion(int idAct, int idPel);
+        void borrarActuacion(int idAct, int idPel);
     }
 }

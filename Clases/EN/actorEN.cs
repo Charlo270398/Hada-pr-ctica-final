@@ -31,6 +31,12 @@ namespace Clases.EN
         {
 
         }
+        public actorEN(int id, string nombre)
+        {
+            this.idAc = id;
+            this.nombre = nombre;
+
+        }
         public actorEN(int id, string nombre, string apellidos, string fecha, string pais)
         {
             this.idAc = id;

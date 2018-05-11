@@ -15,10 +15,10 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <br />Sinopsis:&nbsp; &nbsp;&nbsp; <asp:TextBox ID="sinopsisBox" runat="server"></asp:TextBox>
     &nbsp;<br />
-    Precio de Compra (ej: 2.25):&nbsp; &nbsp;&nbsp;
+    Precio de Compra (en céntimos):&nbsp; &nbsp;&nbsp;
     <asp:TextBox ID="compraBox" runat="server"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp;<br />
-    Precio de Alquiler (ej: 2.25):&nbsp; &nbsp;&nbsp;
+    Precio de Alquiler (en céntimos):&nbsp; &nbsp;&nbsp;
     <asp:TextBox ID="alquilerBox" runat="server"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
     Distribuidora:&nbsp; &nbsp;&nbsp; <asp:DropDownList ID="DWdist" runat="server" AutoPostBack="true">

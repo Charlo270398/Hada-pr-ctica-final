@@ -79,7 +79,7 @@ namespace WebVideo
         {
             if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
             {
-                Response.Redirect("Peliculas/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);                             
+                Response.Redirect("Mostrar/Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex-1]);                             
             }
             else
             {
@@ -147,10 +147,6 @@ namespace WebVideo
 
         }
 
-        protected void Btn_Actor2C(object sender, EventArgs e)
-        {
-
-        }
 
         protected void Btn_Director2C(object sender, EventArgs e)
         {
@@ -187,7 +183,7 @@ namespace WebVideo
                 if (DWDistribuidora.Items.Count == 1)
                 {
                     ErrDistribuidora.Visible = true;
-                    ErrDistribuidora.Text = "*Búsqueda vacía. Introduzca el carácter '%' para ver todos los títulos";
+                    ErrDistribuidora.Text = "*Búsqueda vacía. Introduzca el carácter '%' para ver todas las distribuidoras";
                     DWDistribuidora.Visible = false;
                     Btn_Distribuidora2.Visible = false;
                 }
@@ -204,7 +200,7 @@ namespace WebVideo
 
             ErrSerie.Visible = false;
             ErrPelicula.Visible = false;
-            ErrSerie.Visible = false;
+            ErrActor.Visible = false;
             ErrDirector.Visible = false;
             DWActor.Visible = false;
             DWPeliculas.Visible = false;
@@ -225,11 +221,75 @@ namespace WebVideo
             else
             {
                 ErrDistribuidora.Visible = true;
-                ErrPelicula.Text = "*Seleccione una distribuidora";
+                ErrDistribuidora.Text = "*Seleccione una distribuidora";
             }
 
         }
 
-        
+        protected void Button_Actor(object sender, EventArgs e)
+        {
+            if (ActorBox.Text != "")
+            {
+                listaID.Clear();
+                actorCAD a = new actorCAD();
+                actorEN nombre = new actorEN(-1, ActorBox.Text);
+                List<string> ListaNombres = new List<string>();
+                DWActor.Visible = true;
+                Btn_Actor2.Visible = true;
+                List<actorEN> d = a.mostrarListaActores(nombre);
+                for (int i = 0; i < d.Count; i++)
+                {
+                    ListaNombres.Add(d[i].Nombre + " " + d[i].Apellidos);
+                    listaID.Add(d[i].IdAc);
+                }
+
+                DWActor.DataSource = ListaNombres;
+                DWActor.DataBind();
+                DWActor.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+                if (DWActor.Items.Count == 1)
+                {
+                    ErrActor.Visible = true;
+                    ErrActor.Text = "*Búsqueda vacía. Introduzca el carácter '%' para ver todos los actores";
+                    DWActor.Visible = false;
+                    Btn_Actor2.Visible = false;
+                }
+                else
+                {
+                    ErrActor.Visible = false;
+                }
+            }
+            else
+            {
+                ErrActor.Visible = true;
+                ErrActor.Text = "*Campo vacío";
+            }
+
+            ErrSerie.Visible = false;
+            ErrPelicula.Visible = false;
+            ErrDistribuidora.Visible = false;
+            ErrDirector.Visible = false;
+            DWDistribuidora.Visible = false;
+            DWPeliculas.Visible = false;
+            DWSeries.Visible = false;
+            DWDirector.Visible = false;
+            Btn_Distribuidora2.Visible = false;
+            Btn_Pelicula2.Visible = false;
+            Btn_Serie2.Visible = false;
+            Btn_Director2.Visible = false;
+
+        }
+
+        protected void Btn_Actor2C(object sender, EventArgs e)
+        {
+            if (DWActor.SelectedItem.ToString() != "[Seleccionar]")
+            {
+                Response.Redirect("Mostrar/Mostrar_Actor.aspx?id=" + +listaID[DWActor.SelectedIndex - 1]);
+            }
+            else
+            {
+                ErrActor.Visible = true;
+                ErrActor.Text = "*Seleccione un actor";
+            }
+        }
     }
 }
