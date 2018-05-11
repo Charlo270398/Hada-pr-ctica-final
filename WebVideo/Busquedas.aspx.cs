@@ -72,7 +72,15 @@ namespace WebVideo
 
         protected void Btn_SerieC(object sender, EventArgs e)
         {
-
+            if (DWSeries.SelectedItem.ToString() != "[Seleccionar]")
+            {
+                Response.Redirect("Mostrar/Mostrar_Series.aspx?id=" + listaID[DWSeries.SelectedIndex - 1]);
+            }
+            else
+            {
+                ErrPelicula.Visible = true;
+                ErrPelicula.Text = "*Seleccione una película";
+            }
         }
 
         protected void Btn_Pelicula2C(object sender, EventArgs e)
