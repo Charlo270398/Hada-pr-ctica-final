@@ -18,7 +18,7 @@ namespace WebVideo
         protected void Page_Load(object sender, EventArgs e)
         {
            
-           
+
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace WebVideo
             if (DWPais != null)
             {
                 paisCAD pais = new paisCAD();
-
+                Session["user_session_data"] = null;
                 DWPais.DataSource = pais.mostrarListaPaises() ;
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
@@ -151,7 +151,10 @@ namespace WebVideo
                 try
                 {
                     user.anyadirUsuario();
-                }catch(Exception ex)
+                    Session["user_session_data"] = user;
+                    Response.Redirect("Area_Cliente.aspx");
+                }
+                catch(Exception ex)
                 {
                     EmailErr.Visible = true;
                     EmailErr.Text = ex.Message;
