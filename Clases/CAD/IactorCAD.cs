@@ -15,5 +15,6 @@ namespace CAD
         bool existe(actorEN actor);
         List<peliculaEN> peliculasActor(int id);
         void insertarActuacion(int idAct, int idPel);
+        void borrarActuacion(int idAct, int idPel);
     }
 }

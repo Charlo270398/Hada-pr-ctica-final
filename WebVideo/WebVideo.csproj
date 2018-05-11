@@ -129,7 +129,6 @@
     <Content Include="images\series_img\stranger_things2.jpg" />
     <Content Include="Busquedas.aspx" />
     <Content Include="MasterPage.Master" />
-    <Content Include="MasterPage2.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -151,6 +150,7 @@
     <Content Include="Series\Series_index.aspx" />
     <Content Include="Series\Series_individual.aspx" />
     <Content Include="Series\series_temporada.aspx" />
+    <Content Include="Transaccion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -301,13 +301,6 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage2.Master.cs">
-      <DependentUpon>MasterPage2.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage2.Master.designer.cs">
-      <DependentUpon>MasterPage2.Master</DependentUpon>
-    </Compile>
     <Compile Include="Mostrar\Mostrar_Actor.aspx.cs">
       <DependentUpon>Mostrar_Actor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,6 +400,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaccion.aspx.cs">
+      <DependentUpon>Transaccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaccion.aspx.designer.cs">
+      <DependentUpon>Transaccion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
