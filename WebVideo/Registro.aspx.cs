@@ -17,7 +17,7 @@ namespace WebVideo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["user_session_data"] = null;
+           
 
         }
 
@@ -47,7 +47,7 @@ namespace WebVideo
             if (DWPais != null)
             {
                 paisCAD pais = new paisCAD();
-
+                Session["user_session_data"] = null;
                 DWPais.DataSource = pais.mostrarListaPaises() ;
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
