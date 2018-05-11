@@ -69,40 +69,16 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public actorEN mostrarActor()
+        public void mostrarActor()
         {
-            actorCAD actor = new actorCAD();
-            try
-            {
-                return actor.mostrarActor(this.idAc);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+
         }
-
-
         public void modificarActor()
         {
             actorCAD actor = new actorCAD();
             try
             {
                 actor.modificarActor(this);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public List<peliculaEN> mostrarPeliculasActor()
-        {
-            actorCAD actor = new actorCAD();
-            try
-            {
-                //return peliculasactorCAD
-                return null;
             }
             catch (Exception ex)
             {
