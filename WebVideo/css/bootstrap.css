@@ -1030,9 +1030,7 @@ pre code {
 }
 
 form {
-  margin: 0 0 6px 0;
-    width: 1167px;
-    height: 75px;
+  margin: 0 0 20px;
 }
 
 fieldset {
@@ -1101,7 +1099,7 @@ input[type="color"],
   height: 20px;
   padding: 4px 6px;
   margin-bottom: 10px;
-  font-size: x-small;
+  font-size: 14px;
   line-height: 20px;
   color: #555555;
   vertical-align: middle;
@@ -1900,7 +1898,6 @@ input.search-query {
   margin-bottom: 0;
   vertical-align: middle;
   *zoom: 1;
-    text-align: left;
 }
 
 .form-search .hide,
@@ -3246,7 +3243,7 @@ button.close {
 }
 
 .btn:first-child {
-  *margin-left: 22px;
+  *margin-left: 0;
 }
 
 .btn:hover,
@@ -4596,11 +4593,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav {
   position: relative;
-<<<<<<< HEAD
-  left: 0px;
-=======
   left: -353px;
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
   display: block;
   float: left;
   margin: 0 10px 0 0;
@@ -4609,21 +4602,13 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav.pull-right {
   float: right;
   margin-right: 0;
-<<<<<<< HEAD
-    top: -1px;
-=======
     top: 2px;
     height: 124px;
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
 }
 
 .navbar .nav > li {
   float: left;
     height: 15px;
-    width: 41px;
-}
-
-
 }
 
 .navbar .nav > li > a {
@@ -6162,16 +6147,11 @@ a.badge:focus {
 
 .pull-right {
   float: right;
-<<<<<<< HEAD
-    height: 34px;
-    width: 176px;
-=======
     text-align: left;
     width: 499px;
 }
 
 
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
 }
 
 .pull-left {

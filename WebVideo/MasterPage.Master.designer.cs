@@ -22,7 +22,15 @@ namespace WebVideo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-<<<<<<< HEAD
+        /// Control globoInicioSesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel globoInicioSesion;
+        
+        /// <summary>
         /// Control menuInicio.
         /// </summary>
         /// <remarks>
@@ -30,49 +38,6 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink menuInicio;
-        
-        /// <summary>
-        /// Control menuBusquedas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink menuBusquedas;
-        
-        /// <summary>
-        /// Control menuSN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink menuSN;
-        
-        /// <summary>
-        /// Control menuMantenimiento.
-=======
-        /// Control globoInicioSesion.
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.HyperLink menuMantenimiento;
-=======
-        protected global::System.Web.UI.WebControls.Panel globoInicioSesion;
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
-        
-        /// <summary>
-        /// Control btnSalir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalir;
         
         /// <summary>
         /// Control menuLogin.

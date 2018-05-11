@@ -14,11 +14,6 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
       <style type="text/css">
-<<<<<<< HEAD
-          .navbar-content {
-              width: 915px;
-              height: 6px;
-=======
           .auto-style3 {
               font-size: 12px;
           }
@@ -33,7 +28,6 @@
           .auto-style6 {
               font-size: 18px;
               font-family: "Bell MT";
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
           }
       </style>
   </head>
@@ -45,30 +39,12 @@
           <a class="brand" href="#">Hookin</a>
           <a></a>
           <div class="usuario pull-left">
-<<<<<<< HEAD
-              Tu videoclub online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:HyperLink ID="menuInicio" runat="server" ForeColor="#3333FF" NavigateUrl="Inicio.aspx">Inicio</asp:HyperLink>
-              <asp:HyperLink ID="menuBusquedas" runat="server" ForeColor="#3333FF" NavigateUrl="Busquedas.aspx">Búsquedas</asp:HyperLink>
-                <asp:HyperLink ID="menuSN" runat="server" ForeColor="#3333FF" NavigateUrl="FAQ.aspx">Preguntas frecuentes</asp:HyperLink>
-                <asp:HyperLink ID="menuMantenimiento" runat="server" ForeColor="#3333FF" NavigateUrl="Mantenimiento/Main.aspx">Mantenimiento</asp:HyperLink>
-                <asp:Button ID="btnSalir" runat="server" CssClass="btn" onclick="salirButton_Click" Text="Salir" Width="50px" BorderColor="#CCFF99" ForeColor="#0066FF" />
-              </div>
-        </div>
-      </div>
-    </div>
-    <div style="height: 62px">
-        <br /><br />
-        <br />
-        <br />
-        <br /></div>
-=======
               Tu videoclub online</div>
           <div class="navbar-content">
           </div>
         </div>
       </div>
     </div>
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
 
 
 
@@ -76,18 +52,6 @@
 
     
 
-<<<<<<< HEAD
-    <asp:Panel ID="globoInicioSesion" runat="server" Width="1100px">
-      <div class="alert alert-info hidden-phone">
-          <asp:Label ID="Label1" runat="server" style="font-size: small; text-align: left;" Text="Nombre de Usuario:" />
-          <asp:TextBox ID="userTextBox" runat="server" CssClass="input-medium" Height="16px" Width="120px" />
-          <asp:Label ID="Label2" runat="server" style="font-size: small" Text="Contraseña:" />
-          <asp:TextBox ID="passTextBox" runat="server" CssClass="input-medium" Height="16px" TextMode="Password" Width="120px" />
-          <asp:Label ID="err" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:Button ID="accederButton" runat="server" CssClass="btn" onclick="accederButton_Click" Text="Iniciar Sesión" Width="137px" />
-          <asp:Button ID="nuevoUsuarioButton" runat="server" CssClass="btn" onclick="nuevoUsuarioButton_Click" Text="Registrarse" Width="126px" />
-=======
     <asp:Panel ID="globoInicioSesion" runat="server" CssClass="auto-style3">
       <div class="alert alert-info hidden-phone">
           <strong>
@@ -108,7 +72,6 @@
           <asp:Label ID="Nombre" runat="server" CssClass="auto-style5" ForeColor="#CC00CC" Text="Texto"></asp:Label>
 &nbsp;</strong><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
->>>>>>> ffe516b13842f9d82f4acf12a663a814545fd02c
 
       </div>
     </asp:Panel>
@@ -117,29 +80,11 @@
         
     </asp:ContentPlaceHolder>
 
-            <ul class="nav  pull-right">
-              <li>
-              </li>          
-            </ul>
-            <ul class="nav  pull-right">
-                <li></li>
-            </ul>
-
     <br />
 
 
-    <asp:Panel ID="subBody" runat="server" Visible="False" Height="35px">
+    <asp:Panel ID="subBody" runat="server" Visible="False">
     <asp:ContentPlaceHolder id="bajoCuerpo" runat="server">
-        
-        <ul class="nav  pull-right">
-            <li>
-                &nbsp;</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li>
-            </li>
-        </ul>
         
     </asp:ContentPlaceHolder>
     </asp:Panel>
