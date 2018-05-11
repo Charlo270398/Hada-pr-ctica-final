@@ -14,7 +14,7 @@ namespace WebVideo.Peliculas
 
         peliculaCAD p = new peliculaCAD();
         peliculaEN pelicula = new peliculaEN();
-     
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -53,6 +53,13 @@ namespace WebVideo.Peliculas
                 mostrarSaga.Visible = true;
                 SagaText.Visible = true;
                 mostrarSaga.Text = s.mostrarSaga(pelicula.IdSaga).Nombre;
+            }
+            Response.Charset = "utf-8";
+            usuarioEN user = (usuarioEN)Session["user_session_data"];
+            if (user != null)
+            {
+                adquirirText.Visible = true;
+                adquirirText.NavigateUrl = "../Transaccion.aspx?id=" + pelicula.IdP;
             }
 
         }

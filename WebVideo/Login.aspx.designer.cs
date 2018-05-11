@@ -7,45 +7,45 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebVideo.Mantenimiento {
+namespace WebVideo {
     
     
-    public partial class Borrar_Actuacion {
+    public partial class Login {
         
         /// <summary>
-        /// Control DWActor.
+        /// Control Text_Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWActor;
+        protected global::System.Web.UI.WebControls.TextBox Text_Email;
         
         /// <summary>
-        /// Control DWPelicula.
+        /// Control Text_Pass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWPelicula;
+        protected global::System.Web.UI.WebControls.TextBox Text_Pass;
         
         /// <summary>
-        /// Control Btn_Borrar.
+        /// Control Btn_Login.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Borrar;
+        protected global::System.Web.UI.WebControls.Button Btn_Login;
         
         /// <summary>
-        /// Control Err1.
+        /// Control Err.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Err1;
+        protected global::System.Web.UI.WebControls.Label Err;
     }
 }

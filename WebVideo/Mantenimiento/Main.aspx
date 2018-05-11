@@ -39,6 +39,13 @@
         </asp:DropDownList>
     </p>
     <p>
+        <asp:Button ID="Btn_Privilegios" runat="server" Text="Dar Privilegios" Width="120px" OnClick="Btn_Privilegios_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DW_Privilegios" runat="server" Width="200px">
+        </asp:DropDownList>
+        <asp:Label ID="err" runat="server" Text="err" Visible="False"></asp:Label>
+    </p>
+    <p>
     </p>
     <p>
     </p>

@@ -81,6 +81,7 @@
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
+    <Content Include="Login.aspx" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
     <Content Include="Mantenimiento\Añadir_Actuacion.aspx" />
     <Content Include="Mantenimiento\Añadir_Director.aspx" />
@@ -149,6 +150,7 @@
     <Content Include="Series\Series_index.aspx" />
     <Content Include="Series\Series_individual.aspx" />
     <Content Include="Series\series_temporada.aspx" />
+    <Content Include="Transaccion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +167,13 @@
     </Compile>
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Añadir_Actor.aspx.cs">
       <DependentUpon>Añadir_Actor.aspx</DependentUpon>
@@ -391,6 +400,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaccion.aspx.cs">
+      <DependentUpon>Transaccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaccion.aspx.designer.cs">
+      <DependentUpon>Transaccion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

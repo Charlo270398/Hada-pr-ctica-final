@@ -206,5 +206,22 @@ namespace CAD
                 throw new Exception(ex.Message);
             }
         }
+        public void borrarActuacion(int idAct, int idPel)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Actuaciones where Id_Pelicula = " + idPel + " and  Id_Actor = " + idAct;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
