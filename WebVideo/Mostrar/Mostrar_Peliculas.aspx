@@ -38,6 +38,9 @@
         <asp:HyperLink ID="TrailerLink" runat="server" ForeColor="#CC3399">Ver trailer</asp:HyperLink>
         <br />
         <br />
+        <asp:HyperLink ID="adquirirText" runat="server" Visible="False">Adquirir Película</asp:HyperLink>
+        <br />
+        <br />
     </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bajoCuerpo" runat="server">

@@ -23,11 +23,13 @@
     <p>
         <br />
     <asp:Button ID="Btn_Compra" runat="server"  Text="Ver compra" OnClick="Btn_CompraC" />
+    &nbsp;&nbsp;&nbsp;
     <asp:DropDownList ID="DWCompras" runat="server">
     </asp:DropDownList>
     &nbsp;</p>
     <p>
     <asp:Button ID="Btn_Alquiler" runat="server"  Text="Ver alquiler" OnClick="Btn_AlquilerC" />
+    &nbsp;&nbsp;&nbsp;
     <asp:DropDownList ID="DWAlquiler" runat="server">
     </asp:DropDownList>
     </p>

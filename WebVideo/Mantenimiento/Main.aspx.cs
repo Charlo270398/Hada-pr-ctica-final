@@ -161,16 +161,25 @@ namespace WebVideo.Mantenimiento
                 {
                     if(DW_Privilegios.SelectedItem.ToString() == listaU[i].Email){
                         stop = true;
-                        try
+                        if (!listaU[i].AdMin)
                         {
-                            listaU[i].hacerAdmin();
-                            err.Text = "AHORA " + DW_Privilegios.SelectedItem.ToString() + " ES ADMIN";
-                            err.ForeColor = Color.Green;
-                            err.Visible = true;
+                            try
+                            {
+                                listaU[i].hacerAdmin();
+                                err.Text = "AHORA " + DW_Privilegios.SelectedItem.ToString() + " ES ADMIN";
+                                err.ForeColor = Color.Green;
+                                err.Visible = true;
+                            }
+                            catch (Exception ex)
+                            {
+                                err.Text = ex.Message;
+                                err.ForeColor = Color.Red;
+                                err.Visible = true;
+                            }
                         }
-                        catch(Exception ex)
+                        else
                         {
-                            err.Text = ex.Message;
+                            err.Text = DW_Privilegios.SelectedItem.ToString() + " YA ES ADMIN";
                             err.ForeColor = Color.Red;
                             err.Visible = true;
                         }
