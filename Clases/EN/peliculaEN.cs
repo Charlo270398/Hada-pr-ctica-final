@@ -96,8 +96,33 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public void mostrarPelicula()
+        public void cargarPelicula()
         {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                p.mostrarPelicula(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public peliculaEN mostrarPelicula()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarPelicula(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
         }
         public void modificarPelicula()

@@ -4,12 +4,6 @@ using System.Linq;
 using System.Text;
 using CAD;
 
-
-
-
-
-
-
 namespace Clases.EN
 {
     public class paisEN
@@ -28,18 +22,68 @@ namespace Clases.EN
 
         public void mostrarNombrePais()
         {
-            paisCAD pais = new paisCAD();
-            paisEN mostrar = new paisEN();
-            mostrar = pais.mostrarPais(this.idPais);
-            this.Pais = mostrar.Pais;
+            try
+            {
+                paisCAD pais = new paisCAD();
+                paisEN mostrar = new paisEN();
+                mostrar = pais.mostrarPais(this.idPais);
+                this.Pais = mostrar.Pais;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             
+        }
+
+        public void cargarNombrePais()
+        {
+            try
+            {
+                paisCAD pais = new paisCAD();
+                paisEN mostrar = new paisEN();
+                mostrar = pais.mostrarPais(this.idPais);
+                this.Pais = mostrar.Pais;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
         public void mostrarIdPais()
         {
-            paisCAD pais = new paisCAD();
-            paisEN mostrar = new paisEN();
-            mostrar = pais.mostrarIdPais(this.Pais);
-            this.IdPais = mostrar.IdPais;
+            try
+            {
+                paisCAD pais = new paisCAD();
+                paisEN mostrar = new paisEN();
+                mostrar = pais.mostrarIdPais(this.Pais);
+                this.IdPais = mostrar.IdPais;
+
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void cargarIdPais()
+        {
+            try
+            {
+                paisCAD pais = new paisCAD();
+                paisEN mostrar = new paisEN();
+                mostrar = pais.mostrarIdPais(this.Pais);
+                this.IdPais = mostrar.IdPais;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<paisEN> mostrarListaPaises()
+        {
+            return null;
         }
 
     }
