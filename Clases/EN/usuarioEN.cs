@@ -102,19 +102,7 @@ namespace  Clases.EN
                 throw new Exception(e.Message);
             }
         }
-        public bool validacion()
-        {
-            usuarioCAD user = new usuarioCAD();
-            try
-            {
-                return user.existe(this);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
 
-        }
         public void modificarUsuario()
         {
 

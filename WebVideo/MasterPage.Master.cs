@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clases.EN;
-using CAD;
 using System.Drawing;
 
 namespace WebVideo
@@ -25,7 +24,7 @@ namespace WebVideo
                 menuSalir.Visible = true;
                 menuLogin.Visible = false;
                 menuRegistro.Text = "Área cliente";
-                menuRegistro.NavigateUrl = "Area_cliente.aspx";
+                menuRegistro.NavigateUrl = "Area_Cliente/Area_Cliente.aspx";
                 Nombre.Visible = true;
                 Nombre.ForeColor = Color.Black;
                 Nombre.Text = "Sesión iniciada como: " + user.Email;

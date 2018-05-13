@@ -8,7 +8,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CAD;
 using Clases.EN;
 
 namespace WebVideo
@@ -46,9 +45,9 @@ namespace WebVideo
         {
             if (DWPais != null)
             {
-                paisCAD pais = new paisCAD();
+                paisEN pais = new paisEN();
                 Session["user_session_data"] = null;
-                DWPais.DataSource = pais.mostrarListaPaises() ;
+                DWPais.DataSource = pais.mostrarListaNombresPaises() ;
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
@@ -139,13 +138,13 @@ namespace WebVideo
             
             if (correcto)
             {
-                paisCAD pais = new paisCAD();
+                paisEN pais = new paisEN(DWPais.SelectedItem.ToString());
                 usuarioEN user = new usuarioEN();
                 user.Apellidos = Text_ap.Text;
                 user.Contrasenya = Text_Cnt.Text;
                 user.Email = Text_Email.Text;
                 user.Nombre = Text_nom.Text;
-                user.Pais = pais.mostrarIdPais(DWPais.SelectedItem.ToString()).IdPais;
+                user.Pais = pais.mostrarIdPais().IdPais;
                 DateTime fecha = DateTime.Now;
                 user.FechaA = fecha.Date.ToString();
                 try
@@ -160,6 +159,10 @@ namespace WebVideo
                     EmailErr.Text = ex.Message;
                 }
                 
+            }
+            else
+            {
+                EmailErr.Visible = false;
             }
 
         }
