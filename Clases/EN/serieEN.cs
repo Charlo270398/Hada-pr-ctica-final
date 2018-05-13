@@ -13,8 +13,8 @@ namespace Clases.EN
         private string titulo;
         public string Titulo { get { return titulo; } set { titulo = value; } }
 
-        private string nombre;
-        public string Nombre { get { return nombre; } set { nombre = value; } }
+        private string sinopsis;
+        public string Sinopsis { get { return sinopsis; } set { sinopsis = value; } }
 
         private string fechaE;
         public string FechaE { get { return fechaE; } set { fechaE = value; } }
@@ -28,6 +28,26 @@ namespace Clases.EN
         private string imagen;
         public string Imagen { get { return imagen; } set { imagen = value; } }
 
+        public serieEN()
+        {
+            idS = -1;
+        }
+
+        public serieEN(int id, string nombre)
+        {
+            IdS = id;
+            Titulo = nombre;
+        }
+        public serieEN(int id, string titulo, string fecha, string sinopsis, float precioC, float precioA, string imagen)
+        {
+            IdS = id;
+            Titulo = titulo;
+            this.fechaE = fecha;
+            this.sinopsis = sinopsis;
+            this.precioA = precioA;
+            this.precioC = precioC;
+            this.imagen = imagen;
+        }
         public void anyadirSerie()
         {
 

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CAD;
 using Clases.EN;
+using Clases.CAD;
 
 namespace WebVideo
 {
@@ -72,14 +73,65 @@ namespace WebVideo
 
         protected void Btn_SerieC(object sender, EventArgs e)
         {
+            if (SerieBox.Text != "")
+            {
+                listaID.Clear();
+                serieCAD serie = new serieCAD();
+                serieEN nombre = new serieEN(-1, SerieBox.Text);
+                List<string> ListaNombres = new List<string>();
+                DWSeries.Visible = true;
+                Btn_Serie2.Visible = true;
+                List<serieEN> p = serie.mostrarListaSeries(nombre);
+                for (int i = 0; i < p.Count; i++)
+                {
+                    ListaNombres.Add(p[i].Titulo);
+                    listaID.Add(p[i].IdS);
+                }
+                DWSeries.DataSource = ListaNombres;
+                DWSeries.DataBind();
+                DWSeries.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+                if (DWPeliculas.Items.Count == 1)
+                {
+                    ErrSerie.Visible = true;
+                    ErrSerie.Text = "*Búsqueda vacía. Introduzca el carácter '%' para ver todos los títulos";
+                    DWSeries.Visible = false;
+                    Btn_Serie2.Visible = false;
+                }
+                else
+                {
+                    ErrSerie.Visible = false;
+                }
+            }
+            else
+            {
+                ErrSerie.Visible = true;
+                ErrSerie.Text = "*Campo vacío";
+            }
+
+            ErrPelicula.Visible = false;
+            ErrDistribuidora.Visible = false;
+            ErrPelicula.Visible = false;
+            ErrDirector.Visible = false;
+            DWActor.Visible = false;
+            DWDistribuidora.Visible = false;
+            DWPeliculas.Visible = false;
+            DWDirector.Visible = false;
+            Btn_Actor2.Visible = false;
+            Btn_Distribuidora2.Visible = false;
+            Btn_Pelicula2.Visible = false;
+            Btn_Director2.Visible = false;
+        }
+
+        protected void Btn_Serie2C(object sender, EventArgs e)
+        {
             if (DWSeries.SelectedItem.ToString() != "[Seleccionar]")
             {
                 Response.Redirect("Mostrar/Mostrar_Series.aspx?id=" + listaID[DWSeries.SelectedIndex - 1]);
             }
             else
             {
-                ErrPelicula.Visible = true;
-                ErrPelicula.Text = "*Seleccione una película";
+                ErrSerie.Visible = true;
+                ErrSerie.Text = "*Seleccione una Serie";
             }
         }
 
@@ -148,11 +200,6 @@ namespace WebVideo
             Btn_Pelicula2.Visible = false;
             Btn_Serie2.Visible = false;
             Btn_Distribuidora2.Visible = false;
-        }
-
-        protected void Btn_Serie2C(object sender, EventArgs e)
-        {
-
         }
 
 
