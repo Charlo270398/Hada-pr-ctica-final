@@ -151,7 +151,7 @@ namespace CAD
             {
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "update Usuarios set Nombre = '" + user.Nombre + "' ,Apellidos = '" + user.Apellidos + "' where Email = '" + user.Email + "'";
+                string comando = "update Usuarios set Nombre = '" + user.Nombre + "' ,Apellidos = '" + user.Apellidos + "', Pais = " + user.Pais +  " where Email = '" + user.Email + "'";
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
