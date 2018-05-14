@@ -82,6 +82,7 @@
     <Content Include="Area_Cliente\Cambiar_Contraseña.aspx" />
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
+    <Content Include="images\peliculas_img\interestellar.jpg" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
