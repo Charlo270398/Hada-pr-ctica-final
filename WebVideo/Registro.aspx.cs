@@ -91,10 +91,22 @@ namespace WebVideo
 
             if (Text_Cnt.Text == "")
             {
+                CntErr.Text = "*Campo vacío";
                 correcto = false;
                 Text_Cnt.BorderColor = Color.Red;
                 CntErr.Visible = true;
             }
+            else
+            {
+                if (Text_Cnt.Text.Length < 7)
+                {
+                    correcto = false;
+                    CntErr.Text = "*La contraseña debe tener como mínimo 7 caracteres";
+                    Text_Cnt.BorderColor = Color.Red;
+                    CntErr.Visible = true;
+                }
+            }
+
             if (Text_nom.Text == "")
             {
                 correcto = false;
@@ -151,7 +163,7 @@ namespace WebVideo
                 {
                     user.anyadirUsuario();
                     Session["user_session_data"] = user;
-                    Response.Redirect("Area_Cliente.aspx");
+                    Response.Redirect("Area_Cliente/Menu_Cliente.aspx");
                 }
                 catch(Exception ex)
                 {

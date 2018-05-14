@@ -27,7 +27,7 @@ namespace WebVideo
                     if (usuario.Contrasenya == Text_Pass.Text)
                     {
                         Session["user_session_data"] = usuario; 
-                        Response.Redirect("Area_Cliente/Area_Cliente.aspx"); 
+                        Response.Redirect("Area_Cliente/Menu_Cliente.aspx"); 
                     }
                     else
                     {

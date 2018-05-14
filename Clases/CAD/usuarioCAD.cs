@@ -64,7 +64,6 @@ namespace CAD
 
             return user;
         }
-        public void modificarUsuario(usuarioEN user) {}
         public bool existe(usuarioEN user) {
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
@@ -136,6 +135,40 @@ namespace CAD
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "update Usuarios set Administrador = "+ 1 + "where Email = '" + email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void modificarDatos(usuarioEN user)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "update Usuarios set Nombre = '" + user.Nombre + "' ,Apellidos = '" + user.Apellidos + "' where Email = '" + user.Email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void modificarContraseña(usuarioEN user)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "update Usuarios set Contrasenya = '" + user.Contrasenya + "' where Email = '" + user.Email + "'";
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();

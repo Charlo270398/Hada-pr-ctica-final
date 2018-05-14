@@ -103,9 +103,30 @@ namespace  Clases.EN
             }
         }
 
-        public void modificarUsuario()
+        public void modificarDatos()
         {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                user.modificarDatos(this);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
+        public void modificarContraseña()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                user.modificarContraseña(this);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
     }
