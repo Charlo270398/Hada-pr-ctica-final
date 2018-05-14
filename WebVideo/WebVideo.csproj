@@ -95,6 +95,7 @@
     <Content Include="Mantenimiento\Borrar_Dist.aspx" />
     <Content Include="Mantenimiento\Borrar_Pelicula.aspx" />
     <Content Include="Mantenimiento\Borrar_Saga.aspx" />
+    <Content Include="Mantenimiento\Borrar_Serie.aspx" />
     <Content Include="Mantenimiento\Main.aspx" />
     <Content Include="Mantenimiento\Modificar_Actor.aspx" />
     <Content Include="Mantenimiento\Modificar_Director.aspx" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="Mantenimiento\Borrar_Saga.aspx.designer.cs">
       <DependentUpon>Borrar_Saga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Serie.aspx.cs">
+      <DependentUpon>Borrar_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Serie.aspx.designer.cs">
+      <DependentUpon>Borrar_Serie.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

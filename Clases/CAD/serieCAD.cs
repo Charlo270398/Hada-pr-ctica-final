@@ -165,6 +165,24 @@ namespace Clases.CAD
             return devolver;
         }
 
+        public void borrarSerie(int id)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Series where Id_Serie = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void modificarSerie(serieEN serie)
         {
             throw new NotImplementedException();

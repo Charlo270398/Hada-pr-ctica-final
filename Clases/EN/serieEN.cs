@@ -56,7 +56,16 @@ namespace Clases.EN
         }
         public void borrarSerie()
         {
+            try
+            {
+                serieCAD p = new serieCAD();
+                p.borrarSerie(this.idS);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void mostrarSerie()
         {
