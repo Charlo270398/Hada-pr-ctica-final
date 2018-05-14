@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Clases.CAD;
 
 namespace Clases.EN
 {
@@ -50,7 +51,8 @@ namespace Clases.EN
         }
         public void anyadirSerie()
         {
-
+            serieCAD p = new serieCAD();
+            p.anyadirSerie(this);
         }
         public void borrarSerie()
         {
