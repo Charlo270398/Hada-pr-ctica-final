@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Clases.EN;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CAD
 {
@@ -13,12 +14,76 @@ namespace CAD
         {
 
         }
-        public void alquilar(int id) { }
+        public void alquilar(int idPelicula, string email) {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "insert into TransaccionP values ('" + email + "' , " + idPelicula + " , '" + DateTime.Now + "' , " + 1 + " ,  '" + DateTime.Now.AddDays(7) + "')";
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("La película ya está en alquiler/compra");
+            }
+        }
         public void devolver(int id) { }
-        public void comprar(int id) { }
+        public void comprar(int idPelicula, string email) {
+
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "insert into TransaccionP values ('" + email + "' , " + idPelicula + " , '" + DateTime.Now + "' , " + 0 + " ,  null)";
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }catch(Exception ex)
+            {
+                throw new Exception("La película ya está en alquiler/compra");
+            }
+        }
         public void modificarCompra(int id) { }
         public void modificarAlquiler(int id) { }
-        public transaccionPeliculaEN mostrarTransaccion(int id) { return null; }
+        public transaccionPeliculaEN mostrarTransaccion(int id, string email) {
+            try
+            {
+                transaccionPeliculaEN devolver = new transaccionPeliculaEN(id, email);
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "select * from TransaccionP where Email like '" + email + "' and Id_Pelicula = " + id;
+                cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    devolver.FechaC = reader["Fecha_Compra"].ToString();
+                    if (reader.IsDBNull(4))
+                    {
+                        devolver.Alquiler = false;
+                        devolver.FechaF = null;
+                    }
+                    else{
+                        devolver.FechaF = reader["Fecha_Devolucion"].ToString();
+                        devolver.Alquiler = true;
+                    }
+                }
+                reader.Close();
+                cn.Close();
+                return devolver;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public bool existe(int id) { return false; }
     }
 }

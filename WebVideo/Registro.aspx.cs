@@ -8,8 +8,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CAD;
 using Clases.EN;
+using System.Net.Mail;
 
 namespace WebVideo
 {
@@ -18,7 +18,7 @@ namespace WebVideo
         protected void Page_Load(object sender, EventArgs e)
         {
            
-           
+
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
@@ -46,9 +46,9 @@ namespace WebVideo
         {
             if (DWPais != null)
             {
-                paisCAD pais = new paisCAD();
-
-                DWPais.DataSource = pais.mostrarListaPaises() ;
+                paisEN pais = new paisEN();
+                Session["user_session_data"] = null;
+                DWPais.DataSource = pais.mostrarListaNombresPaises() ;
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
@@ -92,10 +92,22 @@ namespace WebVideo
 
             if (Text_Cnt.Text == "")
             {
+                CntErr.Text = "*Campo vacío";
                 correcto = false;
                 Text_Cnt.BorderColor = Color.Red;
                 CntErr.Visible = true;
             }
+            else
+            {
+                if (Text_Cnt.Text.Length < 7)
+                {
+                    correcto = false;
+                    CntErr.Text = "*La contraseña debe tener como mínimo 7 caracteres";
+                    Text_Cnt.BorderColor = Color.Red;
+                    CntErr.Visible = true;
+                }
+            }
+
             if (Text_nom.Text == "")
             {
                 correcto = false;
@@ -139,24 +151,40 @@ namespace WebVideo
             
             if (correcto)
             {
-                paisCAD pais = new paisCAD();
+                paisEN pais = new paisEN(DWPais.SelectedItem.ToString());
                 usuarioEN user = new usuarioEN();
                 user.Apellidos = Text_ap.Text;
                 user.Contrasenya = Text_Cnt.Text;
                 user.Email = Text_Email.Text;
                 user.Nombre = Text_nom.Text;
-                user.Pais = pais.mostrarIdPais(DWPais.SelectedItem.ToString()).IdPais;
+                user.Pais = pais.mostrarIdPais().IdPais;
                 DateTime fecha = DateTime.Now;
                 user.FechaA = fecha.Date.ToString();
                 try
                 {
+                    SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587);
+                    cliente.EnableSsl = true;
+                    cliente.Credentials = new System.Net.NetworkCredential("hookinVideoclub@gmail.com", "hookin123");
+                    string contenido = "Hola, " + user.Nombre + ". Le informamos de que su registro se ha completado correctamente.\n";
+                    contenido += "Fecha del registro: " + (DateTime.Now).ToString();
+                    contenido += "\nPuede consultar su cuenta en la aplicación de Hookin.\n\n";
+                    contenido += "El equipo de Cuentas de Hookin";
+                    MailMessage mail = new MailMessage("hookinVideoclub@gmail.com", user.Email, "¡Bienvenido a Hookin!", contenido);
                     user.anyadirUsuario();
-                }catch(Exception ex)
+                    cliente.Send(mail);
+                    Session["user_session_data"] = user;
+                    Response.Redirect("Area_Cliente/Menu_Cliente.aspx");
+                }
+                catch(Exception ex)
                 {
                     EmailErr.Visible = true;
                     EmailErr.Text = ex.Message;
                 }
                 
+            }
+            else
+            {
+                EmailErr.Visible = false;
             }
 
         }
