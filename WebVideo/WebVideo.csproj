@@ -77,14 +77,8 @@
       <DependentUpon>bbdd.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-<<<<<<< HEAD
     <Content Include="Area_Cliente.aspx" />
     <Content Include="BusquedaPorDistribuidora.aspx" />
-=======
-    <Content Include="Area_Cliente\Cambiar_Datos.aspx" />
-    <Content Include="Area_Cliente\Menu_Cliente.aspx" />
-    <Content Include="Area_Cliente\Cambiar_Contraseña.aspx" />
->>>>>>> master
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
     <Content Include="Login.aspx" />
@@ -107,14 +101,11 @@
     <Content Include="Mantenimiento\Modificar_Director.aspx" />
     <Content Include="Mantenimiento\Modificar_Dist.aspx" />
     <Content Include="Mantenimiento\Modificar_Pelicula.aspx" />
+    <Content Include="Mantenimiento\Modificar_Serie.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
-<<<<<<< HEAD
     <Content Include="Mostrar\Mostrar_Series.aspx" />
-=======
-    <Content Include="Mostrar\Mostrar_Factura.aspx" />
->>>>>>> master
     <Content Include="Mostrar\Mostrar_Peliculas.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
@@ -158,6 +149,11 @@
     <Content Include="Inicio.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="Peliculas\Peliculas_index.aspx" />
+    <Content Include="Peliculas\Peliculas_individual.aspx" />
+    <Content Include="Series\Series_index.aspx" />
+    <Content Include="Series\Series_individual.aspx" />
+    <Content Include="Series\series_temporada.aspx" />
     <Content Include="Transaccion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -316,6 +312,13 @@
     <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
       <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Modificar_Serie.aspx.cs">
+      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Serie.aspx.designer.cs">
+      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -344,21 +347,12 @@
     <Compile Include="Mostrar\Mostrar_Distribuidora.aspx.designer.cs">
       <DependentUpon>Mostrar_Distribuidora.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Mostrar\Mostrar_Series.aspx.cs">
       <DependentUpon>Mostrar_Series.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mostrar\Mostrar_Series.aspx.designer.cs">
       <DependentUpon>Mostrar_Series.aspx</DependentUpon>
-=======
-    <Compile Include="Mostrar\Mostrar_Factura.aspx.cs">
-      <DependentUpon>Mostrar_Factura.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mostrar\Mostrar_Factura.aspx.designer.cs">
-      <DependentUpon>Mostrar_Factura.aspx</DependentUpon>
->>>>>>> master
     </Compile>
     <Compile Include="Mostrar\Mostrar_Peliculas.aspx.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
@@ -390,12 +384,47 @@
       <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Peliculas\Peliculas_index.aspx.cs">
+      <DependentUpon>Peliculas_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Peliculas\Peliculas_index.aspx.designer.cs">
+      <DependentUpon>Peliculas_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Peliculas\Peliculas_individual.aspx.cs">
+      <DependentUpon>Peliculas_individual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Peliculas\Peliculas_individual.aspx.designer.cs">
+      <DependentUpon>Peliculas_individual.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Series\Series_index.aspx.cs">
+      <DependentUpon>Series_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series\Series_index.aspx.designer.cs">
+      <DependentUpon>Series_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Series\Series_individual.aspx.cs">
+      <DependentUpon>Series_individual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series\Series_individual.aspx.designer.cs">
+      <DependentUpon>Series_individual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Series\series_temporada.aspx.cs">
+      <DependentUpon>series_temporada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Series\series_temporada.aspx.designer.cs">
+      <DependentUpon>series_temporada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>

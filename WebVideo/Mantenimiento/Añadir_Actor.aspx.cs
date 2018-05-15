@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CAD;
 using Clases.EN;
 using System.Drawing;
 
@@ -22,9 +23,9 @@ namespace WebVideo.Mantenimiento
             List<int> nums = new List<int>();
             if (DWPais != null)
             {
-                paisEN pais = new paisEN();
+                paisCAD pais = new paisCAD();
 
-                DWPais.DataSource = pais.mostrarListaNombresPaises();
+                DWPais.DataSource = pais.mostrarListaPaises();
                 DWPais.DataBind();
                 DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
@@ -74,6 +75,7 @@ namespace WebVideo.Mantenimiento
                     try
                     {
                         string fecha = DWdia.SelectedItem.ToString() + "-" + DWmes.SelectedItem.ToString() + "-" + DWaño.SelectedItem.ToString();
+                        paisCAD p = new paisCAD();
                         actorEN actor = new actorEN(-1, TextBox1.Text, TextBox2.Text, fecha, DWPais.SelectedItem.ToString());
                         actor.anyadirActor();
                         Err1.Text = "AÑADIDO CORRECTAMENTE";

@@ -22,6 +22,7 @@ namespace WebVideo.Mantenimiento
             if (DWSeries.SelectedItem.ToString() != "[Seleccionar]")
             {
                 serieCAD p = new serieCAD();
+                //serie.Titulo = DWSeries.SelectedItem.ToString();
                 serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
                 serie = p.mostrarSerie(serie);
                 tituloBox.Text = serie.Titulo;
