@@ -10,150 +10,114 @@
 namespace WebVideo {
     
     
-    public partial class Registro {
+    public partial class Area_Clientes {
         
         /// <summary>
-        /// Control Text_Email.
+        /// Control admin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text_Email;
+        protected global::System.Web.UI.WebControls.Label admin;
         
         /// <summary>
-        /// Control EmailErr.
+        /// Control email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailErr;
+        protected global::System.Web.UI.WebControls.Label email;
         
         /// <summary>
-        /// Control DWPais.
+        /// Control nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWPais;
+        protected global::System.Web.UI.WebControls.Label nombre;
         
         /// <summary>
-        /// Control PaisErr.
+        /// Control pais.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaisErr;
+        protected global::System.Web.UI.WebControls.Label pais;
         
         /// <summary>
-        /// Control Text_Cnt.
+        /// Control fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text_Cnt;
+        protected global::System.Web.UI.WebControls.Label fecha;
         
         /// <summary>
-        /// Control CntErr.
+        /// Control Btn_Compra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CntErr;
+        protected global::System.Web.UI.WebControls.Button Btn_Compra;
         
         /// <summary>
-        /// Control Text_Rcnt.
+        /// Control DWCompras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text_Rcnt;
+        protected global::System.Web.UI.WebControls.DropDownList DWCompras;
         
         /// <summary>
-        /// Control RcntErr.
+        /// Control Btn_Alquiler.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RcntErr;
+        protected global::System.Web.UI.WebControls.Button Btn_Alquiler;
         
         /// <summary>
-        /// Control Text_nom.
+        /// Control DWAlquiler.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text_nom;
+        protected global::System.Web.UI.WebControls.DropDownList DWAlquiler;
         
         /// <summary>
-        /// Control NombreErr.
+        /// Control Btn_ModificarContraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreErr;
+        protected global::System.Web.UI.WebControls.Button Btn_ModificarContraseña;
         
         /// <summary>
-        /// Control Text_ap.
+        /// Control Btn_ModificarDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text_ap;
+        protected global::System.Web.UI.WebControls.Button Btn_ModificarDatos;
         
         /// <summary>
-        /// Control ApellidosErr.
+        /// Control Btn_Borrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ApellidosErr;
-        
-        /// <summary>
-        /// Control TC.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink TC;
-        
-        /// <summary>
-        /// Control Terminos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Terminos;
-        
-        /// <summary>
-        /// Control TerminosErr.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TerminosErr;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Btn_Borrar;
     }
 }
