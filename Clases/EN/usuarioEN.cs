@@ -176,5 +176,18 @@ namespace  Clases.EN
             }
         }
 
+        public List<transaccionSerieEN> listaComprasS()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesCompraS(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
     }
 }

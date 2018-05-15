@@ -11,6 +11,8 @@ namespace WebVideo
 {
     public partial class Area_Clientes : System.Web.UI.Page
     {
+        bool botonpelicula = false;
+        bool botonserie = false;
         List<string> nombres = new List<string>();
         List<int> listaIDA = new List<int>();
         List<int> listaIDC = new List<int>();
@@ -92,7 +94,6 @@ namespace WebVideo
                 nombres.Clear();
                 listaIDA.Clear();
                 nombres.Add("[Seleccionar]");
-                nombres.Add("--- PELICULAS ---");
                 for (int i = 0; i < lista.Count; i++)
                 {
                     peli = new peliculaEN();
@@ -100,16 +101,7 @@ namespace WebVideo
                     listaIDA.Add(peli.IdP);
                     nombres.Add(peli.mostrarPelicula().NombreP);
                 }
-                serieEN serie = new serieEN();
-                List<transaccionSerieEN> lista2 = user.listaAlquileresS();
-                nombres.Add("--- SERIES ---");
-                for (int i = 0; i < lista2.Count; i++)
-                {
-                    serie = new serieEN();
-                    serie.IdS = lista2[i].IdS;
-                    listaIDA.Add(serie.IdS);
-                    nombres.Add(serie.mostrarSerie().Titulo);
-                }
+                
                 DWAlquiler.DataSource = nombres;
                 DWAlquiler.DataBind();
 
@@ -123,7 +115,6 @@ namespace WebVideo
                 nombres.Clear();
                 listaIDC.Clear();
                 nombres.Add("[Seleccionar]");
-                nombres.Add("--- PELICULAS ---");
                 for (int i = 0; i < lista.Count; i++)
                 {
                     peli = new peliculaEN();
@@ -131,9 +122,18 @@ namespace WebVideo
                     listaIDC.Add(peli.IdP);
                     nombres.Add(peli.mostrarPelicula().NombreP);
                 }
+                
+                DWCompras.DataSource = nombres;
+                DWCompras.DataBind();
+            }
+
+            if(DWAlquiler0 != null)
+            {
+                nombres.Clear();
+                listaIDC.Clear();
                 serieEN serie = new serieEN();
                 List<transaccionSerieEN> lista2 = user.listaAlquileresS();
-                nombres.Add("--- SERIES ---");
+                nombres.Add("[Seleccionar]");
                 for (int i = 0; i < lista2.Count; i++)
                 {
                     serie = new serieEN();
@@ -141,10 +141,33 @@ namespace WebVideo
                     listaIDA.Add(serie.IdS);
                     nombres.Add(serie.mostrarSerie().Titulo);
                 }
-                DWCompras.DataSource = nombres;
-                DWCompras.DataBind();
+                DWAlquiler0.DataSource = nombres;
+                DWAlquiler0.DataBind();
+            }
+            if(DWCompras0 != null)
+            {
+                nombres.Clear();
+                listaIDC.Clear();
+                serieEN serie = new serieEN();
+                List<transaccionSerieEN> lista2 = user.listaComprasS();
+                nombres.Add("[Seleccionar]");
+                for (int i = 0; i < lista2.Count; i++)
+                {
+                    serie = new serieEN();
+                    serie.IdS = lista2[i].IdS;
+                    listaIDA.Add(serie.IdS);
+                    nombres.Add(serie.mostrarSerie().Titulo);
+                }
+                DWCompras0.DataSource = nombres;
+                DWCompras0.DataBind();
             }
 
+        }
+
+        protected void btnP_select(object sender, EventArgs e)
+        {
+            botonpelicula = true;
+            botonserie = false;
         }
     }
 }
