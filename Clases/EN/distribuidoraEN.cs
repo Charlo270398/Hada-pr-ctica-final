@@ -71,5 +71,17 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public List<distribuidoraEN> listaDistribuidoras()
+        {
+            try
+            {
+                DistribuidoraCAD dist = new DistribuidoraCAD();
+                return dist.mostrarListaDistribuidora();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

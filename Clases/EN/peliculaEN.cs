@@ -96,8 +96,18 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public void mostrarPelicula()
+        public peliculaEN mostrarPelicula()
         {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarPelicula(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
         }
         public void modificarPelicula()
@@ -106,6 +116,48 @@ namespace Clases.EN
             {
                 peliculaCAD p = new peliculaCAD();
                 p.modificarPelicula(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<peliculaEN> mostrarListaPeliculas()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarListaPeliculas(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<peliculaEN> mostrarListaTodasPeliculas()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                this.nombreP = "%";
+                return p.mostrarListaPeliculas(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<actorEN> mostrarListaActores()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+
+                return null;
 
             }
             catch (Exception ex)
