@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Clases.EN;
 
 namespace WebVideo
 {
@@ -14,19 +15,20 @@ namespace WebVideo
 
         }
 
-        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
+        protected void Imagen_Init(object sender, EventArgs e)
         {
-
-        }
-
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
+            try
+            {
+                peliculaEN p = new peliculaEN();
+                p = p.peliculaMasNueva();
+                Titulo.Text = p.NombreP;
+                Imagen.ImageUrl = p.Imagen;
+                HyperLink.NavigateUrl = "Mostrar/Mostrar_Peliculas.aspx?id=" + p.IdP.ToString();
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Pagina_Error.aspx");
+            }
         }
     }
 }
