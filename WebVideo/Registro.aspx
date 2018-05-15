@@ -11,6 +11,12 @@
         <asp:Label ID="EmailErr" runat="server" BackColor="White" BorderColor="White" ForeColor="Red" style="font-style: italic" Text="*Campo vacío" Visible="False"></asp:Label>
     </p>
     <p>
+        País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+        <asp:DropDownList ID="DWPais" runat="server" AutoPostBack="true" OnInit="DWPais_Init">
+        </asp:DropDownList>
+        <asp:Label ID="PaisErr" runat="server" BackColor="White" BorderColor="White" ForeColor="Red" style="font-style: italic" Text="*País sin seleccionar" Visible="False"></asp:Label>
+    </p>
+    <p>
         Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="Text_Cnt" runat="server" CssClass="mdl-textfield__input" TextMode="Password" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
         <asp:Label ID="CntErr" runat="server" BackColor="White" BorderColor="White" ForeColor="Red" style="font-style: italic" Text="*Campo vacío" Visible="False"></asp:Label>
@@ -29,12 +35,6 @@
         Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="Text_ap" runat="server"></asp:TextBox>
         <asp:Label ID="ApellidosErr" runat="server" BackColor="White" BorderColor="White" ForeColor="Red" style="font-style: italic" Text="*Campo vacío" Visible="False"></asp:Label>
-    </p>
-    <p>
-        País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-        <asp:DropDownList ID="DWPais" runat="server" AutoPostBack="true" OnInit="DWPais_Init">
-        </asp:DropDownList>
-        <asp:Label ID="PaisErr" runat="server" BackColor="White" BorderColor="White" ForeColor="Red" style="font-style: italic" Text="*País sin seleccionar" Visible="False"></asp:Label>
     </p>
     <p>
         &nbsp;</p>

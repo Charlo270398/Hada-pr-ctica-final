@@ -11,7 +11,7 @@ namespace CAD
 
         void alquilar(int id);
         void devolver(int id);
-        void comprar(int id);
+        void comprar(int id, string email);
         void modificarCompra(int id);
         void modificarAlquiler(int id);
         transaccionPeliculaEN mostrarTransaccion(int id);

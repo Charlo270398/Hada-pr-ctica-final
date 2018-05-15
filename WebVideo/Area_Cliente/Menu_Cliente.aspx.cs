@@ -11,10 +11,12 @@ namespace WebVideo
 {
     public partial class Area_Clientes : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+
                 paisEN p = new paisEN();
                 Response.Charset = "utf-8";
                 usuarioEN user = (usuarioEN)Session["user_session_data"];
@@ -69,6 +71,22 @@ namespace WebVideo
         protected void Btn_DatosC(object sender, EventArgs e)
         {
             Response.Redirect("Cambiar_Datos.aspx");
+        }
+
+        protected void Btn_BorrarC(object sender, EventArgs e)
+        {
+            try
+            {
+                usuarioEN user = (usuarioEN)Session["user_session_data"];
+                user.borrarUsuario();
+                Session["user_session_data"] = null;
+                Response.Redirect("../Inicio.aspx");
+            }catch(Exception)
+            {
+                
+            }
+
+            
         }
     }
 }

@@ -55,7 +55,15 @@ namespace  Clases.EN
         }
         public void borrarUsuario()
         {
-
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                user.borrarUsuario(this);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
         public void cargarUsuario()
         {

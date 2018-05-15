@@ -39,6 +39,9 @@
     <p>
     <asp:Button ID="Btn_ModificarDatos" runat="server"  Text="Cambiar datos" OnClick="Btn_DatosC" />
     </p>
+    <p>
+    <asp:Button ID="Btn_Borrar" runat="server"  Text="Borrar cuenta" OnClick="Btn_BorrarC" style="background-color: #CC3300" />
+    </p>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bajoCuerpo" runat="server">
 </asp:Content>

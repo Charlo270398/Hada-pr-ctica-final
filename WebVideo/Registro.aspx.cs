@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clases.EN;
+using System.Net.Mail;
 
 namespace WebVideo
 {
@@ -161,7 +162,16 @@ namespace WebVideo
                 user.FechaA = fecha.Date.ToString();
                 try
                 {
+                    SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587);
+                    cliente.EnableSsl = true;
+                    cliente.Credentials = new System.Net.NetworkCredential("hookinVideoclub@gmail.com", "hookin123");
+                    string contenido = "Hola, " + user.Nombre + ". Le informamos de que su registro se ha completado correctamente.\n";
+                    contenido += "Fecha del registro: " + (DateTime.Now).ToString();
+                    contenido += "Puede consultar su cuenta en la aplicación de Hookin.\n\n";
+                    contenido += "El equipo de Cuentas de Hookin";
+                    MailMessage mail = new MailMessage("hookinVideoclub@gmail.com", user.Email, "¡Bienvenido a Hookin!", contenido);
                     user.anyadirUsuario();
+                    cliente.Send(mail);
                     Session["user_session_data"] = user;
                     Response.Redirect("Area_Cliente/Menu_Cliente.aspx");
                 }
