@@ -9,9 +9,9 @@ namespace CAD
     public interface ItransaccionPeliculaCAD
     {
 
-        void alquilar(int id, string email);
+        void alquilar(int id);
         void devolver(int id);
-        void comprar(int id, string email);
+        void comprar(int id);
         void modificarCompra(int id);
         void modificarAlquiler(int id);
         transaccionPeliculaEN mostrarTransaccion(int id);

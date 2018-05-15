@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clases.EN;
+using CAD;
 using System.Drawing;
 
 namespace WebVideo
@@ -27,7 +28,7 @@ namespace WebVideo
                     if (usuario.Contrasenya == Text_Pass.Text)
                     {
                         Session["user_session_data"] = usuario; 
-                        Response.Redirect("Area_Cliente/Menu_Cliente.aspx"); 
+                        Response.Redirect("Area_Cliente.aspx"); 
                     }
                     else
                     {

@@ -20,7 +20,7 @@ namespace Clases.EN
 
         public sagaEN()
         {
-            idSaga = -1;
+
         }
 
         public sagaEN(int id, string nombre, string desc)
@@ -63,17 +63,6 @@ namespace Clases.EN
             try
             {
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public List<peliculaEN> mostrarPeliculasSaga()
-        {
-            try
-            {
-                return null;
             }
             catch (Exception ex)
             {

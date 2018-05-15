@@ -31,24 +31,6 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.Label EmailErr;
         
         /// <summary>
-        /// Control DWPais.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DWPais;
-        
-        /// <summary>
-        /// Control PaisErr.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaisErr;
-        
-        /// <summary>
         /// Control Text_Cnt.
         /// </summary>
         /// <remarks>
@@ -119,6 +101,24 @@ namespace WebVideo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ApellidosErr;
+        
+        /// <summary>
+        /// Control DWPais.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DWPais;
+        
+        /// <summary>
+        /// Control PaisErr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PaisErr;
         
         /// <summary>
         /// Control TC.
