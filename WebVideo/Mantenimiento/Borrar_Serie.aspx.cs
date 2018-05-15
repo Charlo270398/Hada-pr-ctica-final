@@ -15,7 +15,8 @@ namespace WebVideo.Mantenimiento
     {
         serieEN serie = new serieEN();
         List<serieEN> listaSeries = new List<serieEN>();
-
+        peliculaEN pelicula = new peliculaEN();
+        List<peliculaEN> listaPeliculas = new List<peliculaEN>();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -44,6 +45,28 @@ namespace WebVideo.Mantenimiento
                 Err.Visible = true;
                 Err.Text = "No hay series en la Base de Datos";
             }
+            /*int i;
+            if (DWSeries != null)
+            {
+                peliculaCAD p = new peliculaCAD();
+                pelicula.NombreP = "%";
+                List<String> nombres = new List<string>();
+                listaPeliculas = p.mostrarListaPeliculas(pelicula);
+                for (i = 0; i < listaPeliculas.Count; i++)
+                {
+                    nombres.Add(listaPeliculas[i].NombreP);
+                }
+                DWSeries.DataSource = nombres;
+                DWSeries.DataBind();
+                DWSeries.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+            }
+            if (DWSeries.Items.Count == 1)
+            {
+                Btn_Borrar.Visible = false;
+                Err.ForeColor = Color.Red;
+                Err.Visible = true;
+                Err.Text = "No quedan directores";
+            }*/
         }
         protected void Btn_Borrar_Click(object sender, EventArgs e)
         {
@@ -73,6 +96,7 @@ namespace WebVideo.Mantenimiento
                         Err.ForeColor = Color.Green;
                         Err.Visible = true;
                         Err.Text = "BORRADO CORRECTAMENTE";
+
                         DWSeries_Init(sender, e);
                     }
                     catch (Exception ex)
