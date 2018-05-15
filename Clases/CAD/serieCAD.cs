@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Clases.EN;
 using System.Data.SqlClient;
@@ -29,8 +30,15 @@ namespace Clases.CAD
             serieEN aux = new serieEN();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
-            string comando = "";
-            comando = "select * from Series where Nombre like '" + serie.Titulo + "'";
+            string comando;
+            if (serie.IdS != -1)
+            {
+                comando = "select * from Series where Id_Serie = " + serie.IdS;
+            }
+            else
+            {
+                comando = "select * from Series where Titulo like '" + serie.Titulo + "'";
+            }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -39,10 +47,10 @@ namespace Clases.CAD
                 aux.IdS = (int)reader["Id_Serie"];
                 aux.Titulo = reader["Titulo"].ToString();
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
-                aux.PrecioA = (float)reader["Precio_A"];
-                aux.PrecioC = (float)reader["Precio_C"];
+                aux.Sinopsis = reader["Sinopsis"].ToString();
+                aux.PrecioA = (int)reader["Precio_A"];
+                aux.PrecioC = (int)reader["Precio_C"];
                 aux.Imagen = reader["Imagen"].ToString();
-
             }
             reader.Close();
             cn.Close();
@@ -76,20 +84,20 @@ namespace Clases.CAD
             return aux;
         }
 
-        public List<serieEN> mostrarListaSeries(string titulo)
+        public List<serieEN> mostrarListaSeries(serieEN serie)
         {
             serieEN aux = new serieEN();
             List<serieEN> devolver = new List<serieEN>();
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
             string comando = "";
-            if (titulo == "%")
+            if (serie.Titulo == "%")
             {
-                comando = "select * from Series";
+                comando = "select * from Series order by Nombre";
             }
             else
             {
-                comando = "select * from Series where Nombre like '%" + titulo + "%'";
+                comando = "select * from Series where Titulo like '%" + serie.Titulo + "%' order by Titulo";
             }
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();
@@ -99,11 +107,11 @@ namespace Clases.CAD
                 aux.IdS = (int)reader["Id_Serie"];
                 aux.Titulo = reader["Titulo"].ToString();
                 aux.FechaE = reader["Fecha_Estreno"].ToString();
-                aux.PrecioA = (float)reader["Precio_A"];
-                aux.PrecioC = (float)reader["Precio_C"];
+                aux.Sinopsis = reader["Sinopsis"].ToString();
+                aux.PrecioA = (int)reader["Precio_A"];
+                aux.PrecioC = (int)reader["Precio_C"];
                 aux.Imagen = reader["Imagen"].ToString();
                 devolver.Add(aux);
-
             }
             reader.Close();
             cn.Close();

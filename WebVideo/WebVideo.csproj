@@ -77,12 +77,9 @@
       <DependentUpon>bbdd.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Area_Cliente\Cambiar_Datos.aspx" />
-    <Content Include="Area_Cliente\Menu_Cliente.aspx" />
-    <Content Include="Area_Cliente\Cambiar_Contraseña.aspx" />
+    <Content Include="Area_Cliente.aspx" />
     <Content Include="BusquedaPorDistribuidora.aspx" />
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
-    <Content Include="images\peliculas_img\interestellar.jpg" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
@@ -105,9 +102,8 @@
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
-    <Content Include="Mostrar\Mostrar_Factura.aspx" />
+    <Content Include="Mostrar\Mostrar_Series.aspx" />
     <Content Include="Mostrar\Mostrar_Peliculas.aspx" />
-    <Content Include="Pagina_Error.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
@@ -159,26 +155,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Area_Cliente\Cambiar_Datos.aspx.cs">
-      <DependentUpon>Cambiar_Datos.aspx</DependentUpon>
+    <Compile Include="Area_Cliente.aspx.cs">
+      <DependentUpon>Area_Cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Area_Cliente\Cambiar_Datos.aspx.designer.cs">
-      <DependentUpon>Cambiar_Datos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Area_Cliente\Menu_Cliente.aspx.cs">
-      <DependentUpon>Menu_Cliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Area_Cliente\Menu_Cliente.aspx.designer.cs">
-      <DependentUpon>Menu_Cliente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Area_Cliente\Cambiar_Contraseña.aspx.cs">
-      <DependentUpon>Cambiar_Contraseña.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Area_Cliente\Cambiar_Contraseña.aspx.designer.cs">
-      <DependentUpon>Cambiar_Contraseña.aspx</DependentUpon>
+    <Compile Include="Area_Cliente.aspx.designer.cs">
+      <DependentUpon>Area_Cliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Busquedas.aspx.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
@@ -341,12 +323,12 @@
     <Compile Include="Mostrar\Mostrar_Distribuidora.aspx.designer.cs">
       <DependentUpon>Mostrar_Distribuidora.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Mostrar\Mostrar_Factura.aspx.cs">
-      <DependentUpon>Mostrar_Factura.aspx</DependentUpon>
+    <Compile Include="Mostrar\Mostrar_Series.aspx.cs">
+      <DependentUpon>Mostrar_Series.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mostrar\Mostrar_Factura.aspx.designer.cs">
-      <DependentUpon>Mostrar_Factura.aspx</DependentUpon>
+    <Compile Include="Mostrar\Mostrar_Series.aspx.designer.cs">
+      <DependentUpon>Mostrar_Series.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mostrar\Mostrar_Peliculas.aspx.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
@@ -354,13 +336,6 @@
     </Compile>
     <Compile Include="Mostrar\Mostrar_Peliculas.aspx.designer.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pagina_Error.aspx.cs">
-      <DependentUpon>Pagina_Error.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pagina_Error.aspx.designer.cs">
-      <DependentUpon>Pagina_Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

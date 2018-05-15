@@ -11,7 +11,7 @@ namespace Clases.CAD
         void borrarSerie(serieEN serie);
         serieEN mostrarSerie(serieEN serie);
         serieEN mostrarSerieId(int idSerie);
-        List <serieEN> mostrarListaSeries(string titulo);
+        List <serieEN> mostrarListaSeries(serieEN serie);
         void modificarSerie(serieEN serie);
         bool existe(serieEN serie);
     }
