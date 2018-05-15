@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CAD;
 using Clases.EN;
 
 namespace WebVideo
@@ -23,11 +24,12 @@ namespace WebVideo
             if (PeliculaBox.Text != "")
             {
                 listaID.Clear();
-                peliculaEN peli = new peliculaEN(-1, PeliculaBox.Text);
+                peliculaCAD pelicula = new peliculaCAD();
+                peliculaEN nombre = new peliculaEN(-1, PeliculaBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWPeliculas.Visible = true;
                 Btn_Pelicula2.Visible = true;
-                List<peliculaEN> p = peli.mostrarListaPeliculas();
+                List<peliculaEN> p = pelicula.mostrarListaPeliculas(nombre);
                 for (int i = 0; i < p.Count; i++)
                 {
                     ListaNombres.Add(p[i].NombreP);
@@ -91,12 +93,13 @@ namespace WebVideo
             if (DirectorBox.Text != "")
             {
                 listaID.Clear();
-                directorEN director = new directorEN();
-                director.Nombre = DirectorBox.Text;
+                directorCAD pelicula = new directorCAD();
+                directorEN nombre = new directorEN();
+                nombre.Nombre = DirectorBox.Text;
                 List<string> ListaNombres = new List<string>();
                 DWDirector.Visible = true;
                 Btn_Director2.Visible = true;
-                List<directorEN> d = director.listaDirectoresConcretos();
+                List<directorEN> d = pelicula.mostrarListaDirectores(nombre);
                 for (int i = 0; i < d.Count; i++)
                 {
                     ListaNombres.Add(d[i].Nombre + " " + d[i].Apellidos);
@@ -127,7 +130,7 @@ namespace WebVideo
 
             ErrSerie.Visible = false;
             ErrPelicula.Visible = false;
-            ErrActor.Visible = false;
+            ErrSerie.Visible = false;
             ErrDistribuidora.Visible = false;
             DWActor.Visible = false;
             DWPeliculas.Visible = false;
@@ -162,11 +165,12 @@ namespace WebVideo
             if (DistribuidoraBox.Text != "")
             {
                 listaID.Clear();
-                distribuidoraEN distribuidora = new distribuidoraEN(-1, DistribuidoraBox.Text);
+                DistribuidoraCAD pelicula = new DistribuidoraCAD();
+                distribuidoraEN nombre = new distribuidoraEN(-1, DistribuidoraBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWDistribuidora.Visible = true;
                 Btn_Distribuidora2.Visible = true;
-                List<distribuidoraEN> d = distribuidora.listaDistribuidoras();
+                List<distribuidoraEN> d = pelicula.mostrarListaDistribuidora();
                 for (int i = 0; i < d.Count; i++)
                 {
                     ListaNombres.Add(d[i].Nombre);
@@ -227,11 +231,12 @@ namespace WebVideo
             if (ActorBox.Text != "")
             {
                 listaID.Clear();
-                actorEN actor = new actorEN(-1, ActorBox.Text);
+                actorCAD a = new actorCAD();
+                actorEN nombre = new actorEN(-1, ActorBox.Text);
                 List<string> ListaNombres = new List<string>();
                 DWActor.Visible = true;
                 Btn_Actor2.Visible = true;
-                List<actorEN> d = actor.listaActores();
+                List<actorEN> d = a.mostrarListaActores(nombre);
                 for (int i = 0; i < d.Count; i++)
                 {
                     ListaNombres.Add(d[i].Nombre + " " + d[i].Apellidos);

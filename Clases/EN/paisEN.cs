@@ -25,34 +25,21 @@ namespace Clases.EN
             idPais = -1;
             pais = "No existe";
         }
-        public paisEN(string nombre)
-        {
-            idPais = -1;
-            pais = nombre;
-        }
-        public paisEN(int id)
-        {
-            idPais = id;
-            pais = "";
-        }
 
-        public paisEN mostrarNombrePais()
+        public void mostrarNombrePais()
         {
             paisCAD pais = new paisCAD();
-            return pais.mostrarPais(this.idPais);
-      
+            paisEN mostrar = new paisEN();
+            mostrar = pais.mostrarPais(this.idPais);
+            this.Pais = mostrar.Pais;
+            
         }
-        public paisEN mostrarIdPais()
+        public void mostrarIdPais()
         {
             paisCAD pais = new paisCAD();
-            return pais.mostrarIdPais(this.Pais);
-        }
-
-        public List<string> mostrarListaNombresPaises()
-        {
-            paisCAD pais = new paisCAD();
-            return pais.mostrarListaPaises();
-
+            paisEN mostrar = new paisEN();
+            mostrar = pais.mostrarIdPais(this.Pais);
+            this.IdPais = mostrar.IdPais;
         }
 
     }

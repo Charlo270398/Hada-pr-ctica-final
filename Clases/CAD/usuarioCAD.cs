@@ -17,35 +17,20 @@ namespace CAD
 
             try
             {
-                DateTime fecha = DateTime.Now;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "insert into Usuarios values ('" + user.Email;
-                comando += "', '" + user.Contrasenya + "','" + user.Nombre + "','" + user.Apellidos + "','" + fecha + "','" + user.Pais + "', " + 0 + ")";
+                comando += "', '" + user.Contrasenya + "','" + user.Nombre + "','" + user.Apellidos + "','" + user.FechaA + "','" + user.Pais + "', " + 0 + ")";
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
-            }catch(Exception ex)
-            { //*Email repetido. Introduzca otro.
-                throw new Exception(ex.Message);
+            }catch(Exception)
+            {
+                throw new Exception("*Email repetido. Introduzca otro.");
             }
 
         }
         public void borrarUsuario(usuarioEN user) {
-
-            try
-            {
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-                cn.Open();
-                string comando = "delete from Usuarios  where Email = '" + user.Email + "'";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
 
         }
         public usuarioEN mostrarUsuario(string email){
@@ -79,6 +64,7 @@ namespace CAD
 
             return user;
         }
+        public void modificarUsuario(usuarioEN user) {}
         public bool existe(usuarioEN user) {
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
             cn.Open();
@@ -153,117 +139,6 @@ namespace CAD
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public void modificarDatos(usuarioEN user)
-        {
-            try
-            {
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-                cn.Open();
-                string comando = "update Usuarios set Nombre = '" + user.Nombre + "' ,Apellidos = '" + user.Apellidos + "', Pais = " + user.Pais +  " where Email = '" + user.Email + "'";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public void modificarContraseña(usuarioEN user)
-        {
-            try
-            {
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-                cn.Open();
-                string comando = "update Usuarios set Contrasenya = '" + user.Contrasenya + "' where Email = '" + user.Email + "'";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public List<transaccionPeliculaEN> listaTransaccionesCompraP(string email)
-        {
-            try
-            {
-                transaccionPeliculaEN trans = new transaccionPeliculaEN();
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-                cn.Open();
-                string comando = "select * from TransaccionP where Email like '" + email + "'";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                var reader = cmd.ExecuteReader();
-                List<transaccionPeliculaEN> lista = new List<transaccionPeliculaEN>();
-                while (reader.Read())
-                {
-                    trans = new transaccionPeliculaEN();
-                    trans.Email = reader["Email"].ToString();
-                    trans.IdP = (int)reader["Id_Pelicula"];
-                    trans.FechaC = reader["Fecha_Compra"].ToString();
-                    trans.Alquiler = (bool)reader["Alquiler"];
-                    if (trans.Alquiler)
-                    {
-                        trans.FechaF = reader["Fecha_Devolucion"].ToString();
-                    }
-                    else
-                    {
-                        trans.FechaF = null;
-                        lista.Add(trans);
-                    }
-                }
-                reader.Close();
-                cn.Close();
-
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public List<transaccionPeliculaEN> listaTransaccionesAlquilerP(string email)
-        {
-            try
-            {
-                transaccionPeliculaEN trans = new transaccionPeliculaEN();
-                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-                cn.Open();
-                string comando = "select * from TransaccionP where Email like '" + email + "'";
-                SqlCommand cmd = new SqlCommand(comando, cn);
-                var reader = cmd.ExecuteReader();
-                List<transaccionPeliculaEN> lista = new List<transaccionPeliculaEN>();
-                while (reader.Read())
-                {
-                    trans = new transaccionPeliculaEN();
-                    trans.Email = reader["Email"].ToString();
-                    trans.IdP = (int)reader["Id_Pelicula"];
-                    trans.FechaC = reader["Fecha_Compra"].ToString();
-                    trans.Alquiler = (bool)reader["Alquiler"];
-                    if (trans.Alquiler)
-                    {
-                        trans.FechaF = reader["Fecha_Devolucion"].ToString();
-                        lista.Add(trans);
-                    }
-                    else
-                    {
-                        trans.FechaF = null;
-                    }
-                }
-                reader.Close();
-                cn.Close();
-
-                return lista;
             }
             catch (Exception ex)
             {
