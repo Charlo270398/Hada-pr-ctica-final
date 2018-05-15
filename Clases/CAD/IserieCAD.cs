@@ -8,7 +8,7 @@ namespace Clases.CAD
     public interface IserieCAD
     {
         void anyadirSerie(serieEN serie);
-        void borrarSerie(int id);
+        void borrarSerie(serieEN serie);
         serieEN mostrarSerie(serieEN serie);
         serieEN mostrarSerieId(int idSerie);
         List <serieEN> mostrarListaSeries(serieEN serie);

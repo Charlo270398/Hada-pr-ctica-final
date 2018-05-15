@@ -101,7 +101,6 @@
     <Content Include="Mantenimiento\Modificar_Director.aspx" />
     <Content Include="Mantenimiento\Modificar_Dist.aspx" />
     <Content Include="Mantenimiento\Modificar_Pelicula.aspx" />
-    <Content Include="Mantenimiento\Modificar_Serie.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
@@ -311,13 +310,6 @@
     </Compile>
     <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
       <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Mantenimiento\Modificar_Serie.aspx.cs">
-      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mantenimiento\Modificar_Serie.aspx.designer.cs">
-      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
