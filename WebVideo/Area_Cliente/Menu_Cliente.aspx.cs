@@ -12,8 +12,11 @@ namespace WebVideo
     public partial class Area_Clientes : System.Web.UI.Page
     {
         List<string> nombres = new List<string>();
+<<<<<<< HEAD
         List<int> listaIDA = new List<int>();
         List<int> listaIDC = new List<int>();
+=======
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -28,6 +31,42 @@ namespace WebVideo
                 email.Text = user.Email;
                 fecha.Text = user.FechaA.Substring(0,11);
 
+<<<<<<< HEAD
+=======
+                if (DWAlquiler != null)
+                {
+                    peliculaEN peli = new peliculaEN();
+                    List<transaccionPeliculaEN> lista = user.listaAlquileresP();
+                    nombres.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        peli = new peliculaEN();
+                        peli.IdP = lista[i].IdP;
+                        nombres.Add(peli.mostrarPelicula().NombreP);
+                    }
+                    DWAlquiler.DataSource = nombres;
+                    DWAlquiler.DataBind();
+                    DWAlquiler.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
+                }
+
+                if (DWCompras != null)
+                {
+                    peliculaEN peli = new peliculaEN();
+                    List <transaccionPeliculaEN> lista = user.listaComprasP();
+                    nombres.Clear();
+                    for (int i = 0; i<lista.Count; i++)
+                    {
+                        peli = new peliculaEN();
+                        peli.IdP = lista[i].IdP;
+                        nombres.Add(peli.mostrarPelicula().NombreP);
+                    }
+                    DWCompras.DataSource = nombres;
+                    DWCompras.DataBind();
+                    DWCompras.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
+                }
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
                 if (user.AdMin)
                 {
                     admin.Visible = true;
@@ -42,23 +81,35 @@ namespace WebVideo
 
         protected void Btn_AlquilerC(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (DWAlquiler.SelectedItem.ToString() != "[Seleccionar]")
             {
                 Response.Redirect("../Mostrar/Mostrar_Factura.aspx?id=" + listaIDA[DWAlquiler.SelectedIndex - 1].ToString());
             }
+=======
+
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
         }
 
         protected void Btn_CompraC(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (DWCompras.SelectedItem.ToString() != "[Seleccionar]")
             {
                 Response.Redirect("../Mostrar/Mostrar_Factura.aspx?id=" + listaIDC[DWCompras.SelectedIndex - 1]);
             }
+=======
+
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
         }
 
         protected void Btn_ContraseñaC(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             
+=======
+            Response.Redirect("Cambiar_Contraseña.aspx");
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
         }
 
         protected void Btn_DatosC(object sender, EventArgs e)
@@ -76,11 +127,16 @@ namespace WebVideo
                 Response.Redirect("../Inicio.aspx");
             }catch(Exception)
             {
+<<<<<<< HEAD
                 Response.Redirect("../Pagina_Error.aspx");
+=======
+                
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
             }
 
             
         }
+<<<<<<< HEAD
 
         protected void DWCompras_Init(object sender, EventArgs e)
         {
@@ -124,5 +180,7 @@ namespace WebVideo
             }
 
         }
+=======
+>>>>>>> 8b7a39972a9a02d66fe5d748bc5c048f327ace02
     }
 }

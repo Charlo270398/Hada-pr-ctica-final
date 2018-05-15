@@ -28,7 +28,7 @@
         <br />
     <asp:Button ID="Btn_Compra" runat="server"  Text="Ver compra" OnClick="Btn_CompraC" />
     &nbsp;&nbsp;&nbsp;
-    <asp:DropDownList ID="DWCompras" runat="server" OnInit="DWCompras_Init">
+    <asp:DropDownList ID="DWCompras" runat="server">
     </asp:DropDownList>
     &nbsp;</p>
     <p>
