@@ -15,9 +15,7 @@ namespace CAD
         }
         public void alquilar(int id) { }
         public void devolver(int id) { }
-        public void comprar(int id) {
-
-        }
+        public void comprar(int id) { }
         public void modificarCompra(int id) { }
         public void modificarAlquiler(int id) { }
         public transaccionSerieEN mostrarTransaccion(int id) { return null; }
