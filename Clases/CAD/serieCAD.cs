@@ -14,10 +14,11 @@ namespace Clases.CAD
         {
 
         }
-  
+
         public void anyadirSerie(serieEN serie)
         {
-            try { 
+            try
+            {
                 string fecha = serie.FechaE;
                 int nextId = 1;
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
@@ -47,13 +48,13 @@ namespace Clases.CAD
                     var reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        nextId = (int) reader["max"] + 1;
+                        nextId = (int)reader["max"] + 1;
                     }
                     reader.Close();
                     comando = "insert into Series values (" + nextId + ", '";
                     comando += serie.Titulo + "', '";
                     comando += fecha + "', '";
-                    comando += serie.Sinopsis + "', '" +  serie.PrecioC + "', '" + serie.PrecioA + "', ";
+                    comando += serie.Sinopsis + "', '" + serie.PrecioC + "', '" + serie.PrecioA + "', ";
                     comando += "'../images/series_img/" + serie.Imagen + "')";
                     cmd = new SqlCommand(comando, cn);
                     cmd.ExecuteNonQuery();
