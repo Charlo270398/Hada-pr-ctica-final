@@ -24,7 +24,7 @@ namespace WebVideo
                 pais.Text = p.mostrarNombrePais().Pais;
                 nombre.Text = user.Nombre + " " + user.Apellidos;
                 email.Text = user.Email;
-                fecha.Text = user.FechaA;
+                fecha.Text = user.FechaA.Substring(0,11);
 
                 if (DWAlquiler != null)
                 {
