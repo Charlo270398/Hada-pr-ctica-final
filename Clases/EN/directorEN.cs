@@ -91,6 +91,47 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public List<peliculaEN> peliculasDirector()
+        {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<directorEN> listaDirectores()
+        {
+            try
+            {
+                this.nombre = "%";
+                directorCAD dir = new directorCAD();
+                return dir.mostrarListaDirectores(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<directorEN> listaDirectoresConcretos()
+        {
+            try
+            {
+                directorCAD dir = new directorCAD();
+                return dir.mostrarListaDirectores(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }
