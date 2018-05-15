@@ -10,7 +10,9 @@
     <p class="text-left">
         <span style="font-size: x-large">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Último estreno:</span></p>
 <p class="text-center">
+    <strong>
     <asp:Label ID="Titulo" runat="server" style="font-size: x-large" Text="Título"></asp:Label>
+    </strong>
 </p>
 <p class="text-center">
     <asp:Image ID="Imagen" runat="server" OnInit="Imagen_Init" Width="400px" BorderStyle="Groove" BorderWidth="10px" />
