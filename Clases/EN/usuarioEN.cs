@@ -149,6 +149,20 @@ namespace  Clases.EN
                 throw new Exception(e.Message);
             }
         }
+
+        public List<transaccionSerieEN> listaAlquileresS()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesAlquilerS(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public List<transaccionPeliculaEN> listaComprasP()
         {
             usuarioCAD user = new usuarioCAD();

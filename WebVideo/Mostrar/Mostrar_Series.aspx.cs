@@ -44,7 +44,7 @@ namespace WebVideo.Series
             if (user != null)
             {
                 adquirirText.Visible = true;
-                adquirirText.NavigateUrl = "../Transaccion.aspx?id=" + serie.IdS;
+                adquirirText.NavigateUrl = "../Transaccions.aspx?id=" + serie.IdS;
             }
 
         }

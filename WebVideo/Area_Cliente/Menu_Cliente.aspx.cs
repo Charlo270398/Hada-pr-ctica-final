@@ -91,6 +91,8 @@ namespace WebVideo
                 List<transaccionPeliculaEN> lista = user.listaAlquileresP();
                 nombres.Clear();
                 listaIDA.Clear();
+                nombres.Add("[Seleccionar]");
+                nombres.Add("--- PELICULAS ---");
                 for (int i = 0; i < lista.Count; i++)
                 {
                     peli = new peliculaEN();
@@ -98,9 +100,19 @@ namespace WebVideo
                     listaIDA.Add(peli.IdP);
                     nombres.Add(peli.mostrarPelicula().NombreP);
                 }
+                serieEN serie = new serieEN();
+                List<transaccionSerieEN> lista2 = user.listaAlquileresS();
+                nombres.Add("--- SERIES ---");
+                for (int i = 0; i < lista2.Count; i++)
+                {
+                    serie = new serieEN();
+                    serie.IdS = lista2[i].IdS;
+                    listaIDA.Add(serie.IdS);
+                    nombres.Add(serie.mostrarSerie().Titulo);
+                }
                 DWAlquiler.DataSource = nombres;
                 DWAlquiler.DataBind();
-                DWAlquiler.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+
 
             }
 
@@ -110,6 +122,8 @@ namespace WebVideo
                 List<transaccionPeliculaEN> lista = user.listaComprasP();
                 nombres.Clear();
                 listaIDC.Clear();
+                nombres.Add("[Seleccionar]");
+                nombres.Add("--- PELICULAS ---");
                 for (int i = 0; i < lista.Count; i++)
                 {
                     peli = new peliculaEN();
@@ -117,10 +131,18 @@ namespace WebVideo
                     listaIDC.Add(peli.IdP);
                     nombres.Add(peli.mostrarPelicula().NombreP);
                 }
+                serieEN serie = new serieEN();
+                List<transaccionSerieEN> lista2 = user.listaAlquileresS();
+                nombres.Add("--- SERIES ---");
+                for (int i = 0; i < lista2.Count; i++)
+                {
+                    serie = new serieEN();
+                    serie.IdS = lista2[i].IdS;
+                    listaIDA.Add(serie.IdS);
+                    nombres.Add(serie.mostrarSerie().Titulo);
+                }
                 DWCompras.DataSource = nombres;
                 DWCompras.DataBind();
-                DWCompras.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
-
             }
 
         }

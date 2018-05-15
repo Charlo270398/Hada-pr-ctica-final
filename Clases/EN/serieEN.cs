@@ -67,9 +67,18 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public void mostrarSerie()
+        public serieEN mostrarSerie()
         {
+            try
+            {
+                serieCAD s = new serieCAD();
+                return s.mostrarSerie(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void modificarSerie()
         {

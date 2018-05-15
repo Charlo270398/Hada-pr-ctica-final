@@ -103,6 +103,7 @@
     <Content Include="Mantenimiento\Modificar_Director.aspx" />
     <Content Include="Mantenimiento\Modificar_Dist.aspx" />
     <Content Include="Mantenimiento\Modificar_Pelicula.aspx" />
+    <Content Include="Mantenimiento\Modificar_Serie.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
@@ -152,6 +153,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="Transaccions.aspx" />
     <Content Include="Transaccion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -324,6 +326,13 @@
     <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
       <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Modificar_Serie.aspx.cs">
+      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Serie.aspx.designer.cs">
+      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -416,6 +425,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaccions.aspx.cs">
+      <DependentUpon>Transaccions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaccions.aspx.designer.cs">
+      <DependentUpon>Transaccions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Transaccion.aspx.cs">
       <DependentUpon>Transaccion.aspx</DependentUpon>

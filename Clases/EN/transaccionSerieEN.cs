@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CAD;
 
 namespace Clases.EN
 {
@@ -23,9 +24,28 @@ namespace Clases.EN
         private string fechaF;
         public string FechaF { get { return fechaF; } set { fechaF = value; } }
 
-        public void alquilarSerie()
+        public transaccionSerieEN()
         {
 
+        }
+
+        public transaccionSerieEN(int id, string email)
+        {
+            this.email = email;
+            this.idS = id;
+        }
+
+        public void alquilarSerie()
+        {
+            transaccionSerieCAD t = new transaccionSerieCAD();
+            try
+            {
+                t.alquilar(this.idS, this.email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void devolverSerie()
         {
@@ -33,7 +53,15 @@ namespace Clases.EN
         }
         public void comprarSerie()
         {
-
+            transaccionSerieCAD t = new transaccionSerieCAD();
+            try
+            {
+                t.comprar(this.idS, this.email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void modificarCompraSerie()
         {
@@ -43,9 +71,17 @@ namespace Clases.EN
         {
 
         }
-        public void mostrarTransaccionSerie()
+        public transaccionSerieEN mostrarTransaccionSerie()
         {
-
+            transaccionSerieCAD t = new transaccionSerieCAD();
+            try
+            {
+                return t.mostrarTransaccion(this.idS, this.email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }
