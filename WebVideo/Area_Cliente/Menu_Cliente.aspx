@@ -43,12 +43,12 @@
     <p>
         <strong>Series:</strong></p>
     <p>
-    <asp:Button ID="Btn_Compra0" runat="server"  Text="Ver compra" OnClick="Btn_CompraC" />
-    <asp:DropDownList ID="DWCompras0" runat="server" OnInit="DWCompras_Init">
+    <asp:Button ID="Btn_Compra0" runat="server"  Text="Ver compra" OnClick="Btn_CompraC0" />
+    <asp:DropDownList ID="DWCompras0" runat="server">
     </asp:DropDownList>
     </p>
     <p>
-    <asp:Button ID="Btn_Alquiler0" runat="server"  Text="Ver alquiler" OnClick="Btn_AlquilerC" />
+    <asp:Button ID="Btn_Alquiler0" runat="server"  Text="Ver alquiler" OnClick="Btn_AlquilerC0" />
     <asp:DropDownList ID="DWAlquiler0" runat="server">
     </asp:DropDownList>
     </p>

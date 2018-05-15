@@ -16,6 +16,8 @@ namespace WebVideo
         List<string> nombres = new List<string>();
         List<int> listaIDA = new List<int>();
         List<int> listaIDC = new List<int>();
+        List<int> listaIDAS = new List<int>();
+        List<int> listaIDCS = new List<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -50,11 +52,27 @@ namespace WebVideo
             }
         }
 
+        protected void Btn_AlquilerC0(object sender, EventArgs e)
+        {
+            if (DWAlquiler0.SelectedItem.ToString() != "[Seleccionar]")
+            {
+                Response.Redirect("../Mostrar/Mostrar_Facturas.aspx?id=" + listaIDAS[DWAlquiler0.SelectedIndex - 1].ToString());
+            }
+        }
+
         protected void Btn_CompraC(object sender, EventArgs e)
         {
             if (DWCompras.SelectedItem.ToString() != "[Seleccionar]")
             {
-                Response.Redirect("../Mostrar/Mostrar_Factura.aspx?id=" + listaIDC[DWCompras.SelectedIndex - 1]);
+                Response.Redirect("../Mostrar/Mostrar_Factura.aspx?id=" + listaIDC[DWCompras.SelectedIndex - 1].ToString());
+            }
+        }
+
+        protected void Btn_CompraC0(object sender, EventArgs e)
+        {
+            if (DWCompras0.SelectedItem.ToString() != "[Seleccionar]")
+            {
+                Response.Redirect("../Mostrar/Mostrar_Facturas.aspx?id=" + listaIDCS[DWCompras0.SelectedIndex - 1].ToString());
             }
         }
 
@@ -130,7 +148,7 @@ namespace WebVideo
             if(DWAlquiler0 != null)
             {
                 nombres.Clear();
-                listaIDC.Clear();
+                listaIDAS.Clear();
                 serieEN serie = new serieEN();
                 List<transaccionSerieEN> lista2 = user.listaAlquileresS();
                 nombres.Add("[Seleccionar]");
@@ -138,7 +156,7 @@ namespace WebVideo
                 {
                     serie = new serieEN();
                     serie.IdS = lista2[i].IdS;
-                    listaIDA.Add(serie.IdS);
+                    listaIDAS.Add(serie.IdS);
                     nombres.Add(serie.mostrarSerie().Titulo);
                 }
                 DWAlquiler0.DataSource = nombres;
@@ -147,7 +165,7 @@ namespace WebVideo
             if(DWCompras0 != null)
             {
                 nombres.Clear();
-                listaIDC.Clear();
+                listaIDCS.Clear();
                 serieEN serie = new serieEN();
                 List<transaccionSerieEN> lista2 = user.listaComprasS();
                 nombres.Add("[Seleccionar]");
@@ -155,19 +173,13 @@ namespace WebVideo
                 {
                     serie = new serieEN();
                     serie.IdS = lista2[i].IdS;
-                    listaIDA.Add(serie.IdS);
+                    listaIDCS.Add(serie.IdS);
                     nombres.Add(serie.mostrarSerie().Titulo);
                 }
                 DWCompras0.DataSource = nombres;
                 DWCompras0.DataBind();
             }
 
-        }
-
-        protected void btnP_select(object sender, EventArgs e)
-        {
-            botonpelicula = true;
-            botonserie = false;
         }
     }
 }
