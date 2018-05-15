@@ -73,7 +73,16 @@ namespace Clases.EN
         }
         public void modificarSerie()
         {
+            try
+            {
+                serieCAD p = new serieCAD();
+                p.modificarSerie(this);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }

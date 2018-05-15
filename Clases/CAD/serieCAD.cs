@@ -66,11 +66,6 @@ namespace Clases.CAD
             }
         }
 
-        public void borrarSerie(serieEN serie)
-        {
-            throw new NotImplementedException();
-        }
-
         public serieEN mostrarSerie(serieEN serie)
         {
             serieEN aux = new serieEN();
@@ -185,7 +180,20 @@ namespace Clases.CAD
 
         public void modificarSerie(serieEN serie)
         {
-            throw new NotImplementedException();
+            /*try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Series where Id_Serie = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }*/
         }
 
         public bool existe(serieEN serie)
