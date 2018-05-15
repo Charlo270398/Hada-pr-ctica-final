@@ -194,14 +194,14 @@ namespace CAD
             }
         }
 
-        public List<transaccionPeliculaEN> listaTransaccionesP(string email)
+        public List<transaccionPeliculaEN> listaTransaccionesCompraP(string email)
         {
             try
             {
                 transaccionPeliculaEN trans = new transaccionPeliculaEN();
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "select * from TransaccionC where Email like " + email;
+                string comando = "select * from TransaccionP where Email like '" + email + "'";
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 var reader = cmd.ExecuteReader();
                 List<transaccionPeliculaEN> lista = new List<transaccionPeliculaEN>();
@@ -214,14 +214,51 @@ namespace CAD
                     trans.Alquiler = (bool)reader["Alquiler"];
                     if (trans.Alquiler)
                     {
-                        trans.FechaF = reader["Fecha_Devolucion"].ToString(); ;
+                        trans.FechaF = reader["Fecha_Devolucion"].ToString();
+                    }
+                    else
+                    {
+                        trans.FechaF = null;
+                        lista.Add(trans);
+                    }
+                }
+                reader.Close();
+                cn.Close();
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<transaccionPeliculaEN> listaTransaccionesAlquilerP(string email)
+        {
+            try
+            {
+                transaccionPeliculaEN trans = new transaccionPeliculaEN();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from TransaccionP where Email like '" + email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                List<transaccionPeliculaEN> lista = new List<transaccionPeliculaEN>();
+                while (reader.Read())
+                {
+                    trans = new transaccionPeliculaEN();
+                    trans.Email = reader["Email"].ToString();
+                    trans.IdP = (int)reader["Id_Pelicula"];
+                    trans.FechaC = reader["Fecha_Compra"].ToString();
+                    trans.Alquiler = (bool)reader["Alquiler"];
+                    if (trans.Alquiler)
+                    {
+                        trans.FechaF = reader["Fecha_Devolucion"].ToString();
+                        lista.Add(trans);
                     }
                     else
                     {
                         trans.FechaF = null;
                     }
-
-                    lista.Add(trans);
                 }
                 reader.Close();
                 cn.Close();

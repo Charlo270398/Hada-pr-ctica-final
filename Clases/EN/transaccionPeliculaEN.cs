@@ -37,6 +37,15 @@ namespace Clases.EN
 
         public void alquilarPelicula()
         {
+            transaccionPeliculaCAD t = new transaccionPeliculaCAD();
+            try
+            {
+                t.alquilar(this.idP, this.email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
         }
         public void devolverPelicula()

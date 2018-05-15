@@ -137,5 +137,30 @@ namespace  Clases.EN
             }
         }
 
+        public List<transaccionPeliculaEN> listaAlquileresP()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesAlquilerP(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public List<transaccionPeliculaEN> listaComprasP()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesCompraP(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
     }
 }

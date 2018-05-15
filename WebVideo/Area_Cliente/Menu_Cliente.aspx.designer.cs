@@ -49,6 +49,15 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.Label pais;
         
         /// <summary>
+        /// Control fecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fecha;
+        
+        /// <summary>
         /// Control Btn_Compra.
         /// </summary>
         /// <remarks>

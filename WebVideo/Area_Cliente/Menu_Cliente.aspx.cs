@@ -11,7 +11,7 @@ namespace WebVideo
 {
     public partial class Area_Clientes : System.Web.UI.Page
     {
-
+        List<string> nombres = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -24,10 +24,20 @@ namespace WebVideo
                 pais.Text = p.mostrarNombrePais().Pais;
                 nombre.Text = user.Nombre + " " + user.Apellidos;
                 email.Text = user.Email;
+                fecha.Text = user.FechaA;
 
                 if (DWAlquiler != null)
                 {
-                    DWAlquiler.DataSource = null;
+                    peliculaEN peli = new peliculaEN();
+                    List<transaccionPeliculaEN> lista = user.listaAlquileresP();
+                    nombres.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        peli = new peliculaEN();
+                        peli.IdP = lista[i].IdP;
+                        nombres.Add(peli.mostrarPelicula().NombreP);
+                    }
+                    DWAlquiler.DataSource = nombres;
                     DWAlquiler.DataBind();
                     DWAlquiler.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
@@ -35,8 +45,16 @@ namespace WebVideo
 
                 if (DWCompras != null)
                 {
-
-                    DWCompras.DataSource = null;
+                    peliculaEN peli = new peliculaEN();
+                    List <transaccionPeliculaEN> lista = user.listaComprasP();
+                    nombres.Clear();
+                    for (int i = 0; i<lista.Count; i++)
+                    {
+                        peli = new peliculaEN();
+                        peli.IdP = lista[i].IdP;
+                        nombres.Add(peli.mostrarPelicula().NombreP);
+                    }
+                    DWCompras.DataSource = nombres;
                     DWCompras.DataBind();
                     DWCompras.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 

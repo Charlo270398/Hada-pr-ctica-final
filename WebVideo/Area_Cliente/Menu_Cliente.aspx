@@ -21,6 +21,10 @@
         <asp:Label ID="pais" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
+        <strong>Fecha de alta: </strong>
+        <asp:Label ID="fecha" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
         <br />
     <asp:Button ID="Btn_Compra" runat="server"  Text="Ver compra" OnClick="Btn_CompraC" />
     &nbsp;&nbsp;&nbsp;

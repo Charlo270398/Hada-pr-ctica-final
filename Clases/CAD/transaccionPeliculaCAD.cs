@@ -14,24 +14,39 @@ namespace CAD
         {
 
         }
-        public void alquilar(int id) { }
+        public void alquilar(int idPelicula, string email) {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "insert into TransaccionP values ('" + email + "' , " + idPelicula + " , '" + DateTime.Now + "' , " + 1 + " ,  '" + DateTime.Now.AddDays(7) + "')";
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("La película ya está en alquiler/compra");
+            }
+        }
         public void devolver(int id) { }
         public void comprar(int idPelicula, string email) {
 
             try
             {
-                DateTime fecha = DateTime.Now.AddDays(7);
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
                 string comando = "";
                 SqlCommand cmd;
-                comando = "insert into TransaccionC values ('" + email + "' , " + idPelicula + " , '" + fecha + "' , " + 0 + " ,  null)";
+                comando = "insert into TransaccionP values ('" + email + "' , " + idPelicula + " , '" + DateTime.Now + "' , " + 0 + " ,  null)";
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }catch(Exception ex)
             {
-                throw new Exception("La película ya ha sido comprada previamente");
+                throw new Exception("La película ya está en alquiler/compra");
             }
         }
         public void modificarCompra(int id) { }
