@@ -83,6 +83,7 @@
     <Content Include="App_Data\copiarInsertarPelicula.txt" />
     <Content Include="images\peliculas_img\interestellar.jpg" />
     <Content Include="images\peliculas_img\LaVidaEsBella.jpg" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Mantenimiento\Añadir_Actor.aspx" />
     <Content Include="Mantenimiento\Añadir_Actuacion.aspx" />
@@ -112,6 +113,7 @@
     <Content Include="Mostrar\Mostrar_Peliculas.aspx" />
     <Content Include="Mostrar\Mostrar_Series.aspx" />
     <Content Include="Pagina_Error.aspx" />
+    <Content Include="Progresos.aspx" />
     <Content Include="Terminos.aspx" />
     <Content Include="images\peliculas_img\dunkerque.jpg" />
     <Content Include="images\peliculas_img\it.jpg" />
@@ -151,7 +153,6 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="Global.asax" />
     <Content Include="css\style.css" />
-    <Content Include="Inicio.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Transaccions.aspx" />
@@ -186,6 +187,13 @@
     </Compile>
     <Compile Include="Busquedas.aspx.designer.cs">
       <DependentUpon>Busquedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -397,6 +405,13 @@
     <Compile Include="Pagina_Error.aspx.designer.cs">
       <DependentUpon>Pagina_Error.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Progresos.aspx.cs">
+      <DependentUpon>Progresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Progresos.aspx.designer.cs">
+      <DependentUpon>Progresos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -420,13 +435,6 @@
       <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
