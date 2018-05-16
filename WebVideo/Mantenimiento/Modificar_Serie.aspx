@@ -29,7 +29,7 @@
         Imagen:
         <asp:TextBox ID="imgBox" runat="server"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Btn_modificar" runat="server" Text="Modificar" />
+        <asp:Button ID="Btn_modificar" runat="server" Text="Modificar" OnClick="Btn_modificar_Click" />
         <asp:Label ID="Err" runat="server" ForeColor="Red" Text="ERROR" Visible="False"></asp:Label>
     </p>
     <p>

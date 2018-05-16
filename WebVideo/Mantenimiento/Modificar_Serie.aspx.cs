@@ -15,23 +15,25 @@ namespace WebVideo.Mantenimiento
     {
         serieEN serie = new serieEN();
         List<serieEN> listaSeries = new List<serieEN>();
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (DWSeries.SelectedItem.ToString() != "[Seleccionar]")
             {
-                serieCAD p = new serieCAD();
-                //serie.Titulo = DWSeries.SelectedItem.ToString();
-                serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
-                serie = p.mostrarSerie(serie);
-                tituloBox.Text = serie.Titulo;
-                sinopsisBox.Text = serie.Sinopsis;
-                fechaBox.Text = serie.FechaE;
-                compraBox.Text = serie.PrecioC.ToString();
-                alquilerBox.Text = serie.PrecioA.ToString();
-                imgBox.Text = serie.Imagen;
-                //tituloBox.Text
+                if (fechaBox.Text.Length == 0 && tituloBox.Text.Length == 0 && sinopsisBox.Text.Length == 0 && compraBox.Text.Length == 0 && alquilerBox.Text.Length == 0 && imgBox.Text.Length == 0)
+                {
+                    serieCAD p = new serieCAD();
+                    //serie.Titulo = DWSeries.SelectedItem.ToString();
+                    serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
+                    serie = p.mostrarSerie(serie);
+                    tituloBox.Text = serie.Titulo;
+                    sinopsisBox.Text = serie.Sinopsis;
+                    fechaBox.Text = serie.FechaE;
+                    compraBox.Text = serie.PrecioC.ToString();
+                    alquilerBox.Text = serie.PrecioA.ToString();
+                    imgBox.Text = serie.Imagen;
+                }
             }
             else
             {
@@ -42,6 +44,8 @@ namespace WebVideo.Mantenimiento
                 alquilerBox.Text = "";
                 imgBox.Text = "";
             }
+            Btn_modificar.Visible = true;
+            Err.Visible = false;
         }
         protected void DWSeries_Init(object sender, EventArgs e)
         {
@@ -66,6 +70,31 @@ namespace WebVideo.Mantenimiento
                 Err.ForeColor = Color.Red;
                 Err.Visible = true;
                 Err.Text = "No hay series en la Base de Datos";
+            }
+        }
+
+        protected void Btn_modificar_Click(object sender, EventArgs e)
+        {
+            if (tituloBox.Text.Length == 0 || sinopsisBox.Text.Length == 0 || fechaBox.Text.Length == 0 || compraBox.Text.Length == 0 || alquilerBox.Text.Length == 0 || imgBox.Text.Length == 0)
+            {
+                Btn_modificar.Visible = false;
+                Err.ForeColor = Color.Red;
+                Err.Visible = true;
+                Err.Text = "No puedes dejar ningún campo en blanco";
+            }
+            if (tituloBox.Text == serie.Titulo && sinopsisBox.Text == serie.Sinopsis && fechaBox.Text == serie.FechaE && compraBox.Text == serie.PrecioC.ToString() && alquilerBox.Text == serie.PrecioA.ToString() && imgBox.Text == serie.Imagen)
+            {
+                Btn_modificar.Visible = false;
+                Err.ForeColor = Color.Red;
+                Err.Visible = true;
+                Err.Text = "No has realizado ningún cambio";
+            }
+            else
+            {
+                Btn_modificar.Visible = false;
+                Err.ForeColor = Color.Green;
+                Err.Visible = true;
+                Err.Text = "Has realizado los cambios correctamente";
             }
         }
     }
