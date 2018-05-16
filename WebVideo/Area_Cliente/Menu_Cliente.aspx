@@ -25,18 +25,37 @@
         <asp:Label ID="fecha" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
-        <br />
+        &nbsp;</p>
+    <p>
+        <strong>Peliculas:</strong><br />
     <asp:Button ID="Btn_Compra" runat="server"  Text="Ver compra" OnClick="Btn_CompraC" />
     &nbsp;&nbsp;&nbsp;
     <asp:DropDownList ID="DWCompras" runat="server" OnInit="DWCompras_Init">
     </asp:DropDownList>
-    &nbsp;</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
     <p>
     <asp:Button ID="Btn_Alquiler" runat="server"  Text="Ver alquiler" OnClick="Btn_AlquilerC" />
     &nbsp;&nbsp;&nbsp;
     <asp:DropDownList ID="DWAlquiler" runat="server">
     </asp:DropDownList>
     </p>
+    <p>
+        <strong>Series:</strong></p>
+    <p>
+    <asp:Button ID="Btn_Compra0" runat="server"  Text="Ver compra" OnClick="Btn_CompraC0" />
+    &nbsp;&nbsp;&nbsp;
+    <asp:DropDownList ID="DWCompras0" runat="server">
+    </asp:DropDownList>
+    </p>
+    <p>
+    <asp:Button ID="Btn_Alquiler0" runat="server"  Text="Ver alquiler" OnClick="Btn_AlquilerC0" />
+    &nbsp;&nbsp;&nbsp;
+    <asp:DropDownList ID="DWAlquiler0" runat="server">
+    </asp:DropDownList>
+    </p>
+    <p>
+        <strong>Cliente:</strong></p>
     <p>
     <asp:Button ID="Btn_ModificarContraseña" runat="server"  Text="Cambiar contraseña" OnClick="Btn_ContraseñaC" />
     </p>

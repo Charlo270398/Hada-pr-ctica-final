@@ -94,6 +94,42 @@ namespace WebVideo {
         protected global::System.Web.UI.WebControls.DropDownList DWAlquiler;
         
         /// <summary>
+        /// Control Btn_Compra0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Compra0;
+        
+        /// <summary>
+        /// Control DWCompras0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DWCompras0;
+        
+        /// <summary>
+        /// Control Btn_Alquiler0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Alquiler0;
+        
+        /// <summary>
+        /// Control DWAlquiler0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DWAlquiler0;
+        
+        /// <summary>
         /// Control Btn_ModificarContraseña.
         /// </summary>
         /// <remarks>

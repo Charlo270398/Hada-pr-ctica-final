@@ -91,22 +91,27 @@
     <Content Include="Mantenimiento\Añadir_Dist.aspx" />
     <Content Include="Mantenimiento\Añadir_Pelicula.aspx" />
     <Content Include="Mantenimiento\Añadir_Saga.aspx" />
+    <Content Include="Mantenimiento\Añadir_Serie.aspx" />
     <Content Include="Mantenimiento\Borrar_Actor.aspx" />
     <Content Include="Mantenimiento\Borrar_Actuacion.aspx" />
     <Content Include="Mantenimiento\Borrar_Director.aspx" />
     <Content Include="Mantenimiento\Borrar_Dist.aspx" />
     <Content Include="Mantenimiento\Borrar_Pelicula.aspx" />
     <Content Include="Mantenimiento\Borrar_Saga.aspx" />
+    <Content Include="Mantenimiento\Borrar_Serie.aspx" />
     <Content Include="Mantenimiento\Main.aspx" />
     <Content Include="Mantenimiento\Modificar_Actor.aspx" />
     <Content Include="Mantenimiento\Modificar_Director.aspx" />
     <Content Include="Mantenimiento\Modificar_Dist.aspx" />
     <Content Include="Mantenimiento\Modificar_Pelicula.aspx" />
+    <Content Include="Mantenimiento\Modificar_Serie.aspx" />
     <Content Include="Mostrar\Mostrar_Actor.aspx" />
     <Content Include="Mostrar\Mostrar_Director.aspx" />
     <Content Include="Mostrar\Mostrar_Distribuidora.aspx" />
+    <Content Include="Mostrar\Mostrar_Facturas.aspx" />
     <Content Include="Mostrar\Mostrar_Factura.aspx" />
     <Content Include="Mostrar\Mostrar_Peliculas.aspx" />
+    <Content Include="Mostrar\Mostrar_Series.aspx" />
     <Content Include="Pagina_Error.aspx" />
     <Content Include="Progresos.aspx" />
     <Content Include="Terminos.aspx" />
@@ -121,18 +126,7 @@
     <Content Include="images\peliculas_img\stw6.jpg" />
     <Content Include="images\peliculas_img\stw7.jpg" />
     <Content Include="images\peliculas_img\stw8.jpg" />
-    <Content Include="images\series_img\1x01got.jpg" />
-    <Content Include="images\series_img\1x02got.jpg" />
-    <Content Include="images\series_img\gott1.jpg" />
-    <Content Include="images\series_img\gott2.jpg" />
-    <Content Include="images\series_img\gott3.jpg" />
-    <Content Include="images\series_img\gott4.jpg" />
-    <Content Include="images\series_img\gott5.jpg" />
-    <Content Include="images\series_img\gott6.jpg" />
-    <Content Include="images\series_img\gott7.jpg" />
-    <Content Include="images\series_img\juego_de_tronos.jpg" />
-    <Content Include="images\series_img\lost.jpg" />
-    <Content Include="images\series_img\stranger_things2.jpg" />
+    <Content Include="images\series_img\stranger.jpg" />
     <Content Include="Busquedas.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
@@ -150,6 +144,7 @@
     <Content Include="css\style.css" />
     <Content Include="FAQ.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="Transaccions.aspx" />
     <Content Include="Transaccion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -238,6 +233,13 @@
     <Compile Include="Mantenimiento\Añadir_Saga.aspx.designer.cs">
       <DependentUpon>Añadir_Saga.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Añadir_Serie.aspx.cs">
+      <DependentUpon>Añadir_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Añadir_Serie.aspx.designer.cs">
+      <DependentUpon>Añadir_Serie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Borrar_Actor.aspx.cs">
       <DependentUpon>Borrar_Actor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,6 +282,13 @@
     <Compile Include="Mantenimiento\Borrar_Saga.aspx.designer.cs">
       <DependentUpon>Borrar_Saga.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Borrar_Serie.aspx.cs">
+      <DependentUpon>Borrar_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Borrar_Serie.aspx.designer.cs">
+      <DependentUpon>Borrar_Serie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -315,6 +324,13 @@
     <Compile Include="Mantenimiento\Modificar_Pelicula.aspx.designer.cs">
       <DependentUpon>Modificar_Pelicula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Modificar_Serie.aspx.cs">
+      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Modificar_Serie.aspx.designer.cs">
+      <DependentUpon>Modificar_Serie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,6 +359,13 @@
     <Compile Include="Mostrar\Mostrar_Distribuidora.aspx.designer.cs">
       <DependentUpon>Mostrar_Distribuidora.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mostrar\Mostrar_Facturas.aspx.cs">
+      <DependentUpon>Mostrar_Facturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Facturas.aspx.designer.cs">
+      <DependentUpon>Mostrar_Facturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mostrar\Mostrar_Factura.aspx.cs">
       <DependentUpon>Mostrar_Factura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -356,6 +379,13 @@
     </Compile>
     <Compile Include="Mostrar\Mostrar_Peliculas.aspx.designer.cs">
       <DependentUpon>Mostrar_Peliculas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Series.aspx.cs">
+      <DependentUpon>Mostrar_Series.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mostrar\Mostrar_Series.aspx.designer.cs">
+      <DependentUpon>Mostrar_Series.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pagina_Error.aspx.cs">
       <DependentUpon>Pagina_Error.aspx</DependentUpon>
@@ -400,6 +430,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaccions.aspx.cs">
+      <DependentUpon>Transaccions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaccions.aspx.designer.cs">
+      <DependentUpon>Transaccions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Transaccion.aspx.cs">
       <DependentUpon>Transaccion.aspx</DependentUpon>
