@@ -84,6 +84,18 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public List<int> eliminarAlquiladas()
+        {
+            transaccionPeliculaCAD t = new transaccionPeliculaCAD();
+            try
+            {
+                return t.eliminarAlquiladas(this.email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }
