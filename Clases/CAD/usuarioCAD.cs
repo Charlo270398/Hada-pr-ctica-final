@@ -232,6 +232,46 @@ namespace CAD
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<transaccionSerieEN> listaTransaccionesCompraS(string email)
+        {
+            try
+            {
+                transaccionSerieEN trans = new transaccionSerieEN();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from TransaccionS where Email like '" + email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                List<transaccionSerieEN> lista = new List<transaccionSerieEN>();
+                while (reader.Read())
+                {
+                    trans = new transaccionSerieEN();
+                    trans.Email = reader["Email"].ToString();
+                    trans.IdS = (int)reader["Id_Serie"];
+                    trans.FechaC = reader["Fecha_Compra"].ToString();
+                    trans.Alquiler = (bool)reader["Alquiler"];
+                    if (trans.Alquiler)
+                    {
+                        trans.FechaF = reader["Fecha_Devolucion"].ToString();
+                    }
+                    else
+                    {
+                        trans.FechaF = null;
+                        lista.Add(trans);
+                    }
+                }
+                reader.Close();
+                cn.Close();
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<transaccionPeliculaEN> listaTransaccionesAlquilerP(string email)
         {
             try
@@ -248,6 +288,44 @@ namespace CAD
                     trans = new transaccionPeliculaEN();
                     trans.Email = reader["Email"].ToString();
                     trans.IdP = (int)reader["Id_Pelicula"];
+                    trans.FechaC = reader["Fecha_Compra"].ToString();
+                    trans.Alquiler = (bool)reader["Alquiler"];
+                    if (trans.Alquiler)
+                    {
+                        trans.FechaF = reader["Fecha_Devolucion"].ToString();
+                        lista.Add(trans);
+                    }
+                    else
+                    {
+                        trans.FechaF = null;
+                    }
+                }
+                reader.Close();
+                cn.Close();
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<transaccionSerieEN> listaTransaccionesAlquilerS(string email)
+        {
+            try
+            {
+                transaccionSerieEN trans = new transaccionSerieEN();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "select * from TransaccionS where Email like '" + email + "'";
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                List<transaccionSerieEN> lista = new List<transaccionSerieEN>();
+                while (reader.Read())
+                {
+                    trans = new transaccionSerieEN();
+                    trans.Email = reader["Email"].ToString();
+                    trans.IdS = (int)reader["Id_Serie"];
                     trans.FechaC = reader["Fecha_Compra"].ToString();
                     trans.Alquiler = (bool)reader["Alquiler"];
                     if (trans.Alquiler)

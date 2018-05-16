@@ -58,6 +58,8 @@ namespace WebVideo.Mantenimiento
             DW_Saga.DataBind();
             DW_Saga.DataSource = opList;
             DW_Saga.DataBind();
+            DW_Serie.DataSource = opList;
+            DW_Serie.DataBind();
             listaU = u.listaUsuarios();
             opList.Clear();
             opList.Add("[Seleccionar]");
@@ -119,7 +121,22 @@ namespace WebVideo.Mantenimiento
             {
                 Response.Redirect("Borrar_Pelicula.aspx?");
             }
+        }
 
+        protected void Btn_Serie_Click(object sender, EventArgs e)
+        {
+            if (DW_Serie.SelectedValue == "Añadir")
+            {
+                Response.Redirect("Añadir_Serie.aspx?");
+            }
+            else if (DW_Serie.SelectedValue == "Modificar")
+            {
+                Response.Redirect("Modificar_Serie.aspx?");
+            }
+            else
+            {
+                Response.Redirect("Borrar_Serie.aspx?");
+            }
         }
 
         protected void Btn_Saga_Click(object sender, EventArgs e)

@@ -88,7 +88,7 @@ namespace WebVideo
                 DWSeries.DataSource = ListaNombres;
                 DWSeries.DataBind();
                 DWSeries.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
-                if (DWPeliculas.Items.Count == 1)
+                if (DWSeries.Items.Count == 1)
                 {
                     ErrSerie.Visible = true;
                     ErrSerie.Text = "*Búsqueda vacía. Introduzca el carácter '%' para ver todos los títulos";
@@ -105,7 +105,6 @@ namespace WebVideo
                 ErrSerie.Visible = true;
                 ErrSerie.Text = "*Campo vacío";
             }
-
             ErrPelicula.Visible = false;
             ErrDistribuidora.Visible = false;
             ErrPelicula.Visible = false;

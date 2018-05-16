@@ -14,15 +14,57 @@ namespace Clases.CAD
         {
 
         }
-  
+
         public void anyadirSerie(serieEN serie)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                string fecha = serie.FechaE;
+                int nextId = 1;
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "insert into Series values (" + nextId + ", '";
+                comando += serie.Titulo + "', '";
+                comando += fecha + "', '";
+                comando += serie.Sinopsis + "', " + serie.PrecioC + ", " + serie.PrecioA + ", ";
+                comando += " '../images/series_img/" + serie.Imagen + "')";
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
 
-        public void borrarSerie(serieEN serie)
-        {
-            throw new NotImplementedException();
+                cn.Close();
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    string fecha = serie.FechaE;
+                    int nextId = 1;
+                    SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                    cn.Open();
+                    string comando = "select max(Id_Serie) max from Series";
+                    SqlCommand cmd = new SqlCommand(comando, cn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nextId = (int)reader["max"] + 1;
+                    }
+                    reader.Close();
+                    comando = "insert into Series values (" + nextId + ", '";
+                    comando += serie.Titulo + "', '";
+                    comando += fecha + "', '";
+                    comando += serie.Sinopsis + "', '" + serie.PrecioC + "', '" + serie.PrecioA + "', ";
+                    comando += "'../images/series_img/" + serie.Imagen + "')";
+                    cmd = new SqlCommand(comando, cn);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
 
         public serieEN mostrarSerie(serieEN serie)
@@ -93,7 +135,7 @@ namespace Clases.CAD
             string comando = "";
             if (serie.Titulo == "%")
             {
-                comando = "select * from Series order by Nombre";
+                comando = "select * from Series order by Titulo";
             }
             else
             {
@@ -119,9 +161,40 @@ namespace Clases.CAD
             return devolver;
         }
 
+        public void borrarSerie(int id)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Series where Id_Serie = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void modificarSerie(serieEN serie)
         {
-            throw new NotImplementedException();
+            /*try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from Series where Id_Serie = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }*/
         }
 
         public bool existe(serieEN serie)
