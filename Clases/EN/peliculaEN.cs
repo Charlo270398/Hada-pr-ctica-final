@@ -96,8 +96,18 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public void mostrarPelicula()
+        public peliculaEN mostrarPelicula()
         {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarPelicula(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
         }
         public void modificarPelicula()
@@ -113,5 +123,86 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public List<peliculaEN> mostrarListaPeliculas()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarListaPeliculas(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<peliculaEN> mostrarListaTodasPeliculas()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                this.nombreP = "%";
+                return p.mostrarListaPeliculas(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<actorEN> mostrarListaActores()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public peliculaEN peliculaMasNueva()
+        {
+            try
+            {
+                DateTime nueva = DateTime.Parse("1900-01-01");
+                peliculaEN devolver = new peliculaEN();
+                peliculaCAD p = new peliculaCAD();
+                List<peliculaEN> lista = p.mostrarListaPeliculas(this);
+                for(int i = 0; i<lista.Count; i++)
+                {
+                    DateTime time = DateTime.Parse(lista[i].fechaE);
+                    if (time>nueva)
+                    {
+                        nueva = time;
+                        devolver = lista[i];
+                    }
+                }
+                return devolver;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public peliculaEN peliculaRandom()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarPeliculaRandom();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

@@ -11,9 +11,11 @@ namespace CAD
         void anyadirUsuario(usuarioEN user);
         void borrarUsuario(usuarioEN user);
         usuarioEN mostrarUsuario(string email);
-        void modificarUsuario(usuarioEN user);
+        void modificarDatos(usuarioEN user);
         bool existe(usuarioEN user);
         List<usuarioEN> listaUsuarios();
         void hacerAdmin(string email);
+
+        void modificarContraseña(usuarioEN user);
     }
 }

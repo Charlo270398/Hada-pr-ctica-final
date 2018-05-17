@@ -55,7 +55,15 @@ namespace  Clases.EN
         }
         public void borrarUsuario()
         {
-
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                user.borrarUsuario(this);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
         public void cargarUsuario()
         {
@@ -102,22 +110,83 @@ namespace  Clases.EN
                 throw new Exception(e.Message);
             }
         }
-        public bool validacion()
+
+        public void modificarDatos()
         {
             usuarioCAD user = new usuarioCAD();
             try
             {
-                return user.existe(this);
+                user.modificarDatos(this);
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-
         }
-        public void modificarUsuario()
-        {
 
+        public void modificarContraseña()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                user.modificarContraseña(this);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public List<transaccionPeliculaEN> listaAlquileresP()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesAlquilerP(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public List<transaccionSerieEN> listaAlquileresS()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesAlquilerS(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public List<transaccionPeliculaEN> listaComprasP()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesCompraP(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public List<transaccionSerieEN> listaComprasS()
+        {
+            usuarioCAD user = new usuarioCAD();
+            try
+            {
+                return user.listaTransaccionesCompraS(this.email);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
     }

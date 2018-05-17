@@ -29,6 +29,7 @@ namespace Clases.EN
 
         public actorEN()
         {
+            this.idAc = -1;
 
         }
         public actorEN(int id, string nombre)
@@ -69,8 +70,17 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public void mostrarActor()
+        public actorEN mostrarActor()
         {
+            actorCAD actor = new actorCAD();
+            try
+            {
+                return actor.mostrarActor(this.idAc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
         }
         public void modificarActor()
@@ -79,6 +89,45 @@ namespace Clases.EN
             try
             {
                 actor.modificarActor(this);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<actorEN> listaActores()
+        {
+            actorCAD actor = new actorCAD();
+            try
+            {
+                return actor.mostrarListaActores(this);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<actorEN> listaTodosActores()
+        {
+            actorCAD actor = new actorCAD();
+            try
+            {
+                this.nombre = "%";
+                return actor.mostrarListaActores(this);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<peliculaEN> mostrarPeliculasActor()
+        {
+            actorCAD actor = new actorCAD();
+            try
+            {
+                return actor.peliculasActor(this.idAc);
             }
             catch (Exception ex)
             {

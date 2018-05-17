@@ -16,5 +16,7 @@ namespace CAD
         peliculaEN mostrarPelicula(peliculaEN pelicula);
         void modificarPelicula(peliculaEN pelicula);
         bool existe(peliculaEN pelicula);
+
+        peliculaEN mostrarPeliculaRandom();
     }
 }

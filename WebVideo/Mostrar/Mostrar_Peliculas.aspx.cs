@@ -12,7 +12,6 @@ namespace WebVideo.Peliculas
     public partial class Mostrar_Peliculas : System.Web.UI.Page
     {
 
-        peliculaCAD p = new peliculaCAD();
         peliculaEN pelicula = new peliculaEN();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +30,7 @@ namespace WebVideo.Peliculas
             int id;
             int.TryParse(Request.QueryString["id"], out id);
             pelicula = new peliculaEN(id, "");
-            pelicula = p.mostrarPelicula(pelicula);
+            pelicula = pelicula.mostrarPelicula();
             Titulo.Text = pelicula.NombreP;
             Texto_Sinopsis.Text = pelicula.Sinopsis;
             Imagen.ImageUrl = pelicula.Imagen;
