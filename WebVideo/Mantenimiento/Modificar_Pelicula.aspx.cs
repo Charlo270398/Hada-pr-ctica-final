@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clases.EN;
+using System.Drawing;
 
 namespace WebVideo.Mantenimiento
 {
@@ -127,7 +128,33 @@ namespace WebVideo.Mantenimiento
 
         protected void Btn_Modificar_Click(object sender, EventArgs e)
         {
+            if (DWPelicula.SelectedItem.ToString() != "[Seleccionar]")
+            {
+                try
+                {
+                    p.NombreP = tituloBox.Text;
+                    p.Duracion = int.Parse(duracionBox.Text);
+                    p.Sinopsis = sinopsisBox.Text;
+                    p.PrecioC = int.Parse(compraBox.Text);
+                    p.PrecioA = int.Parse(alquilerBox.Text);
+                    p.Imagen = imagenBox.Text;
+                    p.Trailer = trailerBox.Text;
+                    p.IdDir = listaIdDir[DWdir.SelectedIndex -1];
+                    p.IdDist = listaIdDist[DWdist.SelectedIndex-1];
+                    p.IdSaga = listaIdSag[DWsaga.SelectedIndex];
+                    p.modificarPelicula();
+                    Err.Text = "PELICULA MODIFICADA CORRECTAMENTE";
+                    Err.Visible = true;
+                    Err.ForeColor = Color.Green;
 
+                }
+                catch (Exception ex)
+                {
+                    Err.Text = ex.Message;
+                    Err.Visible = true;
+                    Err.ForeColor = Color.Red;
+                }
+            }
         }
 
         protected void Btn_Cargar_Click(object sender, EventArgs e)
@@ -179,6 +206,7 @@ namespace WebVideo.Mantenimiento
             {
                 Err.Text = ex.Message;
                 Err.Visible = true;
+                Err.ForeColor = Color.Red;
             }
         }
     }
