@@ -51,11 +51,17 @@ namespace WebVideo.Area_Cliente
 
         protected void DWPais_Init(object sender, EventArgs e)
         {
-            if (DWPais != null)
+            try
             {
-                paisEN pais = new paisEN();
-                DWPais.DataSource = pais.mostrarListaNombresPaises();
-                DWPais.DataBind();
+                if (DWPais != null)
+                {
+                    paisEN pais = new paisEN();
+                    DWPais.DataSource = pais.mostrarListaNombresPaises();
+                    DWPais.DataBind();
+                }
+            }catch(Exception ex)
+            {
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
             
         }

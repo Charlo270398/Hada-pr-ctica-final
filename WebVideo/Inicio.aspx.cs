@@ -25,9 +25,9 @@ namespace WebVideo
                 Imagen.ImageUrl = p.Imagen;
                 HyperLink.NavigateUrl = "Mostrar/Mostrar_Peliculas.aspx?id=" + p.IdP.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("Pagina_Error.aspx");
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
             }
         }
     }

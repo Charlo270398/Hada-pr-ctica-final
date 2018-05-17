@@ -29,11 +29,10 @@ namespace WebVideo
                 precio = pelicula.PrecioA / 100 + 0.00;
                 PrecioA.Text = precio.ToString() + "€";
                 Fecha.Text = (DateTime.Now).AddDays(7).ToString().Substring(0,11);
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("Pagina_Error.aspx");
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
             }
         }
 

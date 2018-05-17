@@ -35,9 +35,9 @@ namespace WebVideo
                     admin.Visible = true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("../Pagina_Error.aspx");
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
 
         }
@@ -92,9 +92,9 @@ namespace WebVideo
                 user.borrarUsuario();
                 Session["user_session_data"] = null;
                 Response.Redirect("../Inicio.aspx");
-            }catch(Exception)
+            }catch(Exception ex)
             {
-                Response.Redirect("../Pagina_Error.aspx");
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
 
             

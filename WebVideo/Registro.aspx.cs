@@ -44,14 +44,19 @@ namespace WebVideo
 
         protected void DWPais_Init(object sender, EventArgs e)
         {
-            if (DWPais != null)
+            try
             {
-                paisEN pais = new paisEN();
-                Session["user_session_data"] = null;
-                DWPais.DataSource = pais.mostrarListaNombresPaises() ;
-                DWPais.DataBind();
-                DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
-
+                if (DWPais != null)
+                {
+                    paisEN pais = new paisEN();
+                    Session["user_session_data"] = null;
+                    DWPais.DataSource = pais.mostrarListaNombresPaises();
+                    DWPais.DataBind();
+                    DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+                }
+            }catch(Exception ex)
+            {
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
             }
 
         }
