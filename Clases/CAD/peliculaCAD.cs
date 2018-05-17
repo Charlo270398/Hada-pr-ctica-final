@@ -238,7 +238,39 @@ namespace CAD
             return devolver;
         }
 
-        public void modificarPelicula(peliculaEN id) { }
+        public void modificarPelicula(peliculaEN pelicula)
+        {
+            try
+            {
+                DateTime fecha = DateTime.Parse(pelicula.FechaE);
+                paisCAD p = new paisCAD();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "update Peliculas set Id_Pelicula = " + pelicula.IdP + ", Nombre = '";
+                comando += pelicula.NombreP + "', Duracion = " + pelicula.Duracion + ", Fecha_Estreno = '";
+                comando += fecha + "', Sinopsis = '";
+                comando += pelicula.Sinopsis + "', Precio_C = " + pelicula.PrecioC + ", Precio_A = " + pelicula.PrecioA + ", Id_Distribuidora = " + pelicula.IdDist + ",  Id_Director = ";
+                comando += pelicula.IdDir + ", Imagen = '../images/peliculas_img/" + pelicula.Imagen + "', Id_Saga = ";
+                if (pelicula.IdSaga == -1)
+                {
+                    comando += "null" + ", Trailer = '" + pelicula.Trailer + "'where Id_Pelicula = " + pelicula.IdP;
+                }
+                else
+                {
+                    comando += pelicula.IdSaga + ", Trailer = '" + pelicula.Trailer + "' where Id_Pelicula = " + pelicula.IdP;
+                }
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public bool existe(peliculaEN id) { return false; }
 
         public List<peliculaEN> mostrarListaPeliculasDistribuidora(int idDist)
