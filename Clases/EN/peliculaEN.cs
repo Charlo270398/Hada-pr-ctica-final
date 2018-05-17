@@ -203,6 +203,19 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public int idPelicula()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.idPelicula(this.nombreP);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }

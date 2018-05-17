@@ -242,28 +242,11 @@ namespace CAD
         {
             try
             {
-                DateTime fecha = DateTime.Parse(pelicula.FechaE);
-                paisCAD p = new paisCAD();
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "";
-                SqlCommand cmd;
-                comando = "update Peliculas set Id_Pelicula = " + pelicula.IdP + ", Nombre = '";
-                comando += pelicula.NombreP + "', Duracion = " + pelicula.Duracion + ", Fecha_Estreno = '";
-                comando += fecha + "', Sinopsis = '";
-                comando += pelicula.Sinopsis + "', Precio_C = " + pelicula.PrecioC + ", Precio_A = " + pelicula.PrecioA + ", Id_Distribuidora = " + pelicula.IdDist + ",  Id_Director = ";
-                comando += pelicula.IdDir + ", Imagen = '../images/peliculas_img/" + pelicula.Imagen + "', Id_Saga = ";
-                if (pelicula.IdSaga == -1)
-                {
-                    comando += "null" + ", Trailer = '" + pelicula.Trailer + "'where Id_Pelicula = " + pelicula.IdP;
-                }
-                else
-                {
-                    comando += pelicula.IdSaga + ", Trailer = '" + pelicula.Trailer + "' where Id_Pelicula = " + pelicula.IdP;
-                }
-                cmd = new SqlCommand(comando, cn);
+                string comando = "update Peliculas set Nombre = '" + pelicula.NombreP + "', Trailer = '" + pelicula.Trailer + "' where Id_Pelicula = " + pelicula.IdP;
+                SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
-
                 cn.Close();
             }
             catch (Exception ex)
@@ -353,6 +336,33 @@ namespace CAD
             cn.Close();
 
             return aux;
+        }
+
+        public int idPelicula(string nombre)
+        {
+            try
+            {
+                int aux = -1;
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando;
+
+                comando = "select Id_Pelicula from Peliculas where Nombre like '" + nombre + "'";
+
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    aux = (int)reader["Id_Pelicula"];
+                }
+                reader.Close();
+                cn.Close();
+
+                return aux;
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

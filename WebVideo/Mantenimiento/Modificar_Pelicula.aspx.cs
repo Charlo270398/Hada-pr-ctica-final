@@ -130,22 +130,20 @@ namespace WebVideo.Mantenimiento
         {
             if (DWPelicula.SelectedItem.ToString() != "[Seleccionar]")
             {
+                p.NombreP = DWPelicula.SelectedItem.ToString();
+                p.IdP = p.idPelicula();
+                p.NombreP = tituloBox.Text;
+                p.Trailer = trailerBox.Text;
+
                 try
                 {
-                    p.NombreP = tituloBox.Text;
-                    p.Duracion = int.Parse(duracionBox.Text);
-                    p.Sinopsis = sinopsisBox.Text;
-                    p.PrecioC = int.Parse(compraBox.Text);
-                    p.PrecioA = int.Parse(alquilerBox.Text);
-                    p.Imagen = imagenBox.Text;
-                    p.Trailer = trailerBox.Text;
-                    p.IdDir = listaIdDir[DWdir.SelectedIndex -1];
-                    p.IdDist = listaIdDist[DWdist.SelectedIndex-1];
-                    p.IdSaga = listaIdSag[DWsaga.SelectedIndex];
                     p.modificarPelicula();
                     Err.Text = "PELICULA MODIFICADA CORRECTAMENTE";
                     Err.Visible = true;
                     Err.ForeColor = Color.Green;
+                    DWPelicula.SelectedIndex = 0;
+                    Btn_Cargar_Click(sender,e);
+
 
                 }
                 catch (Exception ex)
