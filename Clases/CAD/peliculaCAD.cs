@@ -255,7 +255,7 @@ namespace CAD
                 comando += pelicula.IdDir + ", Imagen = '../images/peliculas_img/" + pelicula.Imagen + "', Id_Saga = ";
                 if (pelicula.IdSaga == -1)
                 {
-                    comando += "null" + ", Trailer = '" + pelicula.Trailer + "'where Id_Pelicula = " + pelicula.IdP;
+                    comando += "null" + ", Trailer = '" + pelicula.Trailer + "' where Id_Pelicula = " + pelicula.IdP;
                 }
                 else
                 {
@@ -353,6 +353,33 @@ namespace CAD
             cn.Close();
 
             return aux;
+        }
+
+        public int idPelicula(string nombre)
+        {
+            try
+            {
+                int aux = -1;
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando;
+
+                comando = "select Id_Pelicula from Peliculas where Nombre like '" + nombre + "'";
+
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    aux = (int)reader["Id_Pelicula"];
+                }
+                reader.Close();
+                cn.Close();
+
+                return aux;
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

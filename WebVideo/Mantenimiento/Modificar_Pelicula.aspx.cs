@@ -132,6 +132,8 @@ namespace WebVideo.Mantenimiento
             {
                 try
                 {
+                    p.IdP = p.idPelicula();
+                    p.FechaE = DWaño.SelectedItem.ToString() + "-" + DWmes.SelectedItem.ToString() + "-" + DWdia.SelectedItem.ToString();
                     p.NombreP = tituloBox.Text;
                     p.Duracion = int.Parse(duracionBox.Text);
                     p.Sinopsis = sinopsisBox.Text;
