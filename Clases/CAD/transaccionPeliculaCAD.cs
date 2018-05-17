@@ -31,7 +31,22 @@ namespace CAD
                 throw new Exception("La película ya está en alquiler/compra");
             }
         }
-        public void devolver(int id) { }
+        public void devolver(int id, string email) {
+            try
+            {
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "delete from TransaccionP where Email like '" + email + "' and Id_Pelicula = " + id;
+                SqlCommand cmd = new SqlCommand(comando, cn);
+                cmd = new SqlCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public void comprar(int idPelicula, string email) {
 
             try
@@ -85,5 +100,37 @@ namespace CAD
             }
         }
         public bool existe(int id) { return false; }
+
+        public List<int> eliminarAlquiladas(string email)
+        {
+            try
+            {
+                List<int> dev = new List<int>();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                SqlCommand cmd;
+                comando = "select * from TransaccionP where Email like '" + email + "' and Alquiler = " + 1;
+                cmd = new SqlCommand(comando, cn);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (DateTime.Parse(reader["Fecha_Devolucion"].ToString())<=DateTime.Now)
+                    {
+                        devolver((int)reader["Id_Pelicula"],email);
+                        dev.Add((int)reader["Id_Pelicula"]);
+                    }
+
+                }
+                reader.Close();
+                cn.Close();
+                return dev;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
     }
 }
