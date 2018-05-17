@@ -65,6 +65,7 @@ namespace WebVideo.Mantenimiento
                 nombres.Clear();
                 listaIdSag.Clear();
                 List<sagaEN> slist = s.listaSagas();
+                listaIdSag.Add(-1);
                 for (i = 0; i < slist.Count; i++)
                 {
                     nombres.Add(slist[i].Nombre);
@@ -134,6 +135,16 @@ namespace WebVideo.Mantenimiento
                 p.IdP = p.idPelicula();
                 p.NombreP = tituloBox.Text;
                 p.Trailer = trailerBox.Text;
+                p.FechaE = DWaño.SelectedItem.ToString() + "-" + DWmes.SelectedItem.ToString() + "-" + DWdia.SelectedItem.ToString();
+                p.Duracion = int.Parse(duracionBox.Text);
+                p.Sinopsis = sinopsisBox.Text;
+                p.PrecioC = int.Parse(compraBox.Text);
+                p.PrecioA = int.Parse(alquilerBox.Text);
+                p.Imagen = imagenBox.Text;
+                p.Trailer = trailerBox.Text;
+                p.IdDir = listaIdDir[DWdir.SelectedIndex - 1];
+                p.IdDist = listaIdDist[DWdist.SelectedIndex - 1];
+                p.IdSaga = listaIdSag[DWsaga.SelectedIndex];
 
                 try
                 {
