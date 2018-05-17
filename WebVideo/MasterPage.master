@@ -87,6 +87,9 @@
     <asp:Panel ID="subBody" runat="server" Visible="False">
     <asp:ContentPlaceHolder id="bajoCuerpo" runat="server">
         
+        <p>
+            HOL</p>
+        
     </asp:ContentPlaceHolder>
     </asp:Panel>
     <br /><br />
