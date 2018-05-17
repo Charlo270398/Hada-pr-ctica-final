@@ -27,7 +27,7 @@ namespace WebVideo
             }
             catch (Exception)
             {
-                Response.Redirect("Pagina_Error.aspx");
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
             }
         }
     }

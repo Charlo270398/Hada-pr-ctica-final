@@ -14,7 +14,13 @@ namespace WebVideo.Area_Cliente
         usuarioEN user = new usuarioEN();
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = (usuarioEN)Session["user_session_data"];
+            try
+            {
+                user = (usuarioEN)Session["user_session_data"];
+            }catch(Exception ex)
+            {
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
+            }
         }
 
         protected void BTN_CAMBIARC(object sender, EventArgs e)

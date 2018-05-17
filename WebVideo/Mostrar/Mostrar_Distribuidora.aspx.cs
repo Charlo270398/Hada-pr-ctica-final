@@ -20,26 +20,32 @@ namespace WebVideo.Mostrar
 
         protected void Nombre_Init(object sender, EventArgs e)
         {
-            int id;
-            int.TryParse(Request.QueryString["id"], out id);
-            distribuidora.IdDis = id;
-            DistribuidoraCAD aux = new DistribuidoraCAD();
-            peliculaCAD paux = new peliculaCAD();
-
-            distribuidora = aux.mostrarDistribuidora(distribuidora.IdDis);
-
-            NombreText.Text = distribuidora.Nombre;
-
-            List<string> listaNombres = new List<string>();
-            List<peliculaEN> listaP = paux.mostrarListaPeliculasDistribuidora(distribuidora.IdDis);
-            for (int i = 0; i < listaP.Count; i++)
+            try
             {
-                listaNombres.Add(listaP[i].NombreP);
-                listaID.Add(listaP[i].IdP);
+                int id;
+                int.TryParse(Request.QueryString["id"], out id);
+                distribuidora.IdDis = id;
+                DistribuidoraCAD aux = new DistribuidoraCAD();
+                peliculaCAD paux = new peliculaCAD();
+
+                distribuidora = aux.mostrarDistribuidora(distribuidora.IdDis);
+
+                NombreText.Text = distribuidora.Nombre;
+
+                List<string> listaNombres = new List<string>();
+                List<peliculaEN> listaP = paux.mostrarListaPeliculasDistribuidora(distribuidora.IdDis);
+                for (int i = 0; i < listaP.Count; i++)
+                {
+                    listaNombres.Add(listaP[i].NombreP);
+                    listaID.Add(listaP[i].IdP);
+                }
+                DWPeliculas.DataSource = listaNombres;
+                DWPeliculas.DataBind();
+                DWPeliculas.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+            }catch(Exception ex)
+            {
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
-            DWPeliculas.DataSource = listaNombres;
-            DWPeliculas.DataBind();
-            DWPeliculas.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
 
         }
 

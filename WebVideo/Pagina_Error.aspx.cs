@@ -13,5 +13,10 @@ namespace WebVideo
         {
 
         }
+
+        protected void err_Init(object sender, EventArgs e)
+        {
+            err.Text = Request.QueryString["err"];
+        }
     }
 }
