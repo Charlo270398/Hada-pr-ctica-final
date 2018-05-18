@@ -25,6 +25,7 @@ namespace WebVideo
                     {
                         menuMantenimiento.Visible = true;
                     }
+                   
                     menuSalir.Visible = true;
                     menuLogin.Visible = false;
                     menuRegistro.Text = "Área cliente";
