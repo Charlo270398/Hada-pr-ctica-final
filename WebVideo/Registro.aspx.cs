@@ -10,6 +10,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clases.EN;
 using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WebVideo
 {
@@ -21,14 +23,25 @@ namespace WebVideo
 
         }
 
+        public string CalculateMD5Hash(string input)
+
+        {
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = md5.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            return sb.ToString();
+        }
+
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
 
         }
 
-  
-
-     
         protected void Button1_Click(object sender, EventArgs e)
         {
            
@@ -44,14 +57,19 @@ namespace WebVideo
 
         protected void DWPais_Init(object sender, EventArgs e)
         {
-            if (DWPais != null)
+            try
             {
-                paisEN pais = new paisEN();
-                Session["user_session_data"] = null;
-                DWPais.DataSource = pais.mostrarListaNombresPaises() ;
-                DWPais.DataBind();
-                DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
-
+                if (DWPais != null)
+                {
+                    paisEN pais = new paisEN();
+                    Session["user_session_data"] = null;
+                    DWPais.DataSource = pais.mostrarListaNombresPaises();
+                    DWPais.DataBind();
+                    DWPais.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+                }
+            }catch(Exception ex)
+            {
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
             }
 
         }
@@ -151,10 +169,11 @@ namespace WebVideo
             
             if (correcto)
             {
+                string hash = CalculateMD5Hash(Text_Cnt.Text);
                 paisEN pais = new paisEN(DWPais.SelectedItem.ToString());
                 usuarioEN user = new usuarioEN();
                 user.Apellidos = Text_ap.Text;
-                user.Contrasenya = Text_Cnt.Text;
+                user.Contrasenya = hash;
                 user.Email = Text_Email.Text;
                 user.Nombre = Text_nom.Text;
                 user.Pais = pais.mostrarIdPais().IdPais;

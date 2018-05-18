@@ -27,24 +27,30 @@ namespace WebVideo.Series
         }
         protected void imageSerie1_Init(object sender, EventArgs e)
         {
-            int id;
-            int.TryParse(Request.QueryString["id"], out id);
-            serie = new serieEN(id, "");
-            serie = p.mostrarSerie(serie);
-            Titulo_S.Text = serie.Titulo;
-            Texto_Sinopsis.Text = serie.Sinopsis;
-            Imagen.ImageUrl = serie.Imagen;
-            float precio = serie.PrecioA / 100;
-            precioAnumtext.Text = precio.ToString() + "€";
-            fechaEstrenotext.Text = serie.FechaE;
-            precio = serie.PrecioC / 100;
-            precioCnumtext.Text = precio.ToString() + "€";
-            Response.Charset = "utf-8";
-            usuarioEN user = (usuarioEN)Session["user_session_data"];
-            if (user != null)
+            try
             {
-                adquirirText.Visible = true;
-                adquirirText.NavigateUrl = "../Transaccions.aspx?id=" + serie.IdS;
+                int id;
+                int.TryParse(Request.QueryString["id"], out id);
+                serie = new serieEN(id, "");
+                serie = p.mostrarSerie(serie);
+                Titulo_S.Text = serie.Titulo;
+                Texto_Sinopsis.Text = serie.Sinopsis;
+                Imagen.ImageUrl = serie.Imagen;
+                float precio = serie.PrecioA / 100;
+                precioAnumtext.Text = precio.ToString() + "€";
+                fechaEstrenotext.Text = serie.FechaE;
+                precio = serie.PrecioC / 100;
+                precioCnumtext.Text = precio.ToString() + "€";
+                Response.Charset = "utf-8";
+                usuarioEN user = (usuarioEN)Session["user_session_data"];
+                if (user != null)
+                {
+                    adquirirText.Visible = true;
+                    adquirirText.NavigateUrl = "../Transaccions.aspx?id=" + serie.IdS;
+                }
+            }catch(Exception ex)
+            {
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
 
         }

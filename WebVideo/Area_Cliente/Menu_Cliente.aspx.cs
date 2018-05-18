@@ -6,13 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clases.EN;
 using System.Drawing;
+using System.Net.Mail;
 
 namespace WebVideo
 {
     public partial class Area_Clientes : System.Web.UI.Page
     {
-        bool botonpelicula = false;
-        bool botonserie = false;
         List<string> nombres = new List<string>();
         List<int> listaIDA = new List<int>();
         List<int> listaIDC = new List<int>();
@@ -31,15 +30,14 @@ namespace WebVideo
                 nombre.Text = user.Nombre + " " + user.Apellidos;
                 email.Text = user.Email;
                 fecha.Text = user.FechaA.Substring(0,11);
-
                 if (user.AdMin)
                 {
                     admin.Visible = true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("../Pagina_Error.aspx");
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
 
         }
@@ -94,17 +92,41 @@ namespace WebVideo
                 user.borrarUsuario();
                 Session["user_session_data"] = null;
                 Response.Redirect("../Inicio.aspx");
-            }catch(Exception)
+            }catch(Exception ex)
             {
-                Response.Redirect("../Pagina_Error.aspx");
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
 
             
         }
 
+        protected void enviarMensajeDevueltas(peliculaEN p)
+        {
+            usuarioEN user = (usuarioEN)Session["user_session_data"];
+            SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587);
+            cliente.EnableSsl = true;
+            cliente.Credentials = new System.Net.NetworkCredential("hookinVideoclub@gmail.com", "hookin123");
+            string contenido = "Hola, " + user.Nombre + ". Le informamos de que el alquiler de la película " + p.NombreP + " acaba de vencer.\n";
+            contenido += "Puede volver a alquilar la película usando nuestra aplicación.\n\n";
+            contenido += "El equipo de Cuentas de Hookin";
+            MailMessage mail = new MailMessage("hookinVideoclub@gmail.com", user.Email, "Devolución", contenido);
+            cliente.Send(mail);
+
+        }
+
         protected void DWCompras_Init(object sender, EventArgs e)
         {
             usuarioEN user = (usuarioEN)Session["user_session_data"];
+            transaccionPeliculaEN t = new transaccionPeliculaEN();
+            t.Email = user.Email;
+            List <int> devueltas = t.eliminarAlquiladas();
+
+            for(int i = 0; i<devueltas.Count; i++)
+            {
+                peliculaEN p = new peliculaEN(devueltas[i],"");
+                enviarMensajeDevueltas(p.mostrarPelicula());
+            }
+
             if (DWAlquiler != null)
             {
                 peliculaEN peli = new peliculaEN();

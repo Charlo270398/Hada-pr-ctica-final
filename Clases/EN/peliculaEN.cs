@@ -165,5 +165,57 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public peliculaEN peliculaMasNueva()
+        {
+            try
+            {
+                DateTime nueva = DateTime.Parse("1900-01-01");
+                peliculaEN devolver = new peliculaEN();
+                peliculaCAD p = new peliculaCAD();
+                List<peliculaEN> lista = p.mostrarListaPeliculas(this);
+                for(int i = 0; i<lista.Count; i++)
+                {
+                    DateTime time = DateTime.Parse(lista[i].fechaE);
+                    if (time>nueva)
+                    {
+                        nueva = time;
+                        devolver = lista[i];
+                    }
+                }
+                return devolver;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public peliculaEN peliculaRandom()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarPeliculaRandom();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public int idPelicula()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.idPelicula(this.nombreP);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

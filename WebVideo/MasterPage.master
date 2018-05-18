@@ -66,11 +66,12 @@
           <asp:HyperLink ID="menuBusquedas" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="Busquedas.aspx">Búsquedas</asp:HyperLink>
           </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
           <asp:HyperLink ID="menuMantenimiento" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="~/Mantenimiento/Main.aspx" Visible="False">Mantenimiento</asp:HyperLink>
-          </strong><span class="auto-style4"><strong>&nbsp;&nbsp; </strong></span><strong>
-          <asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style6" ForeColor="#3333FF" Visible="False" NavigateUrl="~/Login.aspx">Salir</asp:HyperLink>
+          </strong><span class="auto-style4"><strong>&nbsp; </strong></span><strong>
+          <asp:HyperLink ID="menuSorprendeme" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="~/Login.aspx">Sorpréndeme</asp:HyperLink>
+          &nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="menuSalir" runat="server" CssClass="auto-style6" ForeColor="#3333FF" NavigateUrl="~/Login.aspx" Visible="False">Salir</asp:HyperLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
           <asp:Label ID="Nombre" runat="server" CssClass="auto-style5" ForeColor="#CC00CC" Text="Texto"></asp:Label>
-&nbsp;</strong><br />
+          &nbsp;</strong><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
       </div>
@@ -85,6 +86,9 @@
 
     <asp:Panel ID="subBody" runat="server" Visible="False">
     <asp:ContentPlaceHolder id="bajoCuerpo" runat="server">
+        
+        <p>
+            HOL</p>
         
     </asp:ContentPlaceHolder>
     </asp:Panel>

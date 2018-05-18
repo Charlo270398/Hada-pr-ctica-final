@@ -31,9 +31,9 @@ namespace WebVideo
                 precio = serie.PrecioA / 100;
                 PrecioA.Text = precio.ToString() + "€";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Redirect("Pagina_Error.aspx");
+                Response.Redirect("Pagina_Error.aspx?err=" + ex.Message);
             }
         }
 

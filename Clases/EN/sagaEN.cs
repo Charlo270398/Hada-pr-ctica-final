@@ -80,5 +80,17 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public List<sagaEN> listaSagas()
+        {
+            sagaCAD s = new sagaCAD();
+            try
+            {
+                return s.listaSagas();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

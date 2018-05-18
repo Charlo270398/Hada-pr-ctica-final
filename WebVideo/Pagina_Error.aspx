@@ -15,6 +15,12 @@
     </p>
     <p style="font-size: x-large">
         problema.</p>
+    <p style="font-size: x-large">
+        &nbsp;</p>
+    <p style="font-size: x-large">
+        <span style="font-size: small">Descripción del error:
+        <asp:Label ID="err" runat="server" OnInit="err_Init" Text="Error"></asp:Label>
+        </span></p>
     <p>
     </p>
     <p>
