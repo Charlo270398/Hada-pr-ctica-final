@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Clases.CAD;
 using Clases.EN;
 using CAD;
+using System.Globalization;
 
 namespace WebVideo.Mantenimiento
 {
@@ -24,7 +25,6 @@ namespace WebVideo.Mantenimiento
                 if (fechaBox.Text.Length == 0 && tituloBox.Text.Length == 0 && sinopsisBox.Text.Length == 0 && compraBox.Text.Length == 0 && alquilerBox.Text.Length == 0 && imgBox.Text.Length == 0)
                 {
                     serieCAD p = new serieCAD();
-                    //serie.Titulo = DWSeries.SelectedItem.ToString();
                     serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
                     serie = p.mostrarSerie(serie);
                     tituloBox.Text = serie.Titulo;
@@ -75,26 +75,36 @@ namespace WebVideo.Mantenimiento
 
         protected void Btn_modificar_Click(object sender, EventArgs e)
         {
+            serieCAD p = new serieCAD();
+            serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
+            serie = p.mostrarSerie(serie);
             if (tituloBox.Text.Length == 0 || sinopsisBox.Text.Length == 0 || fechaBox.Text.Length == 0 || compraBox.Text.Length == 0 || alquilerBox.Text.Length == 0 || imgBox.Text.Length == 0)
             {
-                Btn_modificar.Visible = false;
+                Btn_modificar.Visible = true;
                 Err.ForeColor = Color.Red;
                 Err.Visible = true;
-                Err.Text = "No puedes dejar ningún campo en blanco";
+                Err.Text = "*No puedes dejar ningún campo en blanco";
             }
-            if (tituloBox.Text == serie.Titulo && sinopsisBox.Text == serie.Sinopsis && fechaBox.Text == serie.FechaE && compraBox.Text == serie.PrecioC.ToString() && alquilerBox.Text == serie.PrecioA.ToString() && imgBox.Text == serie.Imagen)
+            else if (tituloBox.Text == serie.Titulo && sinopsisBox.Text == serie.Sinopsis && fechaBox.Text == serie.FechaE && compraBox.Text == serie.PrecioC.ToString() && alquilerBox.Text == serie.PrecioA.ToString() && imgBox.Text == serie.Imagen)
             {
-                Btn_modificar.Visible = false;
+                Btn_modificar.Visible = true;
                 Err.ForeColor = Color.Red;
                 Err.Visible = true;
-                Err.Text = "No has realizado ningún cambio";
+                Err.Text = "*No has realizado ningún cambio";
             }
             else
             {
+                serie.Titulo = tituloBox.Text;
+                serie.Sinopsis = sinopsisBox.Text;
+                serie.FechaE = fechaBox.Text;
+                serie.PrecioA = float.Parse(alquilerBox.Text, CultureInfo.InvariantCulture.NumberFormat);
+                serie.PrecioC = float.Parse(compraBox.Text, CultureInfo.InvariantCulture.NumberFormat);
+                serie.Imagen = imgBox.Text;
+                serie.modificarSerie();
                 Btn_modificar.Visible = false;
                 Err.ForeColor = Color.Green;
                 Err.Visible = true;
-                Err.Text = "Has realizado los cambios correctamente";
+                Err.Text = "Has realizado los cambios correctamente :)";
             }
         }
     }

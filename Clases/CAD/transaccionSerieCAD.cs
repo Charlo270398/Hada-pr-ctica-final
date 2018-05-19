@@ -26,7 +26,7 @@ namespace CAD
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("La serie ya está en alquiler/compra");
             }
@@ -44,7 +44,7 @@ namespace CAD
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("La serie ya está en alquiler/compra");
             }

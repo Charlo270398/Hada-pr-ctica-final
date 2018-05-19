@@ -29,7 +29,6 @@ namespace WebVideo.Mantenimiento
                 {
                     float precioC = float.Parse(compra_textBox.Text, CultureInfo.InvariantCulture.NumberFormat);
                     float precioA = float.Parse(alquiler_textBox.Text, CultureInfo.InvariantCulture.NumberFormat);
-                    //string fecha = estreno_textBox.ToString();
                     serie = new serieEN(-1, titulo_textBox.Text, estreno_textBox.Text, sinopsis_textBox.Text, precioC, precioA, imagen_textBox.Text);
                     serie.anyadirSerie();
                     Err.Text = "AÑADIDO CORRECTAMENTE";
