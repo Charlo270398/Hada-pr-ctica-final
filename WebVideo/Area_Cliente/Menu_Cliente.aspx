@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Menu_Cliente.aspx.cs" Inherits="WebVideo.Area_Clientes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeFile="Menu_Cliente.aspx.cs" Inherits="WebVideo.Area_Clientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
     <p>
         &nbsp;</p>
