@@ -5,7 +5,7 @@
     </h2>
     <br />
     <div id ="serie_individual">
-        <asp:ImageButton ID="Imagen" runat="server" Height="200px" Width="200px" OnInit="imagePelicula1_Init" BorderStyle="Groove" BorderWidth="10px"/>
+        <asp:ImageButton ID="Imagen" runat="server" Height="306px" Width="223px" OnInit="imagePelicula1_Init" BorderStyle="Groove" BorderWidth="10px"/>
         <br />
         <h4>FICHA DE LA PELÍCULA</h4>
         <asp:Label ID="DirectorText" runat="server" Text="Director:" Font-Italic="False" Font-Strikeout="False" style="font-weight: 700"></asp:Label>
