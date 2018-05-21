@@ -15,7 +15,7 @@ namespace WebVideo.Mostrar
         List<int> listaID = new List<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Btn_PeliculaC(object sender, EventArgs e)

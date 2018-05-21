@@ -39,7 +39,7 @@ namespace WebVideo
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-
+            
             peliculaEN peli = new peliculaEN();
             lastRand = rnd.Next(0, lista.Count);
             peli = lista[lastRand];
