@@ -54,6 +54,7 @@ namespace WebVideo.Peliculas
                     mostrarSaga.Visible = true;
                     SagaText.Visible = true;
                     mostrarSaga.Text = s.mostrarSaga(pelicula.IdSaga).Nombre;
+
                 }
                 Response.Charset = "utf-8";
                 usuarioEN user = (usuarioEN)Session["user_session_data"];
