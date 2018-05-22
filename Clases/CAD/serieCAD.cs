@@ -181,11 +181,18 @@ namespace Clases.CAD
 
         public void modificarSerie(serieEN serie)
         {
-            /*try
+            try
             {
                 SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
                 cn.Open();
-                string comando = "delete from Series where Id_Serie = " + id;
+                string comando = "update Series set";
+                comando += " Titulo = '" + serie.Titulo;
+                comando += "', Fecha_Estreno = '" + serie.FechaE;
+                comando += "', Sinopsis = '" + serie.Sinopsis;
+                comando += "', Precio_C = " + serie.PrecioC;
+                comando += ", Precio_A = " + serie.PrecioA;
+                comando += ", Imagen = '" + serie.Imagen;
+                comando += "' where Id_Serie = " + serie.IdS;
                 SqlCommand cmd = new SqlCommand(comando, cn);
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
@@ -194,7 +201,7 @@ namespace Clases.CAD
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }*/
+            }
         }
 
         public bool existe(serieEN serie)

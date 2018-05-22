@@ -26,7 +26,7 @@ namespace CAD
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("La película ya está en alquiler/compra");
             }
@@ -59,7 +59,7 @@ namespace CAD
                 cmd = new SqlCommand(comando, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 throw new Exception("La película ya está en alquiler/compra");
             }
