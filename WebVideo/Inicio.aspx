@@ -11,7 +11,9 @@
 
     </p>
     <p>
-        <span style="font-size: x-large">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Últimos estrenos:</span></p>
+        <span style="font-size: x-large">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+    <p>
+        <span style="font-size: x-large">Nuestras películas:</span></p>
 <p class="text-center">
     &nbsp;</p>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
