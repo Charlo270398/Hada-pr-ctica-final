@@ -26,7 +26,7 @@
                 <br />
                 <br />
                 </strong>
-                <asp:Image ID="Imagen" runat="server" BorderStyle="Groove" BorderWidth="10px" OnInit="Imagen_Init" Width="400px" />
+                <asp:Image ID="Imagen" runat="server" BorderStyle="Groove" BorderWidth="10px" OnInit="Imagen_Init" Width="400px" Height="550px" />
                 <br />
                 <asp:HyperLink ID="HyperLink" runat="server">Ver película</asp:HyperLink>
             </div>

@@ -47,6 +47,8 @@ namespace WebVideo
 
             Titulo.Text = peli.NombreP;
             Imagen.ImageUrl = peli.Imagen;
+            Imagen.Width = 400;
+            Imagen.Height = 550;
             HyperLink.NavigateUrl = "Mostrar/Mostrar_Peliculas.aspx?id=" + peli.IdP.ToString();
         }
     }
