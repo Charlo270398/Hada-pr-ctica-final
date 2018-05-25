@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CAD;
-using Clases.CAD;
 using Clases.EN;
 
 namespace WebVideo.Series
@@ -13,7 +11,6 @@ namespace WebVideo.Series
     public partial class Mostrar_Series : System.Web.UI.Page
     {
 
-        serieCAD p = new serieCAD();
         serieEN serie = new serieEN();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,9 +27,9 @@ namespace WebVideo.Series
             try
             {
                 int id;
-                int.TryParse(Request.QueryString["id"], out id);
+                int.TryParse(Request.QueryString["id"], out id);//Recuperamos id Serie
                 serie = new serieEN(id, "");
-                serie = p.mostrarSerie(serie);
+                serie = serie.mostrarSerie();
                 Titulo_S.Text = serie.Titulo;
                 Texto_Sinopsis.Text = serie.Sinopsis;
                 Imagen.ImageUrl = serie.Imagen;

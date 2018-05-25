@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Mostrar_Peliculas.aspx.cs" Inherits="WebVideo.Peliculas.Mostrar_Peliculas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
     <h2>
-        <asp:Label Font-Bold="True" ID="Titulo" runat="server" Text="Titulo"></asp:Label>
+        <asp:Label Font-Bold="True" ID="Titulo" runat="server" Text="Titulo_P"></asp:Label>
     </h2>
     <br />
     <div id ="serie_individual">
-        <asp:ImageButton ID="Imagen" runat="server" Height="306px" Width="223px" OnInit="imagePelicula1_Init" BorderStyle="Groove" BorderWidth="10px"/>
+        <asp:ImageButton ID="Imagen" runat="server" Height="300px" Width="225px" OnInit="imagePelicula1_Init" BorderStyle="Groove" BorderWidth="10px"/>
         <br />
         <h4>FICHA DE LA PELÍCULA</h4>
         <asp:Label ID="DirectorText" runat="server" Text="Director:" Font-Italic="False" Font-Strikeout="False" style="font-weight: 700"></asp:Label>
