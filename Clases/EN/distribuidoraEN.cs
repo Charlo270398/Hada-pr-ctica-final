@@ -83,5 +83,17 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
+        public List<peliculaEN> listaPeliculasDistribuidora()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarListaPeliculasDistribuidora(IdDis);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

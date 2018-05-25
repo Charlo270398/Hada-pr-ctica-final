@@ -11,6 +11,7 @@ namespace WebVideo
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -64,9 +65,6 @@ namespace WebVideo
 
         }
 
-        protected void a(object sender, EventArgs e)
-        {
 
-        }
     }
 }

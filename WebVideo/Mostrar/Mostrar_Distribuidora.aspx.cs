@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CAD;
 using Clases.EN;
 
 namespace WebVideo.Mostrar
@@ -12,7 +11,7 @@ namespace WebVideo.Mostrar
     public partial class Mostrar_Distribuidora : System.Web.UI.Page
     {
         distribuidoraEN distribuidora = new distribuidoraEN();
-        List<int> listaID = new List<int>();
+        List<int> listaID = new List<int>();//Lista Id asociadas
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,21 +22,18 @@ namespace WebVideo.Mostrar
             try
             {
                 int id;
-                int.TryParse(Request.QueryString["id"], out id);
-                distribuidora.IdDis = id;
-                DistribuidoraCAD aux = new DistribuidoraCAD();
-                peliculaCAD paux = new peliculaCAD();
+                int.TryParse(Request.QueryString["id"], out id);//Recuperamos el id de la dist.
+                distribuidora = new distribuidoraEN(id,"");//Cargamos el id de la dist.
 
-                distribuidora = aux.mostrarDistribuidora(distribuidora.IdDis);
-
+                distribuidora = distribuidora.mostrarDistribuidora();//Cargamos la distribuidora
                 NombreText.Text = distribuidora.Nombre;
 
                 List<string> listaNombres = new List<string>();
-                List<peliculaEN> listaP = paux.mostrarListaPeliculasDistribuidora(distribuidora.IdDis);
+                List<peliculaEN> listaP = distribuidora.listaPeliculasDistribuidora();//Cargamos las peliculas de la dist.
                 for (int i = 0; i < listaP.Count; i++)
                 {
                     listaNombres.Add(listaP[i].NombreP);
-                    listaID.Add(listaP[i].IdP);
+                    listaID.Add(listaP[i].IdP);//Asociamos id a nombre en la lista
                 }
                 DWPeliculas.DataSource = listaNombres;
                 DWPeliculas.DataBind();
@@ -51,14 +47,21 @@ namespace WebVideo.Mostrar
 
         protected void Btn_PeliculaC(object sender, EventArgs e)
         {
-            if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
+            try
             {
-                Response.Redirect("Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex - 1]);
+                if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
+                {
+                    Response.Redirect("Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex - 1]);
+                }
+                else
+                {
+                    ErrPelicula.Visible = true;
+                    ErrPelicula.Text = "*Seleccione una película";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ErrPelicula.Visible = true;
-                ErrPelicula.Text = "*Seleccione una película";
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
         }
     }

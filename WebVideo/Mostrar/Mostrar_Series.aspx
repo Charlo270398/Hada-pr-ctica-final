@@ -5,7 +5,7 @@
     </h2>
     <br />
     <div id ="serie_individual">
-        <asp:ImageButton ID="Imagen" runat="server" Height="200px" Width="200px" OnInit="imageSerie1_Init" BorderStyle="Groove" BorderWidth="10px"/>
+        <asp:ImageButton ID="Imagen" runat="server" Height="300px" Width="225px" OnInit="imageSerie1_Init" BorderStyle="Groove" BorderWidth="10px"/>
         <br />
         <h4>FICHA DE LA SERIE</h4>
         <asp:Label ID="Fecha_Etext" runat="server" Text="Fecha de estreno: " Font-Italic="False" Font-Strikeout="False"></asp:Label>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Clases.EN;
 
-namespace Clases.CAD
+namespace CAD
 {
     public interface IserieCAD
     {

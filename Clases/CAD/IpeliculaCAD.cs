@@ -19,6 +19,7 @@ namespace CAD
 
         int idPelicula(string nombre);
 
+        List<peliculaEN> mostrarUltimosEstrenos();
         peliculaEN mostrarPeliculaRandom();
     }
 }

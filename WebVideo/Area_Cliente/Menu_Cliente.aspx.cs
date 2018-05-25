@@ -76,7 +76,7 @@ namespace WebVideo
 
         protected void Btn_ContraseñaC(object sender, EventArgs e)
         {
-            
+            Response.Redirect("Cambiar_Contraseña.aspx");
         }
 
         protected void Btn_DatosC(object sender, EventArgs e)

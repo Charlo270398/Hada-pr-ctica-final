@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CAD;
-using Clases.CAD;
 using Clases.EN;
 using System.Drawing;
 using System.Globalization;
@@ -23,6 +22,7 @@ namespace WebVideo.Mantenimiento
 
         protected void Btn_Insertar_Click(object sender, EventArgs e)
         {
+
             if (titulo_textBox.Text != "" && sinopsis_textBox.Text != "" && estreno_textBox.Text != "" && alquiler_textBox.Text != "" && compra_textBox.Text != "" && imagen_textBox.Text != "")
             {
                 try

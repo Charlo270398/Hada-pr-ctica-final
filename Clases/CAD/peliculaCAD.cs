@@ -381,5 +381,47 @@ namespace CAD
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<peliculaEN> mostrarUltimosEstrenos()
+        {
+            peliculaEN aux = new peliculaEN();
+            List<peliculaEN> devolver = new List<peliculaEN>();
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+            cn.Open();
+            string comando = "";
+            comando = "SELECT TOP 2 * FROM peliculas order by Fecha_Estreno desc";
+            SqlCommand cmd = new SqlCommand(comando, cn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                aux = new peliculaEN();
+                aux.IdP = (int)reader["Id_Pelicula"];
+                aux.NombreP = reader["Nombre"].ToString();
+                aux.Duracion = (int)reader["Duracion"];
+                aux.FechaE = reader["Fecha_Estreno"].ToString();
+                aux.Sinopsis = reader["Sinopsis"].ToString();
+                aux.PrecioA = (int)reader["Precio_A"];
+                aux.PrecioC = (int)reader["Precio_C"];
+                aux.IdDist = (int)reader["Id_Distribuidora"];
+                aux.IdDir = (int)reader["Id_Director"];
+                aux.Imagen = reader["Imagen"].ToString();
+                aux.Trailer = reader["Trailer"].ToString();
+                if (reader.IsDBNull(10))
+                {
+                    aux.IdSaga = -1;
+                }
+                else
+                {
+                    aux.IdSaga = (int)reader["Id_Saga"];
+                }
+
+                devolver.Add(aux);
+
+            }
+            reader.Close();
+            cn.Close();
+
+            return devolver;
+        }
     }
 }

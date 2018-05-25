@@ -191,6 +191,8 @@ namespace WebVideo
                     MailMessage mail = new MailMessage("hookinVideoclub@gmail.com", user.Email, "¡Bienvenido a Hookin!", contenido);
                     user.anyadirUsuario();
                     cliente.Send(mail);
+
+
                     Session["user_session_data"] = user;
                     Response.Redirect("Area_Cliente/Menu_Cliente.aspx");
                 }

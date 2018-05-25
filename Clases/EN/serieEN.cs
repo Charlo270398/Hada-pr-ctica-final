@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Clases.CAD;
+using CAD;
 
 namespace Clases.EN
 {
@@ -51,8 +51,17 @@ namespace Clases.EN
         }
         public void anyadirSerie()
         {
-            serieCAD p = new serieCAD();
-            p.anyadirSerie(this);
+            try
+            {
+                serieCAD p = new serieCAD();
+                p.anyadirSerie(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
         public void borrarSerie()
         {
@@ -86,6 +95,19 @@ namespace Clases.EN
             {
                 serieCAD p = new serieCAD();
                 p.modificarSerie(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<serieEN> listaSeries()
+        {
+            try
+            {
+                serieCAD p = new serieCAD();
+                return p.mostrarListaSeries(this);
 
             }
             catch (Exception ex)

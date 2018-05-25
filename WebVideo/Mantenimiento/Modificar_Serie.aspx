@@ -18,15 +18,15 @@
         <asp:TextBox ID="fechaBox" runat="server"></asp:TextBox>
     </p>
     <p>
-        Precio de Compra:
+        Precio de Compra (en céntimos):
         <asp:TextBox ID="compraBox" runat="server"></asp:TextBox>
     </p>
     <p>
-        Precio de Alquiler:
+        Precio de Alquiler (en céntimos):
         <asp:TextBox ID="alquilerBox" runat="server"></asp:TextBox>
     </p>
     <p>
-        Imagen:
+        Imagen (ej: Imagen.jpg):
         <asp:TextBox ID="imgBox" runat="server"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Btn_modificar" runat="server" Text="Modificar" OnClick="Btn_modificar_Click" />

@@ -54,15 +54,23 @@ namespace Clases.EN
                 throw new Exception(ex.Message);
             }
         }
-        public void mostrarSaga()
+        public sagaEN mostrarSaga()
         {
-
+            try
+            {
+                sagaCAD s = new sagaCAD();
+                return s.mostrarSaga(this.idSaga);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public void modificarSaga()
         {
             try
             {
-
+                //No es necesario
             }
             catch (Exception ex)
             {
@@ -73,7 +81,7 @@ namespace Clases.EN
         {
             try
             {
-                return null;
+                return null;//no es necesario
             }
             catch (Exception ex)
             {
