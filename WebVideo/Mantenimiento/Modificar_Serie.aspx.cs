@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Clases.CAD;
 using Clases.EN;
 using CAD;
 using System.Globalization;
@@ -26,7 +25,7 @@ namespace WebVideo.Mantenimiento
                 {
                     serieCAD p = new serieCAD();
                     serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
-                    serie = p.mostrarSerie(serie);
+                    serie = p.mostrarSerie(serie); 
                     tituloBox.Text = serie.Titulo;
                     sinopsisBox.Text = serie.Sinopsis;
                     fechaBox.Text = serie.FechaE;

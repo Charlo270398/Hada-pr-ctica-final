@@ -6,7 +6,7 @@ using Clases.EN;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace Clases.CAD
+namespace CAD
 {
     public class serieCAD : IserieCAD
     {
