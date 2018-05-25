@@ -95,7 +95,6 @@ namespace Clases.EN
             {
                 serieCAD p = new serieCAD();
                 p.modificarSerie(this);
-                throw new Exception("A");
 
             }
             catch (Exception ex)
