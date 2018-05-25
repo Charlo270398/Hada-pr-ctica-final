@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Clases.EN;
 using System.Drawing;
 using System.Net.Mail;
-using Clases.CAD;
+using CAD;
 namespace WebVideo
 {
     public partial class Transaccions : System.Web.UI.Page

@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CAD;
-using Clases.CAD;
 using Clases.EN;
 using System.Drawing;
 using System.Globalization;
