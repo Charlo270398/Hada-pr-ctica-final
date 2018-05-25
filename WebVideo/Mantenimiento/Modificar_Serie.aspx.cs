@@ -23,9 +23,8 @@ namespace WebVideo.Mantenimiento
             {
                 if (fechaBox.Text.Length == 0 && tituloBox.Text.Length == 0 && sinopsisBox.Text.Length == 0 && compraBox.Text.Length == 0 && alquilerBox.Text.Length == 0 && imgBox.Text.Length == 0)
                 {
-                    serieCAD p = new serieCAD();
                     serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
-                    serie = p.mostrarSerie(serie); 
+                    serie = serie.mostrarSerie(); 
                     tituloBox.Text = serie.Titulo;
                     sinopsisBox.Text = serie.Sinopsis;
                     fechaBox.Text = serie.FechaE;
@@ -51,10 +50,10 @@ namespace WebVideo.Mantenimiento
             int i;
             if (DWSeries != null)
             {
-                serieCAD s = new serieCAD();
-                serie.Titulo = "%";
+
                 List<String> nombres = new List<string>();
-                listaSeries = s.mostrarListaSeries(serie);
+                serie.Titulo = "%";
+                listaSeries = serie.listaSeries();
                 for (i = 0; i < listaSeries.Count; i++)
                 {
                     nombres.Add(listaSeries[i].Titulo);
@@ -76,9 +75,8 @@ namespace WebVideo.Mantenimiento
         {
             try
             {
-                serieCAD p = new serieCAD();
                 serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
-                serie = p.mostrarSerie(serie);
+                serie = serie.mostrarSerie();
                 if (tituloBox.Text.Length == 0 || sinopsisBox.Text.Length == 0 || fechaBox.Text.Length == 0 || compraBox.Text.Length == 0 || alquilerBox.Text.Length == 0 || imgBox.Text.Length == 0)
                 {
                     Btn_modificar.Visible = true;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Clases.CAD;
+using CAD;
 
 namespace Clases.EN
 {
@@ -95,6 +95,20 @@ namespace Clases.EN
             {
                 serieCAD p = new serieCAD();
                 p.modificarSerie(this);
+                throw new Exception("A");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<serieEN> listaSeries()
+        {
+            try
+            {
+                serieCAD p = new serieCAD();
+                return p.mostrarListaSeries(this);
 
             }
             catch (Exception ex)
