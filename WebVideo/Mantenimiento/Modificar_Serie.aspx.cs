@@ -73,12 +73,8 @@ namespace WebVideo.Mantenimiento
 
         protected void Btn_modificar_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             try
             {
->>>>>>> 48796440P
                 serie = new serieEN(-1, DWSeries.SelectedItem.ToString());
                 serie = serie.mostrarSerie();
                 if (tituloBox.Text.Length == 0 || sinopsisBox.Text.Length == 0 || fechaBox.Text.Length == 0 || compraBox.Text.Length == 0 || alquilerBox.Text.Length == 0 || imgBox.Text.Length == 0)
@@ -97,28 +93,6 @@ namespace WebVideo.Mantenimiento
                 }
                 else
                 {
-<<<<<<< HEAD
-                    try { 
-                        serie.Titulo = tituloBox.Text;
-                        serie.Sinopsis = sinopsisBox.Text;
-                        serie.FechaE = fechaBox.Text;
-                        serie.PrecioA = float.Parse(alquilerBox.Text, CultureInfo.InvariantCulture.NumberFormat);
-                        serie.PrecioC = float.Parse(compraBox.Text, CultureInfo.InvariantCulture.NumberFormat);
-                        serie.Imagen = imgBox.Text;
-                        serie.modificarSerie();
-                        Btn_modificar.Visible = false;
-                        Err.ForeColor = Color.Green;
-                        Err.Visible = true;
-                        Err.Text = "Has realizado los cambios correctamente :)";
-                    }catch (Exception ex)
-                    {
-                        Err.ForeColor = Color.Red;
-                        Err.Visible = true;
-                        Err.Text = ex.Message;
-                    }
-                }
-            
-=======
                     serie.Titulo = tituloBox.Text;
                     serie.Sinopsis = sinopsisBox.Text;
                     serie.FechaE = fechaBox.Text;
@@ -137,7 +111,6 @@ namespace WebVideo.Mantenimiento
                 Err.Visible = true;
                 Err.Text = ex.Message;
             }
->>>>>>> 48796440P
         }
     }
 }
