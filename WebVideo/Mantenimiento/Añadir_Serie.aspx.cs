@@ -23,6 +23,7 @@ namespace WebVideo.Mantenimiento
 
         protected void Btn_Insertar_Click(object sender, EventArgs e)
         {
+
             if (titulo_textBox.Text != "" && sinopsis_textBox.Text != "" && estreno_textBox.Text != "" && alquiler_textBox.Text != "" && compra_textBox.Text != "" && imagen_textBox.Text != "")
             {
                 try

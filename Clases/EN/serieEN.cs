@@ -51,8 +51,17 @@ namespace Clases.EN
         }
         public void anyadirSerie()
         {
-            serieCAD p = new serieCAD();
-            p.anyadirSerie(this);
+            try
+            {
+                serieCAD p = new serieCAD();
+                p.anyadirSerie(this);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
         public void borrarSerie()
         {
