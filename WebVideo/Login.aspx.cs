@@ -33,35 +33,45 @@ namespace WebVideo
 
         protected void BTN_LOGIN(object sender, EventArgs e)
         {
-            if(Text_Email.Text != "" && Text_Pass.Text != ""){
-                string passw = CalculateMD5Hash(Text_Pass.Text);
-                usuarioEN usuario = new usuarioEN(Text_Email.Text, passw); //Buscamos el usuario que introducimos para iniciar sesion
-                if (usuario.existe())
+            try
+            {
+                if (Text_Email.Text != "" && Text_Pass.Text != "")
                 {
-                    usuario.cargarUsuario();
-                    if (usuario.Contrasenya == passw)
+                    string passw = CalculateMD5Hash(Text_Pass.Text);
+                    usuarioEN usuario = new usuarioEN(Text_Email.Text, passw); //Buscamos el usuario que introducimos para iniciar sesion
+                    if (usuario.existe())
                     {
-                        Session["user_session_data"] = usuario; 
-                        Response.Redirect("Area_Cliente/Menu_Cliente.aspx"); 
+                        usuario.cargarUsuario();
+                        if (usuario.Contrasenya == passw)
+                        {
+                            Session["user_session_data"] = usuario;
+                            Response.Redirect("Area_Cliente/Menu_Cliente.aspx");
+                        }
+                        else
+                        {
+                            Err.ForeColor = Color.Red;
+                            Err.Text = "*Contraseña incorrecta";
+                            Err.Visible = true;
+                        }
                     }
                     else
                     {
                         Err.ForeColor = Color.Red;
-                        Err.Text = "*Contraseña incorrecta";
+                        Err.Text = "*Email inexistente";
                         Err.Visible = true;
                     }
                 }
                 else
                 {
                     Err.ForeColor = Color.Red;
-                    Err.Text = "*Email inexistente";
+                    Err.Text = "*Quedan campos vacíos";
                     Err.Visible = true;
                 }
             }
-            else
+            catch (Exception ex)
             {
                 Err.ForeColor = Color.Red;
-                Err.Text = "*Quedan campos vacíos";
+                Err.Text = ex.Message;
                 Err.Visible = true;
             }
         }

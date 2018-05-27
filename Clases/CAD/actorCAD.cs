@@ -168,7 +168,7 @@ namespace CAD
             cn.Open();
             string comando = "";
 
-            comando = "select p.Id_Pelicula from Actores a, Peliculas p, Actuaciones ac where p.Id_Pelicula = ac.Id_Pelicula and a.Id_Actor = ac.Id_Actor";
+            comando = "select Id_Pelicula from Actuaciones ac where ac.Id_Actor = " + id;
 
             SqlCommand cmd = new SqlCommand(comando, cn);
             var reader = cmd.ExecuteReader();

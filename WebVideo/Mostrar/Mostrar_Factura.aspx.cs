@@ -47,11 +47,11 @@ namespace WebVideo.Mostrar
                 fechaPago.Text = t.FechaC.Substring(0, 11);
 
 
-            }
-            catch (Exception)
+            
+            }catch(Exception ex)
             {
-                Response.Redirect("../Pagina_Error.aspx");
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
-        }
+}
     }
 }

@@ -27,7 +27,6 @@ namespace WebVideo.Mostrar
             try
             {
                 int id;
-                int i;
                 int.TryParse(Request.QueryString["id"], out id);//Recuperamos Id del director
                 director = new directorEN(id);//Cargamos Id del director
                 director = director.mostrarDirector();//Cargamos datos del director
@@ -39,7 +38,7 @@ namespace WebVideo.Mostrar
                 List<string> listaNombres = new List<string>();
                 List<peliculaEN> listaP = new List<peliculaEN>();
                 listaP = director.peliculasDirector();//Cargamos la lista de peliculas del director
-                for (i = 0; i < listaP.Count; i++)
+                for (int i = 0; i < listaP.Count; i++)
                 {
                     listaNombres.Add(listaP[i].NombreP);
                     listaID.Add(listaP[i].IdP);//Se guarda la id asociada a cada nombre de la lista
@@ -59,7 +58,7 @@ namespace WebVideo.Mostrar
             {
                 if (DWPeliculas.SelectedItem.ToString() != "[Seleccionar]")
                 {
-                    Response.Redirect("Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex - 1]);
+                    Response.Redirect("Mostrar_Peliculas.aspx?id=" + listaID[DWPeliculas.SelectedIndex - 1], false);//Ponemos false porque si no hay excepción
                 }
                 else
                 {

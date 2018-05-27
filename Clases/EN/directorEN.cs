@@ -95,8 +95,8 @@ namespace Clases.EN
         {
             try
             {
-                directorCAD dir = new directorCAD();
-                return null;
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarListaPeliculasDirector(IdD);
 
             }
             catch (Exception ex)
