@@ -15,7 +15,10 @@ namespace WebVideo.Series
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Application.Lock();
+            Application["PageRequestCount"] =
+                ((int)Application["PageRequestCount"]) + 1;
+            Application.UnLock();
         }
 
         protected void imageSerie1_Click(object sender, ImageClickEventArgs e)

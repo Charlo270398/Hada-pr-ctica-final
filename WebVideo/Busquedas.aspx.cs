@@ -14,7 +14,7 @@ namespace WebVideo
         protected static List<int> listaID = new List<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            num.Text = Application["PageRequestCount"].ToString();
         }
 
         

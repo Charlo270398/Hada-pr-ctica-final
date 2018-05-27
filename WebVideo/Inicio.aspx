@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeFile ="Inicio.aspx.cs" Inherits="WebVideo.Inicio" MaintainScrollPositionOnPostback="true"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind ="Inicio.aspx.cs" Inherits="WebVideo.Inicio" MaintainScrollPositionOnPostback="true"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
     <p class="text-center">
     <br />

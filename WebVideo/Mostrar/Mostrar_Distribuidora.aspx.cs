@@ -14,7 +14,10 @@ namespace WebVideo.Mostrar
         List<int> listaID = new List<int>();//Lista Id asociadas
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Application.Lock();
+            Application["PageRequestCount"] =
+                ((int)Application["PageRequestCount"]) + 1;
+            Application.UnLock();
         }
 
         protected void Nombre_Init(object sender, EventArgs e)

@@ -11,7 +11,7 @@
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         &nbsp; -(14/05/18) Cambio datos del usuario operativo.</p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
-        &nbsp; -(11/05/18) Inerfaz Area cliente operativa.</p>
+        &nbsp; -(11/05/18) Interfaz Area cliente operativa.</p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">
         &nbsp; -(10/05/18) Usuarios con privilegios operativo.</p>
     <p style="font-size: medium; text-align: left; font-family: 'Courier New', Courier, 'espacio sencillo';" align="center">

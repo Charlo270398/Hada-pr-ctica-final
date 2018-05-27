@@ -16,8 +16,10 @@ namespace WebVideo
         int lastRand = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             try
             {
+                
                 peliculaEN p = new peliculaEN();
                 lista = p.mostrarListaTodasPeliculas();
                 lastRand = rnd.Next(0, lista.Count);

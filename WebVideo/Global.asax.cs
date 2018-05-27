@@ -11,6 +11,7 @@ namespace WebVideo
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            Application["PageRequestCount"] = 0;
         }
     }
 }

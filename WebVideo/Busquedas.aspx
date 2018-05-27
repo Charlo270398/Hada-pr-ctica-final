@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Busquedas.aspx.cs" Inherits="WebVideo.Formulario_web1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cuerpo" runat="server">
-    <div align="center" style="font-size: xx-large">¿Qué desea buscar?</div><br />
+    <div align="center" style="font-size: xx-large">¿Qué desea buscar?</div>
+        <span style="font-size: x-large"><strong>
+    <br />
+                <asp:Label ID="Titulo0" runat="server" style="font-size: small" Text="Cantidad de búsquedas hoy:"></asp:Label>
+                &nbsp;<asp:Label ID="num" runat="server" style="font-size: small" Text="Título"></asp:Label>
+                <br />
+    </strong></span><br />
     Búsqueda por título (serie):<br />
     <asp:TextBox ID="SerieBox" runat="server" Width="926px"></asp:TextBox>
     <br />

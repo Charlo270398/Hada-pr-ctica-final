@@ -13,6 +13,24 @@ namespace WebVideo {
     public partial class Formulario_web1 {
         
         /// <summary>
+        /// Control Titulo0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Titulo0;
+        
+        /// <summary>
+        /// Control num.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label num;
+        
+        /// <summary>
         /// Control SerieBox.
         /// </summary>
         /// <remarks>
