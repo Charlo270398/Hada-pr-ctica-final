@@ -5,6 +5,9 @@ using System.Text;
 using Clases.EN;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data.SqlTypes;
+using System.Data;
+
 
 namespace CAD
 {
@@ -104,10 +107,6 @@ namespace CAD
         }
         public List<peliculaEN> mostrarListaPeliculas(peliculaEN pelicula) {
 
-            peliculaEN aux = new peliculaEN();
-            List<peliculaEN> devolver = new List<peliculaEN>();
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
             string comando = "";
             if (pelicula.NombreP == "%")
             {
@@ -117,37 +116,50 @@ namespace CAD
             {
                 comando = "select * from Peliculas where Nombre like '%" + pelicula.NombreP + "%' order by Nombre";
             }
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                aux = new peliculaEN();
-                aux.IdP = (int)reader["Id_Pelicula"];
-                aux.NombreP = reader["Nombre"].ToString();
-                aux.Duracion = (int)reader["Duracion"];
-                aux.FechaE = reader["Fecha_Estreno"].ToString();
-                aux.Sinopsis = reader["Sinopsis"].ToString();
-                aux.PrecioA = (int) reader["Precio_A"];
-                aux.PrecioC = (int) reader["Precio_C"];
-                aux.IdDist = (int)reader["Id_Distribuidora"];
-                aux.IdDir = (int)reader["Id_Director"];
-                aux.Imagen = reader["Imagen"].ToString();
-                aux.Trailer = reader["Trailer"].ToString();
-                if (reader.IsDBNull(10)) {
-                    aux.IdSaga = -1;
-                }
-                else
+                int i, j;
+                peliculaEN aux = new peliculaEN();
+                List<peliculaEN> devolver = new List<peliculaEN>();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                DataSet bdvirtual = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(comando, cn);
+                da.Fill(bdvirtual, "Peliculas");
+                DataTable t = new DataTable();
+                t = bdvirtual.Tables["Peliculas"];
+                for (i = 0; i < t.Rows.Count; i++)
                 {
-                    aux.IdSaga = (int)reader["Id_Saga"];
+                    aux = new peliculaEN();
+                    aux.IdP = (int)t.Rows[i][0];
+                    aux.NombreP = t.Rows[i][1].ToString();
+                    aux.Duracion = (int)t.Rows[i][2];
+                    aux.FechaE = t.Rows[i][3].ToString();
+                    aux.Sinopsis = t.Rows[i][4].ToString();
+                    aux.PrecioC = (int)t.Rows[i][5];
+                    aux.PrecioA = (int)t.Rows[i][6];
+                    aux.IdDist = (int)t.Rows[i][7];
+                    aux.IdDir = (int)t.Rows[i][8];
+                    aux.Imagen = t.Rows[i][9].ToString();
+                    aux.Trailer = t.Rows[i][11].ToString();
+                    if (t.Rows[i][10] ==  DBNull.Value)//Comprobamos que no sea NULL
+                    {
+                        aux.IdSaga = -1;
+                    }
+                    else
+                    {
+                        aux.IdSaga = (int)t.Rows[i][10];
+                    }
+                    devolver.Add(aux);
                 }
+                cn.Close();
 
-                devolver.Add(aux);
-
+                return devolver;
             }
-            reader.Close();
-            cn.Close();
-
-            return devolver;
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public peliculaEN mostrarPelicula(peliculaEN pelicula)
         {
@@ -384,44 +396,51 @@ namespace CAD
 
         public List<peliculaEN> mostrarUltimosEstrenos()
         {
-            peliculaEN aux = new peliculaEN();
-            List<peliculaEN> devolver = new List<peliculaEN>();
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
-            cn.Open();
-            string comando = "";
-            comando = "SELECT TOP 2 * FROM peliculas order by Fecha_Estreno desc";
-            SqlCommand cmd = new SqlCommand(comando, cn);
-            var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                aux = new peliculaEN();
-                aux.IdP = (int)reader["Id_Pelicula"];
-                aux.NombreP = reader["Nombre"].ToString();
-                aux.Duracion = (int)reader["Duracion"];
-                aux.FechaE = reader["Fecha_Estreno"].ToString();
-                aux.Sinopsis = reader["Sinopsis"].ToString();
-                aux.PrecioA = (int)reader["Precio_A"];
-                aux.PrecioC = (int)reader["Precio_C"];
-                aux.IdDist = (int)reader["Id_Distribuidora"];
-                aux.IdDir = (int)reader["Id_Director"];
-                aux.Imagen = reader["Imagen"].ToString();
-                aux.Trailer = reader["Trailer"].ToString();
-                if (reader.IsDBNull(10))
+                int i, j;
+                peliculaEN aux = new peliculaEN();
+                List<peliculaEN> devolver = new List<peliculaEN>();
+                SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bbdd"].ToString());
+                cn.Open();
+                string comando = "";
+                comando = "SELECT TOP 2 * FROM peliculas order by Fecha_Estreno desc";
+                DataSet bdvirtual = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(comando, cn);
+                da.Fill(bdvirtual, "Peliculas");
+                DataTable t = new DataTable();
+                t = bdvirtual.Tables["Peliculas"];
+                for (i = 0; i < t.Rows.Count; i++)
                 {
-                    aux.IdSaga = -1;
+                    aux = new peliculaEN();
+                    aux.IdP = (int)t.Rows[i][0];
+                    aux.NombreP = t.Rows[i][1].ToString();
+                    aux.Duracion = (int)t.Rows[i][2];
+                    aux.FechaE = t.Rows[i][3].ToString();
+                    aux.Sinopsis = t.Rows[i][4].ToString();
+                    aux.PrecioC = (int)t.Rows[i][5];
+                    aux.PrecioA = (int)t.Rows[i][6];
+                    aux.IdDist = (int)t.Rows[i][7];
+                    aux.IdDir = (int)t.Rows[i][8];
+                    aux.Imagen = t.Rows[i][9].ToString();
+                    aux.Trailer = t.Rows[i][11].ToString();
+                    if (t.Rows[i][10] == null)
+                    {
+                        aux.IdSaga = -1;
+                    }
+                    else
+                    {
+                        aux.IdSaga = (int)t.Rows[i][10];
+                    }
+                    devolver.Add(aux);
                 }
-                else
-                {
-                    aux.IdSaga = (int)reader["Id_Saga"];
-                }
+                cn.Close();
 
-                devolver.Add(aux);
-
+                return devolver;
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
-            reader.Close();
-            cn.Close();
-
-            return devolver;
         }
     }
 }

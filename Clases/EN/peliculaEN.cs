@@ -206,5 +206,19 @@ namespace Clases.EN
             }
         }
 
+        public List<peliculaEN> mostrarUltimosEstrenos()
+        {
+            try
+            {
+                peliculaCAD p = new peliculaCAD();
+                return p.mostrarUltimosEstrenos();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }
