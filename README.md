@@ -5,6 +5,10 @@ La aplicación web a implementar va a ser un videoclub, en el que un usuario pue
 Grupo de prácticas:
 * Viernes 17h a 19h.
 
+Para el uso de la práctica recomendamos utilizar los siguientes datos:
+Usuario: carloszamora270398@gmail.com
+Contraseña: 123
+
 Desarrolladores:
 * Pepe Soler
 * Aitor Salgado
@@ -42,3 +46,5 @@ Los usuarios que accedan a la parte privada podrán ver:
 - [ ] Posibilidad de añadir una Tarjeta de Crédito para realizar los pagos.
 ### Documentación ###
 * El diagrama entidad-relación se encuentra en: "/Documentación/er_videoclub.pdf"
+* La presentación hecha en clase se encuentra en: "/Documentacion/presentaciónHada.pptx"
+* El trabajo realizado a cada uno y los problemas surgidos se encuentra en: "/Documentacion/Documentacion.pdf"
