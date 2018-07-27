@@ -17,6 +17,8 @@ namespace WebVideo
         List<int> listaIDC = new List<int>();
         List<int> listaIDAS = new List<int>();
         List<int> listaIDCS = new List<int>();
+
+        usuarioEN user = new usuarioEN();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -24,7 +26,10 @@ namespace WebVideo
 
                 paisEN p = new paisEN();
                 Response.Charset = "utf-8";
-                usuarioEN user = (usuarioEN)Session["user_session_data"];
+                if ((usuarioEN)Session["user_session_data"] != null)
+                {
+                    user = (usuarioEN)Session["user_session_data"];
+                }
                 p.IdPais = user.Pais;
                 pais.Text = p.mostrarNombrePais().Pais;
                 nombre.Text = user.Nombre + " " + user.Apellidos;
@@ -116,90 +121,95 @@ namespace WebVideo
 
         protected void DWCompras_Init(object sender, EventArgs e)
         {
-            usuarioEN user = (usuarioEN)Session["user_session_data"];
-            transaccionPeliculaEN t = new transaccionPeliculaEN();
-            t.Email = user.Email;
-            List <int> devueltas = t.eliminarAlquiladas();
-
-            for(int i = 0; i<devueltas.Count; i++)
+            try
             {
-                peliculaEN p = new peliculaEN(devueltas[i],"");
-                enviarMensajeDevueltas(p.mostrarPelicula());
-            }
+                transaccionPeliculaEN t = new transaccionPeliculaEN();
+                t.Email = user.Email;
+                List<int> devueltas = t.eliminarAlquiladas();
 
-            if (DWAlquiler != null)
-            {
-                peliculaEN peli = new peliculaEN();
-                List<transaccionPeliculaEN> lista = user.listaAlquileresP();
-                nombres.Clear();
-                listaIDA.Clear();
-                nombres.Add("[Seleccionar]");
-                for (int i = 0; i < lista.Count; i++)
+                for (int i = 0; i < devueltas.Count; i++)
                 {
-                    peli = new peliculaEN();
-                    peli.IdP = lista[i].IdP;
-                    listaIDA.Add(peli.IdP);
-                    nombres.Add(peli.mostrarPelicula().NombreP);
+                    peliculaEN p = new peliculaEN(devueltas[i], "");
+                    enviarMensajeDevueltas(p.mostrarPelicula());
                 }
-                
-                DWAlquiler.DataSource = nombres;
-                DWAlquiler.DataBind();
 
-
-            }
-
-            if (DWCompras != null)
-            {
-                peliculaEN peli = new peliculaEN();
-                List<transaccionPeliculaEN> lista = user.listaComprasP();
-                nombres.Clear();
-                listaIDC.Clear();
-                nombres.Add("[Seleccionar]");
-                for (int i = 0; i < lista.Count; i++)
+                if (DWAlquiler != null)
                 {
-                    peli = new peliculaEN();
-                    peli.IdP = lista[i].IdP;
-                    listaIDC.Add(peli.IdP);
-                    nombres.Add(peli.mostrarPelicula().NombreP);
-                }
-                
-                DWCompras.DataSource = nombres;
-                DWCompras.DataBind();
-            }
+                    peliculaEN peli = new peliculaEN();
+                    List<transaccionPeliculaEN> lista = user.listaAlquileresP();
+                    nombres.Clear();
+                    listaIDA.Clear();
+                    nombres.Add("[Seleccionar]");
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        peli = new peliculaEN();
+                        peli.IdP = lista[i].IdP;
+                        listaIDA.Add(peli.IdP);
+                        nombres.Add(peli.mostrarPelicula().NombreP);
+                    }
 
-            if(DWAlquiler0 != null)
-            {
-                nombres.Clear();
-                listaIDAS.Clear();
-                serieEN serie = new serieEN();
-                List<transaccionSerieEN> lista2 = user.listaAlquileresS();
-                nombres.Add("[Seleccionar]");
-                for (int i = 0; i < lista2.Count; i++)
-                {
-                    serie = new serieEN();
-                    serie.IdS = lista2[i].IdS;
-                    listaIDAS.Add(serie.IdS);
-                    nombres.Add(serie.mostrarSerie().Titulo);
+                    DWAlquiler.DataSource = nombres;
+                    DWAlquiler.DataBind();
+
+
                 }
-                DWAlquiler0.DataSource = nombres;
-                DWAlquiler0.DataBind();
-            }
-            if(DWCompras0 != null)
-            {
-                nombres.Clear();
-                listaIDCS.Clear();
-                serieEN serie = new serieEN();
-                List<transaccionSerieEN> lista2 = user.listaComprasS();
-                nombres.Add("[Seleccionar]");
-                for (int i = 0; i < lista2.Count; i++)
+
+                if (DWCompras != null)
                 {
-                    serie = new serieEN();
-                    serie.IdS = lista2[i].IdS;
-                    listaIDCS.Add(serie.IdS);
-                    nombres.Add(serie.mostrarSerie().Titulo);
+                    peliculaEN peli = new peliculaEN();
+                    List<transaccionPeliculaEN> lista = user.listaComprasP();
+                    nombres.Clear();
+                    listaIDC.Clear();
+                    nombres.Add("[Seleccionar]");
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        peli = new peliculaEN();
+                        peli.IdP = lista[i].IdP;
+                        listaIDC.Add(peli.IdP);
+                        nombres.Add(peli.mostrarPelicula().NombreP);
+                    }
+
+                    DWCompras.DataSource = nombres;
+                    DWCompras.DataBind();
                 }
-                DWCompras0.DataSource = nombres;
-                DWCompras0.DataBind();
+
+                if (DWAlquiler0 != null)
+                {
+                    nombres.Clear();
+                    listaIDAS.Clear();
+                    serieEN serie = new serieEN();
+                    List<transaccionSerieEN> lista2 = user.listaAlquileresS();
+                    nombres.Add("[Seleccionar]");
+                    for (int i = 0; i < lista2.Count; i++)
+                    {
+                        serie = new serieEN();
+                        serie.IdS = lista2[i].IdS;
+                        listaIDAS.Add(serie.IdS);
+                        nombres.Add(serie.mostrarSerie().Titulo);
+                    }
+                    DWAlquiler0.DataSource = nombres;
+                    DWAlquiler0.DataBind();
+                }
+                if (DWCompras0 != null)
+                {
+                    nombres.Clear();
+                    listaIDCS.Clear();
+                    serieEN serie = new serieEN();
+                    List<transaccionSerieEN> lista2 = user.listaComprasS();
+                    nombres.Add("[Seleccionar]");
+                    for (int i = 0; i < lista2.Count; i++)
+                    {
+                        serie = new serieEN();
+                        serie.IdS = lista2[i].IdS;
+                        listaIDCS.Add(serie.IdS);
+                        nombres.Add(serie.mostrarSerie().Titulo);
+                    }
+                    DWCompras0.DataSource = nombres;
+                    DWCompras0.DataBind();
+                }
+            }catch(Exception ex)
+            {
+                Response.Redirect("../Pagina_Error.aspx?err=" + ex.Message);
             }
 
         }
